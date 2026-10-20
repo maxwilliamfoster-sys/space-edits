@@ -25,7 +25,7 @@ SOUND_MODE = os.environ.get("SOUND_MODE", "own").strip().lower()
 EDITS_PER_RUN = int(os.environ.get("EDITS_PER_RUN") or 1)
 MAX_TRIES = 8                     # renders per run (each is a few minutes of CI time)
 QUEUE_TARGET = 3                  # never keep more than this many posts waiting in Buffer
-SLOT_HOURS_UTC = (16, 19)         # posting slots; the next free one after now is used
+SLOT_HOURS_UTC = (17, 20)         # 6pm and 9pm UK in BST (5pm and 8pm in GMT): UK evening scroll time
 POSTED = LIB / "posted.json"      # {edit id: {post, due, file}} (committed by the workflow)
 
 
