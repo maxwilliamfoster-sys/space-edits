@@ -2,13 +2,16 @@ name: Make and schedule space edits
 
 on:
   schedule:
-    # daily; the job is skipped until the repo variable AUTO_POST is set to 'true' (nothing posts before Max approves)
+    # daily preview only: renders, gates and sends the edit to Telegram. Nothing is ever scheduled on Buffer from the cron.
     - cron: '23 13 * * *'
   workflow_dispatch:
     inputs:
       count:
         description: 'edits to render this run'
         default: '1'
+      post:
+        description: 'true = also schedule the passing edit on Buffer (manual approval)'
+        default: 'false'
 
 concurrency:
   group: space-edits
@@ -16,7 +19,6 @@ concurrency:
 
 jobs:
   run:
-    if: github.event_name == 'workflow_dispatch' || vars.AUTO_POST == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 90
     permissions:
@@ -36,7 +38,7 @@ jobs:
 
       - name: Render, preview, schedule
         env:
-          AUTO_POST: ${{ vars.AUTO_POST }}
+          AUTO_POST: ${{ github.event.inputs.post == 'true' && 'true' || '' }}
           EDITS_PER_RUN: ${{ github.event.inputs.count || vars.EDITS_PER_RUN || '1' }}
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
           BUFFER_CHANNEL_ID: ${{ secrets.BUFFER_CHANNEL_ID }}
@@ -64,7 +66,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add library/history.json library/posted.json
+          git add -A library/history.json library/posted.json library/gate_log.json 2>/dev/null || git add library/history.json
           git diff --staged --quiet && exit 0
           git commit -m "state: $(date -u +%Y-%m-%dT%H:%M)"
           for i in 1 2 3; do
