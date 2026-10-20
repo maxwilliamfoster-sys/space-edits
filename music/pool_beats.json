@@ -1,0 +1,182 @@
+{
+ "Call_to_Adventure": {
+  "file": "music/pool/Call_to_Adventure.mp3",
+  "title": "Call to Adventure",
+  "bpm": 86.1,
+  "P": 0.6966,
+  "T0": 0.931,
+  "R": 0.296,
+  "dur": 247.2
+ },
+ "Crossing_the_Chasm": {
+  "file": "music/pool/Crossing_the_Chasm.mp3",
+  "title": "Crossing the Chasm",
+  "bpm": 99.4,
+  "P": 0.6037,
+  "T0": 0.975,
+  "R": 0.021,
+  "dur": 196.9
+ },
+ "Dark_Fog": {
+  "file": "music/pool/Dark_Fog.mp3",
+  "title": "Dark Fog",
+  "bpm": 143.6,
+  "P": 0.418,
+  "T0": 0.672,
+  "R": 0.008,
+  "dur": 239.0
+ },
+ "Dreams_Become_Real": {
+  "file": "music/pool/Dreams_Become_Real.mp3",
+  "title": "Dreams Become Real",
+  "bpm": 95.7,
+  "P": 0.6269,
+  "T0": 0.843,
+  "R": 0.078,
+  "dur": 410.1
+ },
+ "Echoes_of_Time_v2": {
+  "file": "music/pool/Echoes_of_Time_v2.mp3",
+  "title": "Echoes of Time v2",
+  "bpm": 136.0,
+  "P": 0.4412,
+  "T0": 0.935,
+  "R": 0.242,
+  "dur": 285.2
+ },
+ "Eternal_Hope": {
+  "file": "music/pool/Eternal_Hope.mp3",
+  "title": "Eternal Hope",
+  "bpm": 103.4,
+  "P": 0.5805,
+  "T0": 0.703,
+  "R": 0.225,
+  "dur": 284.1
+ },
+ "Evening_of_Chaos": {
+  "file": "music/pool/Evening_of_Chaos.mp3",
+  "title": "Evening of Chaos",
+  "bpm": 136.0,
+  "P": 0.4412,
+  "T0": 0.783,
+  "R": 0.187,
+  "dur": 282.1
+ },
+ "Gathering_Darkness": {
+  "file": "music/pool/Gathering_Darkness.mp3",
+  "title": "Gathering Darkness",
+  "bpm": 143.6,
+  "P": 0.418,
+  "T0": 0.999,
+  "R": 0.717,
+  "dur": 265.0
+ },
+ "Ghost_Story": {
+  "file": "music/pool/Ghost_Story.mp3",
+  "title": "Ghost Story",
+  "bpm": 89.1,
+  "P": 0.6734,
+  "T0": 0.731,
+  "R": 0.416,
+  "dur": 319.6
+ },
+ "Heart_of_the_Beast": {
+  "file": "music/pool/Heart_of_the_Beast.mp3",
+  "title": "Heart of the Beast",
+  "bpm": 80.7,
+  "P": 0.743,
+  "T0": 0.942,
+  "R": 0.328,
+  "dur": 297.4
+ },
+ "Impact_Prelude": {
+  "file": "music/pool/Impact_Prelude.mp3",
+  "title": "Impact Prelude",
+  "bpm": 80.7,
+  "P": 0.743,
+  "T0": 1.166,
+  "R": 0.0,
+  "dur": 203.0
+ },
+ "Lightless_Dawn": {
+  "file": "music/pool/Lightless_Dawn.mp3",
+  "title": "Lightless Dawn",
+  "bpm": 101.3,
+  "P": 0.5921,
+  "T0": 1.103,
+  "R": 0.094,
+  "dur": 379.8
+ },
+ "Long_Time_Coming": {
+  "file": "music/pool/Long_Time_Coming.mp3",
+  "title": "Long Time Coming",
+  "bpm": 117.5,
+  "P": 0.5108,
+  "T0": 0.65,
+  "R": 0.024,
+  "dur": 274.4
+ },
+ "Mesmerize": {
+  "file": "music/pool/Mesmerize.mp3",
+  "title": "Mesmerize",
+  "bpm": 152.0,
+  "P": 0.3947,
+  "T0": 0.994,
+  "R": 0.235,
+  "dur": 424.1
+ },
+ "Rising_Tide": {
+  "file": "music/pool/Rising_Tide.mp3",
+  "title": "Rising Tide",
+  "bpm": 107.7,
+  "P": 0.5573,
+  "T0": 0.769,
+  "R": 0.039,
+  "dur": 277.4
+ },
+ "Rite_of_Passage": {
+  "file": "music/pool/Rite_of_Passage.mp3",
+  "title": "Rite of Passage",
+  "bpm": 123.0,
+  "P": 0.4876,
+  "T0": 0.905,
+  "R": 0.015,
+  "dur": 281.3
+ },
+ "Windswept": {
+  "file": "music/pool/Windswept.mp3",
+  "title": "Windswept",
+  "bpm": 80.7,
+  "P": 0.743,
+  "T0": 1.169,
+  "R": 0.002,
+  "dur": 208.3
+ },
+ "Epic_Unease": {
+  "file": "music/Epic_Unease.mp3",
+  "title": "Epic Unease",
+  "bpm": 123.0,
+  "P": 0.4876,
+  "T0": 1.055,
+  "R": 0.117,
+  "dur": 37.5
+ },
+ "Heroic_Age": {
+  "file": "music/Heroic_Age.mp3",
+  "title": "Heroic Age",
+  "bpm": 129.2,
+  "P": 0.4644,
+  "T0": 0.99,
+  "R": 0.138,
+  "dur": 97.5
+ },
+ "Cut_and_Run": {
+  "file": "music/pool/Cut_and_Run.mp3",
+  "title": "Cut and Run",
+  "bpm": 143.6,
+  "P": 0.418,
+  "T0": 0.645,
+  "R": 0.399,
+  "dur": 214.8
+ }
+}

@@ -1,0 +1,271 @@
+{
+ "edits": [
+  {
+   "id": "20261020_0001",
+   "seed": 1,
+   "template": "tour",
+   "music": "Cut and Run",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "weic2510b",
+    "potw2428a",
+    "weic2520b",
+    "heic1620c",
+    "heic1620c",
+    "potm2507b"
+   ]
+  },
+  {
+   "id": "20261020_0002",
+   "seed": 2,
+   "template": "classic",
+   "music": "Dark Fog",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "earth_exp65",
+    "sdo_flare",
+    "weic2214b",
+    "potm2211a",
+    "potm2211a",
+    "potm2601b"
+   ]
+  },
+  {
+   "id": "20261020_0011",
+   "seed": 11,
+   "template": "nebulae",
+   "music": "Epic Unease",
+   "qc": false,
+   "assets": [
+    "earth_exp65",
+    "earth_exp65",
+    "potw2511a",
+    "potw2425a",
+    "potm2410b",
+    "heic2011c",
+    "heic2011c",
+    "heic1816a"
+   ]
+  },
+  {
+   "id": "20261020_0012",
+   "seed": 12,
+   "template": "nebulae",
+   "music": "Ghost Story",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "earth_exp65",
+    "potw2434a",
+    "potm2601a",
+    "weic2420a",
+    "heic2018b",
+    "heic2018b",
+    "potm2606a"
+   ]
+  },
+  {
+   "id": "20261020_0013",
+   "seed": 13,
+   "template": "deep",
+   "music": "Heart of the Beast",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "mercury_transit",
+    "potm2510b",
+    "weic2427a",
+    "weic2420c",
+    "weic2420c",
+    "potm2503a"
+   ]
+  },
+  {
+   "id": "20261020_0031",
+   "seed": 31,
+   "template": "classic",
+   "music": "Rite of Passage",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "earth_exp65",
+    "sdo_year6",
+    "weic2332a",
+    "potm2301b",
+    "potm2301b",
+    "weic2429a"
+   ]
+  },
+  {
+   "id": "20261020_0032",
+   "seed": 32,
+   "template": "classic",
+   "music": "Evening of Chaos",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "earth_exp65",
+    "sdo_year6",
+    "weic2332a",
+    "heic1919a",
+    "heic1919a",
+    "weic2522a"
+   ]
+  },
+  {
+   "id": "20261020_0021",
+   "seed": 21,
+   "template": "tour",
+   "music": "Mesmerize",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "heic2312b",
+    "potw2504a",
+    "weic2514b",
+    "heic2201a",
+    "heic2201a",
+    "potm2312a"
+   ]
+  },
+  {
+   "id": "20261020_0033",
+   "seed": 33,
+   "template": "tour",
+   "music": "Gathering Darkness",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "heic2312b",
+    "potw2403a",
+    "heic2301b",
+    "potm2306c",
+    "potm2306c",
+    "heic1417a"
+   ]
+  },
+  {
+   "id": "20261020_0022",
+   "seed": 22,
+   "template": "tour",
+   "music": "Gathering Darkness",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "weic2606a",
+    "heic1712b",
+    "weic2316c",
+    "potm2306c",
+    "potm2306c",
+    "heic1711b"
+   ]
+  },
+  {
+   "id": "20261020_0034",
+   "seed": 34,
+   "template": "deep",
+   "music": "Cut and Run",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "mercury_transit",
+    "heic2604a",
+    "potw2517a",
+    "heic1903a",
+    "heic1903a",
+    "potw2527a"
+   ]
+  },
+  {
+   "id": "20261020_0035",
+   "seed": 35,
+   "template": "deep",
+   "music": "Echoes of Time v2",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "sdo_flare",
+    "potw2525a",
+    "potw2316a",
+    "weic2517c",
+    "weic2517c",
+    "potm2609a"
+   ]
+  },
+  {
+   "id": "20261020_0036",
+   "seed": 36,
+   "template": "deep",
+   "music": "Crossing the Chasm",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "mercury_transit",
+    "weic2619b",
+    "potm2608b",
+    "potm2211a",
+    "potm2211a",
+    "weic2209b"
+   ]
+  }
+ ],
+ "usage": {
+  "earth_exp65": 18,
+  "weic2510b": 1,
+  "potw2428a": 1,
+  "weic2520b": 1,
+  "heic1620c": 2,
+  "potm2507b": 1,
+  "sdo_flare": 2,
+  "weic2214b": 1,
+  "potm2211a": 4,
+  "potm2601b": 1,
+  "potw2511a": 1,
+  "potw2425a": 1,
+  "potm2410b": 1,
+  "heic2011c": 2,
+  "heic1816a": 1,
+  "potw2434a": 1,
+  "potm2601a": 1,
+  "weic2420a": 1,
+  "heic2018b": 2,
+  "potm2606a": 1,
+  "mercury_transit": 3,
+  "potm2510b": 1,
+  "weic2427a": 1,
+  "weic2420c": 2,
+  "potm2503a": 1,
+  "sdo_year6": 2,
+  "weic2332a": 2,
+  "potm2301b": 2,
+  "weic2429a": 1,
+  "heic1919a": 2,
+  "weic2522a": 1,
+  "heic2312b": 2,
+  "potw2504a": 1,
+  "weic2514b": 1,
+  "heic2201a": 2,
+  "potm2312a": 1,
+  "potw2403a": 1,
+  "heic2301b": 1,
+  "potm2306c": 4,
+  "heic1417a": 1,
+  "weic2606a": 1,
+  "heic1712b": 1,
+  "weic2316c": 1,
+  "heic1711b": 1,
+  "heic2604a": 1,
+  "potw2517a": 1,
+  "heic1903a": 2,
+  "potw2527a": 1,
+  "potw2525a": 1,
+  "potw2316a": 1,
+  "weic2517c": 2,
+  "potm2609a": 1,
+  "weic2619b": 1,
+  "potm2608b": 1,
+  "weic2209b": 1
+ }
+}

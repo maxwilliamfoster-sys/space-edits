@@ -1,0 +1,662 @@
+{
+ "potm2301b": {
+  "y": 22.8,
+  "hi": 0.107,
+  "site": "webb",
+  "title": "Zoom: A Spiral Amongst Thousands"
+ },
+ "weic2503c": {
+  "y": 31.7,
+  "hi": 0.179,
+  "site": "webb",
+  "title": "Zoom video:  Lynds 483"
+ },
+ "weic2427b": {
+  "y": 37.2,
+  "hi": 0.209,
+  "site": "webb",
+  "title": "Zoom video: Sombrero Galaxy"
+ },
+ "weic2420c": {
+  "y": 16.7,
+  "hi": 0.067,
+  "site": "webb",
+  "title": "Zoom into interacting galaxies Arp 142"
+ },
+ "weic2615b": {
+  "y": 28.8,
+  "hi": 0.164,
+  "site": "webb",
+  "title": "Zoom video: Centaurus A"
+ },
+ "weic2411c": {
+  "y": 25.6,
+  "hi": 0.102,
+  "site": "webb",
+  "title": "Zoom into the Horsehead Nebula"
+ },
+ "weic2305b": {
+  "y": 27.6,
+  "hi": 0.145,
+  "site": "webb",
+  "title": "Zoom Into Pandora\u2019s Cluster"
+ },
+ "weic2620b": {
+  "y": 24.9,
+  "hi": 0.107,
+  "site": "webb",
+  "title": "Zoom video: NGC 7129"
+ },
+ "weic2619d": {
+  "y": 25.2,
+  "hi": 0.108,
+  "site": "webb",
+  "title": "Zoom video: IC 348"
+ },
+ "potm2607b": {
+  "y": 28.9,
+  "hi": 0.154,
+  "site": "webb",
+  "title": "Zoom video: Treasure Chest Nebula"
+ },
+ "weic2612b": {
+  "y": 25.3,
+  "hi": 0.108,
+  "site": "webb",
+  "title": "Zoom video: M82"
+ },
+ "weic2510a": {
+  "y": 46.2,
+  "hi": 0.372,
+  "site": "webb",
+  "title": "Pullout of aurora observations on Jupiter"
+ },
+ "weic2517b": {
+  "y": 75.1,
+  "hi": 0.539,
+  "site": "webb",
+  "title": "Pullout video: Butterfly Nebula NGC 6302"
+ },
+ "potm2605c": {
+  "y": 15.4,
+  "hi": 0.058,
+  "site": "webb",
+  "title": "Zoom video: OMC-2"
+ },
+ "weic2608c": {
+  "y": 21.3,
+  "hi": 0.1,
+  "site": "webb",
+  "title": "Zoom video: M51"
+ },
+ "weic2519b": {
+  "y": 21.3,
+  "hi": 0.084,
+  "site": "webb",
+  "title": "Zoom video: Stellar jet in Sh2-284"
+ },
+ "weic2517c": {
+  "y": 31.2,
+  "hi": 0.172,
+  "site": "webb",
+  "title": "Zoom video: Butterfly Nebula NGC 6302"
+ },
+ "weic2326c": {
+  "y": 20.7,
+  "hi": 0.091,
+  "site": "webb",
+  "title": "Zoom into the Crab Nebula"
+ },
+ "weic2324c": {
+  "y": 24.3,
+  "hi": 0.141,
+  "site": "webb",
+  "title": "Zooming into NGC 346"
+ },
+ "potm2306c": {
+  "y": 27.7,
+  "hi": 0.155,
+  "site": "webb",
+  "title": "Zoom into NGC 3256"
+ },
+ "weic2311b": {
+  "y": 17.5,
+  "hi": 0.075,
+  "site": "webb",
+  "title": "Zoom Into Cassiopeia A"
+ },
+ "potm2303b": {
+  "y": 20.8,
+  "hi": 0.111,
+  "site": "webb",
+  "title": "Zoom into the cosmic seahorse"
+ },
+ "weic2219b": {
+  "y": 19.2,
+  "hi": 0.085,
+  "site": "webb",
+  "title": "Zoom Into Protostar L1527"
+ },
+ "weic2518b": {
+  "y": 31.6,
+  "hi": 0.171,
+  "site": "webb",
+  "title": "Zoom video: Pismis 24"
+ },
+ "potm2606b": {
+  "y": 30.5,
+  "hi": 0.14,
+  "site": "webb",
+  "title": "Zoom video: MACS J0553.4-3342"
+ },
+ "potm2302b": {
+  "y": 30.7,
+  "hi": 0.189,
+  "site": "webb",
+  "title": "Zoom: Seeing Triple"
+ },
+ "weic2506d": {
+  "y": 30.1,
+  "hi": 0.167,
+  "site": "webb",
+  "title": "Zoom Video: HH49/50"
+ },
+ "weic2316d": {
+  "y": 29.8,
+  "hi": 0.165,
+  "site": "webb",
+  "title": "Zoom into Rho Ophiuchi cloud complex"
+ },
+ "potm2305c": {
+  "y": 18.7,
+  "hi": 0.106,
+  "site": "webb",
+  "title": "Zoom into NGC 5068"
+ },
+ "weic2307b": {
+  "y": 30.1,
+  "hi": 0.178,
+  "site": "webb",
+  "title": "Zoom Into Wolf-Rayet 124"
+ },
+ "weic2513d": {
+  "y": 28.7,
+  "hi": 0.158,
+  "site": "webb",
+  "title": "Zoom video - Cat\u2019s Paw Nebula"
+ },
+ "weic2301c": {
+  "y": 29.3,
+  "hi": 0.167,
+  "site": "webb",
+  "title": "Zooming Into NGC 346"
+ },
+ "potm2211a": {
+  "y": 18.6,
+  "hi": 0.097,
+  "site": "webb",
+  "title": "Zoom Into II ZW 96"
+ },
+ "weic2216d": {
+  "y": 34.0,
+  "hi": 0.181,
+  "site": "webb",
+  "title": "Zoom into Webb\u2019s View of the Pillars of Creation"
+ },
+ "weic2212b": {
+  "y": 25.5,
+  "hi": 0.14,
+  "site": "webb",
+  "title": "Zoom Into the Tarantula Nebula"
+ },
+ "weic2211c": {
+  "y": 21.3,
+  "hi": 0.113,
+  "site": "webb",
+  "title": "Zoom into the Cartwheel Galaxy"
+ },
+ "weic2207a": {
+  "y": 21.3,
+  "hi": 0.116,
+  "site": "webb",
+  "title": "Zoom Into the Southern Ring Nebula (NIRCam Image)"
+ },
+ "heic1712a": {
+  "y": 4.4,
+  "hi": 0.002,
+  "site": "hubble",
+  "title": "Zooming onto the galaxies NGC 1512 and NGC 1510"
+ },
+ "heic1615a": {
+  "y": 17.2,
+  "hi": 0.05,
+  "site": "hubble",
+  "title": "Zoom into Abell S1063"
+ },
+ "heic1614a": {
+  "y": 20.7,
+  "hi": 0.091,
+  "site": "hubble",
+  "title": "Zooming in on the Crab Nebula"
+ },
+ "heic1612a": {
+  "y": 0.7,
+  "hi": 0.001,
+  "site": "hubble",
+  "title": "Zoom on LEDA 36252"
+ },
+ "heic1417a": {
+  "y": 2.4,
+  "hi": 0.001,
+  "site": "hubble",
+  "title": "Zooming in on a gravitationally lensed galaxy merger in the distant Universe"
+ },
+ "carina-neb_4kultrahd": {
+  "y": 87.7,
+  "hi": 0.72,
+  "site": "hubble",
+  "title": "Zoom out from the Carina Nebula"
+ },
+ "heic1705a": {
+  "y": 19.3,
+  "hi": 0.074,
+  "site": "hubble",
+  "title": "Zoom-in on the Orion Nebula"
+ },
+ "heic1914b": {
+  "y": 90.0,
+  "hi": 0.555,
+  "site": "hubble",
+  "title": "Zooming Into the Great Red Spot of Jupiter"
+ },
+ "heic1911a": {
+  "y": 31.8,
+  "hi": 0.132,
+  "site": "hubble",
+  "title": "Zoom on ESO 495-21"
+ },
+ "heic1910a": {
+  "y": 26.1,
+  "hi": 0.101,
+  "site": "hubble",
+  "title": "Zoom-in on NGC 4485"
+ },
+ "heic1711a": {
+  "y": 16.9,
+  "hi": 0.03,
+  "site": "hubble",
+  "title": "Zoom-in on Abell 370"
+ },
+ "heic1819b": {
+  "y": 34.0,
+  "hi": 0.164,
+  "site": "hubble",
+  "title": "Zoom on HBC 672"
+ },
+ "heic1513a": {
+  "y": 5.1,
+  "hi": 0.001,
+  "site": "hubble",
+  "title": "Zooming in on NGC 6503"
+ },
+ "heic1909a": {
+  "y": 10.8,
+  "hi": 0.011,
+  "site": "hubble",
+  "title": "Zooming in on the Hubble Legacy Field"
+ },
+ "heic1520a": {
+  "y": 23.5,
+  "hi": 0.114,
+  "site": "hubble",
+  "title": "Zooming in on the Veil Nebula"
+ },
+ "heic2011d": {
+  "y": 21.1,
+  "hi": 0.065,
+  "site": "hubble",
+  "title": "Zooming-in to NGC 7027"
+ },
+ "heic2011c": {
+  "y": 26.0,
+  "hi": 0.124,
+  "site": "hubble",
+  "title": "Zooming-in to NGC 6302"
+ },
+ "heic1903a": {
+  "y": 38.1,
+  "hi": 0.195,
+  "site": "hubble",
+  "title": "Zooming in on NGC 6752 and Bedin 1"
+ },
+ "heic1709b": {
+  "y": 0.7,
+  "hi": 0.002,
+  "site": "hubble",
+  "title": "Zoom-in on NGC 4298 and NGC 4302"
+ },
+ "heic2007c": {
+  "y": 23.7,
+  "hi": 0.098,
+  "site": "hubble",
+  "title": "Zooming Into the Cosmic Reef"
+ },
+ "heic2002a": {
+  "y": 17.4,
+  "hi": 0.044,
+  "site": "hubble",
+  "title": "Zoom of UGC 2885"
+ },
+ "heic1912b": {
+  "y": 22.9,
+  "hi": 0.118,
+  "site": "hubble",
+  "title": "Zoom on Eta Carinae"
+ },
+ "heic1907b": {
+  "y": 25.9,
+  "hi": 0.12,
+  "site": "hubble",
+  "title": "Zooming in on the Southern Crab Nebula"
+ },
+ "heic1901b": {
+  "y": 32.5,
+  "hi": 0.1,
+  "site": "hubble",
+  "title": "Zooming in on the Triangulum Galaxy"
+ },
+ "heic1811a": {
+  "y": 27.3,
+  "hi": 0.152,
+  "site": "hubble",
+  "title": "Zoom-in on NGC 3256"
+ },
+ "heic1805b": {
+  "y": 23.9,
+  "hi": 0.075,
+  "site": "hubble",
+  "title": "Zoom on Arp 256"
+ },
+ "heic1803b": {
+  "y": 26.0,
+  "hi": 0.1,
+  "site": "hubble",
+  "title": "Zoom-in on NGC 3344"
+ },
+ "heic1601a": {
+  "y": 13.7,
+  "hi": 0.025,
+  "site": "hubble",
+  "title": "Zoom in onto Trumpler 14"
+ },
+ "heic1816a": {
+  "y": 17.0,
+  "hi": 0.03,
+  "site": "hubble",
+  "title": "Zooming onto the galaxy cluster Abell 370"
+ },
+ "heic1514a": {
+  "y": 2.8,
+  "hi": 0.0,
+  "site": "hubble",
+  "title": "Zooming into galaxy group HCG 16"
+ },
+ "heic1719a": {
+  "y": 7.7,
+  "hi": 0.001,
+  "site": "hubble",
+  "title": "Zoom on a a part of the Sculptor Dwarf Galaxy"
+ },
+ "heic2004a": {
+  "y": 24.7,
+  "hi": 0.103,
+  "site": "hubble",
+  "title": "Zoom-in on LHA 120-N150"
+ },
+ "heic1818a": {
+  "y": 23.8,
+  "hi": 0.094,
+  "site": "hubble",
+  "title": "Zoom-in on the Ghost Nebula"
+ },
+ "heic1720a": {
+  "y": 26.5,
+  "hi": 0.102,
+  "site": "hubble",
+  "title": "Zoom on NGC 5256"
+ },
+ "heic1516a": {
+  "y": 23.4,
+  "hi": 0.117,
+  "site": "hubble",
+  "title": "Zooming in on ESO 381-12"
+ },
+ "heic1509b": {
+  "y": 23.5,
+  "hi": 0.123,
+  "site": "hubble",
+  "title": "Zoom into Westerlund 2"
+ },
+ "heic1806a": {
+  "y": 24.0,
+  "hi": 0.073,
+  "site": "hubble",
+  "title": "Zoom on NGC 1052-DF2"
+ },
+ "heic1517a": {
+  "y": 13.1,
+  "hi": 0.036,
+  "site": "hubble",
+  "title": "Zooming in on the Lagoon Nebula"
+ },
+ "heic1518b": {
+  "y": 26.4,
+  "hi": 0.138,
+  "site": "hubble",
+  "title": "Zooming in on the Twin Jet Nebula"
+ },
+ "potw2309a": {
+  "y": 11.2,
+  "hi": 0.055,
+  "site": "hubble",
+  "title": "Zoom: Galactic Seascape"
+ },
+ "opo1742b": {
+  "y": 5.7,
+  "hi": 0.002,
+  "site": "hubble",
+  "title": "Zooming in on a light echo (annotated)"
+ },
+ "opo1742a": {
+  "y": 5.7,
+  "hi": 0.002,
+  "site": "hubble",
+  "title": "Zooming in on a light echo"
+ },
+ "heic2108d": {
+  "y": 22.4,
+  "hi": 0.127,
+  "site": "hubble",
+  "title": "Zoom Into M13"
+ },
+ "heic1521b": {
+  "y": 25.4,
+  "hi": 0.131,
+  "site": "hubble",
+  "title": "Zoom on AU Mic"
+ },
+ "heic2108e": {
+  "y": 22.1,
+  "hi": 0.131,
+  "site": "hubble",
+  "title": "Zoom Into M3"
+ },
+ "heic2109c": {
+  "y": 27.8,
+  "hi": 0.144,
+  "site": "hubble",
+  "title": "Zoom into GAL-CLUS-022058s"
+ },
+ "heic2105c": {
+  "y": 42.7,
+  "hi": 0.231,
+  "site": "hubble",
+  "title": "Zoom Into AG Carinae"
+ },
+ "heic2020b": {
+  "y": 34.7,
+  "hi": 0.18,
+  "site": "hubble",
+  "title": "Zooming Into the Stingray Nebula"
+ },
+ "heic1608b": {
+  "y": 20.1,
+  "hi": 0.095,
+  "site": "hubble",
+  "title": "Zoom into the Bubble Nebula"
+ },
+ "potm2602d": {
+  "y": 25.3,
+  "hi": 0.125,
+  "site": "hubble",
+  "title": "Zoom Video: Cat's Eye Nebula"
+ },
+ "heic2201a": {
+  "y": 19.6,
+  "hi": 0.067,
+  "site": "hubble",
+  "title": "Zoom into Arp 143"
+ },
+ "heic1616b": {
+  "y": 22.8,
+  "hi": 0.115,
+  "site": "hubble",
+  "title": "Zooming in on the exotic binary star AR Scorpii"
+ },
+ "potm2602c": {
+  "y": 33.1,
+  "hi": 0.128,
+  "site": "hubble",
+  "title": "Pullout video: Cat's Eye Nebula (Hubble and Euclid images)"
+ },
+ "heic1502a": {
+  "y": 26.2,
+  "hi": 0.113,
+  "site": "hubble",
+  "title": "Zooming in on the Andromeda Galaxy"
+ },
+ "potm2608c": {
+  "y": 31.3,
+  "hi": 0.168,
+  "site": "hubble",
+  "title": "Zoom video: LHA120-N44"
+ },
+ "heic1801a": {
+  "y": 26.9,
+  "hi": 0.104,
+  "site": "hubble",
+  "title": "Zooming into the galaxy cluster A1758N"
+ },
+ "heic1620c": {
+  "y": 0.9,
+  "hi": 0.003,
+  "site": "hubble",
+  "title": "Zoom on galaxies"
+ },
+ "potm2609b": {
+  "y": 31.3,
+  "hi": 0.171,
+  "site": "hubble",
+  "title": "Zoom video: NGC 4698"
+ },
+ "heic2505g": {
+  "y": 31.2,
+  "hi": 0.177,
+  "site": "hubble",
+  "title": "Zoom into the planetary nebula NGC 2899"
+ },
+ "heic2502b": {
+  "y": 25.9,
+  "hi": 0.159,
+  "site": "hubble",
+  "title": "Zoom video: NGC 346"
+ },
+ "heic2304d": {
+  "y": 20.8,
+  "hi": 0.096,
+  "site": "hubble",
+  "title": "Zoom into NGC 1333"
+ },
+ "heic2204b": {
+  "y": 18.0,
+  "hi": 0.073,
+  "site": "hubble",
+  "title": "Zoom Into GNz7q"
+ },
+ "heic2112c": {
+  "y": 13.9,
+  "hi": 0.051,
+  "site": "hubble",
+  "title": "Zoom Into CW Leonis"
+ },
+ "heic1919a": {
+  "y": 16.2,
+  "hi": 0.031,
+  "site": "hubble",
+  "title": "Zooming in on Arp-Madore 2026-424"
+ },
+ "heic1707a": {
+  "y": 25.0,
+  "hi": 0.135,
+  "site": "hubble",
+  "title": "Zoom into N103B"
+ },
+ "heic1503b": {
+  "y": 4.4,
+  "hi": 0.0,
+  "site": "hubble",
+  "title": "Zooming in on NGC 7714"
+ },
+ "heic2018b": {
+  "y": 19.3,
+  "hi": 0.069,
+  "site": "hubble",
+  "title": "Zooming Into NGC 2525"
+ },
+ "heic1606a": {
+  "y": 23.5,
+  "hi": 0.114,
+  "site": "hubble",
+  "title": "Zoom in to the galactic centre"
+ },
+ "heic1602a": {
+  "y": 3.6,
+  "hi": 0.017,
+  "site": "hubble",
+  "title": "Zooming onto the galaxy NGC 4889"
+ },
+ "heic1526a": {
+  "y": 24.1,
+  "hi": 0.117,
+  "site": "hubble",
+  "title": "Zooming on HH 24"
+ },
+ "heic1617a": {
+  "y": 25.7,
+  "hi": 0.134,
+  "site": "hubble",
+  "title": "Zooming on the star cluster Terzan"
+ },
+ "heic2106a": {
+  "y": 32.0,
+  "hi": 0.147,
+  "site": "hubble",
+  "title": "Zoom Into NGC 2276"
+ },
+ "heic2012b": {
+  "y": 47.2,
+  "hi": 0.273,
+  "site": "hubble",
+  "title": "Zooming Into the Bat Shadow and its \u201cFlapping\u201d"
+ }
+}

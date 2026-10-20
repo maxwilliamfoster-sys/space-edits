@@ -1,0 +1,77 @@
+name: Make and schedule space edits
+
+on:
+  schedule:
+    # daily; the job is skipped until the repo variable AUTO_POST is set to 'true' (nothing posts before Max approves)
+    - cron: '23 13 * * *'
+  workflow_dispatch:
+    inputs:
+      count:
+        description: 'edits to render this run'
+        default: '1'
+
+concurrency:
+  group: space-edits
+  cancel-in-progress: false
+
+jobs:
+  run:
+    if: github.event_name == 'workflow_dispatch' || vars.AUTO_POST == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: write      # push the media branch + commit library state
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: System packages
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-liberation
+
+      - run: pip install -r requirements.txt
+
+      - name: Render, preview, schedule
+        env:
+          AUTO_POST: ${{ vars.AUTO_POST }}
+          EDITS_PER_RUN: ${{ github.event.inputs.count || vars.EDITS_PER_RUN || '1' }}
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          BUFFER_CHANNEL_ID: ${{ secrets.BUFFER_CHANNEL_ID }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python ci_run.py
+
+      - name: Keep the rendered edits for a few days
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: edits
+          path: |
+            out/queue/**/video.mp4
+            out/queue/**/caption.txt
+            out/queue/**/qc.json
+            out/rejected/**/qc.json
+          if-no-files-found: ignore
+          retention-days: 3
+
+      - name: Commit library state
+        if: always()
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add library/history.json library/posted.json
+          git diff --staged --quiet && exit 0
+          git commit -m "state: $(date -u +%Y-%m-%dT%H:%M)"
+          for i in 1 2 3; do
+            if git pull --rebase -q; then
+              git push && exit 0
+            else
+              git rebase --abort 2>/dev/null || true
+            fi
+            sleep 5
+          done
+          exit 1
