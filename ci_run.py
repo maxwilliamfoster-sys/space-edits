@@ -108,7 +108,7 @@ def main():
         caption = (folder / "caption.txt").read_text(encoding="utf-8")
         if len(caption) > 2200:
             caption = caption[:2190].rsplit(" ", 1)[0] + "..."
-        due = next_slot(taken)
+        due = datetime.now(timezone.utc) if os.environ.get("POST_NOW") == "true" else next_slot(taken)   # POST_NOW: publish immediately
         fname = f"space_{eid}.mp4"
         url = publish.host_video(folder / "video.mp4", fname, protect)
         post = publish.schedule_tiktok(chan, url, caption, due, notify=(SOUND_MODE == "tiktok"))

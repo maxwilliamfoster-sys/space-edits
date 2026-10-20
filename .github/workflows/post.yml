@@ -9,6 +9,9 @@ on:
       count:
         description: 'edits to render this run'
         default: '1'
+      now:
+        description: 'true = publish immediately instead of the next slot (with post=true)'
+        default: 'false'
       post:
         description: 'true = also schedule the passing edit on Buffer (manual approval)'
         default: 'false'
@@ -38,6 +41,7 @@ jobs:
 
       - name: Render, preview, schedule
         env:
+          POST_NOW: ${{ github.event.inputs.now == 'true' && 'true' || '' }}
           AUTO_POST: ${{ github.event.inputs.post == 'true' && 'true' || '' }}
           EDITS_PER_RUN: ${{ github.event.inputs.count || vars.EDITS_PER_RUN || '1' }}
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
