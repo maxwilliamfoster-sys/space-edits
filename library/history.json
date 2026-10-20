@@ -209,10 +209,27 @@
     "potm2211a",
     "weic2209b"
    ]
+  },
+  {
+   "id": "20261020_0038",
+   "seed": 38,
+   "template": "nebulae",
+   "music": "Mesmerize",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "earth_exp65",
+    "heic1716a",
+    "weic2212e",
+    "potw2445a",
+    "heic2304d",
+    "heic2304d",
+    "heic1711a"
+   ]
   }
  ],
  "usage": {
-  "earth_exp65": 18,
+  "earth_exp65": 20,
   "weic2510b": 1,
   "potw2428a": 1,
   "weic2520b": 1,
@@ -266,6 +283,11 @@
   "potm2609a": 1,
   "weic2619b": 1,
   "potm2608b": 1,
-  "weic2209b": 1
+  "weic2209b": 1,
+  "heic1716a": 1,
+  "weic2212e": 1,
+  "potw2445a": 1,
+  "heic2304d": 2,
+  "heic1711a": 1
  }
 }
