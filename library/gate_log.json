@@ -1,0 +1,36 @@
+[
+ {
+  "id": "20261020_0040",
+  "t": "2026-10-20T22:11:06+00:00",
+  "template": "nebulae",
+  "music": "Cut and Run",
+  "hook": "You are smaller than you think.",
+  "closer": "ALL OF HISTORY HAPPENED ON ONE SPECK",
+  "assets": [
+   "weic2620a",
+   "potm2604a",
+   "potm2407a",
+   "weic2615b",
+   "weic2615b",
+   "heic1711b"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    80
+   ],
+   [
+    "earth_exp65",
+    1962
+   ]
+  ],
+  "hashes": [
+   16168178814123769986,
+   17506051390071947440,
+   13889374895809818876,
+   141288323212532,
+   16208719976531556592,
+   1758373554574758032
+  ]
+ }
+]

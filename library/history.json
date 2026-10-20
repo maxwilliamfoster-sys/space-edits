@@ -226,10 +226,27 @@
     "heic2304d",
     "heic1711a"
    ]
+  },
+  {
+   "id": "20261020_0040",
+   "seed": 40,
+   "template": "nebulae",
+   "music": "Cut and Run",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "earth_exp65",
+    "weic2620a",
+    "potm2604a",
+    "potm2407a",
+    "weic2615b",
+    "weic2615b",
+    "heic1711b"
+   ]
   }
  ],
  "usage": {
-  "earth_exp65": 20,
+  "earth_exp65": 22,
   "weic2510b": 1,
   "potw2428a": 1,
   "weic2520b": 1,
@@ -272,7 +289,7 @@
   "weic2606a": 1,
   "heic1712b": 1,
   "weic2316c": 1,
-  "heic1711b": 1,
+  "heic1711b": 2,
   "heic2604a": 1,
   "potw2517a": 1,
   "heic1903a": 2,
@@ -288,6 +305,10 @@
   "weic2212e": 1,
   "potw2445a": 1,
   "heic2304d": 2,
-  "heic1711a": 1
+  "heic1711a": 1,
+  "weic2620a": 1,
+  "potm2604a": 1,
+  "potm2407a": 1,
+  "weic2615b": 2
  }
 }
