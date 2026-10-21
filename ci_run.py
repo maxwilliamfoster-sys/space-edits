@@ -10,6 +10,7 @@ import os
 import shutil
 import subprocess
 import sys
+import time
 from datetime import datetime, timedelta, timezone
 
 import requests
@@ -23,7 +24,8 @@ from spacepipe.lib import FFMPEG, LIB, ROOT, history
 AUTO_POST = os.environ.get("AUTO_POST", "").strip().lower() == "true"
 SOUND_MODE = os.environ.get("SOUND_MODE", "own").strip().lower()
 EDITS_PER_RUN = int(os.environ.get("EDITS_PER_RUN") or 10)
-MAX_TRIES = 32                    # renders per run (each is a few minutes of CI time); gate rejections eat into this
+MAX_TRIES = 120                   # safety cap on renders per run; the real limit is RUN_BUDGET_S, so a rejected edit is replaced until one passes
+RUN_BUDGET_S = 200 * 60           # stop starting renders after this (job timeout is 240 min); the next cron tops the queue up
 MAX_PLANS = 600                   # plans per run; a plan that breaks a novelty rule is dropped before rendering (costs milliseconds)
 QUEUE_TARGET = 10                 # never keep more than this many posts waiting in Buffer (its free-plan cap; one day at 10 a day)
 SLOT_HOURS_UTC = (5, 7, 9, 11, 13, 15, 17, 19, 21, 23)   # 10 a day, 2 h apart: 6am to midnight UK in BST (one hour earlier in GMT)
@@ -89,7 +91,9 @@ def main():
             skipped.append(reasons)
         return reasons
 
-    while len(good) < need and plans - len(skipped) < MAX_TRIES and plans < MAX_PLANS:
+    started = time.monotonic()
+    while (len(good) < need and plans - len(skipped) < MAX_TRIES and plans < MAX_PLANS
+           and time.monotonic() - started < RUN_BUDGET_S):
         plans += 1
         for eid, plan, folder in spacepipe_make.run_batch(1, base=base + plans, silent=(SOUND_MODE == "tiktok"), precheck=precheck):
             res = gate.check(folder, plan, eid, extra_log=batch_log)

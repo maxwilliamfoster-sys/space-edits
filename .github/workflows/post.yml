@@ -3,7 +3,9 @@ name: Make and schedule space edits
 on:
   schedule:
     # daily: renders, gates and previews on Telegram; also schedules on Buffer when repo variable AUTO_POST is 'true' (off = preview only).
-    - cron: '23 13 * * *'
+    # Several times a day: a run only makes what is missing from Buffer's queue (QUEUE_TARGET minus waiting posts) and exits
+    # at once when it is full, so a late or dropped GitHub cron is covered by the next one and the queue never runs dry.
+    - cron: '23 1,5,9,13,17,21 * * *'
   workflow_dispatch:
     inputs:
       count:
