@@ -2,7 +2,7 @@ name: Make and schedule space edits
 
 on:
   schedule:
-    # daily preview only: renders, gates and sends the edit to Telegram. Nothing is ever scheduled on Buffer from the cron.
+    # daily: renders, gates and previews on Telegram; also schedules on Buffer when repo variable AUTO_POST is 'true' (off = preview only).
     - cron: '23 13 * * *'
   workflow_dispatch:
     inputs:
@@ -42,14 +42,14 @@ jobs:
       - name: Render, preview, schedule
         env:
           POST_NOW: ${{ github.event.inputs.now == 'true' && 'true' || '' }}
-          AUTO_POST: ${{ github.event.inputs.post == 'true' && 'true' || '' }}
+          AUTO_POST: ${{ (github.event.inputs.post == 'true' || (github.event_name == 'schedule' && vars.AUTO_POST == 'true')) && 'true' || '' }}
           EDITS_PER_RUN: ${{ github.event.inputs.count || vars.EDITS_PER_RUN || '10' }}
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
           BUFFER_CHANNEL_ID: ${{ secrets.BUFFER_CHANNEL_ID }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          REQUIRE_AI: ${{ github.event.inputs.post == 'true' && '1' || '' }}   # scheduling fails closed if the AI review cannot run
+          REQUIRE_AI: ${{ (github.event.inputs.post == 'true' || (github.event_name == 'schedule' && vars.AUTO_POST == 'true')) && '1' || '' }}   # scheduling fails closed if the AI review cannot run
           APP_URL: https://bot-hq.maxwilliamfoster.workers.dev
           APP_EVENTS_TOKEN: ${{ secrets.APP_EVENTS_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
