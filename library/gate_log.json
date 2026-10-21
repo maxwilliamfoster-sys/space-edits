@@ -32,5 +32,333 @@
    16208719976531556592,
    1758373554574758032
   ]
+ },
+ {
+  "id": "20261021_0073",
+  "t": "2026-10-21T18:58:19+00:00",
+  "template": "deep",
+  "music": "Dreams Become Real",
+  "hook": "Earth is not the main character.",
+  "closer": "EVERYTHING YOU LOVE IS ON ONE SPECK",
+  "assets": [
+   "potw2502a",
+   "potm2608a",
+   "potm2607b",
+   "potm2607b",
+   "heic1711a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    1876
+   ],
+   [
+    "sdo_year6",
+    34
+   ]
+  ],
+  "hashes": [
+   13962226281667362817,
+   9150958982354209104,
+   16204172378981854460,
+   5322403715690055144,
+   8133712861126983680,
+   215504279044096
+  ]
+ },
+ {
+  "id": "20261021_0075",
+  "t": "2026-10-21T18:59:33+00:00",
+  "template": "nebulae",
+  "music": "Rite of Passage",
+  "hook": "You are smaller than you think.",
+  "closer": "EVERYTHING YOU LOVE IS ON ONE SPECK",
+  "assets": [
+   "heic2204c",
+   "potw2444a",
+   "potm2305a",
+   "heic2502b",
+   "heic2502b",
+   "heic1417a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    2344
+   ],
+   [
+    "earth_exp65",
+    2070
+   ]
+  ],
+  "hashes": [
+   36276052930129920,
+   27127358917968900,
+   17938101681394933976,
+   1610612736,
+   1073793986119336448,
+   224300372066304
+  ]
+ },
+ {
+  "id": "20261021_0077",
+  "t": "2026-10-21T19:01:17+00:00",
+  "template": "deep",
+  "music": "Impact Prelude",
+  "hook": "How small are you? Watch this.",
+  "closer": "EVERYTHING YOU LOVE IS ON ONE SPECK",
+  "assets": [
+   "heic1919b",
+   "potm2604b",
+   "heic1901b",
+   "heic1901b",
+   "potm2312a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    696
+   ],
+   [
+    "sdo_flare",
+    42
+   ]
+  ],
+  "hashes": [
+   16667203161497010181,
+   15916531289531937000,
+   16767733471093257456,
+   482917482496,
+   80103022337048,
+   883963849640509733
+  ]
+ },
+ {
+  "id": "20261021_0079",
+  "t": "2026-10-21T19:04:15+00:00",
+  "template": "tour",
+  "music": "Windswept",
+  "hook": "This is how big the universe really is.",
+  "closer": "AND WE ARE ONE TINY ROCK",
+  "assets": [
+   "heic1914b",
+   "potm2401a",
+   "weic2407b",
+   "heic1811a",
+   "heic1811a",
+   "weic2305a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    616
+   ]
+  ],
+  "hashes": [
+   16157997306118464639,
+   331235441254099054,
+   247157263171584,
+   13717921134280704,
+   1978063780839425,
+   252318011209324552
+  ]
+ },
+ {
+  "id": "20261021_0093",
+  "t": "2026-10-21T19:06:12+00:00",
+  "template": "nebulae",
+  "music": "Long Time Coming",
+  "hook": "Earth is not the main character.",
+  "closer": "YOU ARE SMALLER THAN YOU THINK",
+  "assets": [
+   "potw2439a",
+   "heic1707b",
+   "heic2108b",
+   "weic2420c",
+   "weic2420c",
+   "weic2418a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    368
+   ],
+   [
+    "earth_exp65",
+    460
+   ]
+  ],
+  "hashes": [
+   17357111420473311308,
+   54307974370883825,
+   17361782147639822030,
+   1131338997308,
+   4606083989504,
+   5922463131238179601
+  ]
+ },
+ {
+  "id": "20261021_0095",
+  "t": "2026-10-21T19:09:26+00:00",
+  "template": "tour",
+  "music": "Epic Unease",
+  "hook": "How small are you? Watch this.",
+  "closer": "YOU ARE SMALLER THAN YOU THINK",
+  "assets": [
+   "weic2332a",
+   "weic2426a",
+   "potw2549a",
+   "heic2002a",
+   "heic2002a",
+   "potm2601b"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    2684
+   ]
+  ],
+  "hashes": [
+   17012497691582398464,
+   12736391784326725120,
+   224895177538453504,
+   1879113728,
+   13380724236476315751,
+   12745403036875680227
+  ]
+ },
+ {
+  "id": "20261021_0097",
+  "t": "2026-10-21T19:12:06+00:00",
+  "template": "tour",
+  "music": "Rite of Passage",
+  "hook": "How small are you? Watch this.",
+  "closer": "ALL OF HISTORY HAPPENED ON ONE SPECK",
+  "assets": [
+   "heic2312b",
+   "potm2303a",
+   "potm2311a",
+   "weic2608c",
+   "weic2608c",
+   "weic2429a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    1350
+   ]
+  ],
+  "hashes": [
+   7884408154731874291,
+   6764405726390016,
+   871508617569288320,
+   208037478400,
+   61036934598848516,
+   54535811324516376
+  ]
+ },
+ {
+  "id": "20261021_0106",
+  "t": "2026-10-21T19:15:36+00:00",
+  "template": "nebulae",
+  "music": "Call to Adventure",
+  "hook": "This is how big the universe really is.",
+  "closer": "ALL OF HISTORY HAPPENED ON ONE SPECK",
+  "assets": [
+   "weic2326a",
+   "heic1909b",
+   "heic1805a",
+   "weic2612b",
+   "weic2612b",
+   "potm2606b"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    1744
+   ],
+   [
+    "earth_exp65",
+    2448
+   ]
+  ],
+  "hashes": [
+   17361219844266033152,
+   18358754420639449312,
+   9278242550239490056,
+   1879181071,
+   1034818682880,
+   18137544650800188
+  ]
+ },
+ {
+  "id": "20261021_0110",
+  "t": "2026-10-21T19:18:24+00:00",
+  "template": "nebulae",
+  "music": "Gathering Darkness",
+  "hook": "Earth is not the main character.",
+  "closer": "ALL OF HISTORY HAPPENED ON ONE SPECK",
+  "assets": [
+   "potw2503a",
+   "weic2407a",
+   "weic2420b",
+   "potm2301b",
+   "potm2301b",
+   "heic1816b"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    2282
+   ],
+   [
+    "earth_exp65",
+    272
+   ]
+  ],
+  "hashes": [
+   5667453056128650248,
+   14452194913367407734,
+   4656783831670685844,
+   1082163392,
+   139183783936,
+   9109362005362081792
+  ]
+ },
+ {
+  "id": "20261021_0121",
+  "t": "2026-10-21T19:21:37+00:00",
+  "template": "classic",
+  "music": "Evening of Chaos",
+  "hook": "Zoom out. Keep zooming out.",
+  "closer": "EVERYTHING YOU LOVE IS ON ONE SPECK",
+  "assets": [
+   "weic2606a",
+   "weic2427b",
+   "weic2427b",
+   "heic1615a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    1426
+   ],
+   [
+    "earth_exp65",
+    2422
+   ],
+   [
+    "mercury_transit",
+    36
+   ]
+  ],
+  "hashes": [
+   17363905413596053504,
+   1934721582946173297,
+   1620099324,
+   206963736576,
+   304338698240,
+   119907368574976
+  ]
  }
 ]
