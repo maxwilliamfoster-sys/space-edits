@@ -24,9 +24,11 @@ import requests
 from spacepipe.lib import FFMPEG, LIB
 
 LOG = LIB / "gate_log.json"
-NO_REPEAT_CLIPS = 15       # an ESA clip may not appear in any of the last N posted edits
-NO_REPEAT_WINDOW_S = 90    # same NASA reel: new windows must start this far from recently used ones
-NO_REPEAT_REELS = 30       # ... looking back this many edits
+# Sized for 5 edits a day (simulated 12 days with the real planner: the old 15 / 90 s / 30 ran dry on day 3 because the only vetted
+# Earth reel is 3000 s and the three Sun reels are 79-391 s). 10 edits = 2 days of posts.
+NO_REPEAT_CLIPS = 10       # an ESA clip may not appear in any of the last N posted edits
+NO_REPEAT_WINDOW_S = 20    # same NASA reel: new windows must start this far from recently used ones (shots are 3-6 s long)
+NO_REPEAT_REELS = 10       # ... looking back this many edits
 NO_REPEAT_COMBO = 6        # template+music
 NO_REPEAT_TEXT = 8         # hook+closer
 HASH_FRAMES = 6

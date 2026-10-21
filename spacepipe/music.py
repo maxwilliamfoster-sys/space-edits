@@ -9,6 +9,8 @@ warnings.filterwarnings("ignore")
 ROOT = Path(__file__).resolve().parent.parent
 CACHE = ROOT / "music/pool_beats.json"
 CREDIT = "{t} by Kevin MacLeod (incompetech.com), CC BY 4.0"
+# CI test run 2026-10-21: both failed every time they were drawn (2 of 2), so they never reach the gate again
+BAD_TRACKS = {"Lightless Dawn": "silent stretch >= 2 s (gate)", "Rising Tide": "loudness -18.2 LUFS after loudnorm (QC needs -17..-11)"}
 EXTRA = {"Epic_Unease": (1.02, 0.4875), "Heroic_Age": None}  # Epic Unease grid hand-tuned earlier
 
 
@@ -50,6 +52,8 @@ def usable(cache):
     """beat tracks (grid trustworthy, R>=0.6) lock cuts to the music; ambient tracks get a fixed 0.5 s rhythm instead."""
     out = []
     for k, v in cache.items():
+        if v["title"] in BAD_TRACKS:
+            continue
         if k == "Epic_Unease":
             v = dict(v, T0=1.02, P=0.4875, R=1.0)
         if v["dur"] < 45 and k != "Epic_Unease":

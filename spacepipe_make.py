@@ -17,9 +17,17 @@ from spacepipe import compose, music, qc, render  # noqa: E402
 from spacepipe.lib import ROOT, ensure_local, history, load_assets, save_history  # noqa: E402
 
 
-def make_one(seed, template, track, silent=False):
-    """Plan, render and QC one edit. Returns (edit id, plan, qc result, folder)."""
+class PlanRejected(Exception):
+    """The plan breaks a novelty rule, so it is not worth rendering."""
+
+
+def make_one(seed, template, track, silent=False, precheck=None):
+    """Plan, render and QC one edit. Returns (edit id, plan, qc result, folder).
+    precheck(plan) -> list of reasons; a non-empty list skips the (minutes-long) render with PlanRejected."""
     p = compose.plan(seed, template, track)
+    reasons = precheck(p) if precheck else []
+    if reasons:
+        raise PlanRejected("; ".join(reasons))
     p["silent"] = silent   # silent: audio track is silence (a TikTok sound is added in the app); beats still set the cuts
     eid = f"{datetime.date.today():%Y%m%d}_{seed:04d}"
     tmp = ROOT / "out/work" / eid
@@ -35,7 +43,7 @@ def make_one(seed, template, track, silent=False):
     return eid, p, res, tmp
 
 
-def run_batch(n, template=None, track=None, base=None, silent=False):
+def run_batch(n, template=None, track=None, base=None, silent=False, precheck=None):
     """Make n edits. Passing ones go to out/queue/, QC failures to out/rejected/ (not counted as clip usage); a crash skips that
     seed only. Returns [(edit id, plan, folder)] for the edits that passed."""
     if base is None:
@@ -44,7 +52,10 @@ def run_batch(n, template=None, track=None, base=None, silent=False):
     for i in range(n):
         seed = base + i
         try:
-            eid, p, res, tmp = make_one(seed, template, track, silent)
+            eid, p, res, tmp = make_one(seed, template, track, silent, precheck)
+        except PlanRejected as e:
+            print(f"   seed {seed} skipped before rendering: {e}", flush=True)
+            continue
         except Exception as e:
             print(f"   seed {seed} CRASHED: {str(e)[-300:]}", flush=True)
             continue

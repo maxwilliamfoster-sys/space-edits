@@ -24,6 +24,7 @@ AUTO_POST = os.environ.get("AUTO_POST", "").strip().lower() == "true"
 SOUND_MODE = os.environ.get("SOUND_MODE", "own").strip().lower()
 EDITS_PER_RUN = int(os.environ.get("EDITS_PER_RUN") or 5)
 MAX_TRIES = 16                    # renders per run (each is a few minutes of CI time); gate rejections eat into this
+MAX_PLANS = 600                   # plans per run; a plan that breaks a novelty rule is dropped before rendering (costs milliseconds)
 QUEUE_TARGET = 10                 # never keep more than this many posts waiting in Buffer (two days at 5 a day)
 SLOT_HOURS_UTC = (8, 11, 14, 17, 20)   # 5 a day, 3 h apart: 9am, 12, 3pm, 6pm, 9pm UK in BST (one hour earlier in GMT)
 POSTED = LIB / "posted.json"      # {edit id: {post, due, file}} (committed by the workflow)
@@ -78,11 +79,18 @@ def main():
             return
     else:
         pending, need = [], EDITS_PER_RUN
-    good, tries, batch_log = [], 0, []
+    good, plans, batch_log, skipped = [], 0, [], []
     base = max([e["seed"] for e in history()["edits"]] + [0]) + 1
-    while len(good) < need and tries < MAX_TRIES:
-        tries += 1
-        for eid, plan, folder in spacepipe_make.run_batch(1, base=base + tries, silent=(SOUND_MODE == "tiktok")):
+
+    def precheck(plan):   # the plan-only novelty rules (clips, reel windows, template+music, hook+closer), against the log and this run's edits
+        reasons = gate.novelty(plan, [], gate.load_log() + batch_log)
+        if reasons:
+            skipped.append(reasons)
+        return reasons
+
+    while len(good) < need and plans - len(skipped) < MAX_TRIES and plans < MAX_PLANS:
+        plans += 1
+        for eid, plan, folder in spacepipe_make.run_batch(1, base=base + plans, silent=(SOUND_MODE == "tiktok"), precheck=precheck):
             res = gate.check(folder, plan, eid, extra_log=batch_log)
             if res["ok"]:
                 good.append((eid, plan, folder))
@@ -97,7 +105,7 @@ def main():
                 emit("gate_rejected", "info", f"Space: edit {eid} rejected by the gate", "\n".join(res["reasons"]))
     if len(good) < need:
         emit("render_failed", "warning", "Space: could not make enough edits that pass the gate",
-             f"{len(good)}/{need} passed after {tries} tries")
+             f"{len(good)}/{need} passed after {plans - len(skipped)} renders ({len(skipped)} plans dropped before rendering)")
     if not good:
         sys.exit("no edit passed the gate")
     posted = load_posted()

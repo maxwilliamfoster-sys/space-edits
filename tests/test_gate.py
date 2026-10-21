@@ -52,16 +52,18 @@ class NoveltyRules(unittest.TestCase):
     def test_fresh_edit_passes(self):
         self.assertEqual(gate.novelty(plan(), [], [entry()]), [])
 
-    def test_clip_reuse_within_last_15_is_rejected_and_16th_back_is_allowed(self):
-        old = [entry(f"e{i}", assets=(f"c{i}",)) for i in range(20)]
-        self.assertTrue(gate.novelty(plan(assets=("c19",)), [], old))                # most recent
-        self.assertTrue(gate.novelty(plan(assets=("c5",)), [], old))                 # 15th back: still banned
-        self.assertFalse([r for r in gate.novelty(plan(assets=("c4",)), [], old) if r.startswith("clip")])   # 16th back: free again
+    def test_clip_reuse_within_the_last_n_edits_is_rejected_and_the_next_one_back_is_allowed(self):
+        n = gate.NO_REPEAT_CLIPS
+        old = [entry(f"e{i}", assets=(f"c{i}",)) for i in range(n + 5)]
+        newest, oldest_banned, first_free = len(old) - 1, len(old) - n, len(old) - n - 1
+        self.assertTrue(gate.novelty(plan(assets=(f"c{newest}",)), [], old))
+        self.assertTrue(gate.novelty(plan(assets=(f"c{oldest_banned}",)), [], old))
+        self.assertFalse([r for r in gate.novelty(plan(assets=(f"c{first_free}",)), [], old) if r.startswith("clip")])
 
     def test_same_nasa_reel_window_too_close_is_rejected(self):
         log = [entry(windows=[("reel", 100)])]
-        self.assertTrue(gate.novelty(plan(windows=[("reel", 150)]), [], log))        # 50 s apart
-        self.assertFalse(gate.novelty(plan(windows=[("reel", 250)]), [], log))       # 150 s apart
+        self.assertTrue(gate.novelty(plan(windows=[("reel", 110)]), [], log))        # 10 s apart
+        self.assertFalse(gate.novelty(plan(windows=[("reel", 130)]), [], log))       # 30 s apart
         self.assertFalse(gate.novelty(plan(windows=[("other_reel", 100)]), [], log))
 
     def test_template_and_music_combo_repeat_is_rejected_but_either_alone_is_fine(self):
@@ -244,6 +246,42 @@ class WholeGate(unittest.TestCase):
         black = make_video("black", name="whole_black")
         self.assertFalse(gate.check(black, plan(), "b1")["ok"])
         self.assertFalse(gate.approved(black))
+
+
+class PreRender(unittest.TestCase):
+    """A plan that breaks a novelty rule must be dropped before the minutes-long render."""
+
+    def test_rejected_plan_is_never_rendered(self):
+        import spacepipe_make
+        with mock.patch.object(spacepipe_make.compose, "plan", return_value=plan()),                 mock.patch.object(spacepipe_make.render, "render") as render:
+            with self.assertRaises(spacepipe_make.PlanRejected):
+                spacepipe_make.make_one(1, None, None, precheck=lambda p: ["clip a1 was used in one of the last 10 edits"])
+            render.assert_not_called()
+
+    def test_run_batch_skips_a_rejected_plan_without_crashing_or_touching_history(self):
+        import spacepipe_make
+        with mock.patch.object(spacepipe_make.compose, "plan", return_value=plan()),                 mock.patch.object(spacepipe_make, "save_history") as save:
+            self.assertEqual(spacepipe_make.run_batch(2, base=1, precheck=lambda p: ["repeat"]), [])
+            save.assert_not_called()
+
+
+class Capacity(unittest.TestCase):
+    def test_five_edits_a_day_stay_possible_for_ten_days(self):
+        """Real planner + real novelty rules, no rendering. The old thresholds (15 clips / 90 s / 30 reels) fail this on day 3."""
+        from spacepipe import compose
+        log, seed, worst = [], 7000, 0
+        with mock.patch.object(compose, "history", return_value={"usage": {}, "edits": []}):
+            for day in range(10):
+                made, tried = [], 0
+                while len(made) < 5 and tried < ci_run.MAX_PLANS:
+                    seed, tried = seed + 1, tried + 1
+                    p = compose.plan(seed)
+                    if not gate.novelty(p, [], log + made):
+                        made.append(gate.entry_for(p, [], f"s{seed}"))
+                self.assertEqual(len(made), 5, f"day {day + 1}: only {len(made)} edits possible in {tried} plans")
+                log += made
+                worst = max(worst, tried)
+        self.assertLess(worst, ci_run.MAX_PLANS)
 
 
 class Slots(unittest.TestCase):
