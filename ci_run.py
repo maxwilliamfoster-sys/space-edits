@@ -22,10 +22,10 @@ from spacepipe.lib import FFMPEG, LIB, ROOT, history
 
 AUTO_POST = os.environ.get("AUTO_POST", "").strip().lower() == "true"
 SOUND_MODE = os.environ.get("SOUND_MODE", "own").strip().lower()
-EDITS_PER_RUN = int(os.environ.get("EDITS_PER_RUN") or 1)
-MAX_TRIES = 8                     # renders per run (each is a few minutes of CI time)
-QUEUE_TARGET = 3                  # never keep more than this many posts waiting in Buffer
-SLOT_HOURS_UTC = (17, 20)         # 6pm and 9pm UK in BST (5pm and 8pm in GMT): UK evening scroll time
+EDITS_PER_RUN = int(os.environ.get("EDITS_PER_RUN") or 5)
+MAX_TRIES = 16                    # renders per run (each is a few minutes of CI time); gate rejections eat into this
+QUEUE_TARGET = 10                 # never keep more than this many posts waiting in Buffer (two days at 5 a day)
+SLOT_HOURS_UTC = (8, 11, 14, 17, 20)   # 5 a day, 3 h apart: 9am, 12, 3pm, 6pm, 9pm UK in BST (one hour earlier in GMT)
 POSTED = LIB / "posted.json"      # {edit id: {post, due, file}} (committed by the workflow)
 
 

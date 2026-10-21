@@ -128,18 +128,19 @@ def assemble(p, final):
         al = f"if(lt(t,{a:.2f}),0,if(lt(t,{a + 0.4:.2f}),(t-{a:.2f})/0.4,if(lt(t,{b - 0.4:.2f}),1,if(lt(t,{b:.2f}),({b:.2f}-t)/0.4,0))))"
         safe = tx["text"].replace("\\", "").replace(":", "\\:").replace("'", "’").replace("%", "\\%")
         txt.append(f"drawtext=fontfile='{FONTS[tx['font']]}':text='{safe}':fontsize={tx['size']}:fontcolor=white:borderw=4:bordercolor=black@0.85"
-                   f":x=(w-tw)/2-60:y={y}:alpha='{al}'")
+                   f":x=(w-tw)/2:y={y}:alpha='{al}'")
     cdir = ROOT / "out/pipe_tmp"
     cdir.mkdir(parents=True, exist_ok=True)
-    ct = cdir / f"credits_{p['seed']}.txt"
-    ct.write_bytes(credit_text(p).encode("utf-8"))
     c0 = bt(60 - CARD_BEATS)
     cal = f"if(lt(t,{c0:.2f}),0,min(1,(t-{c0:.2f})/0.5))"
-    nlines = credit_text(p).count("\n") + 1
-    box_h = nlines * 31 + 40
-    txt.append(f"drawbox=x=36:y=700:w=900:h={box_h}:color=black@0.55:t=fill:enable='gte(t,{c0:.2f})'")
-    txt.append(f"drawtext=fontfile='{FONTS['plain']}':textfile='{ct.relative_to(ROOT).as_posix()}':fontsize=24:line_spacing=7:fontcolor=white@0.95:"
-               f"x=56:y=718:alpha='{cal}'")
+    lines = credit_text(p).split("\n")
+    box_h = len(lines) * 31 + 40
+    txt.append(f"drawbox=x=(iw-900)/2:y=700:w=900:h={box_h}:color=black@0.55:t=fill:enable='gte(t,{c0:.2f})'")
+    for i, line in enumerate(lines):   # one drawtext per line so each is centred (text_align needs ffmpeg 7+, CI has 6.1)
+        lf = cdir / f"credits_{p['seed']}_{i}.txt"
+        lf.write_bytes(line.encode("utf-8"))
+        txt.append(f"drawtext=fontfile='{FONTS['plain']}':textfile='{lf.relative_to(ROOT).as_posix()}':fontsize=24:fontcolor=white@0.95:"
+                   f"x=(w-tw)/2:y={718 + i * 31}:alpha='{cal}'")
     post = f"[{last}]fade=t=in:st=0:d=0.5,fade=t=out:st={t_end - 1.0:.2f}:d=1.0," + ",".join(txt) + ",format=yuv420p[v]"
     script = cdir / f"filter_{p['seed']}.txt"
     script.write_text(";\n".join(chain + [post]), encoding="utf-8")
