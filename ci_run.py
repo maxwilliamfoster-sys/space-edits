@@ -22,11 +22,12 @@ from spacepipe.lib import FFMPEG, LIB, ROOT, history
 
 AUTO_POST = os.environ.get("AUTO_POST", "").strip().lower() == "true"
 SOUND_MODE = os.environ.get("SOUND_MODE", "own").strip().lower()
-EDITS_PER_RUN = int(os.environ.get("EDITS_PER_RUN") or 5)
-MAX_TRIES = 16                    # renders per run (each is a few minutes of CI time); gate rejections eat into this
+EDITS_PER_RUN = int(os.environ.get("EDITS_PER_RUN") or 10)
+MAX_TRIES = 32                    # renders per run (each is a few minutes of CI time); gate rejections eat into this
 MAX_PLANS = 600                   # plans per run; a plan that breaks a novelty rule is dropped before rendering (costs milliseconds)
-QUEUE_TARGET = 10                 # never keep more than this many posts waiting in Buffer (two days at 5 a day)
-SLOT_HOURS_UTC = (8, 11, 14, 17, 20)   # 5 a day, 3 h apart: 9am, 12, 3pm, 6pm, 9pm UK in BST (one hour earlier in GMT)
+QUEUE_TARGET = 10                 # never keep more than this many posts waiting in Buffer (its free-plan cap; one day at 10 a day)
+SLOT_HOURS_UTC = (5, 7, 9, 11, 13, 15, 17, 19, 21, 23)   # 10 a day, 2 h apart: 6am to midnight UK in BST (one hour earlier in GMT)
+MIN_GAP_S = 5400                  # a slot must be this far from every post already waiting (slots are 2 h apart)
 POSTED = LIB / "posted.json"      # {edit id: {post, due, file}} (committed by the workflow)
 
 
@@ -49,7 +50,7 @@ def next_slot(taken, now=None):
     for day in range(0, 30):
         for h in SLOT_HOURS_UTC:
             dt = (now + timedelta(days=day)).replace(hour=h, minute=0, second=0, microsecond=0)
-            if dt > now + timedelta(minutes=15) and all(abs((dt - t).total_seconds()) > 7200 for t in taken):
+            if dt > now + timedelta(minutes=15) and all(abs((dt - t).total_seconds()) > MIN_GAP_S for t in taken):
                 return dt
     raise RuntimeError("no free slot in 30 days")
 

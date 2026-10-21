@@ -8,7 +8,7 @@ on:
     inputs:
       count:
         description: 'edits to render this run'
-        default: '5'
+        default: '10'
       now:
         description: 'true = publish immediately instead of the next slot (with post=true)'
         default: 'false'
@@ -43,7 +43,7 @@ jobs:
         env:
           POST_NOW: ${{ github.event.inputs.now == 'true' && 'true' || '' }}
           AUTO_POST: ${{ github.event.inputs.post == 'true' && 'true' || '' }}
-          EDITS_PER_RUN: ${{ github.event.inputs.count || vars.EDITS_PER_RUN || '5' }}
+          EDITS_PER_RUN: ${{ github.event.inputs.count || vars.EDITS_PER_RUN || '10' }}
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
           BUFFER_CHANNEL_ID: ${{ secrets.BUFFER_CHANNEL_ID }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}

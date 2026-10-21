@@ -266,19 +266,20 @@ class PreRender(unittest.TestCase):
 
 
 class Capacity(unittest.TestCase):
-    def test_five_edits_a_day_stay_possible_for_ten_days(self):
-        """Real planner + real novelty rules, no rendering. The old thresholds (15 clips / 90 s / 30 reels) fail this on day 3."""
+    def test_a_full_day_of_edits_stays_possible_for_ten_days(self):
+        """Real planner + real novelty rules, no rendering. The old thresholds (15 clips / 90 s / 30 reels) fail this on day 3 at 5 a day."""
         from spacepipe import compose
+        per_day = len(ci_run.SLOT_HOURS_UTC)
         log, seed, worst = [], 7000, 0
         with mock.patch.object(compose, "history", return_value={"usage": {}, "edits": []}):
             for day in range(10):
                 made, tried = [], 0
-                while len(made) < 5 and tried < ci_run.MAX_PLANS:
+                while len(made) < per_day and tried < ci_run.MAX_PLANS:
                     seed, tried = seed + 1, tried + 1
                     p = compose.plan(seed)
                     if not gate.novelty(p, [], log + made):
                         made.append(gate.entry_for(p, [], f"s{seed}"))
-                self.assertEqual(len(made), 5, f"day {day + 1}: only {len(made)} edits possible in {tried} plans")
+                self.assertEqual(len(made), per_day, f"day {day + 1}: only {len(made)} edits possible in {tried} plans")
                 log += made
                 worst = max(worst, tried)
         self.assertLess(worst, ci_run.MAX_PLANS)
@@ -287,26 +288,28 @@ class Capacity(unittest.TestCase):
 class Slots(unittest.TestCase):
     NOW = datetime(2026, 10, 21, 6, 0, tzinfo=timezone.utc)
 
-    def test_five_posts_a_day_three_hours_apart(self):
+    NOW = datetime(2026, 10, 21, 4, 0, tzinfo=timezone.utc)
+
+    def test_ten_posts_a_day_two_hours_apart(self):
         taken = []
-        for _ in range(10):
+        for _ in range(20):
             taken.append(ci_run.next_slot(taken, self.NOW))
         days = {}
         for t in taken:
             days.setdefault(t.date(), []).append(t.hour)
         self.assertEqual(sorted(days), [datetime(2026, 10, 21).date(), datetime(2026, 10, 22).date()])
-        self.assertTrue(all(h == [8, 11, 14, 17, 20] for h in days.values()), days)
+        self.assertTrue(all(h == [5, 7, 9, 11, 13, 15, 17, 19, 21, 23] for h in days.values()), days)
 
     def test_slot_taken_by_a_waiting_post_is_skipped(self):
-        busy = [datetime(2026, 10, 21, 8, 0, tzinfo=timezone.utc)]
-        self.assertEqual(ci_run.next_slot(busy, self.NOW).hour, 11)
+        busy = [datetime(2026, 10, 21, 5, 0, tzinfo=timezone.utc)]
+        self.assertEqual(ci_run.next_slot(busy, self.NOW).hour, 7)
 
     def test_never_schedules_in_the_past_or_within_15_minutes(self):
-        now = datetime(2026, 10, 21, 7, 50, tzinfo=timezone.utc)
-        self.assertEqual(ci_run.next_slot([], now).hour, 11)             # 08:00 is only 10 min away
+        now = datetime(2026, 10, 21, 6, 50, tzinfo=timezone.utc)
+        self.assertEqual(ci_run.next_slot([], now).hour, 9)              # 07:00 is only 10 min away
 
-    def test_queue_holds_two_days_of_posts(self):
-        self.assertGreaterEqual(ci_run.QUEUE_TARGET, 2 * len(ci_run.SLOT_HOURS_UTC))
+    def test_queue_holds_a_full_day_of_posts(self):
+        self.assertGreaterEqual(ci_run.QUEUE_TARGET, len(ci_run.SLOT_HOURS_UTC))
 
 
 class MediaPruning(unittest.TestCase):
