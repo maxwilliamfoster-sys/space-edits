@@ -33,6 +33,7 @@ HASH_FRAMES = 6
 HASH_NEAR = 8              # max hamming distance (of 64 bits) for two frames to count as "the same picture"
 HASH_MATCHES = 3           # this many near-identical frames = a repeat
 GROQ_MODEL = os.environ.get("GATE_VISION_MODEL", "qwen/qwen3.8-27b")
+AI_UNAVAILABLE = "AI review could not run"
 AI_PROMPT = (
     "You are the quality gate for a TikTok space-footage edit (vertical video of real telescope / ISS footage with white text "
     "overlays). These are 12 frames in time order. Expected and fine: clean white headline text with a small subline, and in the "
@@ -109,7 +110,7 @@ def ai_review(video, dur):
     """None = skipped (no key), else a list of problems (empty = looks fine)."""
     key = os.environ.get("GROQ_API_KEY")
     if not key:
-        return None
+        return [AI_UNAVAILABLE] if os.environ.get("REQUIRE_AI") == "1" else None
     ts = [dur * (i + 0.5) / 12 for i in range(12)]
     fr = _frames(video, ts, 270, 480, gray=False)
     if len(fr) < 12:
@@ -133,7 +134,7 @@ def ai_review(video, dur):
         v = json.loads(re.search(r"{.*}", txt, re.S).group(0))
     except Exception as e:      # a gate that cannot run must not wave things through when it is required
         print(f"[gate] AI review failed: {type(e).__name__}")
-        return ["AI review could not run"] if os.environ.get("REQUIRE_AI") == "1" else None
+        return [AI_UNAVAILABLE] if os.environ.get("REQUIRE_AI") == "1" else None
     return [] if v.get("ok") else [f"AI review: {p}" for p in v.get("problems", ["rejected"])] or ["AI review rejected it"]
 
 
@@ -183,8 +184,9 @@ def sha256(path):
     return h.hexdigest()
 
 
-def check(folder, plan, eid=None):
-    """Run the whole gate on out/queue/<id>/. Returns {ok, reasons, ai}. Writes gate.json (the approval) only when ok."""
+def check(folder, plan, eid=None, extra_log=()):
+    """Run the whole gate on out/queue/<id>/. Returns {ok, reasons, ai}. Writes gate.json (the approval) only when ok.
+    extra_log = pending_entry() of edits already approved in this run but not posted yet, so one batch cannot repeat itself."""
     folder = Path(folder)
     video = folder / "video.mp4"
     eid = eid or folder.name
@@ -194,7 +196,7 @@ def check(folder, plan, eid=None):
     ai = ai_review(video, dur)   # frames only, so works for silent edits too
     if ai:
         reasons += ai
-    reasons += novelty(plan, hashes, load_log())
+    reasons += novelty(plan, hashes, load_log() + list(extra_log))
     res = dict(ok=not reasons, reasons=reasons, ai="skipped" if ai is None else "ran")
     gj = folder / "gate.json"
     if res["ok"]:
@@ -219,9 +221,14 @@ def require(folder):
         raise RuntimeError(f"upload gate has not approved {folder}")
 
 
+def pending_entry(plan, folder, eid):
+    """Novelty-log entry for an approved edit (hashes come from its gate.json)."""
+    hashes = json.loads((Path(folder) / "gate.json").read_text(encoding="utf-8")).get("hashes", [])
+    return entry_for(plan, hashes, eid)
+
+
 def record(plan, folder, eid):
     """Add a published edit to the novelty log."""
-    hashes = json.loads((Path(folder) / "gate.json").read_text(encoding="utf-8")).get("hashes", [])
     log = load_log()
-    log = [p for p in log if p["id"] != eid] + [entry_for(plan, hashes, eid)]
+    log = [p for p in log if p["id"] != eid] + [pending_entry(plan, folder, eid)]
     LOG.write_text(json.dumps(log[-200:], indent=1), encoding="utf-8")

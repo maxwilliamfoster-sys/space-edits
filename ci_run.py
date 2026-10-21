@@ -78,14 +78,18 @@ def main():
             return
     else:
         pending, need = [], EDITS_PER_RUN
-    good, tries = [], 0
+    good, tries, batch_log = [], 0, []
     base = max([e["seed"] for e in history()["edits"]] + [0]) + 1
     while len(good) < need and tries < MAX_TRIES:
         tries += 1
         for eid, plan, folder in spacepipe_make.run_batch(1, base=base + tries, silent=(SOUND_MODE == "tiktok")):
-            res = gate.check(folder, plan, eid)
+            res = gate.check(folder, plan, eid, extra_log=batch_log)
             if res["ok"]:
                 good.append((eid, plan, folder))
+                batch_log.append(gate.pending_entry(plan, folder, eid))
+            elif gate.AI_UNAVAILABLE in res["reasons"]:   # every further edit would be rejected the same way: stop instead of burning renders
+                emit("gate_unavailable", "error", "Space: the AI quality review could not run", "Stopped without posting. Check GROQ_API_KEY / Groq limits.")
+                sys.exit("AI review unavailable and required")
             else:
                 rej = ROOT / "out/rejected" / eid
                 shutil.rmtree(rej, ignore_errors=True)
