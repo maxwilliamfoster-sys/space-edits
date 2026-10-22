@@ -360,5 +360,75 @@
    304338698240,
    119907368574976
   ]
+ },
+ {
+  "id": "20261022_0141",
+  "t": "2026-10-22T00:11:17+00:00",
+  "template": "classic",
+  "music": "Epic Unease",
+  "hook": "Zoom out. Keep zooming out.",
+  "closer": "ALL OF HISTORY HAPPENED ON ONE SPECK",
+  "assets": [
+   "weic2214b",
+   "heic1819b",
+   "heic1819b",
+   "potm2503a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    2234
+   ],
+   [
+    "earth_exp65",
+    2016
+   ],
+   [
+    "sdo_year6",
+    300
+   ]
+  ],
+  "hashes": [
+   9291138115606462464,
+   8125357904776240372,
+   27295315524638720,
+   8936493189120,
+   16181636290314563824,
+   9286634218504903136
+  ]
+ },
+ {
+  "id": "20261022_0142",
+  "t": "2026-10-22T00:15:17+00:00",
+  "template": "nebulae",
+  "music": "Eternal Hope",
+  "hook": "Zoom out. Keep zooming out.",
+  "closer": "AND WE ARE ONE TINY ROCK",
+  "assets": [
+   "weic2621a",
+   "potm2607a",
+   "potm2411a",
+   "weic2615b",
+   "weic2615b",
+   "potm2609a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    1276
+   ],
+   [
+    "earth_exp65",
+    92
+   ]
+  ],
+  "hashes": [
+   15902918613217050624,
+   4503738821381120,
+   17938111063893516480,
+   141288860083444,
+   16208719976531556592,
+   18034719210436308667
+  ]
  }
 ]
