@@ -464,5 +464,140 @@
    103884523010,
    7126036937346445536
   ]
+ },
+ {
+  "id": "20261022_0199",
+  "t": "2026-10-22T15:03:14+00:00",
+  "template": "deep",
+  "music": "Mesmerize",
+  "hook": "How small are you? Watch this.",
+  "closer": "EVERYTHING YOU LOVE IS ON ONE SPECK",
+  "assets": [
+   "potw2443a",
+   "heic2201b",
+   "potm2305c",
+   "potm2305c",
+   "potm2507b"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    2194
+   ],
+   [
+    "sdo_flare",
+    44
+   ]
+  ],
+  "hashes": [
+   14456771203402563584,
+   540428624545710080,
+   4028402525493191906,
+   671088640,
+   4954259861608342790,
+   2694498487179032064
+  ]
+ },
+ {
+  "id": "20261022_0204",
+  "t": "2026-10-22T15:11:06+00:00",
+  "template": "nebulae",
+  "music": "Dark Fog",
+  "hook": "How small are you? Watch this.",
+  "closer": "YOU ARE SMALLER THAN YOU THINK",
+  "assets": [
+   "potw2518a",
+   "potw2431a",
+   "potm2208c",
+   "heic1903a",
+   "heic1903a",
+   "potm2606a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    768
+   ],
+   [
+    "earth_exp65",
+    1198
+   ]
+  ],
+  "hashes": [
+   18229710343455821824,
+   8710209004841529569,
+   17219778092876210380,
+   18013834451175093248,
+   12949243803886424664,
+   184279212734595712
+  ]
+ },
+ {
+  "id": "20261022_0210",
+  "t": "2026-10-22T15:14:21+00:00",
+  "template": "nebulae",
+  "music": "Call to Adventure",
+  "hook": "You are smaller than you think.",
+  "closer": "AND YOU THOUGHT YOUR PROBLEMS WERE BIG",
+  "assets": [
+   "weic2506c",
+   "weic2520c",
+   "weic2208a",
+   "potm2607b",
+   "potm2607b",
+   "weic2418a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    2340
+   ],
+   [
+    "earth_exp65",
+    2116
+   ]
+  ],
+  "hashes": [
+   14761841357909716992,
+   6353781013063155712,
+   2026070689039908880,
+   23837620278689792,
+   12728507036109148296,
+   23838407934137241
+  ]
+ },
+ {
+  "id": "20261022_0247",
+  "t": "2026-10-22T15:18:29+00:00",
+  "template": "nebulae",
+  "music": "Impact Prelude",
+  "hook": "You are smaller than you think.",
+  "closer": "YOU ARE SMALLER THAN YOU THINK",
+  "assets": [
+   "weic2411b",
+   "potm2507a",
+   "potw2537a",
+   "heic2505g",
+   "heic2505g",
+   "heic1801a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    2814
+   ],
+   [
+    "earth_exp65",
+    140
+   ]
+  ],
+  "hashes": [
+   16278269821572929536,
+   8102239683029766224,
+   4082161978313469125,
+   42211277779509248,
+   2943268315903431853,
+   16201919561790914560
+  ]
  }
 ]
