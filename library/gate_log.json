@@ -599,5 +599,135 @@
    2943268315903431853,
    16201919561790914560
   ]
+ },
+ {
+  "id": "20261022_0277",
+  "t": "2026-10-22T21:29:35+00:00",
+  "template": "classic",
+  "music": "Eternal Hope",
+  "hook": "This is how big the universe really is.",
+  "closer": "EVERYTHING YOU LOVE IS ON ONE SPECK",
+  "assets": [
+   "heic1914b",
+   "weic2517c",
+   "weic2517c",
+   "heic1711a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    118
+   ],
+   [
+    "earth_exp65",
+    468
+   ],
+   [
+    "sdo_year6",
+    210
+   ]
+  ],
+  "hashes": [
+   9553586151592296448,
+   17339762026567141328,
+   178561298464768,
+   208039575560,
+   633322388586496,
+   1506819442597851745
+  ]
+ },
+ {
+  "id": "20261022_0302",
+  "t": "2026-10-22T21:32:46+00:00",
+  "template": "nebulae",
+  "music": "Epic Unease",
+  "hook": "Zoom out. Keep zooming out.",
+  "closer": "EVERYTHING YOU LOVE IS ON ONE SPECK",
+  "assets": [
+   "potw2507a",
+   "potw2317a",
+   "potw2534a",
+   "heic1901b",
+   "heic1901b",
+   "weic2522a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    2698
+   ],
+   [
+    "earth_exp65",
+    1624
+   ]
+  ],
+  "hashes": [
+   10249188639954173952,
+   12073903145903588142,
+   6331779849947264,
+   15059755665805148160,
+   16204216376904147413,
+   246443715748450
+  ]
+ },
+ {
+  "id": "20261022_0335",
+  "t": "2026-10-22T21:35:43+00:00",
+  "template": "tour",
+  "music": "Call to Adventure",
+  "hook": "Earth is not the main character.",
+  "closer": "AND WE ARE ONE TINY ROCK",
+  "assets": [
+   "weic2332a",
+   "heic1910b",
+   "weic2514b",
+   "heic1720a",
+   "heic1720a",
+   "heic1816b"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    1784
+   ]
+  ],
+  "hashes": [
+   15914844834619768896,
+   13526817550581164093,
+   17429177676396003328,
+   805306368,
+   4845962636853141730,
+   448908728831052800
+  ]
+ },
+ {
+  "id": "20261022_0377",
+  "t": "2026-10-22T21:39:03+00:00",
+  "template": "tour",
+  "music": "Cut and Run",
+  "hook": "Earth is not the main character.",
+  "closer": "AND YOU THOUGHT YOUR PROBLEMS WERE BIG",
+  "assets": [
+   "heic2312b",
+   "potw2514a",
+   "potm2602a",
+   "heic2011c",
+   "heic2011c",
+   "potm2312a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    846
+   ]
+  ],
+  "hashes": [
+   13902859302785835256,
+   67264723211843808,
+   247160484397056,
+   3785769874994,
+   20276997753216009,
+   924214496566509857
+  ]
  }
 ]
