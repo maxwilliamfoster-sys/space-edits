@@ -844,10 +844,27 @@
     "weic2615b",
     "potm2609a"
    ]
+  },
+  {
+   "id": "20261022_0171",
+   "seed": 171,
+   "template": "nebulae",
+   "music": "Rite of Passage",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "earth_exp65",
+    "heic2106b",
+    "weic2603a",
+    "potw2515a",
+    "heic1919a",
+    "heic1919a",
+    "potw2527a"
+   ]
   }
  ],
  "usage": {
-  "earth_exp65": 76,
+  "earth_exp65": 78,
   "weic2510b": 1,
   "potw2428a": 1,
   "weic2520b": 1,
@@ -876,7 +893,7 @@
   "weic2332a": 5,
   "potm2301b": 6,
   "weic2429a": 3,
-  "heic1919a": 2,
+  "heic1919a": 4,
   "weic2522a": 2,
   "heic2312b": 4,
   "potw2504a": 1,
@@ -894,7 +911,7 @@
   "heic2604a": 1,
   "potw2517a": 1,
   "heic1903a": 2,
-  "potw2527a": 2,
+  "potw2527a": 3,
   "potw2525a": 1,
   "potw2316a": 1,
   "weic2517c": 2,
@@ -996,6 +1013,9 @@
   "potw2448a": 1,
   "weic2621a": 1,
   "potm2607a": 1,
-  "potm2411a": 1
+  "potm2411a": 1,
+  "heic2106b": 1,
+  "weic2603a": 1,
+  "potw2515a": 1
  }
 }
