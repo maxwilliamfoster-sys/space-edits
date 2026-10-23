@@ -22,7 +22,7 @@ GRADE = "eq=contrast=1.06:saturation=1.1:gamma=0.97,vignette=PI/6"
 TEXT_Y = {"earth": (1290, 1410), "planet": (1180, 1300)}
 CARD_BEATS = 5          # credit card shows for the last N beats
 # opening hook (p["hook"]), burned in from frame 0 (audit 2026-10-21 #9): Impact, centred, top band y 380-520
-HOOK_SIZE, HOOK_LINE, HOOK_WRAP, HOOK_Y = 72, 84, 20, 392
+HOOK_SIZE, HOOK_LINE, HOOK_WRAP, HOOK_Y = 80, 92, 20, 392   # 20 chars of Impact 80 ~ 800 px of the 1080 width
 HOOK_BEATS, HOOK_FADE = 5, 0.3   # held until beat 5 (~2.5-3 s), then faded out
 NET = ["-reconnect", "1", "-reconnect_streamed", "1", "-reconnect_delay_max", "5"]   # for http inputs (NASA reels in CI)
 WIN = 9 / 16 / (16 / 9)  # width fraction of a 16:9 frame that a 9:16 window covers
