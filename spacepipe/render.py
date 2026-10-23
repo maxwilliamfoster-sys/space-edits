@@ -11,6 +11,13 @@ import numpy as np
 
 from .lib import FFMPEG, ROOT, ensure_local
 
+try:
+    import audio_norm   # growth-lab S3 (vendored at the repo root)
+except ImportError:     # imported as a package from somewhere else: put the repo root on the path
+    import sys
+    sys.path.insert(0, str(ROOT))
+    import audio_norm
+
 W, H, FPS = 1080, 1920, 30
 CACHE = ROOT / "out/pipe_cache"
 if os.name == "nt":
@@ -26,6 +33,7 @@ HOOK_SIZE, HOOK_LINE, HOOK_WRAP, HOOK_Y = 80, 92, 20, 392   # 20 chars of Impact
 HOOK_BEATS, HOOK_FADE = 5, 0.3   # held until beat 5 (~2.5-3 s), then faded out
 NET = ["-reconnect", "1", "-reconnect_streamed", "1", "-reconnect_delay_max", "5"]   # for http inputs (NASA reels in CI)
 WIN = 9 / 16 / (16 / 9)  # width fraction of a 16:9 frame that a 9:16 window covers
+LOUDNESS_TARGET = -14    # LUFS, two-pass linear (audio_norm); qc.py accepts -17..-11
 
 
 def run(args, **kw):
@@ -143,12 +151,33 @@ def post_chain(p, last, t_end, txt):
 
 def audio_filter(p, t_end):
     """Music from plan['music']['start'] (its best section, compose/music.pick_start) for t_end seconds. A 0.05 s fade-in only
-    removes the click of starting mid-track; the first second must already be at full level."""
+    removes the click of starting mid-track; the first second must already be at full level. No loudnorm here: single-pass
+    loudnorm is dynamic and flattened the build into the reveal, so normalize_audio() runs a two-pass linear one afterwards."""
     if p.get("silent"):
         return "aresample=48000"
     st = float(p["music"].get("start") or 0.0)
     return (f"atrim=start={st:.2f}:end={st + t_end:.2f},asetpts=PTS-STARTPTS,afade=t=in:st=0:d=0.05,"
-            f"afade=t=out:st={t_end - 1.8:.2f}:d=1.8,loudnorm=I=-14:TP=-1,aresample=48000")
+            f"afade=t=out:st={t_end - 1.8:.2f}:d=1.8,aresample=48000")
+
+
+def normalize_audio(final, silent=False):
+    """Two-pass LINEAR loudnorm of the finished mp4 to LOUDNESS_TARGET (one constant gain, so the music's own build is kept;
+    a limiter runs first if more than +6 dB is needed). The video stream is copied. On any failure the un-normalised mix is
+    kept and qc's loudness window decides. Returns audio_norm's result dict, or None (silent edit or failure)."""
+    if silent:
+        return None
+    tmp = str(final) + ".norm.mp4"
+    try:
+        res = audio_norm.normalize(str(final), tmp, target=LOUDNESS_TARGET, keep_video=True, ffmpeg=FFMPEG, log=print)
+        os.replace(tmp, str(final))
+        print(f"[audio] {res.get('input_i')} -> {res.get('output_i')} LUFS ({res.get('normalization_type')}"
+              f"{', limited' if res.get('limited') else ''})")
+        return res
+    except Exception as e:
+        print(f"[audio] two-pass loudnorm failed, keeping the raw mix: {type(e).__name__}: {str(e)[:200]}")
+        if os.path.exists(tmp):
+            os.remove(tmp)
+        return None
 
 
 def assemble(p, final):
@@ -197,6 +226,7 @@ def assemble(p, final):
          "-af", af,
          "-t", f"{t_end:.2f}", "-c:v", "libx264", "-profile:v", "high", "-crf", "16", "-preset", "slow", "-pix_fmt", "yuv420p",
          "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", final])
+    normalize_audio(final, silent=bool(p.get("silent")))
     return t_end
 
 
