@@ -286,30 +286,55 @@ class Capacity(unittest.TestCase):
 
 
 class Slots(unittest.TestCase):
-    NOW = datetime(2026, 10, 21, 6, 0, tzinfo=timezone.utc)
-
     NOW = datetime(2026, 10, 21, 4, 0, tzinfo=timezone.utc)
 
-    def test_ten_posts_a_day_two_hours_apart(self):
+    def test_three_posts_a_day_at_12_17_22_utc(self):
         taken = []
-        for _ in range(20):
+        for _ in range(6):
             taken.append(ci_run.next_slot(taken, self.NOW))
         days = {}
         for t in taken:
             days.setdefault(t.date(), []).append(t.hour)
         self.assertEqual(sorted(days), [datetime(2026, 10, 21).date(), datetime(2026, 10, 22).date()])
-        self.assertTrue(all(h == [5, 7, 9, 11, 13, 15, 17, 19, 21, 23] for h in days.values()), days)
+        self.assertTrue(all(h == [12, 17, 22] for h in days.values()), days)
 
     def test_slot_taken_by_a_waiting_post_is_skipped(self):
-        busy = [datetime(2026, 10, 21, 5, 0, tzinfo=timezone.utc)]
-        self.assertEqual(ci_run.next_slot(busy, self.NOW).hour, 7)
+        busy = [datetime(2026, 10, 21, 12, 0, tzinfo=timezone.utc)]
+        self.assertEqual(ci_run.next_slot(busy, self.NOW).hour, 17)
 
     def test_never_schedules_in_the_past_or_within_15_minutes(self):
-        now = datetime(2026, 10, 21, 6, 50, tzinfo=timezone.utc)
-        self.assertEqual(ci_run.next_slot([], now).hour, 9)              # 07:00 is only 10 min away
+        now = datetime(2026, 10, 21, 11, 50, tzinfo=timezone.utc)
+        self.assertEqual(ci_run.next_slot([], now).hour, 17)             # 12:00 is only 10 min away
 
-    def test_queue_holds_a_full_day_of_posts(self):
-        self.assertGreaterEqual(ci_run.QUEUE_TARGET, len(ci_run.SLOT_HOURS_UTC))
+    def test_old_two_hourly_posts_still_waiting_push_new_ones_to_free_slots(self):
+        """Posts queued before the cut (2 h apart) are left alone; a new slot must keep MIN_GAP_S from each of them."""
+        busy = [datetime(2026, 10, 21, h, 0, tzinfo=timezone.utc) for h in (11, 13, 15, 17, 19, 21, 23)]
+        got = ci_run.next_slot(busy, self.NOW)
+        self.assertEqual((got.day, got.hour), (22, 12))
+
+    def test_queue_holds_two_days_of_posts_and_a_run_makes_one_day(self):
+        self.assertEqual(ci_run.SLOT_HOURS_UTC, (12, 17, 22))
+        self.assertEqual(ci_run.QUEUE_TARGET, 6)
+        with mock.patch.dict(os.environ, {"EDITS_PER_RUN": ""}):
+            import importlib
+            self.assertEqual(importlib.reload(ci_run).EDITS_PER_RUN, 3)
+
+    def test_cron_runs_twice_a_day(self):
+        wf = (Path(__file__).resolve().parent.parent / ".github/workflows/post.yml").read_text(encoding="utf-8")
+        self.assertIn("cron: '23 6,16 * * *'", wf)
+        self.assertNotIn("|| '10'", wf)
+
+
+class NoveltyWindows(unittest.TestCase):
+    def test_windows_cover_days_not_hours_at_three_a_day(self):
+        per_day = len(ci_run.SLOT_HOURS_UTC)
+        self.assertGreaterEqual(gate.NO_REPEAT_CLIPS / per_day, 3)
+        self.assertGreaterEqual(gate.NO_REPEAT_REELS / per_day, 3)
+        self.assertGreaterEqual(gate.NO_REPEAT_COMBO / per_day, 3)
+        self.assertGreaterEqual(gate.NO_REPEAT_TEXT / per_day, 2)
+
+    def test_planning_stays_cheap_next_to_rendering(self):
+        self.assertLessEqual(ci_run.MAX_PLANS, 5000)   # ~20 plans/s, so at most a few minutes of a 200-minute budget
 
 
 class MediaPruning(unittest.TestCase):

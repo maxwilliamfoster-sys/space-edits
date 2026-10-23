@@ -23,13 +23,16 @@ from spacepipe.lib import FFMPEG, LIB, ROOT, history
 
 AUTO_POST = os.environ.get("AUTO_POST", "").strip().lower() == "true"
 SOUND_MODE = os.environ.get("SOUND_MODE", "own").strip().lower()
-EDITS_PER_RUN = int(os.environ.get("EDITS_PER_RUN") or 10)
+EDITS_PER_RUN = int(os.environ.get("EDITS_PER_RUN") or 3)
 MAX_TRIES = 120                   # safety cap on renders per run; the real limit is RUN_BUDGET_S, so a rejected edit is replaced until one passes
 RUN_BUDGET_S = 200 * 60           # stop starting renders after this (job timeout is 240 min); the next cron tops the queue up
-MAX_PLANS = 600                   # plans per run; a plan that breaks a novelty rule is dropped before rendering (costs milliseconds)
-QUEUE_TARGET = 10                 # never keep more than this many posts waiting in Buffer (its free-plan cap; one day at 10 a day)
-SLOT_HOURS_UTC = (5, 7, 9, 11, 13, 15, 17, 19, 21, 23)   # 10 a day, 2 h apart: 6am to midnight UK in BST (one hour earlier in GMT)
-MIN_GAP_S = 5400                  # a slot must be this far from every post already waiting (slots are 2 h apart)
+MAX_PLANS = 3000                  # plans per run (~20/s); a plan that breaks a novelty rule is dropped before rendering. At 3 a day
+                                  # with 3-day windows a passing plan can take a few hundred draws (tests/test_gate.py Capacity)
+QUEUE_TARGET = 6                  # never keep more than this many posts waiting in Buffer (two days at 3 a day)
+# 3 a day (audit 2026-10-21: 10 near-identical template posts a day is the policy risk, not volume itself). 12/17/22 UTC =
+# UK lunch / evening / late evening and US East 8am / 1pm / 6pm. Raise only after ~2 weeks of analytics show no suppression.
+SLOT_HOURS_UTC = (12, 17, 22)
+MIN_GAP_S = 5400                  # a slot must be this far from every post already waiting (old 2-hourly posts still in Buffer too)
 POSTED = LIB / "posted.json"      # {edit id: {post, due, file}} (committed by the workflow)
 
 

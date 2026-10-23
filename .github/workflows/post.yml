@@ -2,15 +2,15 @@ name: Make and schedule space edits
 
 on:
   schedule:
-    # daily: renders, gates and previews on Telegram; also schedules on Buffer when repo variable AUTO_POST is 'true' (off = preview only).
-    # Several times a day: a run only makes what is missing from Buffer's queue (QUEUE_TARGET minus waiting posts) and exits
-    # at once when it is full, so a late or dropped GitHub cron is covered by the next one and the queue never runs dry.
-    - cron: '23 1,5,9,13,17,21 * * *'
+    # renders, gates and previews on Telegram; also schedules on Buffer when repo variable AUTO_POST is 'true' (off = preview only).
+    # Twice a day: a run only makes what is missing from Buffer's queue (QUEUE_TARGET=6 minus waiting posts, at most
+    # EDITS_PER_RUN=3) and exits at once when it is full, so a late or dropped GitHub cron is covered by the next one.
+    - cron: '23 6,16 * * *'
   workflow_dispatch:
     inputs:
       count:
         description: 'edits to render this run'
-        default: '10'
+        default: '3'
       now:
         description: 'true = publish immediately instead of the next slot (with post=true)'
         default: 'false'
@@ -45,7 +45,7 @@ jobs:
         env:
           POST_NOW: ${{ github.event.inputs.now == 'true' && 'true' || '' }}
           AUTO_POST: ${{ (github.event.inputs.post == 'true' || (github.event_name == 'schedule' && vars.AUTO_POST == 'true')) && 'true' || '' }}
-          EDITS_PER_RUN: ${{ github.event.inputs.count || vars.EDITS_PER_RUN || '10' }}
+          EDITS_PER_RUN: ${{ github.event.inputs.count || vars.EDITS_PER_RUN || '3' }}
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
           BUFFER_CHANNEL_ID: ${{ secrets.BUFFER_CHANNEL_ID }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}

@@ -24,13 +24,14 @@ import requests
 from spacepipe.lib import FFMPEG, LIB
 
 LOG = LIB / "gate_log.json"
-# Sized for 5 edits a day (simulated 12 days with the real planner: the old 15 / 90 s / 30 ran dry on day 3 because the only vetted
-# Earth reel is 3000 s and the three Sun reels are 79-391 s). 10 edits = 2 days of posts.
-NO_REPEAT_CLIPS = 10       # an ESA clip may not appear in any of the last N posted edits
+# Sized for 3 edits a day (ci_run.SLOT_HOURS_UTC), checked by tests/test_gate.py Capacity with the real planner. The limits are
+# the only vetted Earth reel (3000 s), the three Sun reels (79-391 s), the 12 all-sky zooms that pass compose's brightness and
+# scale checks (one per edit, so NO_REPEAT_CLIPS must stay well under 12) and 5 hooks x 5 closers. 12/12/9/9 ran dry on day 5.
+NO_REPEAT_CLIPS = 9        # an ESA clip may not appear in any of the last N posted edits (3 days; was 10 = 1 day at 10 a day)
 NO_REPEAT_WINDOW_S = 20    # same NASA reel: new windows must start this far from recently used ones (shots are 3-6 s long)
-NO_REPEAT_REELS = 10       # ... looking back this many edits
-NO_REPEAT_COMBO = 6        # template+music
-NO_REPEAT_TEXT = 8         # hook+closer
+NO_REPEAT_REELS = 9        # ... looking back this many edits (3 days)
+NO_REPEAT_COMBO = 9        # template+music (3 days)
+NO_REPEAT_TEXT = 6         # hook+closer (2 days; only 25 pairs until the text pools grow)
 HASH_FRAMES = 6
 HASH_NEAR = 8              # max hamming distance (of 64 bits) for two frames to count as "the same picture"
 HASH_MATCHES = 3           # this many near-identical frames = a repeat
@@ -38,8 +39,9 @@ GROQ_MODEL = os.environ.get("GATE_VISION_MODEL", "qwen/qwen3.8-27b")
 AI_UNAVAILABLE = "AI review could not run"
 AI_PROMPT = (
     "You are the quality gate for a TikTok space-footage edit (vertical video of real telescope / ISS footage with white text "
-    "overlays). These are 12 frames in time order. Expected and fine: clean white headline text with a small subline, and in the "
-    "LAST frame a small semi-transparent black box listing credits. Reject (ok=false) ONLY for clear problems: a chart, graph, "
+    "overlays). These are 12 frames in time order. Expected and fine: a large bold white hook line near the top of the picture in "
+    "the first frames (it is the video's opening hook, burned in on purpose), clean white headline text with a small subline, and "
+    "in the LAST frame a small semi-transparent black box listing credits. Reject (ok=false) ONLY for clear problems: a chart, graph, "
     "axis, scale bar or data/caption box that is part of the source footage; an agency/telescope logo or watermark stamped on the "
     "footage itself; heavy blur or compression blocks; headline text cut off by the frame edge or overlapping other text; a "
     "glitch or solid black/green frame in the middle; imagery that is clearly not real space or Earth footage. Do not flag stars "
