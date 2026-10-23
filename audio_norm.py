@@ -1,4 +1,4 @@
-# vendored from growth-lab/audio_norm.py @ 016fdd6 - do not edit here; change the master and run sync_vendored.py
+# vendored from growth-lab/audio_norm.py @ 7ec3a82 - do not edit here; change the master and run sync_vendored.py
 """audio_norm: two-pass LINEAR loudness normalisation (growth-lab S3, master copy).
 
 Edit it HERE, then roll it out with sync_vendored.py. Stdlib + the ffmpeg binary.
@@ -10,8 +10,8 @@ Edit it HERE, then roll it out with sync_vendored.py. Stdlib + the ffmpeg binary
 How it works
 ------------
 1. Measure: `loudnorm=I=<target>:TP=-1.5:LRA=11:print_format=json` into a null muxer.
-2. If the static gain needed (target - measured I) is more than +6 dB, run a
-   peak limiter FIRST (alimiter, auto-level off) with its ceiling set so the
+2. If the static gain needed (target - measured I) is more than +6 dB, or any
+   boost would lift the measured true peak past TP, run a peak limiter FIRST (alimiter, auto-level off) with its ceiling set so the
    gain cannot push peaks past TP, then measure again. Without this, loudnorm's
    linear mode silently falls back to dynamic (pumping) mode on spiky audio.
 3. Apply: the same loudnorm with the measured_* values, offset and linear=true
@@ -102,8 +102,14 @@ def static_gain(measured, target=TARGET):
     return float(target) - float(measured["input_i"])
 
 
-def needs_limiter(measured, target=TARGET, above_db=LIMIT_ABOVE_DB):
-    return static_gain(measured, target) > above_db
+def needs_limiter(measured, target=TARGET, above_db=LIMIT_ABOVE_DB, tp=TRUE_PEAK):
+    """A limiter goes first when the static gain is big (> above_db) OR when any
+    boost would push the measured true peak past `tp`: loudnorm's linear mode
+    only holds while measured_TP + gain <= TP, otherwise it silently switches to
+    dynamic mode (seen on a mastered music bed: -16.8 LUFS, TP near 0, +3 dB ->
+    "dynamic", space-edits 2026-10-23)."""
+    gain = static_gain(measured, target)
+    return gain > above_db or (gain > 0 and float(measured["input_tp"]) + gain > tp)
 
 
 def limiter_filter(gain_db, tp=TRUE_PEAK, margin_db=LIMIT_MARGIN_DB):
@@ -191,7 +197,7 @@ def normalize(src, dst, target=TARGET, tp=TRUE_PEAK, lra=LRA, keep_video=False, 
         return res
 
     pre, measured = None, first
-    if needs_limiter(first, target):
+    if needs_limiter(first, target, tp=tp):
         # Limiting loud spikes lowers the integrated loudness, which raises the
         # gain still needed, so re-aim the ceiling until peaks + gain fit under TP.
         gain = static_gain(first, target)
