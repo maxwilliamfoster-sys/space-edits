@@ -796,5 +796,108 @@
    70699319296,
    150083447230208
   ]
+ },
+ {
+  "id": "20261023_0397",
+  "t": "2026-10-23T20:20:48+00:00",
+  "template": "classic",
+  "music": "Dark Fog",
+  "hook": "Zoom out from Earth. Keep going.",
+  "closer": "AND WE ARE ONE TINY ROCK",
+  "assets": [
+   "weic2606a",
+   "heic2201a",
+   "heic2201a",
+   "weic2209b"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    2464
+   ],
+   [
+    "earth_exp65",
+    1842
+   ],
+   [
+    "sdo_flare",
+    32
+   ]
+  ],
+  "hashes": [
+   16269379232494256128,
+   13902874703887450880,
+   3772003842,
+   70464307200,
+   16152561853218684992,
+   27127173101694976
+  ]
+ },
+ {
+  "id": "20261023_0402",
+  "t": "2026-10-23T20:25:20+00:00",
+  "template": "nebulae",
+  "music": "Dreams Become Real",
+  "hook": "Earth is not the main character.",
+  "closer": "YOU ARE SMALLER THAN YOU THINK",
+  "assets": [
+   "potw2433a",
+   "potw2519a",
+   "heic1811a",
+   "heic1811a",
+   "potw2541a",
+   "potm2505a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    1466
+   ],
+   [
+    "earth_exp65",
+    1400
+   ]
+  ],
+  "hashes": [
+   20531115678760960,
+   69938804808799328,
+   247157261074432,
+   63302064432746508,
+   9259648125086002683,
+   10969617473279656601
+  ]
+ },
+ {
+  "id": "20261023_0415",
+  "t": "2026-10-23T20:29:26+00:00",
+  "template": "deep",
+  "music": "Gathering Darkness",
+  "hook": "You vs the universe. Watch this.",
+  "closer": "ALL OF HISTORY HAPPENED ON ONE SPECK",
+  "assets": [
+   "weic2617b",
+   "weic2615b",
+   "weic2615b",
+   "potm2410b",
+   "weic2418a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    688
+   ],
+   [
+    "sdo_year6",
+    258
+   ]
+  ],
+  "hashes": [
+   14757417400389861384,
+   17618646120035064816,
+   9241528138955755271,
+   27286515389315072,
+   13882505126579699744,
+   12148702120707171368
+  ]
  }
 ]
