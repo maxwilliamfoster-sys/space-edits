@@ -21,6 +21,7 @@ from pathlib import Path
 import numpy as np
 import requests
 
+import hook_lint   # growth-lab S5 (vendored)
 from spacepipe.lib import FFMPEG, LIB
 
 LOG = LIB / "gate_log.json"
@@ -36,6 +37,9 @@ HASH_FRAMES = 6
 HASH_NEAR = 8              # max hamming distance (of 64 bits) for two frames to count as "the same picture"
 HASH_MATCHES = 3           # this many near-identical frames = a repeat
 GROQ_MODEL = os.environ.get("GATE_VISION_MODEL", "qwen/qwen3.8-27b")
+HOOK_MAX_WORDS = 7         # on-screen hook (audit 2026-10-21 #2: 7 words or fewer, burned in at Impact 80)
+# names/places that count as the hook's concrete specific (hook_lint also takes numbers and capitalised names)
+HOOK_SPECIFICS = ("universe", "galaxy", "galaxies", "milky way", "solar system", "earth", "sun", "light-year", "light-years")
 AI_UNAVAILABLE = "AI review could not run"
 AI_PROMPT = (
     "You are the quality gate for a TikTok space-footage edit (vertical video of real telescope / ISS footage with white text "
@@ -178,6 +182,24 @@ def novelty(plan, hashes, log):
     return reasons
 
 
+# --------------------------------------------------------------------- text --
+
+def text_lint(plan, caption=None):
+    """hook_lint on the on-screen hook (<= HOOK_MAX_WORDS, a concrete specific, no greeting/'...'/doubled word), the plan's
+    hashtags (2-4, no #fyp/#foryou) and the caption (doubled words). Fails become gate reasons; warnings are only printed."""
+    res = hook_lint.lint(hook=plan.get("hook") or "", caption=caption, tags=plan.get("hashtags"),
+                         max_words=HOOK_MAX_WORDS, specifics=HOOK_SPECIFICS)
+    for w in res.warns:
+        print(f"[gate] text lint warning: {w.code}: {w.message}")
+    return [f"text lint: {i.code}: {i.message}" for i in res.fails]
+
+
+def plan_check(plan, log):
+    """Everything that can be judged from the plan alone (text lint + plan novelty), so a bad plan is dropped before the
+    minutes-long render."""
+    return text_lint(plan) + novelty(plan, [], log)
+
+
 # --------------------------------------------------------------------- API --
 
 def sha256(path):
@@ -197,6 +219,8 @@ def check(folder, plan, eid=None, extra_log=()):
     dur = _duration(video)
     hashes = frame_hashes(video, dur)
     reasons = quality(video, folder, dur, silent=bool(plan.get("silent")))
+    cap = folder / "caption.txt"
+    reasons += text_lint(plan, cap.read_text(encoding="utf-8") if cap.exists() else None)
     ai = ai_review(video, dur)   # frames only, so works for silent edits too
     if ai:
         reasons += ai

@@ -90,22 +90,26 @@ def render_shot(s):
     tmp.replace(out)   # atomic: a killed encode never leaves a truncated cache file
 
 
-def credit_text(p):
-    seen, lines = [], []
+def credit_items(p):
+    """One string per credit (clip credits in order of first use, the CC BY note, the music)."""
+    items = []
     for s in p["shots"]:
-        if s["credit"] not in seen:
-            seen.append(s["credit"])
-    for c in seen:
-        lines.append(textwrap.fill(c, 64))
+        if s["credit"] not in items:
+            items.append(s["credit"])
     if any(s["src"] != "nasa" for s in p["shots"]):
-        lines.append(textwrap.fill("ESA/Webb and ESA/Hubble material: CC BY 4.0. Cropped to vertical, zooms sped up.", 64))
-    lines.append(textwrap.fill("Music: " + p["music"]["credit"], 64))
-    return "Credits\n" + "\n".join(lines)
+        items.append("ESA/Webb and ESA/Hubble material: CC BY 4.0. Cropped to vertical, zooms sped up.")
+    items.append("Music: " + p["music"]["credit"])
+    return items
+
+
+def credit_text(p):
+    return "Credits\n" + "\n".join(textwrap.fill(c, 64) for c in credit_items(p))
 
 
 def caption_text(p):
-    credits = credit_text(p).replace("\n", " ")
-    return f"{p['hook']}\n{' '.join(p['hashtags'])}\n\n{credits}"
+    """Hook, tags, a blank line, then the credits as one paragraph. Credits are joined with '; ' so neighbours never run
+    together ('ESA/Hubble, NASA' + 'NASA, ESA...' used to read 'NASA NASA')."""
+    return f"{p['hook']}\n{' '.join(p['hashtags'])}\n\nCredits: " + "; ".join(credit_items(p))
 
 
 def _fade_out(b, d):

@@ -10,10 +10,12 @@ PLANET = {"saturn": ("SATURN", "ABOUT 9 EARTHS WIDE"), "uranus": ("URANUS", "ABO
 MW = [("OUR GALAXY", "100+ BILLION STARS"), ("THE MILKY WAY", "ABOUT 100,000 LIGHT-YEARS ACROSS"), ("OUR GALAXY", "THE SUN IS 1 STAR OF 100+ BILLION")]
 CLOSERS = ["AND WE ARE ONE TINY ROCK", "YOU ARE SMALLER THAN YOU THINK", "ALL OF HISTORY HAPPENED ON ONE SPECK",
            "EVERYTHING YOU LOVE IS ON ONE SPECK", "AND YOU THOUGHT YOUR PROBLEMS WERE BIG"]
-HASHTAGS = [["#space", "#universe", "#nasa", "#webb", "#fyp"], ["#astronomy", "#cosmos", "#jameswebb", "#perspective", "#fyp"],
-            ["#space", "#galaxy", "#hubble", "#deepspace", "#fyp"], ["#universe", "#scale", "#earth", "#nasa", "#fyp"]]
-HOOKS = ["You are smaller than you think.", "How small are you? Watch this.", "Zoom out. Keep zooming out.",
-         "This is how big the universe really is.", "Earth is not the main character."]
+# 2-4 niche tags, never #fyp/#foryou (hook_lint fails them; research-algorithm-policy: hashtags barely matter)
+HASHTAGS = [["#space", "#universe", "#nasa", "#webb"], ["#astronomy", "#cosmos", "#jameswebb", "#perspective"],
+            ["#space", "#galaxy", "#hubble", "#deepspace"], ["#universe", "#scale", "#earth", "#nasa"]]
+# on-screen hook: 7 words or fewer with a concrete specific (a name or place: Earth, the universe...), checked by gate.text_lint
+HOOKS = ["You vs the universe. Watch this.", "How small is Earth? Watch this.", "Zoom out from Earth. Keep going.",
+         "This is how big the universe is.", "Earth is not the main character."]
 
 
 def ly_text(d):

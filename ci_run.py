@@ -88,8 +88,8 @@ def main():
     good, plans, batch_log, skipped = [], 0, [], []
     base = max([e["seed"] for e in history()["edits"]] + [0]) + 1
 
-    def precheck(plan):   # the plan-only novelty rules (clips, reel windows, template+music, hook+closer), against the log and this run's edits
-        reasons = gate.novelty(plan, [], gate.load_log() + batch_log)
+    def precheck(plan):   # plan-only rules (text lint; clips, reel windows, template+music, hook+closer novelty) against the log and this run's edits
+        reasons = gate.plan_check(plan, gate.load_log() + batch_log)
         if reasons:
             skipped.append(reasons)
         return reasons

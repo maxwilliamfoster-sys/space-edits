@@ -38,7 +38,8 @@ def make_video(kind, audio=True, name=None):
     return folder
 
 
-def plan(assets=("new1", "new2"), windows=(), template="tour", music="New song", hook="New hook", closer="NEW CLOSER"):
+def plan(assets=("new1", "new2"), windows=(), template="tour", music="New song", hook="New hook about Earth", closer="NEW CLOSER"):
+    # the hook must pass gate.text_lint (hook_lint: a concrete specific such as Earth), as every real hook does
     """Defaults are all different from entry()'s, so a test only trips the one rule it overrides."""
     shots = [dict(asset=a, src="esa", src_in=0) for a in assets] + [dict(asset=a, src="nasa", src_in=t) for a, t in windows]
     return dict(template=template, music=dict(title=music), hook=hook, shots=shots, texts=[dict(text=closer, k1=60)])
