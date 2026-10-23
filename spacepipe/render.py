@@ -21,6 +21,9 @@ else:   # CI (ubuntu): Anton is the free Impact look-alike (committed in fonts/)
 GRADE = "eq=contrast=1.06:saturation=1.1:gamma=0.97,vignette=PI/6"
 TEXT_Y = {"earth": (1290, 1410), "planet": (1180, 1300)}
 CARD_BEATS = 5          # credit card shows for the last N beats
+# opening hook (p["hook"]), burned in from frame 0 (audit 2026-10-21 #9): Impact, centred, top band y 380-520
+HOOK_SIZE, HOOK_LINE, HOOK_WRAP, HOOK_Y = 72, 84, 20, 392
+HOOK_BEATS, HOOK_FADE = 5, 0.3   # held until beat 5 (~2.5-3 s), then faded out
 NET = ["-reconnect", "1", "-reconnect_streamed", "1", "-reconnect_delay_max", "5"]   # for http inputs (NASA reels in CI)
 WIN = 9 / 16 / (16 / 9)  # width fraction of a 16:9 frame that a 9:16 window covers
 
@@ -97,6 +100,57 @@ def caption_text(p):
     return f"{p['hook']}\n{' '.join(p['hashtags'])}\n\n{credits}"
 
 
+def _fade_out(b, d):
+    """Alpha 1 until b-d, then down to 0 at b (drawtext alpha expression; only if/lt/arithmetic so tests can evaluate it)."""
+    return f"if(lt(t,{b - d:.2f}),1,if(lt(t,{b:.2f}),({b:.2f}-t)/{d},0))"
+
+
+def text_layers(p):
+    """Every drawtext layer of the edit: {text, y, size, font, alpha, t0, hook}. The hook is burned in fully opaque from frame 0
+    (no fade from black, no fade-in) in the band y 380-520, below TikTok's top UI and clear of the headline band, and fades
+    out over HOOK_FADE s at beat HOOK_BEATS. Headlines of the first shot are also fully visible from frame 0; later ones fade in."""
+    P, T0 = p["P"], p["T0"]
+    bt = lambda k: T0 + k * P
+    slot_at, k = [], 0
+    for s in p["shots"]:
+        slot_at.append((k, s["slot"]))
+        k += s["beats"]
+    out = []
+    lines = textwrap.wrap(p["hook"].upper(), HOOK_WRAP) if p.get("hook") else []
+    y0 = HOOK_Y + (HOOK_LINE // 2 if len(lines) == 1 else 0)
+    for i, line in enumerate(lines):
+        out.append(dict(text=line, y=y0 + i * HOOK_LINE, size=HOOK_SIZE, font="impact", t0=0.0, hook=True,
+                        alpha=_fade_out(bt(HOOK_BEATS), HOOK_FADE)))
+    for tx in p["texts"]:
+        slot = next((sl for a, sl in slot_at if a == tx["k0"]), "")
+        y = tx["y"]
+        if y in ("y1", "y2"):
+            y = TEXT_Y.get(slot, (1010, 1130))[0 if y == "y1" else 1]
+        b = bt(tx["k1"]) - 0.15
+        if tx["k0"] == 0:   # on screen with the first frame, like the hook
+            a, al = 0.0, _fade_out(b, 0.4)
+        else:
+            a = bt(tx["k0"]) + 0.15
+            al = f"if(lt(t,{a:.2f}),0,if(lt(t,{a + 0.4:.2f}),(t-{a:.2f})/0.4,{_fade_out(b, 0.4)}))"
+        out.append(dict(text=tx["text"], y=y, size=tx["size"], font=tx["font"], t0=a, hook=False, alpha=al))
+    return out
+
+
+def post_chain(p, last, t_end, txt):
+    """Final video filter: no fade-in (the hook must be readable at t=0), fade out at the end, then the text layers."""
+    return f"[{last}]fade=t=out:st={t_end - 1.0:.2f}:d=1.0," + ",".join(txt) + ",format=yuv420p[v]"
+
+
+def audio_filter(p, t_end):
+    """Music from plan['music']['start'] (its best section, compose/music.pick_start) for t_end seconds. A 0.05 s fade-in only
+    removes the click of starting mid-track; the first second must already be at full level."""
+    if p.get("silent"):
+        return "aresample=48000"
+    st = float(p["music"].get("start") or 0.0)
+    return (f"atrim=start={st:.2f}:end={st + t_end:.2f},asetpts=PTS-STARTPTS,afade=t=in:st=0:d=0.05,"
+            f"afade=t=out:st={t_end - 1.8:.2f}:d=1.8,loudnorm=I=-14:TP=-1,aresample=48000")
+
+
 def assemble(p, final):
     shots = p["shots"]
     P, T0 = p["P"], p["T0"]
@@ -113,22 +167,11 @@ def assemble(p, final):
         typ, d = shots[i]["tin"]
         chain.append(f"[{last}][p{i}]xfade=transition={typ}:duration={d}:offset={shots[i]['c0'] - d / 2:.3f}[x{i}]")
         last = f"x{i}"
-    slot_at = []
-    k = 0
-    for s in shots:
-        slot_at.append((k, k + s["beats"], s["slot"]))
-        k += s["beats"]
     txt = []
-    for tx in p["texts"]:
-        slot = next((sl for a, b, sl in slot_at if a == tx["k0"]), "")
-        y = tx["y"]
-        if y in ("y1", "y2"):
-            y = TEXT_Y.get(slot, (1010, 1130))[0 if y == "y1" else 1]
-        a, b = bt(tx["k0"]) + 0.15, bt(tx["k1"]) - 0.15
-        al = f"if(lt(t,{a:.2f}),0,if(lt(t,{a + 0.4:.2f}),(t-{a:.2f})/0.4,if(lt(t,{b - 0.4:.2f}),1,if(lt(t,{b:.2f}),({b:.2f}-t)/0.4,0))))"
-        safe = tx["text"].replace("\\", "").replace(":", "\\:").replace("'", "’").replace("%", "\\%")
-        txt.append(f"drawtext=fontfile='{FONTS[tx['font']]}':text='{safe}':fontsize={tx['size']}:fontcolor=white:borderw=4:bordercolor=black@0.85"
-                   f":x=(w-tw)/2:y={y}:alpha='{al}'")
+    for L in text_layers(p):
+        safe = L["text"].replace("\\", "").replace(":", "\\:").replace("'", "’").replace("%", "\\%")
+        txt.append(f"drawtext=fontfile='{FONTS[L['font']]}':text='{safe}':fontsize={L['size']}:fontcolor=white:borderw=4:bordercolor=black@0.85"
+                   f":x=(w-tw)/2:y={L['y']}:alpha='{L['alpha']}'")
     cdir = ROOT / "out/pipe_tmp"
     cdir.mkdir(parents=True, exist_ok=True)
     c0 = bt(60 - CARD_BEATS)
@@ -141,16 +184,15 @@ def assemble(p, final):
         lf.write_bytes(line.encode("utf-8"))
         txt.append(f"drawtext=fontfile='{FONTS['plain']}':textfile='{lf.relative_to(ROOT).as_posix()}':fontsize=24:fontcolor=white@0.95:"
                    f"x=(w-tw)/2:y={718 + i * 31}:alpha='{cal}'")
-    post = f"[{last}]fade=t=in:st=0:d=0.5,fade=t=out:st={t_end - 1.0:.2f}:d=1.0," + ",".join(txt) + ",format=yuv420p[v]"
+    post = post_chain(p, last, t_end, txt)
     script = cdir / f"filter_{p['seed']}.txt"
     script.write_text(";\n".join(chain + [post]), encoding="utf-8")
     inputs = [x for s in shots for x in ("-i", s["file"])]
-    m = p["music"]
     if p.get("silent"):
-        src, af = ["-f", "lavfi", "-t", f"{t_end:.2f}", "-i", "anullsrc=r=48000:cl=stereo"], "aresample=48000"
+        src = ["-f", "lavfi", "-t", f"{t_end:.2f}", "-i", "anullsrc=r=48000:cl=stereo"]
     else:
-        src = ["-i", ROOT / m["file"]]
-        af = f"atrim=0:{t_end:.2f},afade=t=in:st=0:d=0.5,afade=t=out:st={t_end - 1.8:.2f}:d=1.8,loudnorm=I=-14:TP=-1,aresample=48000"
+        src = ["-i", ROOT / p["music"]["file"]]
+    af = audio_filter(p, t_end)
     run([*inputs, *src, "-filter_complex_script", script, "-map", "[v]", "-map", f"{len(shots)}:a",
          "-af", af,
          "-t", f"{t_end:.2f}", "-c:v", "libx264", "-profile:v", "high", "-crf", "16", "-preset", "slow", "-pix_fmt", "yuv420p",

@@ -2,18 +2,25 @@
 import functools
 import json
 import random
+import re
 import statistics
 
 from . import facts, music
 from .lib import history, load_assets
 
-# (slot, beats). Totals must be 60 beats.
+# (slot, beats). Totals must be 60 beats. Slots only ever get bigger (SCALE_RANK): the caption promises "zoom out", so no
+# Jupiter after the Sun and no other galaxy before our own. mw -> galaxy_zoom stay adjacent (one all-sky zoom serves both).
 TEMPLATES = {
-    "classic": [("earth", 6), ("earth", 4), ("sun", 8), ("planet", 4), ("mw", 8), ("galaxy_zoom", 10), ("deep", 20)],
+    "classic": [("earth", 6), ("earth", 4), ("planet", 4), ("sun", 8), ("mw", 8), ("galaxy_zoom", 10), ("deep", 20)],
     "tour":    [("earth", 6), ("planet", 6), ("nebula", 6), ("nebula", 6), ("mw", 8), ("galaxy_zoom", 10), ("deep", 18)],
-    "deep":    [("earth", 8), ("sun", 6), ("nebula", 8), ("galaxy", 6), ("mw", 6), ("galaxy_zoom", 10), ("deep", 16)],
-    "nebulae": [("earth", 6), ("earth", 4), ("nebula", 8), ("nebula", 6), ("galaxy", 6), ("mw", 6), ("galaxy_zoom", 10), ("deep", 14)],
+    "deep":    [("earth", 8), ("sun", 6), ("nebula", 8), ("mw", 6), ("galaxy_zoom", 10), ("galaxy", 6), ("deep", 16)],
+    "nebulae": [("earth", 6), ("earth", 4), ("nebula", 8), ("nebula", 6), ("mw", 6), ("galaxy_zoom", 10), ("galaxy", 6), ("deep", 14)],
 }
+SCALE_RANK = {"earth": 0, "planet": 1, "sun": 2, "nebula": 3, "mw": 4, "galaxy_zoom": 5, "galaxy": 5, "deep": 6}
+IN_OUR_GALAXY_LY = 1e5      # a "nebula" slot comes before the Milky Way, so its clip must be inside it (MW is ~100,000 ly across)
+OTHER_GALAXY_LY = 1e6       # the zoom after "OUR GALAXY" and the galaxy slots must end outside it (nearest big galaxies: ~2.5M ly)
+DARK_Y = 8                  # probe frame mean luma (gate thumbnail scale) under this counts as dark; the gate's line is 6
+MAX_DARK_FRAMES = 1         # of the 6 probe frames (library/luma_probe.json); more = the gate would likely call it near-black
 SLOT_TIERS = {"earth": ["earth"], "sun": ["sun"], "planet": ["planet"], "nebula": ["nebula"], "galaxy": ["galaxy"],
               "mw": ["galaxy", "nebula"], "galaxy_zoom": ["galaxy", "nebula"], "deep": ["deep"]}
 # eyeballed planet clips (id -> how to frame): box = planet on black background fitted full-width; src_in = allowed start range (s)
@@ -22,8 +29,41 @@ PLANET_CFG = {"weic2332a": dict(mode="box", rng=(21, 25)), "weic2214b": dict(mod
 CLOSER_BEATS = 8   # the last N beats carry the closing line and the credit card
 
 
+def ly_value(d):
+    """'650' -> 650, '5,500' -> 5500, '30 million' -> 3e7, '6.3 billion' -> 6.3e9; None/unparseable -> None."""
+    if not d:
+        return None
+    m = re.match(r"\s*([\d.,]+)\s*(million|billion)?", str(d), re.I)
+    if not m:
+        return None
+    try:
+        v = float(m.group(1).replace(",", ""))
+    except ValueError:
+        return None
+    return v * {"million": 1e6, "billion": 1e9}.get((m.group(2) or "").lower(), 1)
+
+
+def bright_enough(a):
+    """False if the clip's luma probe says the upload gate would likely reject it as near-black. Unprobed clips pass."""
+    ys = a.get("luma")
+    return not ys or sum(y < DARK_Y for y in ys) <= MAX_DARK_FRAMES
+
+
+def scale_ok(slot, a):
+    """The on-screen distance must fit the slot's place in the zoom-out."""
+    d = ly_value(a.get("dist_ly"))
+    if slot == "nebula":
+        return d is None or d < IN_OUR_GALAXY_LY
+    if slot in ("mw", "galaxy_zoom"):   # the all-sky zoom's target is captioned after "OUR GALAXY"
+        return (a["tier"] == "galaxy" and d is None) or (d is not None and d >= OTHER_GALAXY_LY)
+    if slot == "galaxy":
+        return d is None or d >= OTHER_GALAXY_LY
+    return True
+
+
 def pick_asset(slot, assets, used_ids, usage, rng):
-    pool = [a for a in assets if a["tier"] in SLOT_TIERS[slot] and a["id"] not in used_ids and not a.get("unvetted")]
+    pool = [a for a in assets if a["tier"] in SLOT_TIERS[slot] and a["id"] not in used_ids and not a.get("unvetted")
+            and bright_enough(a) and scale_ok(slot, a)]
     if slot in ("mw", "galaxy_zoom"):
         # one all-sky zoom serves both slots, so it must end on something we can caption truthfully
         pool = [a for a in pool if a.get("kind") == "zoom" and a.get("allsky") and (a["tier"] == "galaxy" or a.get("dist_ly"))]
@@ -129,5 +169,9 @@ def plan(seed, template=None, track=None):
         k += beats
     closer = rng.choice(facts.CLOSERS)
     texts.append(dict(text=closer, k0=60 - CLOSER_BEATS, k1=60, size=60 if len(closer) <= 30 else 48, y=560, font="impact"))
+    # music from its best section: the build lands on the deep-field reveal (start of the last deep shot). Own rng, so adding
+    # this did not change which shots/texts a seed gives.
+    k_deep = sum(b for _, b in slots[:max(i for i, (sl, _) in enumerate(slots) if sl == "deep")])
+    tr = dict(tr, start=music.pick_start(tr, T0 + 60 * P, T0 + k_deep * P, random.Random(f"{seed}/music")))
     return dict(seed=seed, template=tname, music=tr, shots=shots, texts=texts, hook=rng.choice(facts.HOOKS),
                 hashtags=rng.choice(facts.HASHTAGS), P=P, T0=T0)

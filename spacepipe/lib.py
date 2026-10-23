@@ -40,8 +40,11 @@ def load_assets():
         assets.append(a)
     cat = LIB / "catalog.json"
     probe = json.loads((LIB / "zoom_probe.json").read_text()) if (LIB / "zoom_probe.json").exists() else {}
+    luma = json.loads((LIB / "luma_probe.json").read_text()) if (LIB / "luma_probe.json").exists() else {}   # spacepipe/probe_luma.py
     for c in json.loads(cat.read_text(encoding="utf-8")) if cat.exists() else []:
         c = dict(c, src=c["site"], path=str(POOL / f"{c['id']}.mp4"))
+        if c["id"] in luma:
+            c["luma"] = luma[c["id"]]["y"]
         pr = probe.get(c["id"])
         if c["id"] in CHART_DENY or CHART_TITLE.search(c["title"]):
             c["unvetted"] = True
