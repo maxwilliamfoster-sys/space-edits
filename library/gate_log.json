@@ -729,5 +729,39 @@
    20276997753216009,
    924214496566509857
   ]
+ },
+ {
+  "id": "20261023_0391",
+  "t": "2026-10-23T00:06:49+00:00",
+  "template": "nebulae",
+  "music": "Eternal Hope",
+  "hook": "How small are you? Watch this.",
+  "closer": "ALL OF HISTORY HAPPENED ON ONE SPECK",
+  "assets": [
+   "potm2408a",
+   "heic1812c",
+   "potm2604c",
+   "weic2518b",
+   "weic2518b",
+   "weic2305a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    2042
+   ],
+   [
+    "earth_exp65",
+    600
+   ]
+  ],
+  "hashes": [
+   10393589892319543296,
+   14454477344210019264,
+   17577779078880621682,
+   27553084959907840,
+   15055780810750737656,
+   13835498447278497954
+  ]
  }
 ]

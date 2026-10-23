@@ -1074,10 +1074,27 @@
     "heic2011c",
     "potm2312a"
    ]
+  },
+  {
+   "id": "20261023_0391",
+   "seed": 391,
+   "template": "nebulae",
+   "music": "Eternal Hope",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "earth_exp65",
+    "potm2408a",
+    "heic1812c",
+    "potm2604c",
+    "weic2518b",
+    "weic2518b",
+    "weic2305a"
+   ]
   }
  ],
  "usage": {
-  "earth_exp65": 97,
+  "earth_exp65": 99,
   "weic2510b": 1,
   "potw2428a": 1,
   "weic2520b": 1,
@@ -1167,7 +1184,7 @@
   "weic2218a": 1,
   "potm2405e": 1,
   "potw2406a": 1,
-  "weic2518b": 2,
+  "weic2518b": 4,
   "potm2603b": 1,
   "heic2505d": 1,
   "heic1819b": 4,
@@ -1176,7 +1193,7 @@
   "heic2505g": 4,
   "heic1801a": 3,
   "weic2216d": 4,
-  "weic2305a": 2,
+  "weic2305a": 3,
   "weic2211c": 4,
   "potw2510a": 1,
   "potw2412a": 1,
@@ -1252,6 +1269,9 @@
   "potw2534a": 1,
   "heic1910b": 1,
   "potw2514a": 1,
-  "potm2602a": 1
+  "potm2602a": 1,
+  "potm2408a": 1,
+  "heic1812c": 1,
+  "potm2604c": 1
  }
 }
