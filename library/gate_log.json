@@ -763,5 +763,38 @@
    15055780810750737656,
    13835498447278497954
   ]
+ },
+ {
+  "id": "20261023_0393",
+  "t": "2026-10-23T06:12:38+00:00",
+  "template": "deep",
+  "music": "Impact Prelude",
+  "hook": "This is how big the universe really is.",
+  "closer": "AND YOU THOUGHT YOUR PROBLEMS WERE BIG",
+  "assets": [
+   "potm2502a",
+   "potw2329a",
+   "weic2503c",
+   "weic2503c",
+   "potm2606b"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    22
+   ],
+   [
+    "sdo_year6",
+    180
+   ]
+  ],
+  "hashes": [
+   11301902862548730106,
+   17940362352205006064,
+   11593093256757181680,
+   15336049312957958,
+   70699319296,
+   150083447230208
+  ]
  }
 ]

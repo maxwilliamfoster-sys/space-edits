@@ -1091,10 +1091,26 @@
     "weic2518b",
     "weic2305a"
    ]
+  },
+  {
+   "id": "20261023_0393",
+   "seed": 393,
+   "template": "deep",
+   "music": "Impact Prelude",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "sdo_year6",
+    "potm2502a",
+    "potw2329a",
+    "weic2503c",
+    "weic2503c",
+    "potm2606b"
+   ]
   }
  ],
  "usage": {
-  "earth_exp65": 99,
+  "earth_exp65": 100,
   "weic2510b": 1,
   "potw2428a": 1,
   "weic2520b": 1,
@@ -1119,7 +1135,7 @@
   "weic2427a": 1,
   "weic2420c": 6,
   "potm2503a": 3,
-  "sdo_year6": 10,
+  "sdo_year6": 11,
   "weic2332a": 8,
   "potm2301b": 6,
   "weic2429a": 3,
@@ -1160,7 +1176,7 @@
   "weic2615b": 4,
   "heic1914b": 4,
   "weic2608c": 4,
-  "potm2606b": 3,
+  "potm2606b": 4,
   "heic2002a": 4,
   "heic1615a": 3,
   "weic2303a": 1,
@@ -1212,7 +1228,7 @@
   "weic2612b": 4,
   "weic2517a": 1,
   "weic2423a": 1,
-  "weic2503c": 2,
+  "weic2503c": 4,
   "potw2502a": 1,
   "potm2608a": 1,
   "potm2607b": 4,
@@ -1272,6 +1288,8 @@
   "potm2602a": 1,
   "potm2408a": 1,
   "heic1812c": 1,
-  "potm2604c": 1
+  "potm2604c": 1,
+  "potm2502a": 1,
+  "potw2329a": 1
  }
 }
