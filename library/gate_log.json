@@ -999,5 +999,71 @@
    18371582493393531104,
    4647869737482641632
   ]
+ },
+ {
+  "id": "20261024_0540",
+  "t": "2026-10-24T19:03:11+00:00",
+  "template": "deep",
+  "music": "Call to Adventure",
+  "hook": "You vs the universe. Watch this.",
+  "closer": "EVERYTHING YOU LOVE IS ON ONE SPECK",
+  "assets": [
+   "heic2409a",
+   "heic1901b",
+   "heic1901b",
+   "potm2310a",
+   "heic1801a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    1964
+   ],
+   [
+    "sdo_year6",
+    82
+   ]
+  ],
+  "hashes": [
+   10266220266324492288,
+   17361641102908633338,
+   10432824905656372992,
+   17793987045362819272,
+   1544552448,
+   74766790688768
+  ]
+ },
+ {
+  "id": "20261024_0554",
+  "t": "2026-10-24T19:06:50+00:00",
+  "template": "deep",
+  "music": "Eternal Hope",
+  "hook": "How small is Earth? Watch this.",
+  "closer": "AND YOU THOUGHT YOUR PROBLEMS WERE BIG",
+  "assets": [
+   "weic2514c",
+   "heic1502a",
+   "heic1502a",
+   "potm2306a",
+   "weic2429a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    786
+   ],
+   [
+    "mercury_transit",
+    10
+   ]
+  ],
+  "hashes": [
+   6929967754413245152,
+   10142336126227149188,
+   4039310849,
+   16168152189213704192,
+   43013465117487112,
+   36521825333250072
+  ]
  }
 ]
