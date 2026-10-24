@@ -899,5 +899,105 @@
    13882505126579699744,
    12148702120707171368
   ]
+ },
+ {
+  "id": "20261024_0421",
+  "t": "2026-10-24T11:32:19+00:00",
+  "template": "deep",
+  "music": "Epic Unease",
+  "hook": "Zoom out from Earth. Keep going.",
+  "closer": "EVERYTHING YOU LOVE IS ON ONE SPECK",
+  "assets": [
+   "potw2552a",
+   "heic2108d",
+   "heic2108d",
+   "potm2604b",
+   "potm2601b"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    1044
+   ],
+   [
+    "mercury_transit",
+    40
+   ]
+  ],
+  "hashes": [
+   12025993056838746210,
+   1419204730794762720,
+   2020784376,
+   264917612494848,
+   8368931006528544910,
+   13216509037029666154
+  ]
+ },
+ {
+  "id": "20261024_0442",
+  "t": "2026-10-24T11:35:26+00:00",
+  "template": "deep",
+  "music": "Windswept",
+  "hook": "Earth is not the main character.",
+  "closer": "EVERYTHING YOU LOVE IS ON ONE SPECK",
+  "assets": [
+   "potw2351a",
+   "heic1919a",
+   "heic1919a",
+   "potm2411b",
+   "potm2606a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    2888
+   ],
+   [
+    "sdo_year6",
+    52
+   ]
+  ],
+  "hashes": [
+   4666262434060956220,
+   4776795927802096,
+   144958515239190528,
+   34896613392,
+   590187986804574208,
+   9368807410695185040
+  ]
+ },
+ {
+  "id": "20261024_0479",
+  "t": "2026-10-24T11:38:27+00:00",
+  "template": "nebulae",
+  "music": "Cut and Run",
+  "hook": "Zoom out from Earth. Keep going.",
+  "closer": "YOU ARE SMALLER THAN YOU THINK",
+  "assets": [
+   "potw2529a",
+   "weic2331a",
+   "potm2306c",
+   "potm2306c",
+   "potw2546a",
+   "potw2527a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    2076
+   ],
+   [
+    "earth_exp65",
+    562
+   ]
+  ],
+  "hashes": [
+   16787432425165487104,
+   14757413040601792516,
+   247157261074432,
+   54197629269311488,
+   18371582493393531104,
+   4647869737482641632
+  ]
  }
 ]
