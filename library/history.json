@@ -1305,10 +1305,27 @@
     "potm2306a",
     "weic2429a"
    ]
+  },
+  {
+   "id": "20261025_0556",
+   "seed": 556,
+   "template": "nebulae",
+   "music": "Evening of Chaos",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "earth_exp65",
+    "potm2504b",
+    "weic2328a",
+    "heic1903a",
+    "heic1903a",
+    "potw2324a",
+    "heic1615a"
+   ]
   }
  ],
  "usage": {
-  "earth_exp65": 119,
+  "earth_exp65": 121,
   "weic2510b": 1,
   "potw2428a": 1,
   "weic2520b": 1,
@@ -1354,7 +1371,7 @@
   "heic1711b": 2,
   "heic2604a": 1,
   "potw2517a": 1,
-  "heic1903a": 6,
+  "heic1903a": 8,
   "potw2527a": 4,
   "potw2525a": 1,
   "potw2316a": 1,
@@ -1376,7 +1393,7 @@
   "weic2608c": 4,
   "potm2606b": 4,
   "heic2002a": 4,
-  "heic1615a": 3,
+  "heic1615a": 4,
   "weic2303a": 1,
   "weic2411b": 2,
   "potw2235c": 1,
@@ -1512,6 +1529,9 @@
   "heic2409a": 1,
   "potm2310a": 1,
   "weic2514c": 1,
-  "potm2306a": 1
+  "potm2306a": 1,
+  "potm2504b": 1,
+  "weic2328a": 1,
+  "potw2324a": 1
  }
 }

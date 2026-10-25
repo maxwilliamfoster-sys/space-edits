@@ -1065,5 +1065,39 @@
    43013465117487112,
    36521825333250072
   ]
+ },
+ {
+  "id": "20261025_0556",
+  "t": "2026-10-25T11:53:17+00:00",
+  "template": "nebulae",
+  "music": "Evening of Chaos",
+  "hook": "How small is Earth? Watch this.",
+  "closer": "YOU ARE SMALLER THAN YOU THINK",
+  "assets": [
+   "potm2504b",
+   "weic2328a",
+   "heic1903a",
+   "heic1903a",
+   "potw2324a",
+   "heic1615a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    1870
+   ],
+   [
+    "earth_exp65",
+    1708
+   ]
+  ],
+  "hashes": [
+   18012420041393831937,
+   576594828045378804,
+   54202332539322368,
+   153157847117463552,
+   17939236928097412300,
+   250688651198464
+  ]
  }
 ]
