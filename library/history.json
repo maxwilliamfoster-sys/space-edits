@@ -1322,17 +1322,66 @@
     "potw2324a",
     "heic1615a"
    ]
+  },
+  {
+   "id": "20261025_0565",
+   "seed": 565,
+   "template": "nebulae",
+   "music": "Impact Prelude",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "earth_exp65",
+    "weic2301a",
+    "potw2510a",
+    "heic1720a",
+    "heic1720a",
+    "weic2410a",
+    "heic1417a"
+   ]
+  },
+  {
+   "id": "20261025_0571",
+   "seed": 571,
+   "template": "tour",
+   "music": "Ghost Story",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "weic2332a",
+    "heic1803d",
+    "heic2507a",
+    "heic2002a",
+    "heic2002a",
+    "potm2312a"
+   ]
+  },
+  {
+   "id": "20261025_0598",
+   "seed": 598,
+   "template": "classic",
+   "music": "Windswept",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "earth_exp65",
+    "weic2214b",
+    "sdo_year6",
+    "heic2201a",
+    "heic2201a",
+    "weic2209b"
+   ]
   }
  ],
  "usage": {
-  "earth_exp65": 121,
+  "earth_exp65": 126,
   "weic2510b": 1,
   "potw2428a": 1,
   "weic2520b": 1,
   "heic1620c": 2,
   "potm2507b": 4,
   "sdo_flare": 12,
-  "weic2214b": 5,
+  "weic2214b": 6,
   "potm2211a": 4,
   "potm2601b": 3,
   "potw2511a": 1,
@@ -1350,8 +1399,8 @@
   "weic2427a": 1,
   "weic2420c": 6,
   "potm2503a": 4,
-  "sdo_year6": 14,
-  "weic2332a": 8,
+  "sdo_year6": 15,
+  "weic2332a": 9,
   "potm2301b": 6,
   "weic2429a": 5,
   "heic1919a": 6,
@@ -1359,12 +1408,12 @@
   "heic2312b": 5,
   "potw2504a": 1,
   "weic2514b": 2,
-  "heic2201a": 4,
-  "potm2312a": 4,
+  "heic2201a": 6,
+  "potm2312a": 5,
   "potw2403a": 1,
   "heic2301b": 1,
   "potm2306c": 6,
-  "heic1417a": 4,
+  "heic1417a": 5,
   "weic2606a": 6,
   "heic1712b": 1,
   "weic2316c": 1,
@@ -1379,7 +1428,7 @@
   "potm2609a": 3,
   "weic2619b": 1,
   "potm2608b": 1,
-  "weic2209b": 3,
+  "weic2209b": 4,
   "heic1716a": 1,
   "weic2212e": 1,
   "potw2445a": 1,
@@ -1392,7 +1441,7 @@
   "heic1914b": 4,
   "weic2608c": 4,
   "potm2606b": 4,
-  "heic2002a": 4,
+  "heic2002a": 6,
   "heic1615a": 4,
   "weic2303a": 1,
   "weic2411b": 2,
@@ -1401,7 +1450,7 @@
   "weic2305b": 4,
   "weic2311a": 1,
   "weic2608b": 1,
-  "heic1720a": 8,
+  "heic1720a": 10,
   "potm2303b": 6,
   "heic1816b": 3,
   "heic2211a": 1,
@@ -1426,7 +1475,7 @@
   "weic2216d": 4,
   "weic2305a": 3,
   "weic2211c": 8,
-  "potw2510a": 1,
+  "potw2510a": 2,
   "potw2412a": 1,
   "heic1502a": 6,
   "weic2207d": 1,
@@ -1532,6 +1581,10 @@
   "potm2306a": 1,
   "potm2504b": 1,
   "weic2328a": 1,
-  "potw2324a": 1
+  "potw2324a": 1,
+  "weic2301a": 1,
+  "weic2410a": 1,
+  "heic1803d": 1,
+  "heic2507a": 1
  }
 }

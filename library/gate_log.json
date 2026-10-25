@@ -1099,5 +1099,71 @@
    17939236928097412300,
    250688651198464
   ]
+ },
+ {
+  "id": "20261025_0571",
+  "t": "2026-10-25T19:21:18+00:00",
+  "template": "tour",
+  "music": "Ghost Story",
+  "hook": "This is how big the universe is.",
+  "closer": "AND WE ARE ONE TINY ROCK",
+  "assets": [
+   "weic2332a",
+   "heic1803d",
+   "heic2507a",
+   "heic2002a",
+   "heic2002a",
+   "potm2312a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    2002
+   ]
+  ],
+  "hashes": [
+   17931346679532151808,
+   16787441324472185056,
+   1067836243968,
+   1879113728,
+   1742899991295295488,
+   4637859767690793072
+  ]
+ },
+ {
+  "id": "20261025_0598",
+  "t": "2026-10-25T19:24:44+00:00",
+  "template": "classic",
+  "music": "Windswept",
+  "hook": "This is how big the universe is.",
+  "closer": "YOU ARE SMALLER THAN YOU THINK",
+  "assets": [
+   "weic2214b",
+   "heic2201a",
+   "heic2201a",
+   "weic2209b"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    2744
+   ],
+   [
+    "earth_exp65",
+    1300
+   ],
+   [
+    "sdo_year6",
+    108
+   ]
+  ],
+  "hashes": [
+   17562849858181660677,
+   8691465595496535632,
+   3772002818,
+   70464307200,
+   918920070330616,
+   4667093015740932096
+  ]
  }
 ]
