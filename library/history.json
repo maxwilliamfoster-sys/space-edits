@@ -1404,10 +1404,26 @@
     "potm2310b",
     "weic2522a"
    ]
+  },
+  {
+   "id": "20261026_0624",
+   "seed": 624,
+   "template": "tour",
+   "music": "Crossing the Chasm",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "weic2606a",
+    "potw2506a",
+    "heic2505e",
+    "heic2108d",
+    "heic2108d",
+    "heic1417a"
+   ]
   }
  ],
  "usage": {
-  "earth_exp65": 129,
+  "earth_exp65": 130,
   "weic2510b": 1,
   "potw2428a": 1,
   "weic2520b": 1,
@@ -1446,8 +1462,8 @@
   "potw2403a": 1,
   "heic2301b": 1,
   "potm2306c": 6,
-  "heic1417a": 5,
-  "weic2606a": 6,
+  "heic1417a": 6,
+  "weic2606a": 7,
   "heic1712b": 1,
   "weic2316c": 1,
   "heic1711b": 2,
@@ -1513,7 +1529,7 @@
   "heic1502a": 6,
   "weic2207d": 1,
   "potw2516a": 1,
-  "heic2108d": 4,
+  "heic2108d": 6,
   "weic2418a": 4,
   "heic1509d": 1,
   "potw2528a": 1,
@@ -1623,6 +1639,8 @@
   "weic2212d": 1,
   "heic2313a": 1,
   "heic2608a": 1,
-  "potm2310b": 1
+  "potm2310b": 1,
+  "potw2506a": 1,
+  "heic2505e": 1
  }
 }

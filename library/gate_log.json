@@ -1229,5 +1229,35 @@
    16204198715729174768,
    4612475771758969480
   ]
+ },
+ {
+  "id": "20261026_0624",
+  "t": "2026-10-26T21:13:47+00:00",
+  "template": "tour",
+  "music": "Crossing the Chasm",
+  "hook": "You vs the universe. Watch this.",
+  "closer": "EVERYTHING YOU LOVE IS ON ONE SPECK",
+  "assets": [
+   "weic2606a",
+   "potw2506a",
+   "heic2505e",
+   "heic2108d",
+   "heic2108d",
+   "heic1417a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    1144
+   ]
+  ],
+  "hashes": [
+   7591222431170327055,
+   17420276065152303619,
+   964300111872,
+   208050061312,
+   72746008576,
+   97273359368192
+  ]
  }
 ]
