@@ -1371,10 +1371,43 @@
     "heic2201a",
     "weic2209b"
    ]
+  },
+  {
+   "id": "20261026_0608",
+   "seed": 608,
+   "template": "tour",
+   "music": "Evening of Chaos",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "heic1914b",
+    "heic1608c",
+    "weic2212d",
+    "heic1811a",
+    "heic1811a",
+    "potm2505a"
+   ]
+  },
+  {
+   "id": "20261026_0617",
+   "seed": 617,
+   "template": "nebulae",
+   "music": "Windswept",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "earth_exp65",
+    "heic2313a",
+    "heic2608a",
+    "weic2211c",
+    "weic2211c",
+    "potm2310b",
+    "weic2522a"
+   ]
   }
  ],
  "usage": {
-  "earth_exp65": 126,
+  "earth_exp65": 129,
   "weic2510b": 1,
   "potw2428a": 1,
   "weic2520b": 1,
@@ -1404,7 +1437,7 @@
   "potm2301b": 6,
   "weic2429a": 5,
   "heic1919a": 6,
-  "weic2522a": 3,
+  "weic2522a": 4,
   "heic2312b": 5,
   "potw2504a": 1,
   "weic2514b": 2,
@@ -1438,7 +1471,7 @@
   "potm2604a": 1,
   "potm2407a": 1,
   "weic2615b": 6,
-  "heic1914b": 4,
+  "heic1914b": 5,
   "weic2608c": 4,
   "potm2606b": 4,
   "heic2002a": 6,
@@ -1456,10 +1489,10 @@
   "heic2211a": 1,
   "potm2410c": 1,
   "weic2427b": 4,
-  "potm2505a": 3,
+  "potm2505a": 4,
   "potw2418a": 1,
   "potm2506d": 1,
-  "heic1811a": 6,
+  "heic1811a": 8,
   "heic1901b": 8,
   "weic2218a": 1,
   "potm2405e": 1,
@@ -1474,7 +1507,7 @@
   "heic1801a": 4,
   "weic2216d": 4,
   "weic2305a": 3,
-  "weic2211c": 8,
+  "weic2211c": 10,
   "potw2510a": 2,
   "potw2412a": 1,
   "heic1502a": 6,
@@ -1585,6 +1618,11 @@
   "weic2301a": 1,
   "weic2410a": 1,
   "heic1803d": 1,
-  "heic2507a": 1
+  "heic2507a": 1,
+  "heic1608c": 1,
+  "weic2212d": 1,
+  "heic2313a": 1,
+  "heic2608a": 1,
+  "potm2310b": 1
  }
 }

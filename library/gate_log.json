@@ -1165,5 +1165,69 @@
    918920070330616,
    4667093015740932096
   ]
+ },
+ {
+  "id": "20261026_0608",
+  "t": "2026-10-26T13:28:19+00:00",
+  "template": "tour",
+  "music": "Evening of Chaos",
+  "hook": "This is how big the universe is.",
+  "closer": "AND YOU THOUGHT YOUR PROBLEMS WERE BIG",
+  "assets": [
+   "heic1914b",
+   "heic1608c",
+   "weic2212d",
+   "heic1811a",
+   "heic1811a",
+   "potm2505a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    1628
+   ]
+  ],
+  "hashes": [
+   3742759008281296896,
+   1220740465888346112,
+   247156187332608,
+   9069185972043776,
+   16207577518711565291,
+   12872101774703495265
+  ]
+ },
+ {
+  "id": "20261026_0617",
+  "t": "2026-10-26T13:31:39+00:00",
+  "template": "nebulae",
+  "music": "Windswept",
+  "hook": "You vs the universe. Watch this.",
+  "closer": "YOU ARE SMALLER THAN YOU THINK",
+  "assets": [
+   "heic2313a",
+   "heic2608a",
+   "weic2211c",
+   "weic2211c",
+   "potm2310b",
+   "weic2522a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    1200
+   ],
+   [
+    "earth_exp65",
+    48
+   ]
+  ],
+  "hashes": [
+   8771310000002071566,
+   14478193054864949248,
+   1881968332621508832,
+   36028798629576704,
+   16204198715729174768,
+   4612475771758969480
+  ]
  }
 ]
