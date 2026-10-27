@@ -75,7 +75,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A library/history.json library/posted.json library/gate_log.json 2>/dev/null || git add library/history.json
+          git add -A library/history.json library/posted.json library/gate_log.json library/alerts.json 2>/dev/null || git add library/history.json
           git diff --staged --quiet && exit 0
           git commit -m "state: $(date -u +%Y-%m-%dT%H:%M)"
           for i in 1 2 3; do

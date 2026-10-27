@@ -212,5 +212,41 @@ class Reconcile(Base):
         self.assertLess(body.index("reconcile(posted"), body.index("pending_posts("))
 
 
+class QuotaWarningOnce(unittest.TestCase):
+    """A standing low-quota condition warns once a day, not on every 3-a-day run (review 2026-10-27)."""
+
+    def setUp(self):
+        import tempfile
+        self.path = Path(tempfile.mkdtemp()) / "alerts.json"
+        patcher = mock.patch.object(ci_run, "ALERTS", self.path)
+        patcher.start()
+        self.addCleanup(patcher.stop)
+        self.t0 = NOW.timestamp()
+
+    def test_first_low_warns_then_quiet_for_a_day(self):
+        self.assertTrue(ci_run.alert_once("buffer_quota_low", "30d", now=self.t0))
+        self.assertFalse(ci_run.alert_once("buffer_quota_low", "30d", now=self.t0 + 5 * 3600))
+        self.assertTrue(ci_run.alert_once("buffer_quota_low", "30d", now=self.t0 + 86400))
+
+    def test_a_newly_low_window_warns_at_once(self):
+        ci_run.alert_once("buffer_quota_low", "30d", now=self.t0)
+        self.assertTrue(ci_run.alert_once("buffer_quota_low", "24h,30d", now=self.t0 + 60))
+
+    def test_recovery_clears_so_the_next_low_warns(self):
+        ci_run.alert_once("buffer_quota_low", "30d", now=self.t0)
+        self.assertFalse(ci_run.alert_once("buffer_quota_low", None, now=self.t0 + 60))
+        self.assertEqual(json.loads(self.path.read_text(encoding="utf-8")), {})
+        self.assertTrue(ci_run.alert_once("buffer_quota_low", "30d", now=self.t0 + 120))
+
+    def test_no_condition_and_no_file_writes_nothing(self):
+        self.assertFalse(ci_run.alert_once("buffer_quota_low", None, now=self.t0))
+        self.assertFalse(self.path.exists())
+
+    def test_the_workflow_commits_the_alert_state(self):
+        wf = (Path(ci_run.__file__).parent / ".github/workflows/post.yml").read_text(encoding="utf-8")
+        self.assertIn("library/alerts.json", wf)
+        self.assertTrue((Path(ci_run.__file__).parent / "library/alerts.json").exists())   # git add -A fails on a missing path
+
+
 if __name__ == "__main__":
     unittest.main()

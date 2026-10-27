@@ -37,6 +37,8 @@ POSTED = LIB / "posted.json"      # {edit id: {post, due, file, mode, status[, s
 FINAL = ("sent", "error", "missing")   # statuses that are never asked again
 RECONCILE_GRACE_S = 1800          # ask about a post this long after its due time (TikTok takes 1-3 min to take it)
 RECONCILE_MAX = 40                # posts asked per run: 2 calls of the shared Buffer quota at most (20 per call)
+ALERTS = LIB / "alerts.json"      # {kind: {key, at}}: a standing warning goes out once a day, not every run (committed by the workflow)
+ALERT_REPEAT_S = 86400
 
 
 def telegram_text(text):
@@ -47,6 +49,22 @@ def telegram_text(text):
 
 def emit(kind, severity, title, body="", data=None):
     app_events.emit("space", kind, severity, title, body, data=data, fallback=telegram_text)
+
+
+def alert_once(kind, key, now=None):
+    """True when a standing condition `key` is new, has changed, or was last alerted a day ago; key None clears it."""
+    now = time.time() if now is None else now
+    alerts = json.loads(ALERTS.read_text(encoding="utf-8")) if ALERTS.exists() else {}
+    last = alerts.get(kind)
+    if key is None:
+        fire, changed = False, alerts.pop(kind, None) is not None
+    else:
+        fire = changed = not last or last.get("key") != key or now - last.get("at", 0) >= ALERT_REPEAT_S
+        if fire:
+            alerts[kind] = {"key": key, "at": now}
+    if changed:
+        ALERTS.write_text(json.dumps(alerts, indent=1), encoding="utf-8")
+    return fire
 
 
 def load_posted():
@@ -140,7 +158,7 @@ def main():
             save_posted(posted)
         pending = publish.pending_posts(org, chan)
         low = publish.client().quota_low()
-        if low:
+        if alert_once("buffer_quota_low", ",".join(sorted(low)) or None):
             emit("buffer_quota_low", "warning", "Space: Buffer API quota is running low",
                  f"Under 15% left in: {', '.join(low)} (the key may be shared with other bots)", data=publish.client().remaining())
         need = min(EDITS_PER_RUN, QUEUE_TARGET - len(pending))

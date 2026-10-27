@@ -9,8 +9,8 @@
       "local_patch": true
     },
     "buffer_client.py": {
-      "sha256": "c079fe5992421fe24378c6d4751763dce2a72a9d7477a961a8a9b1eafff4f104",
-      "master_sha": "cdc873836f87d8d51b7fbaa77632d30b23f55952718828643c4bb6a6ea46947c",
+      "sha256": "45ac0c551f5be9ad2a18827efa6d93613d0e99a8e01ab915033fa0fb51e62023",
+      "master_sha": "707f8617e76d9b7ec481db83aa7b8b115b94c24985463d835ae713dba47a5b19",
       "local_patch": true
     },
     "hook_lint.py": {
