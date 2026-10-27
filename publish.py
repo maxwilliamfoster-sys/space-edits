@@ -151,10 +151,17 @@ def _gql(query, variables=None):
         raise PublishError(str(e)) from e
 
 
+def _graphql_refusal(e):
+    """True only for a GraphQL error in an HTTP 200 reply (e.g. 'post not found'). An HTTP 5xx/401, a reply with no data or
+    a missing key is the API being down, never evidence that a post is gone (review 2026-10-27)."""
+    return isinstance(e.__cause__, buffer_client.BufferError) and str(e.__cause__).startswith("Buffer error:")
+
+
 def post_statuses(ids):
     """{post id: {id, status, dueAt, sentAt, externalLink, error{message}} or None if Buffer no longer has it}.
-    One request per STATUS_CHUNK ids; if a chunk fails (e.g. one post was deleted) its ids are asked one by one so the
-    others still resolve. Raises BufferRateLimited on a 429."""
+    One request per STATUS_CHUNK ids; if a chunk is refused with a GraphQL error (e.g. one post was deleted) its ids are
+    asked one by one so the others still resolve. Raises BufferRateLimited on a 429 and PublishError when Buffer itself
+    fails (HTTP error, no data), so an outage never marks posts as missing."""
     out = {}
     for i in range(0, len(ids), STATUS_CHUNK):
         part = list(ids[i:i + STATUS_CHUNK])
@@ -164,11 +171,15 @@ def post_statuses(ids):
             data = _gql(query, {f"i{k}": {"id": pid} for k, pid in enumerate(part)})
             for k, pid in enumerate(part):
                 out[pid] = data.get(f"p{k}")
-        except PublishError:
+        except PublishError as e:
+            if not _graphql_refusal(e):
+                raise
             for pid in part:
                 try:
                     out[pid] = _gql(f"query($i: PostInput!) {{ post(input: $i) {{ {STATUS_FIELDS} }} }}", {"i": {"id": pid}})["post"]
                 except PublishError as e:
+                    if not _graphql_refusal(e):
+                        raise
                     print(f"[buffer] post {pid}: {str(e)[:150]}")
                     out[pid] = None
     return out

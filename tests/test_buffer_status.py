@@ -182,6 +182,17 @@ class Reconcile(Base):
         self.assertFalse(ci_run.reconcile(posted, now=NOW, emit=lambda *a, **k: None))
         self.assertEqual(json.dumps(posted, sort_keys=True), before)
 
+    def test_buffer_outage_marks_nothing_missing(self):
+        # review 2026-10-27: an HTTP 5xx (or 401) used to fall through to the one-by-one retry, every id failed the same
+        # way and was stored as None -> status "missing" (final, never asked again) plus a post_failed alert per post.
+        for status in (502, 503, 401):
+            self.use(Fake(lambda b, s=status: (s, {"message": "upstream unavailable"})))
+            posted, events = self.posted(), []
+            before = json.dumps(posted, sort_keys=True)
+            self.assertFalse(ci_run.reconcile(posted, now=NOW, emit=lambda *a, **k: events.append(a)))
+            self.assertEqual(json.dumps(posted, sort_keys=True), before, status)
+            self.assertEqual(events, [], status)
+
     def test_at_most_max_posts_per_run(self):
         states = {f"p{k}": {"id": f"p{k}", "status": "sent"} for k in range(60)}
         fake = self.use(Fake(post_reply(states)))
