@@ -1,4 +1,4 @@
-# vendored from growth-lab/audio_norm.py @ 7ec3a82 - do not edit here; change the master and run sync_vendored.py
+# vendored from growth-lab/audio_norm.py @ a0fbaa7 - do not edit here; change the master and run sync_vendored.py
 """audio_norm: two-pass LINEAR loudness normalisation (growth-lab S3, master copy).
 
 Edit it HERE, then roll it out with sync_vendored.py. Stdlib + the ffmpeg binary.
@@ -48,6 +48,7 @@ report parser), under the MIT licence:
     SOFTWARE.
 """
 import json
+import math
 import os
 import shutil
 import subprocess
@@ -107,9 +108,10 @@ def needs_limiter(measured, target=TARGET, above_db=LIMIT_ABOVE_DB, tp=TRUE_PEAK
     boost would push the measured true peak past `tp`: loudnorm's linear mode
     only holds while measured_TP + gain <= TP, otherwise it silently switches to
     dynamic mode (seen on a mastered music bed: -16.8 LUFS, TP near 0, +3 dB ->
-    "dynamic", space-edits 2026-10-23)."""
+    "dynamic", space-edits 2026-10-23). A small CUT can break it too: -12.9 LUFS
+    with TP -0.2 needs -1.1 dB, which leaves TP at -1.3 > -1.5."""
     gain = static_gain(measured, target)
-    return gain > above_db or (gain > 0 and float(measured["input_tp"]) + gain > tp)
+    return gain > above_db or float(measured["input_tp"]) + gain > tp
 
 
 def limiter_filter(gain_db, tp=TRUE_PEAK, margin_db=LIMIT_MARGIN_DB):
@@ -131,6 +133,10 @@ def apply_filter(measured, target=TARGET, tp=TRUE_PEAK, lra=LRA, sample_rate=SAM
     # dynamic mode. A steady tone or drone really measures 0.00 LU, so pass a
     # hair above it (seen with ffmpeg 8.1.1 on a sine, 2026-10-23).
     m_lra = m["input_lra"] if float(m["input_lra"]) > 0 else 0.01
+    # Linear mode also needs measured_LRA <= the LRA target, else it goes dynamic (narration
+    # with pauses measured 15.6 LU vs LRA=11). One constant gain never changes the LRA, so
+    # lift the target to fit (loudnorm accepts LRA up to 50).
+    lra = min(50.0, max(float(lra), math.ceil(float(m["input_lra"]) * 10) / 10))
     return (f"loudnorm={_target(target, tp, lra)}:measured_I={m['input_i']}:"
             f"measured_TP={m['input_tp']}:measured_LRA={m_lra}:"
             f"measured_thresh={m['input_thresh']}:offset={m['target_offset']}:"

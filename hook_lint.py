@@ -1,4 +1,4 @@
-# vendored from growth-lab/hook_lint.py @ 016fdd6 - do not edit here; change the master and run sync_vendored.py
+# vendored from growth-lab/hook_lint.py @ a0fbaa7 - do not edit here; change the master and run sync_vendored.py
 """hook_lint: deterministic hook, tag and true-crime wording checks (growth-lab S5, master copy).
 
 Edit it HERE, then roll it out with sync_vendored.py. Stdlib only, zero tokens.
@@ -87,8 +87,12 @@ _NUMBER = re.compile(
     r"hundred|thousand|million|billion|trillion|half|twice|dozen|percent)\b", re.I)
 _ELLIPSIS = re.compile(r"(\.\.\.|…)$")
 _CLOSERS = "\"')]}’” \t"
-_DOUBLED = re.compile(r"\b(\w+)\s+\1\b", re.I)
+# Same line only (a caption's line break is not a doubled word); a hyphen after the repeat is
+# a compound name ("Boutros Boutros-Ghali"). Kept in step with upload_gate.DOUBLED_RE.
+_DOUBLED = re.compile(r"\b(\w+)[ \t]+\1\b(?!-)", re.I)
 DOUBLE_OK = {"had", "that"}
+# Real doubled names, allowed only when both words are capitalised ("Sirhan Sirhan").
+DOUBLED_NAMES = {"sirhan", "sing", "bora", "walla", "pago", "duran", "mahi", "baden", "tora"}
 _WORD = re.compile(r"[\w'’-]+", re.U)
 
 # Capitalised words that open ordinary sentences: not names or places.
@@ -226,6 +230,9 @@ def _doubled(text):
     for m in _DOUBLED.finditer(text or ""):
         w = m.group(1).lower()
         if w in DOUBLE_OK or w.isdigit():
+            continue
+        second = m.group(0).split()[-1]
+        if w in DOUBLED_NAMES and m.group(1)[:1].isupper() and second[:1].isupper():
             continue
         out.append(Issue("doubled_word", "fail", f"Doubled word: '{m.group(0)}'."))
     return out
