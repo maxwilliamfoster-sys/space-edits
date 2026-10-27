@@ -1420,10 +1420,42 @@
     "heic2108d",
     "heic1417a"
    ]
+  },
+  {
+   "id": "20261027_0626",
+   "seed": 626,
+   "template": "deep",
+   "music": "Dreams Become Real",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "mercury_transit",
+    "heic2414b",
+    "heic1919a",
+    "heic1919a",
+    "weic2420a",
+    "heic1816b"
+   ]
+  },
+  {
+   "id": "20261027_0665",
+   "seed": 665,
+   "template": "tour",
+   "music": "Cut and Run",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "heic2312b",
+    "heic1819c",
+    "potw2540a",
+    "potm2306c",
+    "potm2306c",
+    "heic1711a"
+   ]
   }
  ],
  "usage": {
-  "earth_exp65": 130,
+  "earth_exp65": 132,
   "weic2510b": 1,
   "potw2428a": 1,
   "weic2520b": 1,
@@ -1440,10 +1472,10 @@
   "heic1816a": 3,
   "potw2434a": 1,
   "potm2601a": 1,
-  "weic2420a": 1,
+  "weic2420a": 2,
   "heic2018b": 2,
   "potm2606a": 4,
-  "mercury_transit": 12,
+  "mercury_transit": 13,
   "potm2510b": 1,
   "weic2427a": 1,
   "weic2420c": 6,
@@ -1452,16 +1484,16 @@
   "weic2332a": 9,
   "potm2301b": 6,
   "weic2429a": 5,
-  "heic1919a": 6,
+  "heic1919a": 8,
   "weic2522a": 4,
-  "heic2312b": 5,
+  "heic2312b": 6,
   "potw2504a": 1,
   "weic2514b": 2,
   "heic2201a": 6,
   "potm2312a": 5,
   "potw2403a": 1,
   "heic2301b": 1,
-  "potm2306c": 6,
+  "potm2306c": 8,
   "heic1417a": 6,
   "weic2606a": 7,
   "heic1712b": 1,
@@ -1482,7 +1514,7 @@
   "weic2212e": 1,
   "potw2445a": 1,
   "heic2304d": 2,
-  "heic1711a": 3,
+  "heic1711a": 4,
   "weic2620a": 1,
   "potm2604a": 1,
   "potm2407a": 1,
@@ -1501,7 +1533,7 @@
   "weic2608b": 1,
   "heic1720a": 10,
   "potm2303b": 6,
-  "heic1816b": 3,
+  "heic1816b": 4,
   "heic2211a": 1,
   "potm2410c": 1,
   "weic2427b": 4,
@@ -1641,6 +1673,9 @@
   "heic2608a": 1,
   "potm2310b": 1,
   "potw2506a": 1,
-  "heic2505e": 1
+  "heic2505e": 1,
+  "heic2414b": 1,
+  "heic1819c": 1,
+  "potw2540a": 1
  }
 }
