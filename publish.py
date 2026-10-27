@@ -4,6 +4,11 @@ host_video(): Buffer needs a public direct HTTPS URL it fetches at publish time,
 orphan `media` branch (served by GitHub Pages at https://<owner>.github.io/<repo>/v/<file>.mp4); only the last KEEP are kept.
 The branch is rewritten each time (it is a throwaway orphan), after the existing videos have been fetched and carried over.
 schedule_tiktok(): Buffer GraphQL createPost for the mcfiddler.bob channel (BUFFER_CHANNEL_ID).
+post_statuses(): what happened to posts already handed to Buffer (sent / error / still scheduled), one call per 20 posts.
+
+Every Buffer call goes through growth-lab buffer_client (S7, vendored): it logs the RateLimit headers on each reply and
+raises BufferRateLimited on a 429, which is never read as "no posts". Free plan, PER API KEY (shared with Escape Cup and
+BCF if they use the same key): 100 calls / 15 min, 250 / 24 h, 3,000 / 30 days.
 """
 import os
 import shutil
@@ -14,7 +19,8 @@ from datetime import datetime, timezone
 
 import requests
 
-BUFFER_API = "https://api.buffer.com"
+import buffer_client
+
 KEEP = 12
 PAGES_WAIT_S = 600
 PAGES_RETRIGGER_S = 300
@@ -116,18 +122,56 @@ def host_video(path, filename, protect=()):
         shutil.rmtree(tmp, ignore_errors=True)
 
 
+_client = None
+STATUS_FIELDS = "id status dueAt sentAt externalLink error { message }"
+STATUS_CHUNK = 20      # posts per status query (aliased post(input:) fields in one request = one call of the quota)
+
+
+def client():
+    """The run's BufferClient (key from BUFFER_API_KEY)."""
+    global _client
+    if _client is None or _client.api_key != os.environ.get("BUFFER_API_KEY", ""):
+        _client = buffer_client.BufferClient()
+    return _client
+
+
+def reset_client():
+    global _client
+    _client = None
+
+
 def _gql(query, variables=None):
-    key = os.environ.get("BUFFER_API_KEY")
-    if not key:
+    if not os.environ.get("BUFFER_API_KEY"):
         raise PublishError("BUFFER_API_KEY not set")
-    r = requests.post(BUFFER_API, json={"query": query, "variables": variables or {}},
-                      headers={"Authorization": f"Bearer {key}"}, timeout=60)
-    if r.status_code != 200:
-        raise PublishError(f"Buffer HTTP {r.status_code}: {r.text[:300]}")
-    body = r.json()
-    if body.get("errors"):
-        raise PublishError(f"Buffer error: {body['errors'][0].get('message')}")
-    return body["data"]
+    try:
+        return client().gql(query, variables)
+    except buffer_client.BufferRateLimited:
+        raise                       # its own type: callers must never read a 429 as "missing"
+    except buffer_client.BufferError as e:
+        raise PublishError(str(e)) from e
+
+
+def post_statuses(ids):
+    """{post id: {id, status, dueAt, sentAt, externalLink, error{message}} or None if Buffer no longer has it}.
+    One request per STATUS_CHUNK ids; if a chunk fails (e.g. one post was deleted) its ids are asked one by one so the
+    others still resolve. Raises BufferRateLimited on a 429."""
+    out = {}
+    for i in range(0, len(ids), STATUS_CHUNK):
+        part = list(ids[i:i + STATUS_CHUNK])
+        query = ("query(" + ", ".join(f"$i{k}: PostInput!" for k in range(len(part))) + ") { "
+                 + " ".join(f"p{k}: post(input: $i{k}) {{ {STATUS_FIELDS} }}" for k in range(len(part))) + " }")
+        try:
+            data = _gql(query, {f"i{k}": {"id": pid} for k, pid in enumerate(part)})
+            for k, pid in enumerate(part):
+                out[pid] = data.get(f"p{k}")
+        except PublishError:
+            for pid in part:
+                try:
+                    out[pid] = _gql(f"query($i: PostInput!) {{ post(input: $i) {{ {STATUS_FIELDS} }} }}", {"i": {"id": pid}})["post"]
+                except PublishError as e:
+                    print(f"[buffer] post {pid}: {str(e)[:150]}")
+                    out[pid] = None
+    return out
 
 
 def tiktok_channel():

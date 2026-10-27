@@ -33,7 +33,10 @@ QUEUE_TARGET = 6                  # never keep more than this many posts waiting
 # UK lunch / evening / late evening and US East 8am / 1pm / 6pm. Raise only after ~2 weeks of analytics show no suppression.
 SLOT_HOURS_UTC = (12, 17, 22)
 MIN_GAP_S = 5400                  # a slot must be this far from every post already waiting (old 2-hourly posts still in Buffer too)
-POSTED = LIB / "posted.json"      # {edit id: {post, due, file}} (committed by the workflow)
+POSTED = LIB / "posted.json"      # {edit id: {post, due, file, mode, status[, sent_at, link, error]}} (committed by the workflow)
+FINAL = ("sent", "error", "missing")   # statuses that are never asked again
+RECONCILE_GRACE_S = 1800          # ask about a post this long after its due time (TikTok takes 1-3 min to take it)
+RECONCILE_MAX = 40                # posts asked per run: 2 calls of the shared Buffer quota at most (20 per call)
 
 
 def telegram_text(text):
@@ -48,6 +51,60 @@ def emit(kind, severity, title, body="", data=None):
 
 def load_posted():
     return json.loads(POSTED.read_text(encoding="utf-8")) if POSTED.exists() else {}
+
+
+def save_posted(posted):
+    POSTED.write_text(json.dumps(posted, indent=1), encoding="utf-8")
+
+
+def posted_entry(post, due, fname):
+    return dict(post=post["id"], due=due.isoformat().replace("+00:00", "Z"), file=fname, mode=SOUND_MODE, status="scheduled")
+
+
+def reconcile(posted, now=None, emit=None):
+    """Ask Buffer what happened to every post whose due time passed (plus a grace) and that has no final status yet, and
+    record it in `posted` (status sent / error / missing, plus sent_at, link or error). A failed post is reported to Bot HQ
+    as post_failed (once), a sent one as posted. Never raises: a Buffer problem here must not stop the run, it just leaves
+    the entries to the next run. Returns True if `posted` changed."""
+    now = now or datetime.now(timezone.utc)
+    emit = emit or globals()["emit"]
+    due = [(eid, v) for eid, v in posted.items()
+           if v.get("post") and v.get("status") not in FINAL
+           and datetime.fromisoformat(v["due"].replace("Z", "+00:00")) + timedelta(seconds=RECONCILE_GRACE_S) < now]
+    due.sort(key=lambda kv: kv[1]["due"])
+    due = due[:RECONCILE_MAX]
+    if not due:
+        return False
+    try:
+        got = publish.post_statuses([v["post"] for _, v in due])
+    except Exception as e:   # BufferRateLimited, network, ...: try again next run
+        print(f"[buffer] status check skipped: {type(e).__name__}: {str(e)[:200]}")
+        return False
+    changed = False
+    for eid, v in due:
+        node = got.get(v["post"], False)
+        if node is False:
+            continue
+        status = "missing" if node is None else node.get("status") or "unknown"
+        if status == v.get("status"):
+            continue
+        v["status"] = status
+        changed = True
+        if status == "sent":
+            v["sent_at"] = node.get("sentAt")
+            if node.get("externalLink"):
+                v["link"] = node["externalLink"]
+            emit("posted", "info", f"Space: {eid} posted on TikTok", node.get("externalLink") or f"Buffer post {v['post']}",
+                 data={"edit": eid, "post": v["post"], "link": node.get("externalLink")})
+        elif status == "error":
+            v["error"] = ((node.get("error") or {}).get("message") or "unknown error")[:300]
+            emit("post_failed", "error", f"Space: Buffer failed to post {eid}", f"Due {v['due']}: {v['error']}",
+                 data={"edit": eid, "post": v["post"], "due": v["due"]})
+        elif status == "missing":
+            emit("post_failed", "warning", f"Space: Buffer post for {eid} no longer exists",
+                 f"Due {v['due']}, post {v['post']} (deleted in Buffer?)", data={"edit": eid, "post": v["post"]})
+    print("[buffer] post status: " + ", ".join(f"{eid}={v.get('status')}" for eid, v in due))
+    return changed
 
 
 def next_slot(taken, now=None):
@@ -78,7 +135,14 @@ def main():
     org = chan = None
     if AUTO_POST:
         org, chan = publish.tiktok_channel()
+        posted = load_posted()
+        if reconcile(posted):   # sent / error for past-due posts, so a failed post is seen instead of silently refilled
+            save_posted(posted)
         pending = publish.pending_posts(org, chan)
+        low = publish.client().quota_low()
+        if low:
+            emit("buffer_quota_low", "warning", "Space: Buffer API quota is running low",
+                 f"Under 15% left in: {', '.join(low)} (the key may be shared with other bots)", data=publish.client().remaining())
         need = min(EDITS_PER_RUN, QUEUE_TARGET - len(pending))
         print(f"[buffer] {len(pending)} post(s) waiting, making {max(need, 0)}")
         if need <= 0:
@@ -134,8 +198,8 @@ def main():
         post = publish.schedule_tiktok(chan, url, caption, due, notify=(SOUND_MODE == "tiktok"))
         taken.append(due)
         protect.append(fname)
-        posted[eid] = dict(post=post["id"], due=due.isoformat().replace("+00:00", "Z"), file=fname, mode=SOUND_MODE)
-        POSTED.write_text(json.dumps(posted, indent=1), encoding="utf-8")
+        posted[eid] = posted_entry(post, due, fname)
+        save_posted(posted)
         gate.record(plan, folder, eid)
         what = "notification (add a TikTok sound in the app)" if SOUND_MODE == "tiktok" else "auto-post"
         emit("scheduled", "info", f"Space: {eid} scheduled", f"{due:%a %d %b %H:%M} UTC on mcfiddler.bob, {what}",
