@@ -1534,6 +1534,45 @@
     "potm2608a",
     "weic2429a"
    ]
+  },
+  {
+   "id": "20261028_0794",
+   "seed": 794,
+   "template": "guess",
+   "music": "Eternal Hope",
+   "qc": true,
+   "assets": [
+    "weic2517b",
+    "weic2216c",
+    "potw2518a",
+    "weic2420b"
+   ]
+  },
+  {
+   "id": "20261028_0795",
+   "seed": 795,
+   "template": "countdown",
+   "music": "Windswept",
+   "qc": true,
+   "assets": [
+    "weic2411d",
+    "potw2510a",
+    "potm2512a",
+    "potw2435a",
+    "weic2327a"
+   ]
+  },
+  {
+   "id": "20261028_0796",
+   "seed": 796,
+   "template": "drift",
+   "music": "Windswept",
+   "qc": true,
+   "assets": [
+    "potw2318a",
+    "potm2303a",
+    "potm2602a"
+   ]
   }
  ],
  "usage": {
@@ -1638,7 +1677,7 @@
   "weic2216d": 4,
   "weic2305a": 3,
   "weic2211c": 10,
-  "potw2510a": 2,
+  "potw2510a": 3,
   "potw2412a": 1,
   "heic1502a": 8,
   "weic2207d": 1,
@@ -1649,7 +1688,7 @@
   "potw2528a": 1,
   "weic2427c": 1,
   "heic2502b": 4,
-  "potm2512a": 2,
+  "potm2512a": 3,
   "weic2518a": 1,
   "heic2108b": 2,
   "weic2612b": 4,
@@ -1672,7 +1711,7 @@
   "heic1707b": 1,
   "weic2426a": 1,
   "potw2549a": 1,
-  "potm2303a": 1,
+  "potm2303a": 2,
   "potm2311a": 2,
   "potw2427a": 1,
   "weic2208b": 1,
@@ -1681,7 +1720,7 @@
   "heic1805a": 1,
   "potw2503a": 1,
   "weic2407a": 1,
-  "weic2420b": 1,
+  "weic2420b": 2,
   "heic2213a": 1,
   "potw2448a": 1,
   "weic2621a": 1,
@@ -1692,7 +1731,7 @@
   "potw2515a": 1,
   "potw2443a": 1,
   "heic2201b": 1,
-  "potw2518a": 1,
+  "potw2518a": 2,
   "potw2431a": 1,
   "potm2208c": 1,
   "weic2506c": 1,
@@ -1712,7 +1751,7 @@
   "potw2534a": 1,
   "heic1910b": 1,
   "potw2514a": 1,
-  "potm2602a": 1,
+  "potm2602a": 2,
   "potm2408a": 1,
   "heic1812c": 1,
   "potm2604c": 1,
@@ -1767,6 +1806,12 @@
   "heic1811b": 1,
   "potw2430a": 1,
   "potw2551a": 1,
-  "weic2205b": 1
+  "weic2205b": 1,
+  "weic2517b": 1,
+  "weic2216c": 1,
+  "weic2411d": 1,
+  "potw2435a": 1,
+  "weic2327a": 1,
+  "potw2318a": 1
  }
 }
