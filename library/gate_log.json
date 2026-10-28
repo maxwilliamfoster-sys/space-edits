@@ -1355,5 +1355,72 @@
    10468257213447263428,
    13012392129425109233
   ]
+ },
+ {
+  "id": "20261028_0758",
+  "t": "2026-10-28T13:28:38+00:00",
+  "template": "deep",
+  "music": "Dark Fog",
+  "hook": "Earth is not the main character.",
+  "closer": "YOU ARE SMALLER THAN YOU THINK",
+  "assets": [
+   "potw2421a",
+   "heic1502a",
+   "heic1502a",
+   "heic1811b",
+   "potm2503a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    1798
+   ],
+   [
+    "sdo_flare",
+    42
+   ]
+  ],
+  "hashes": [
+   16782911388509831360,
+   18011285761746839792,
+   1757609473,
+   16168152189213704192,
+   13580878244025004088,
+   13876989549233631480
+  ]
+ },
+ {
+  "id": "20261028_0792",
+  "t": "2026-10-28T13:31:30+00:00",
+  "template": "nebulae",
+  "music": "Cut and Run",
+  "hook": "Zoom out from Earth. Keep going.",
+  "closer": "AND WE ARE ONE TINY ROCK",
+  "assets": [
+   "weic2620a",
+   "weic2205b",
+   "weic2615b",
+   "weic2615b",
+   "potm2608a",
+   "weic2429a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    2936
+   ],
+   [
+    "earth_exp65",
+    1466
+   ]
+  ],
+  "hashes": [
+   58794155122423808,
+   18230286486554587288,
+   36240936125990672,
+   53809232478208,
+   16204173237983145190,
+   15046765558490994904
+  ]
  }
 ]
