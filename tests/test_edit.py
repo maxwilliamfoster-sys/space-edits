@@ -129,7 +129,9 @@ class ScaleOrder(unittest.TestCase):
     def test_the_milky_way_zoom_never_ends_on_something_inside_it(self):
         for seed in SEEDS:
             p = plan(seed)
-            z = next(s for s in p["shots"] if s["slot"] == "galaxy_zoom")
+            z = next((s for s in p["shots"] if s["slot"] == "galaxy_zoom"), None)
+            if z is None:   # one of the other formats (compose.FORMATS)
+                continue
             if z["tier"] != "galaxy":
                 self.assertGreaterEqual(compose.ly_value(z["dist_ly"]), 1e6, (z["asset"], z["dist_ly"]))
 

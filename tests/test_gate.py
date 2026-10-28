@@ -38,7 +38,7 @@ def make_video(kind, audio=True, name=None):
     return folder
 
 
-def plan(assets=("new1", "new2"), windows=(), template="tour", music="New song", hook="New hook about Earth", closer="NEW CLOSER"):
+def plan(assets=("new1", "new2"), windows=(), template="timemachine", music="New song", hook="New hook about Earth", closer="NEW CLOSER"):
     # the hook must pass gate.text_lint (hook_lint: a concrete specific such as Earth), as every real hook does
     """Defaults are all different from entry()'s, so a test only trips the one rule it overrides."""
     shots = [dict(asset=a, src="esa", src_in=0) for a in assets] + [dict(asset=a, src="nasa", src_in=t) for a, t in windows]
@@ -70,8 +70,17 @@ class NoveltyRules(unittest.TestCase):
     def test_template_and_music_combo_repeat_is_rejected_but_either_alone_is_fine(self):
         log = [entry(template="classic", music="Song A")]
         self.assertTrue(gate.novelty(plan(template="classic", music="Song A"), [], log))
-        self.assertFalse(gate.novelty(plan(template="classic", music="Song B"), [], log))
-        self.assertFalse(gate.novelty(plan(template="tour", music="Song A"), [], log))
+        combo = lambda p: [r for r in gate.novelty(p, [], log) if r.startswith("template+music")]
+        self.assertFalse(combo(plan(template="classic", music="Song B")))
+        self.assertFalse(combo(plan(template="tour", music="Song A")))
+
+    def test_two_edits_in_a_row_never_share_a_format(self):
+        log = [entry(template="classic")]
+        same = lambda t: [r for r in gate.novelty(plan(template=t), [], log) if r.startswith("same format")]
+        self.assertTrue(same("tour"))            # both zoom-outs
+        self.assertFalse(same("countdown"))
+        log.append(entry("e2", template="countdown"))
+        self.assertFalse(same("classic"))        # only the previous edit counts
 
     def test_hook_and_closer_pair_repeat_is_rejected(self):
         log = [entry(hook="Hook A", closer="CLOSER A")]

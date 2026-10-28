@@ -1,5 +1,5 @@
 """Space 'scale' edit factory.
-  py -I -X utf8 spacepipe_make.py new [-n 3] [--seed S] [--template classic|tour|deep|nebulae] [--track "Epic Unease"]
+  py -I -X utf8 spacepipe_make.py new [-n 3] [--seed S] [--template classic|tour|deep|nebulae|timemachine|guess|countdown|drift] [--track "Epic Unease"]
   py -I -X utf8 spacepipe_make.py status        # footage/music capacity report
   py -I -X utf8 spacepipe_make.py prefetch [-n 6]  # download N ESA clips per tier ahead of time
 Each edit lands in out/queue/<id>/ : video.mp4, caption.txt, plan.json, qc.json.
@@ -118,7 +118,7 @@ if __name__ == "__main__":
     n = sub.add_parser("new")
     n.add_argument("-n", type=int, default=1)
     n.add_argument("--seed", type=int)
-    n.add_argument("--template", choices=list(compose.TEMPLATES))
+    n.add_argument("--template", choices=[*compose.TEMPLATES, *compose.FORMATS])
     n.add_argument("--track")
     n.set_defaults(f=new)
     sub.add_parser("status").set_defaults(f=status)

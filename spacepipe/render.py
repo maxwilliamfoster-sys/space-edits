@@ -65,7 +65,8 @@ def render_shot(s):
     resolve_fx(s)
     keys = ("path", "src_in", "len", "fx", "z", "speed", "mode", "box")
     src_sig = [0, 0] if s["path"].startswith("http") else [Path(s["path"]).stat().st_size, int(Path(s["path"]).stat().st_mtime)]
-    sig = hashlib.md5(json.dumps({**{k: s.get(k) for k in keys}, "wh": [W, H, FPS], "grade": GRADE, "src": src_sig},
+    grade = s.get("grade") or GRADE   # compose.STYLE: each format has its own look
+    sig = hashlib.md5(json.dumps({**{k: s.get(k) for k in keys}, "wh": [W, H, FPS], "grade": grade, "src": src_sig},
                                  sort_keys=True).encode()).hexdigest()[:12]
     out = CACHE / f"{s['asset']}_{sig}.mp4"
     s["file"] = str(out)
@@ -84,7 +85,7 @@ def render_shot(s):
               f"scale=w='2*ceil({W}*{zexpr}/2)':h='2*ceil({H}*{zexpr}/2)':eval=frame:flags=lanczos", f"crop={W}:{H}"]
     if sp != 1.0:
         vf.insert(0, f"setpts=PTS/{sp}")
-    vf += [f"fps={FPS}", GRADE, "format=yuv420p"]
+    vf += [f"fps={FPS}", grade, "format=yuv420p"]
     run([*(NET if s["path"].startswith("http") else []), "-ss", f"{s['src_in']:.3f}", "-t", f"{(L + 0.1) * sp:.3f}", "-i", s["path"], "-vf", ",".join(vf), "-t", f"{L:.3f}", "-an",
          "-c:v", "libx264", "-crf", "12", "-preset", "veryfast", "-r", FPS, tmp])
     tmp.replace(out)   # atomic: a killed encode never leaves a truncated cache file
@@ -144,7 +145,8 @@ def text_layers(p):
         else:
             a = bt(tx["k0"]) + 0.15
             al = f"if(lt(t,{a:.2f}),0,if(lt(t,{a + 0.4:.2f}),(t-{a:.2f})/0.4,{_fade_out(b, 0.4)}))"
-        out.append(dict(text=tx["text"], y=y, size=tx["size"], font=tx["font"], t0=a, hook=False, alpha=al))
+        out.append(dict(text=tx["text"], y=y, size=tx["size"], font=tx["font"], t0=a, hook=False, alpha=al,
+                        color=tx.get("color", "white")))
     return out
 
 
@@ -203,7 +205,7 @@ def assemble(p, final):
     txt = []
     for L in text_layers(p):
         safe = L["text"].replace("\\", "").replace(":", "\\:").replace("'", "’").replace("%", "\\%")
-        txt.append(f"drawtext=fontfile='{FONTS[L['font']]}':text='{safe}':fontsize={L['size']}:fontcolor=white:borderw=4:bordercolor=black@0.85"
+        txt.append(f"drawtext=fontfile='{FONTS[L['font']]}':text='{safe}':fontsize={L['size']}:fontcolor={L.get('color', 'white')}:borderw=4:bordercolor=black@0.85"
                    f":x=(w-tw)/2:y={L['y']}:alpha='{L['alpha']}'")
     cdir = ROOT / "out/pipe_tmp"
     cdir.mkdir(parents=True, exist_ok=True)

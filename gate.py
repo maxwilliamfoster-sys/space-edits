@@ -170,6 +170,10 @@ def novelty(plan, hashes, log):
             if any(a == asset and abs(t - t2) < NO_REPEAT_WINDOW_S for a, t2 in p["windows"]):
                 reasons.append(f"{asset} window near {t:.0f}s was already used")
                 break
+    # Max, 2026-10-28: posts all told the same zoom-out story. Back-to-back edits must be different formats.
+    from spacepipe.compose import FAMILY
+    if log and FAMILY.get(log[-1]["template"], log[-1]["template"]) == FAMILY.get(e["template"], e["template"]):
+        reasons.append(f"same format ({FAMILY.get(e['template'], e['template'])}) as the previous edit")
     if any(p["template"] == e["template"] and p["music"] == e["music"] for p in log[-NO_REPEAT_COMBO:]):
         reasons.append(f"template+music ({e['template']} / {e['music']}) used in the last {NO_REPEAT_COMBO} edits")
     if any(p["hook"] == e["hook"] and p["closer"] == e["closer"] for p in log[-NO_REPEAT_TEXT:]):
