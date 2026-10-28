@@ -1573,6 +1573,20 @@
     "potm2303a",
     "potm2602a"
    ]
+  },
+  {
+   "id": "20261028_0798",
+   "seed": 798,
+   "template": "countdown",
+   "music": "Ghost Story",
+   "qc": true,
+   "assets": [
+    "weic2517a",
+    "weic2611a",
+    "potw2420a",
+    "potw2542a",
+    "potm2601b"
+   ]
   }
  ],
  "usage": {
@@ -1585,7 +1599,7 @@
   "sdo_flare": 14,
   "weic2214b": 6,
   "potm2211a": 4,
-  "potm2601b": 3,
+  "potm2601b": 4,
   "potw2511a": 1,
   "potw2425a": 1,
   "potm2410b": 2,
@@ -1692,7 +1706,7 @@
   "weic2518a": 1,
   "heic2108b": 2,
   "weic2612b": 4,
-  "weic2517a": 1,
+  "weic2517a": 2,
   "weic2423a": 1,
   "weic2503c": 4,
   "potw2502a": 1,
@@ -1812,6 +1826,9 @@
   "weic2411d": 1,
   "potw2435a": 1,
   "weic2327a": 1,
-  "potw2318a": 1
+  "potw2318a": 1,
+  "weic2611a": 1,
+  "potw2420a": 1,
+  "potw2542a": 1
  }
 }

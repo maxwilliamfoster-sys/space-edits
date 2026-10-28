@@ -1422,5 +1422,29 @@
    16204173237983145190,
    15046765558490994904
   ]
+ },
+ {
+  "id": "20261028_0798",
+  "t": "2026-10-28T21:17:32+00:00",
+  "template": "countdown",
+  "music": "Ghost Story",
+  "hook": "5 real telescope images, ranked by distance.",
+  "closer": "WHICH NUMBER WAS YOUR FAVOURITE?",
+  "assets": [
+   "weic2517a",
+   "weic2611a",
+   "potw2420a",
+   "potw2542a",
+   "potm2601b"
+  ],
+  "windows": [],
+  "hashes": [
+   17938375843712131264,
+   16474441150774171868,
+   17361641480937074912,
+   16641074370539745504,
+   9335484907321457,
+   2997941829237240114
+  ]
  }
 ]
