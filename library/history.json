@@ -1613,6 +1613,19 @@
     "potw2322a",
     "potw2505a"
    ]
+  },
+  {
+   "id": "20261029_0808",
+   "seed": 808,
+   "template": "guess",
+   "music": "Windswept",
+   "qc": true,
+   "assets": [
+    "potw2402a",
+    "heic1920a",
+    "heic2505d",
+    "potw2514a"
+   ]
   }
  ],
  "usage": {
@@ -1708,7 +1721,7 @@
   "potw2406a": 1,
   "weic2518b": 4,
   "potm2603b": 1,
-  "heic2505d": 1,
+  "heic2505d": 2,
   "heic1819b": 4,
   "weic2422a": 1,
   "potw2235a": 1,
@@ -1790,7 +1803,7 @@
   "potw2317a": 1,
   "potw2534a": 1,
   "heic1910b": 1,
-  "potw2514a": 1,
+  "potw2514a": 2,
   "potm2602a": 2,
   "potm2408a": 1,
   "heic1812c": 1,
@@ -1860,6 +1873,8 @@
   "potm2412b": 1,
   "heic2112b": 1,
   "potw2322a": 1,
-  "potw2505a": 1
+  "potw2505a": 1,
+  "potw2402a": 1,
+  "heic1920a": 1
  }
 }
