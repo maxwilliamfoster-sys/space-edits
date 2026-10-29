@@ -1446,5 +1446,51 @@
    9335484907321457,
    2997941829237240114
   ]
+ },
+ {
+  "id": "20261029_0802",
+  "t": "2026-10-29T13:31:22+00:00",
+  "template": "drift",
+  "music": "Echoes of Time v2",
+  "hook": "Real telescope footage of the universe.",
+  "closer": "SEND THIS TO SOMEONE WHO NEEDS IT",
+  "assets": [
+   "potw2446a",
+   "potm2412b",
+   "heic2112b"
+  ],
+  "windows": [],
+  "hashes": [
+   65355215917611008,
+   56436389943638016,
+   7418194743223620256,
+   2240756795363456,
+   4777347839995904,
+   13784547094751232
+  ]
+ },
+ {
+  "id": "20261029_0805",
+  "t": "2026-10-29T13:34:37+00:00",
+  "template": "countdown",
+  "music": "Gathering Darkness",
+  "hook": "5 real telescope images, ranked by distance.",
+  "closer": "THE FARTHEST LIGHT CAME LAST",
+  "assets": [
+   "weic2411b",
+   "weic2517b",
+   "potm2607a",
+   "potw2322a",
+   "potw2505a"
+  ],
+  "windows": [],
+  "hashes": [
+   29396613486934208,
+   943566548317106656,
+   16195191606954457160,
+   141703591495168,
+   395690788257792,
+   1108174323056640
+  ]
  }
 ]

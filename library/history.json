@@ -1587,6 +1587,32 @@
     "potw2542a",
     "potm2601b"
    ]
+  },
+  {
+   "id": "20261029_0802",
+   "seed": 802,
+   "template": "drift",
+   "music": "Echoes of Time v2",
+   "qc": true,
+   "assets": [
+    "potw2446a",
+    "potm2412b",
+    "heic2112b"
+   ]
+  },
+  {
+   "id": "20261029_0805",
+   "seed": 805,
+   "template": "countdown",
+   "music": "Gathering Darkness",
+   "qc": true,
+   "assets": [
+    "weic2411b",
+    "weic2517b",
+    "potm2607a",
+    "potw2322a",
+    "potw2505a"
+   ]
   }
  ],
  "usage": {
@@ -1660,7 +1686,7 @@
   "heic2002a": 6,
   "heic1615a": 4,
   "weic2303a": 1,
-  "weic2411b": 2,
+  "weic2411b": 3,
   "potw2235c": 1,
   "potm2305c": 4,
   "weic2305b": 4,
@@ -1738,7 +1764,7 @@
   "heic2213a": 1,
   "potw2448a": 1,
   "weic2621a": 1,
-  "potm2607a": 1,
+  "potm2607a": 2,
   "potm2411a": 1,
   "heic2106b": 1,
   "weic2603a": 1,
@@ -1821,7 +1847,7 @@
   "potw2430a": 1,
   "potw2551a": 1,
   "weic2205b": 1,
-  "weic2517b": 1,
+  "weic2517b": 2,
   "weic2216c": 1,
   "weic2411d": 1,
   "potw2435a": 1,
@@ -1829,6 +1855,11 @@
   "potw2318a": 1,
   "weic2611a": 1,
   "potw2420a": 1,
-  "potw2542a": 1
+  "potw2542a": 1,
+  "potw2446a": 1,
+  "potm2412b": 1,
+  "heic2112b": 1,
+  "potw2322a": 1,
+  "potw2505a": 1
  }
 }
