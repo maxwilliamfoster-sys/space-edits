@@ -1570,5 +1570,41 @@
    17639176769978294512,
    17361623820232880372
   ]
+ },
+ {
+  "id": "20261030_0849",
+  "t": "2026-10-30T21:00:29+00:00",
+  "template": "classic",
+  "music": "Heart of the Beast",
+  "hook": "This is how big the universe is.",
+  "closer": "YOU ARE SMALLER THAN YOU THINK",
+  "assets": [
+   "heic1914b",
+   "heic2002a",
+   "heic2002a",
+   "heic1816a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    2746
+   ],
+   [
+    "earth_exp65",
+    1756
+   ],
+   [
+    "mercury_transit",
+    16
+   ]
+  ],
+  "hashes": [
+   16193199218576850944,
+   8125280357015640690,
+   278040614010880,
+   70598524928,
+   3690987520,
+   255086697644032
+  ]
  }
 ]

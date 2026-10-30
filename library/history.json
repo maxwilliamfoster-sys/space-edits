@@ -1654,10 +1654,26 @@
     "heic2304c",
     "potw2344a"
    ]
+  },
+  {
+   "id": "20261030_0849",
+   "seed": 849,
+   "template": "classic",
+   "music": "Heart of the Beast",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "earth_exp65",
+    "heic1914b",
+    "mercury_transit",
+    "heic2002a",
+    "heic2002a",
+    "heic1816a"
+   ]
   }
  ],
  "usage": {
-  "earth_exp65": 140,
+  "earth_exp65": 142,
   "weic2510b": 1,
   "potw2428a": 1,
   "weic2520b": 1,
@@ -1671,13 +1687,13 @@
   "potw2425a": 1,
   "potm2410b": 2,
   "heic2011c": 6,
-  "heic1816a": 4,
+  "heic1816a": 5,
   "potw2434a": 1,
   "potm2601a": 1,
   "weic2420a": 2,
   "heic2018b": 2,
   "potm2606a": 4,
-  "mercury_transit": 13,
+  "mercury_transit": 14,
   "potm2510b": 1,
   "weic2427a": 1,
   "weic2420c": 6,
@@ -1721,10 +1737,10 @@
   "potm2604a": 1,
   "potm2407a": 1,
   "weic2615b": 8,
-  "heic1914b": 5,
+  "heic1914b": 6,
   "weic2608c": 4,
   "potm2606b": 4,
-  "heic2002a": 6,
+  "heic2002a": 8,
   "heic1615a": 4,
   "weic2303a": 1,
   "weic2411b": 3,
