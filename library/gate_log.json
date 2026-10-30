@@ -1515,5 +1515,60 @@
    8213975112660025344,
    11304510160843603968
   ]
+ },
+ {
+  "id": "20261030_0815",
+  "t": "2026-10-30T13:22:00+00:00",
+  "template": "deep",
+  "music": "Crossing the Chasm",
+  "hook": "You vs the universe. Watch this.",
+  "closer": "YOU ARE SMALLER THAN YOU THINK",
+  "assets": [
+   "heic1818b",
+   "weic2211c",
+   "weic2211c",
+   "potw2316a",
+   "potm2505a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    1290
+   ],
+   [
+    "sdo_year6",
+    36
+   ]
+  ],
+  "hashes": [
+   17580629064684208128,
+   16629021260809564400,
+   1895891201,
+   70598524928,
+   7560666233355086699,
+   12889553873928202337
+  ]
+ },
+ {
+  "id": "20261030_0835",
+  "t": "2026-10-30T13:26:33+00:00",
+  "template": "drift",
+  "music": "Evening of Chaos",
+  "hook": "30 seconds of the real universe.",
+  "closer": "ALL OF THIS IS REAL",
+  "assets": [
+   "weic2218a",
+   "heic2304c",
+   "potw2344a"
+  ],
+  "windows": [],
+  "hashes": [
+   4103026379158250080,
+   13901759862159034728,
+   16208702417222897272,
+   17931321678578601984,
+   17639176769978294512,
+   17361623820232880372
+  ]
  }
 ]
