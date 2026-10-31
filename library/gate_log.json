@@ -1651,5 +1651,38 @@
    17941479933162354913,
    17936985163987742880
   ]
+ },
+ {
+  "id": "20261031_0876",
+  "t": "2026-10-31T20:13:15+00:00",
+  "template": "deep",
+  "music": "Windswept",
+  "hook": "You vs the universe. Watch this.",
+  "closer": "EVERYTHING YOU LOVE IS ON ONE SPECK",
+  "assets": [
+   "weic2307c",
+   "heic1502a",
+   "heic1502a",
+   "potm2605a",
+   "weic2429a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    358
+   ],
+   [
+    "sdo_flare",
+    48
+   ]
+  ],
+  "hashes": [
+   2339746381543506155,
+   12799392596390090792,
+   4039310849,
+   16172655788841074688,
+   301882740933931008,
+   13891591381646850048
+  ]
  }
 ]
