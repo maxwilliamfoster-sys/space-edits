@@ -1670,6 +1670,31 @@
     "heic2002a",
     "heic1816a"
    ]
+  },
+  {
+   "id": "20261031_0852",
+   "seed": 852,
+   "template": "drift",
+   "music": "Crossing the Chasm",
+   "qc": true,
+   "assets": [
+    "potw2438a",
+    "potm2211b",
+    "potw2538a"
+   ]
+  },
+  {
+   "id": "20261031_0871",
+   "seed": 871,
+   "template": "guess",
+   "music": "Dreams Become Real",
+   "qc": true,
+   "assets": [
+    "weic2216c",
+    "potw2512a",
+    "heic2406a",
+    "potw2437a"
+   ]
   }
  ],
  "usage": {
@@ -1905,7 +1930,7 @@
   "potw2551a": 1,
   "weic2205b": 1,
   "weic2517b": 2,
-  "weic2216c": 1,
+  "weic2216c": 2,
   "weic2411d": 1,
   "potw2435a": 1,
   "weic2327a": 1,
@@ -1922,6 +1947,12 @@
   "heic1920a": 1,
   "heic1818b": 1,
   "heic2304c": 1,
-  "potw2344a": 1
+  "potw2344a": 1,
+  "potw2438a": 1,
+  "potm2211b": 1,
+  "potw2538a": 1,
+  "potw2512a": 1,
+  "heic2406a": 1,
+  "potw2437a": 1
  }
 }

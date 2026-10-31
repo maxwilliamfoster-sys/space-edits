@@ -1606,5 +1606,50 @@
    3690987520,
    255086697644032
   ]
+ },
+ {
+  "id": "20261031_0852",
+  "t": "2026-10-31T12:57:01+00:00",
+  "template": "drift",
+  "music": "Crossing the Chasm",
+  "hook": "30 seconds of the real universe.",
+  "closer": "SAVE THIS FOR LATER",
+  "assets": [
+   "potw2438a",
+   "potm2211b",
+   "potw2538a"
+  ],
+  "windows": [],
+  "hashes": [
+   13902876903028095224,
+   9926198427830513912,
+   1143975011945472,
+   13290514184220,
+   17361641481138401520,
+   8138269444283625712
+  ]
+ },
+ {
+  "id": "20261031_0871",
+  "t": "2026-10-31T12:59:37+00:00",
+  "template": "guess",
+  "music": "Dreams Become Real",
+  "hook": "Guess the distance in light-years.",
+  "closer": "WHICH ONE SURPRISED YOU?",
+  "assets": [
+   "weic2216c",
+   "potw2512a",
+   "heic2406a",
+   "potw2437a"
+  ],
+  "windows": [],
+  "hashes": [
+   354074217613676770,
+   7812751914616518104,
+   8313892031405609700,
+   9280859997597655232,
+   17941479933162354913,
+   17936985163987742880
+  ]
  }
 ]
