@@ -1684,5 +1684,61 @@
    301882740933931008,
    13891591381646850048
   ]
+ },
+ {
+  "id": "20261101_0881",
+  "t": "2026-11-01T13:47:36+00:00",
+  "template": "guess",
+  "music": "Eternal Hope",
+  "hook": "Guess how far. Light-years appear.",
+  "closer": "WHICH ONE SURPRISED YOU?",
+  "assets": [
+   "weic2420a",
+   "potw2539a",
+   "potm2601b",
+   "heic2112c"
+  ],
+  "windows": [],
+  "hashes": [
+   17651001605618415616,
+   8970677048594496668,
+   17363893332558933232,
+   7803885907710893594,
+   4665870504698052736,
+   440043275248926977
+  ]
+ },
+ {
+  "id": "20261101_0882",
+  "t": "2026-11-01T13:50:25+00:00",
+  "template": "deep",
+  "music": "Echoes of Time v2",
+  "hook": "How small is Earth? Watch this.",
+  "closer": "NOW LOOK UP TONIGHT",
+  "assets": [
+   "potw2432a",
+   "potm2306c",
+   "potm2306c",
+   "potm2506c",
+   "weic2522a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    2080
+   ],
+   [
+    "sdo_year6",
+    236
+   ]
+  ],
+  "hashes": [
+   16496941556624718848,
+   75371784974704,
+   141635020177408,
+   8832063373312,
+   4558714529121347,
+   1743297883573338497
+  ]
  }
 ]
