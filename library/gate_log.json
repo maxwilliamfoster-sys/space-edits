@@ -1808,5 +1808,59 @@
    16208728805908606976,
    17940362365626802176
   ]
+ },
+ {
+  "id": "20261102_0908",
+  "t": "2026-11-02T23:47:54+00:00",
+  "template": "nebulae",
+  "music": "Eternal Hope",
+  "hook": "Not CGI. This is the real universe.",
+  "closer": "ONE PLANET. ONE CHANCE.",
+  "assets": [
+   "potw2532a",
+   "heic2414b",
+   "heic1919a",
+   "heic1919a",
+   "potm2506d",
+   "potm2609a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    1164
+   ]
+  ],
+  "hashes": [
+   17505756701037755454,
+   2329199332988787,
+   0,
+   17940362829348528352,
+   4047835516677939416,
+   11010422447873617676
+  ]
+ },
+ {
+  "id": "20261102_0918",
+  "t": "2026-11-02T23:50:31+00:00",
+  "template": "countdown",
+  "music": "Dark Fog",
+  "hook": "The universe, ranked by distance. Watch.",
+  "closer": "WHICH NUMBER WAS YOUR FAVOURITE?",
+  "assets": [
+   "heic2112b",
+   "weic2218a",
+   "potw2326a",
+   "potw2530a",
+   "potw2402a"
+  ],
+  "windows": [],
+  "hashes": [
+   28399255642177536,
+   13902323946251937260,
+   16210971810570756310,
+   17938084640181999616,
+   211934909070456,
+   54255334582974584
+  ]
  }
 ]
