@@ -1,6 +1,7 @@
 """The non-zoom formats (2026-10-28): different stories, true numbers, and a mix across seeds."""
 import collections
 import os
+import re
 import sys
 import unittest
 from unittest import mock
@@ -70,6 +71,14 @@ class Formats(unittest.TestCase):
         self.assertEqual(len(set(grades.values())), len(grades))
         cuts = {plan(2, t)["shots"][1]["tin"][0] for t in compose.FORMATS}
         self.assertGreaterEqual(len(cuts), 3)
+
+
+class Labels(unittest.TestCase):
+    def test_star_clusters_are_never_called_a_galaxy(self):
+        """M13 and M72 are globular clusters inside the Milky Way; a 'galaxy' tier makes the edit say ONE GALAXY over them."""
+        for a in compose.load_assets():
+            if re.search(r"M13|Messier 72", a["title"]):
+                self.assertNotEqual(a["tier"], "galaxy", a["title"])
 
 
 if __name__ == "__main__":

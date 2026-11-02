@@ -264,7 +264,7 @@
   "mb": 113.5,
   "kind": "pan",
   "tier": "nebula",
-  "credit": "ESA/Webb, NASA, CSA, M. Zamani (ESA/Webb), N. Bartmann (ESA/Webb), O. Bern\u00e9 and the PDRs4All ERS Team",
+  "credit": "ESA/Webb, NASA, CSA, M. Zamani (ESA/Webb), N. Bartmann (ESA/Webb), O. Berné and the PDRs4All ERS Team",
   "dur": 30,
   "dist": null,
   "url": "https://cdn.esawebb.org/archives/videos/ultra_hd/weic2315a.mp4",
@@ -324,7 +324,7 @@
   "mb": 680.5,
   "kind": "pan",
   "tier": "nebula",
-  "credit": "NASA, ESA, CSA, STScI, J. Lee (STScI), T. Williams (Oxford), PHANGS Team, E. Wheatley (STScI),\u00a0N. Bartmann",
+  "credit": "NASA, ESA, CSA, STScI, J. Lee (STScI), T. Williams (Oxford), PHANGS Team, E. Wheatley (STScI), N. Bartmann",
   "dur": 180,
   "dist": null,
   "url": "https://cdn.esawebb.org/archives/videos/ultra_hd/weic2403a.mp4",
@@ -390,7 +390,7 @@
   "mb": 113.0,
   "kind": "pan",
   "tier": "nebula",
-  "credit": "NASA, ESA, CSA, STScI, J. Diego (Instituto de F\u00edsica de Cantabria, Spain), J. D\u2019Silva (U. Western Australia), A. Koekemoer (STScI), J. Summers & R. Windhorst (ASU), and H. Yan (U. Missouri), N. Bartmann (ESA/Webb)",
+  "credit": "NASA, ESA, CSA, STScI, J. Diego (Instituto de Física de Cantabria, Spain), J. D’Silva (U. Western Australia), A. Koekemoer (STScI), J. Summers & R. Windhorst (ASU), and H. Yan (U. Missouri), N. Bartmann (ESA/Webb)",
   "dur": 30,
   "dist": {
    "text": "4.3 billion",
@@ -438,7 +438,7 @@
   "mb": 113.0,
   "kind": "pan",
   "tier": "deep",
-  "credit": "ESA/Webb, NASA & CSA, J. Rigby and the JWST\u00a0TEMPLATES\u00a0team, N. Bartmann (ESA/Webb)",
+  "credit": "ESA/Webb, NASA & CSA, J. Rigby and the JWST TEMPLATES team, N. Bartmann (ESA/Webb)",
   "dur": 30,
   "dist": null,
   "url": "https://cdn.esawebb.org/archives/videos/ultra_hd/potm2312a.mp4",
@@ -479,7 +479,7 @@
  {
   "id": "weic2418a",
   "site": "webb",
-  "title": "Pan of Cosmic Gems (galaxy cluster SPT-CL J0615\u22125746)",
+  "title": "Pan of Cosmic Gems (galaxy cluster SPT-CL J0615−5746)",
   "mb": 112.0,
   "kind": "pan",
   "tier": "deep",
@@ -600,7 +600,7 @@
   "mb": 112.0,
   "kind": "pan",
   "tier": "nebula",
-  "credit": "ESA/Webb, NASA, CSA, J. Dunlop, D. Magee, P. G.\u00a0P\u00e9rez-Gonz\u00e1lez,\u00a0H. \u00dcbler, R. Maiolino, et. al, N. Bartmann (ESA/Webb)",
+  "credit": "ESA/Webb, NASA, CSA, J. Dunlop, D. Magee, P. G. Pérez-González, H. Übler, R. Maiolino, et. al, N. Bartmann (ESA/Webb)",
   "dur": 30,
   "dist": null,
   "url": "https://cdn.esawebb.org/archives/videos/ultra_hd/weic2413a.mp4",
@@ -660,7 +660,7 @@
   "mb": 114.5,
   "kind": "pan",
   "tier": "nebula",
-  "credit": "NASA, ESA, CSA, STScI, K. Pontoppidan (NASA\u2019s Jet Propulsion Laboratory), J. Green (Space Telescope Science Institute), N. Bartmann (ESA/Webb)",
+  "credit": "NASA, ESA, CSA, STScI, K. Pontoppidan (NASA’s Jet Propulsion Laboratory), J. Green (Space Telescope Science Institute), N. Bartmann (ESA/Webb)",
   "dur": 30,
   "dist": null,
   "url": "https://cdn.esawebb.org/archives/videos/ultra_hd/weic2415c.mp4",
@@ -694,7 +694,7 @@
   "dur": 30,
   "dist": {
    "text": "59 million",
-   "sentence": "The galaxy was first identified by Swiss astronomer Fritz Zwicky in the 1930\u2019s and resides roughly 59 million light-years from Earth."
+   "sentence": "The galaxy was first identified by Swiss astronomer Fritz Zwicky in the 1930’s and resides roughly 59 million light-years from Earth."
   },
   "url": "https://cdn.esawebb.org/archives/videos/ultra_hd/potm2403a.mp4",
   "page": "https://esawebb.org/videos/potm2403a/",
@@ -704,7 +704,7 @@
  {
   "id": "weic2305a",
   "site": "webb",
-  "title": "Pan of Pandora\u2019s Cluster",
+  "title": "Pan of Pandora’s Cluster",
   "mb": 106.2,
   "kind": "pan",
   "tier": "deep",
@@ -840,7 +840,7 @@
   "mb": 119.0,
   "kind": "transition",
   "tier": "nebula",
-  "credit": "ESA/Webb, NASA & CSA, P. Pei\u00dfker, J. Lu, F. Yusef-Zadeh, N. B. Sabha, C. Chan, N. Bartmann (ESA/Webb)",
+  "credit": "ESA/Webb, NASA & CSA, P. Peißker, J. Lu, F. Yusef-Zadeh, N. B. Sabha, C. Chan, N. Bartmann (ESA/Webb)",
   "dur": 30,
   "dist": null,
   "url": "https://cdn.esawebb.org/archives/videos/ultra_hd/weic2617b.mp4",
@@ -859,7 +859,7 @@
   "dur": 30,
   "dist": {
    "text": "65 million",
-   "sentence": "This spiral galaxy is named NGC 5134, and it\u2019s located 65 million light-years away in the constellation Virgo."
+   "sentence": "This spiral galaxy is named NGC 5134, and it’s located 65 million light-years away in the constellation Virgo."
   },
   "url": "https://cdn.esawebb.org/archives/videos/ultra_hd/potm2602a.mp4",
   "page": "https://esawebb.org/videos/potm2602a/",
@@ -951,7 +951,7 @@
   "mb": 114.2,
   "kind": "pan",
   "tier": "nebula",
-  "credit": "NASA, ESA, CSA, STScI, A. Ginsburg (University of Florida), N. Budaiev (University of Florida), T. Yoo (University of Florida), A. Pagan (STScI), N. Bartmann (ESA/Webb).\u00a0Music: Stellardrone - The Night Sky in Motion",
+  "credit": "NASA, ESA, CSA, STScI, A. Ginsburg (University of Florida), N. Budaiev (University of Florida), T. Yoo (University of Florida), A. Pagan (STScI), N. Bartmann (ESA/Webb). Music: Stellardrone - The Night Sky in Motion",
   "dur": 30,
   "dist": null,
   "url": "https://cdn.esawebb.org/archives/videos/ultra_hd/weic2520c.mp4",
@@ -1061,7 +1061,7 @@
  {
   "id": "weic2427c",
   "site": "webb",
-  "title": "Transition video: Hubble and Webb\u2019s views of the Sombrero Galaxy",
+  "title": "Transition video: Hubble and Webb’s views of the Sombrero Galaxy",
   "mb": 113.2,
   "kind": "transition",
   "tier": "galaxy",
@@ -1157,7 +1157,7 @@
  {
   "id": "weic2305b",
   "site": "webb",
-  "title": "Zoom Into Pandora\u2019s Cluster",
+  "title": "Zoom Into Pandora’s Cluster",
   "mb": 226.8,
   "kind": "zoom",
   "tier": "deep",
@@ -1410,7 +1410,7 @@
   "mb": 338.5,
   "kind": "zoom",
   "tier": "nebula",
-  "credit": "ESA/Webb, NASA, CSA, WIYN and NOIRLab, NSF, AURA, DSS2, A. Pagan (STScI), N. Bartmann (ESA/Webb),\u00a0 E. Slawik, N. Risinger, T. A. Rector, H. Schweiker, M. Zamani\u00a0(ESA/Webb)",
+  "credit": "ESA/Webb, NASA, CSA, WIYN and NOIRLab, NSF, AURA, DSS2, A. Pagan (STScI), N. Bartmann (ESA/Webb),  E. Slawik, N. Risinger, T. A. Rector, H. Schweiker, M. Zamani (ESA/Webb)",
   "dur": 90,
   "dist": null,
   "url": "https://cdn.esawebb.org/archives/videos/ultra_hd/weic2620b.mp4",
@@ -1455,7 +1455,7 @@
   "mb": 229.4,
   "kind": "zoom",
   "tier": "nebula",
-  "credit": "ESA/Webb, NASA, CSA, ESO, Digitized Sky Survey 2, N. Bartmann (ESA/Webb),\u00a0 J. Emerson, M. Irwin, J. Lewis, E. Slawik, N. Risinger, D. De Martin (ESA/Webb), M. Zamani (ESA/Webb)",
+  "credit": "ESA/Webb, NASA, CSA, ESO, Digitized Sky Survey 2, N. Bartmann (ESA/Webb),  J. Emerson, M. Irwin, J. Lewis, E. Slawik, N. Risinger, D. De Martin (ESA/Webb), M. Zamani (ESA/Webb)",
   "dur": 60,
   "dist": {
    "text": "7500",
@@ -1536,7 +1536,7 @@
   "mb": 121.8,
   "kind": "pan",
   "tier": "nebula",
-  "credit": "ESA/Webb, NASA & CSA, G. \u00d6stlin, P. G. Perez-Gonzalez, J. Melinder, the JADES Collaboration, the MIDIS collaboration, M. Zamani (ESA/Webb), N. Bartmann (ESA/Webb)",
+  "credit": "ESA/Webb, NASA & CSA, G. Östlin, P. G. Perez-Gonzalez, J. Melinder, the JADES Collaboration, the MIDIS collaboration, M. Zamani (ESA/Webb), N. Bartmann (ESA/Webb)",
   "dur": 30,
   "dist": null,
   "url": "https://cdn.esawebb.org/archives/videos/ultra_hd/potm2507a.mp4",
@@ -1815,7 +1815,7 @@
   "mb": 182.8,
   "kind": "zoom",
   "tier": "nebula",
-  "credit": "ESA/Webb, NASA, CSA, STScI, KPNO/NOIRLab, ESO, Digitized Sky Survey 2,\u00a0 N. Bartmann (ESA/Webb), N. Risinger, D. De Martin\u00a0 (ESA/Hubble), M. Zamani (ESA/Webb)",
+  "credit": "ESA/Webb, NASA, CSA, STScI, KPNO/NOIRLab, ESO, Digitized Sky Survey 2,  N. Bartmann (ESA/Webb), N. Risinger, D. De Martin  (ESA/Hubble), M. Zamani (ESA/Webb)",
   "dur": 50,
   "dist": null,
   "url": "https://cdn.esawebb.org/archives/videos/ultra_hd/weic2326c.mp4",
@@ -1934,7 +1934,7 @@
  {
   "id": "weic2216c",
   "site": "webb",
-  "title": "Pan of the Webb\u2019s Portrait of the Pillars of Creation (NIRCam)",
+  "title": "Pan of the Webb’s Portrait of the Pillars of Creation (NIRCam)",
   "mb": 171.4,
   "kind": "pan",
   "tier": "nebula",
@@ -2022,7 +2022,7 @@
   "mb": 112.6,
   "kind": "transition",
   "tier": "deep",
-  "credit": "NASA, ESA, G. Illingworth, D. Magee, and P. Oesch (University of California, Santa Cruz), R. Bouwens (Leiden University), and the HUDF09 Team, ESA/Webb, NASA & CSA, G. \u00d6stlin, P. G. Perez-Gonzalez, J. Melinder, the JADES Collaboration, the MIDIS collaboration, M. Zamani (ESA/Webb)",
+  "credit": "NASA, ESA, G. Illingworth, D. Magee, and P. Oesch (University of California, Santa Cruz), R. Bouwens (Leiden University), and the HUDF09 Team, ESA/Webb, NASA & CSA, G. Östlin, P. G. Perez-Gonzalez, J. Melinder, the JADES Collaboration, the MIDIS collaboration, M. Zamani (ESA/Webb)",
   "dur": 30,
   "dist": null,
   "url": "https://cdn.esawebb.org/archives/videos/ultra_hd/potm2507b.mp4",
@@ -2082,7 +2082,7 @@
   "mb": 112.0,
   "kind": "pan",
   "tier": "deep",
-  "credit": "ESA/Webb, NASA & CSA, G. Rihtar\u0161i\u010d (University of Ljubljana, FMF), R. Tripodi (University of Ljubljana, FMF), N. Bartmann (ESA/Webb)",
+  "credit": "ESA/Webb, NASA & CSA, G. Rihtaršič (University of Ljubljana, FMF), R. Tripodi (University of Ljubljana, FMF), N. Bartmann (ESA/Webb)",
   "dur": 30,
   "dist": null,
   "url": "https://cdn.esawebb.org/archives/videos/ultra_hd/weic2522a.mp4",
@@ -2112,7 +2112,7 @@
   "mb": 170.8,
   "kind": "pan",
   "tier": "nebula",
-  "credit": "ESA/Webb, NASA & CSA, P. Pei\u00dfker, J. Lu, F. Yusef-Zadeh, N. B. Sabha, C. Chan, N. Bartmann (ESA/Webb)",
+  "credit": "ESA/Webb, NASA & CSA, P. Peißker, J. Lu, F. Yusef-Zadeh, N. B. Sabha, C. Chan, N. Bartmann (ESA/Webb)",
   "dur": 45,
   "dist": null,
   "url": "https://cdn.esawebb.org/archives/videos/ultra_hd/weic2617a.mp4",
@@ -2127,7 +2127,7 @@
   "mb": 227.2,
   "kind": "zoom",
   "tier": "nebula",
-  "credit": "ESA/Webb, NASA & CSA, P. Kelly,\u00a0Dark Energy Survey/DOE/FNAL/NOIRLab/NSF/AURA, DSS, N. Bartmann (ESA/Webb), E. Slawik, N. Risinger, D. de Martin\u00a0 (ESA/Webb), M. Zamani (ESA/Webb)",
+  "credit": "ESA/Webb, NASA & CSA, P. Kelly, Dark Energy Survey/DOE/FNAL/NOIRLab/NSF/AURA, DSS, N. Bartmann (ESA/Webb), E. Slawik, N. Risinger, D. de Martin  (ESA/Webb), M. Zamani (ESA/Webb)",
   "dur": 60,
   "dist": {
    "text": "3.2 billion",
@@ -2174,7 +2174,7 @@
  {
   "id": "weic2513c",
   "site": "webb",
-  "title": "Pan video - Cat\u2019s Paw Nebula",
+  "title": "Pan video - Cat’s Paw Nebula",
   "mb": 151.7,
   "kind": "pan",
   "tier": "nebula",
@@ -2215,7 +2215,7 @@
   "dur": 30,
   "dist": {
    "text": "24 million",
-   "sentence": "These two galaxies are named NGC 4490 and NGC 4485, and they\u2019re located about 24 million light-years away in the constellation Canes Venatici (The Hunting Dogs)."
+   "sentence": "These two galaxies are named NGC 4490 and NGC 4485, and they’re located about 24 million light-years away in the constellation Canes Venatici (The Hunting Dogs)."
   },
   "url": "https://cdn.esawebb.org/archives/videos/ultra_hd/potm2511a.mp4",
   "page": "https://esawebb.org/videos/potm2511a/",
@@ -2336,11 +2336,11 @@
  {
   "id": "weic2513d",
   "site": "webb",
-  "title": "Zoom video - Cat\u2019s Paw Nebula",
+  "title": "Zoom video - Cat’s Paw Nebula",
   "mb": 339.9,
   "kind": "zoom",
   "tier": "nebula",
-  "credit": "ESA/Webb, NASA, CSA, STScI, ESO/J. Emerson/VISTA, Digitized Sky Survey 2, N. Bartmann (ESA/Webb), E. Slawik, N. Risinger, D. De Martin, M. Zamani (ESA/Webb) Tonelabs \u2013 The Red North (www.tonelabs.com)",
+  "credit": "ESA/Webb, NASA, CSA, STScI, ESO/J. Emerson/VISTA, Digitized Sky Survey 2, N. Bartmann (ESA/Webb), E. Slawik, N. Risinger, D. De Martin, M. Zamani (ESA/Webb) Tonelabs – The Red North (www.tonelabs.com)",
   "dur": 90,
   "dist": null,
   "url": "https://cdn.esawebb.org/archives/videos/ultra_hd/weic2513d.mp4",
@@ -2373,7 +2373,7 @@
   "mb": 101.8,
   "kind": "pan",
   "tier": "nebula",
-  "credit": "ESA/Webb, NASA & CSA, ESA/Hubble, ALMA (ESO/NAOJ/NRAO), G. Duch\u00eane, M. Villenave, N. Bartmann (ESA/Webb)",
+  "credit": "ESA/Webb, NASA & CSA, ESA/Hubble, ALMA (ESO/NAOJ/NRAO), G. Duchêne, M. Villenave, N. Bartmann (ESA/Webb)",
   "dur": 30,
   "dist": {
    "text": "450",
@@ -2520,7 +2520,7 @@
   "mb": 223.1,
   "kind": "zoom",
   "tier": "nebula",
-  "credit": "ESA/Webb, NASA, CSA, ESO, ESA/Hubble, Digitized Sky Survey 2, A. Nota,\u00a0 N. Bartmann, M. Zamani",
+  "credit": "ESA/Webb, NASA, CSA, ESO, ESA/Hubble, Digitized Sky Survey 2, A. Nota,  N. Bartmann, M. Zamani",
   "dur": 60,
   "dist": null,
   "url": "https://cdn.esawebb.org/archives/videos/ultra_hd/weic2301c.mp4",
@@ -2582,7 +2582,7 @@
  {
   "id": "weic2218a",
   "site": "webb",
-  "title": "Pan of the Webb\u2019s Portrait of the Pillars of Creation (MIRI)",
+  "title": "Pan of the Webb’s Portrait of the Pillars of Creation (MIRI)",
   "mb": 71.1,
   "kind": "pan",
   "tier": "nebula",
@@ -2600,7 +2600,7 @@
  {
   "id": "weic2216d",
   "site": "webb",
-  "title": "Zoom into Webb\u2019s View of the Pillars of Creation",
+  "title": "Zoom into Webb’s View of the Pillars of Creation",
   "mb": 225.6,
   "kind": "zoom",
   "tier": "nebula",
@@ -2618,7 +2618,7 @@
  {
   "id": "weic2214b",
   "site": "webb",
-  "title": "Pan of Webb\u2019s First Views of Neptune",
+  "title": "Pan of Webb’s First Views of Neptune",
   "mb": 75.4,
   "kind": "pan",
   "tier": "planet",
@@ -2667,7 +2667,7 @@
   "mb": 225.4,
   "kind": "zoom",
   "tier": "nebula",
-  "credit": "NASA, ESA, CSA, STScI, ESO, E. Slawik, N. Risinger, D. De Martin,\u00a0 D. Lennon, E. Sabbi, N. Bartmann, M. Zamani",
+  "credit": "NASA, ESA, CSA, STScI, ESO, E. Slawik, N. Risinger, D. De Martin,  D. Lennon, E. Sabbi, N. Bartmann, M. Zamani",
   "dur": 60,
   "dist": null,
   "url": "https://cdn.esawebb.org/archives/videos/ultra_hd/weic2212b.mp4",
@@ -2759,7 +2759,7 @@
  {
   "id": "weic2208a",
   "site": "webb",
-  "title": "Pan of Stephan\u2019s Quintet (NIRCam + MIRI Imaging)",
+  "title": "Pan of Stephan’s Quintet (NIRCam + MIRI Imaging)",
   "mb": 149.9,
   "kind": "pan",
   "tier": "galaxy",
@@ -2774,7 +2774,7 @@
  {
   "id": "weic2208b",
   "site": "webb",
-  "title": "Pan of Stephan\u2019s Quintet (MIRI Imaging)",
+  "title": "Pan of Stephan’s Quintet (MIRI Imaging)",
   "mb": 112.7,
   "kind": "pan",
   "tier": "galaxy",
@@ -2834,7 +2834,7 @@
  {
   "id": "weic2209b",
   "site": "webb",
-  "title": "Pan of Webb\u2019s First Deep Field (NIRCam Image)",
+  "title": "Pan of Webb’s First Deep Field (NIRCam Image)",
   "mb": 113.4,
   "kind": "pan",
   "tier": "deep",
@@ -3022,7 +3022,7 @@
   "dur": 30,
   "dist": {
    "text": "000",
-   "sentence": "Instead, it\u2019s in the Large Magellanic Cloud, a dwarf galaxy that is located about 160 000 light-years away in the constellations Dorado and Mensa ."
+   "sentence": "Instead, it’s in the Large Magellanic Cloud, a dwarf galaxy that is located about 160 000 light-years away in the constellations Dorado and Mensa ."
   },
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/potw2531a.mp4",
   "page": "https://esahubble.org/videos/potw2531a/",
@@ -3058,7 +3058,7 @@
   "dur": 30,
   "dist": {
    "text": "100 million",
-   "sentence": "Appearances can be deceiving with objects so far from Earth \u2014 IC 3225 itself is about 100 million light-years away \u2014 but the galaxy\u2019s location suggests some causes for this active scene, because IC 3225 is one of over 1300 members of the Virgo galaxy cluster."
+   "sentence": "Appearances can be deceiving with objects so far from Earth — IC 3225 itself is about 100 million light-years away — but the galaxy’s location suggests some causes for this active scene, because IC 3225 is one of over 1300 members of the Virgo galaxy cluster."
   },
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/potw2443a.mp4",
   "page": "https://esahubble.org/videos/potw2443a/",
@@ -3076,7 +3076,7 @@
   "dur": 30,
   "dist": {
    "text": "55 million",
-   "sentence": "M90 is located 55 million light-years from Earth, but it\u2019s one of the very few galaxies getting closer to us."
+   "sentence": "M90 is located 55 million light-years from Earth, but it’s one of the very few galaxies getting closer to us."
   },
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/potw2442a.mp4",
   "page": "https://esahubble.org/videos/potw2442a/",
@@ -3108,7 +3108,7 @@
   "mb": 113.8,
   "kind": "pan",
   "tier": "nebula",
-  "credit": "ESA/Hubble & NASA, F. Belfiore, W. Yuan, J. Lee and the PHANGS-HST Team, A. Riess, K. Tak\u00e1ts, D. de Martin & M. Zamani (ESA/Hubble), N. Bartmann (ESA/Hubble)",
+  "credit": "ESA/Hubble & NASA, F. Belfiore, W. Yuan, J. Lee and the PHANGS-HST Team, A. Riess, K. Takáts, D. de Martin & M. Zamani (ESA/Hubble), N. Bartmann (ESA/Hubble)",
   "dur": 30,
   "dist": {
    "text": "35 million",
@@ -3155,7 +3155,7 @@
  {
   "id": "potw2347a",
   "site": "hubble",
-  "title": "Pan: \u201cLate-type\u201d galaxy?",
+  "title": "Pan: “Late-type” galaxy?",
   "mb": 113.3,
   "kind": "pan",
   "tier": "galaxy",
@@ -3265,7 +3265,7 @@
   "dur": 30,
   "dist": {
    "text": "50 million",
-   "sentence": "Located over 50 million light-years from Earth in the constellation Columba (the Dove), the bright glow of the galaxy\u2019s centre is offset by the flocculent and sparkling spiral arms swirling around it."
+   "sentence": "Located over 50 million light-years from Earth in the constellation Columba (the Dove), the bright glow of the galaxy’s centre is offset by the flocculent and sparkling spiral arms swirling around it."
   },
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/potw2548a.mp4",
   "page": "https://esahubble.org/videos/potw2548a/",
@@ -3297,7 +3297,7 @@
   "mb": 117.5,
   "kind": "pan",
   "tier": "nebula",
-  "credit": "ESA/Hubble & NASA, M. Monelli, N. Bartmann (ESA/Hubble) Acknowledgement: M. H. \u00d6zsara\u00e7",
+  "credit": "ESA/Hubble & NASA, M. Monelli, N. Bartmann (ESA/Hubble) Acknowledgement: M. H. Özsaraç",
   "dur": 30,
   "dist": {
    "text": "000",
@@ -3315,7 +3315,7 @@
   "mb": 119.7,
   "kind": "pan",
   "tier": "nebula",
-  "credit": "ESA/Hubble & NASA, W. Jacobson-Gal\u00e1n, A. Filippenko, J. Mauerhan, N. Bartmann (ESA/Hubble)",
+  "credit": "ESA/Hubble & NASA, W. Jacobson-Galán, A. Filippenko, J. Mauerhan, N. Bartmann (ESA/Hubble)",
   "dur": 30,
   "dist": {
    "text": "577",
@@ -3337,7 +3337,7 @@
   "dur": 30,
   "dist": {
    "text": "390 million",
-   "sentence": "This week\u2019s new image from the NASA/ESA Hubble Space Telescope depicts the cosmic tangle that is MCG+05-31-045, a pair of interacting galaxies located 390 million light-years away and a part of the so-called Coma galaxy cluster."
+   "sentence": "This week’s new image from the NASA/ESA Hubble Space Telescope depicts the cosmic tangle that is MCG+05-31-045, a pair of interacting galaxies located 390 million light-years away and a part of the so-called Coma galaxy cluster."
   },
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/potw2446a.mp4",
   "page": "https://esahubble.org/videos/potw2446a/",
@@ -3406,7 +3406,7 @@
   "dur": 30,
   "dist": {
    "text": "60 million",
-   "sentence": "The galaxy IC 758, shown here in today\u2019s NASA/ESA Hubble Space Telescope Picture of the Week , is situated 60 million light-years away in the constellation Ursa Major ."
+   "sentence": "The galaxy IC 758, shown here in today’s NASA/ESA Hubble Space Telescope Picture of the Week , is situated 60 million light-years away in the constellation Ursa Major ."
   },
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/potw2523a.mp4",
   "page": "https://esahubble.org/videos/potw2523a/",
@@ -3558,7 +3558,7 @@
   "mb": 117.3,
   "kind": "pan",
   "tier": "nebula",
-  "credit": "ESA/Hubble & NASA, A. Filippenko, N. Bartmann (ESA/Hubble) Acknowledgement: M. H. \u00d6zsara\u00e7",
+  "credit": "ESA/Hubble & NASA, A. Filippenko, N. Bartmann (ESA/Hubble) Acknowledgement: M. H. Özsaraç",
   "dur": 30,
   "dist": {
    "text": "102 million",
@@ -3576,11 +3576,11 @@
   "mb": 118.4,
   "kind": "pan",
   "tier": "nebula",
-  "credit": "ESA/Hubble & NASA, R. J. Foley\u00a0(UC Santa Cruz), N. Bartmann (ESA/Hubble)",
+  "credit": "ESA/Hubble & NASA, R. J. Foley (UC Santa Cruz), N. Bartmann (ESA/Hubble)",
   "dur": 30,
   "dist": {
    "text": "400 million",
-   "sentence": "Even at over 400 million light-years away, LEDA 132905\u2019s spiral structure is faintly visible, as are patches of bright blue stars."
+   "sentence": "Even at over 400 million light-years away, LEDA 132905’s spiral structure is faintly visible, as are patches of bright blue stars."
   },
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/potw2505a.mp4",
   "page": "https://esahubble.org/videos/potw2505a/",
@@ -3628,7 +3628,7 @@
   "dur": 30,
   "dist": {
    "text": "000",
-   "sentence": "NGC 2005 is located about 750 light-years from the heart of the Large Magellanic Cloud (LMC), which is the Milky Way\u2019s largest satellite galaxy and which itself lies about 162 000 light-years from Earth."
+   "sentence": "NGC 2005 is located about 750 light-years from the heart of the Large Magellanic Cloud (LMC), which is the Milky Way’s largest satellite galaxy and which itself lies about 162 000 light-years from Earth."
   },
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/potw2424a.mp4",
   "page": "https://esahubble.org/videos/potw2424a/",
@@ -3668,7 +3668,7 @@
  {
   "id": "heic2017a",
   "site": "hubble",
-  "title": "Hubble\u2019s New Views of Jupiter",
+  "title": "Hubble’s New Views of Jupiter",
   "mb": 28.4,
   "kind": "still-video",
   "tier": "planet",
@@ -3702,7 +3702,7 @@
   "mb": 112.4,
   "kind": "pan",
   "tier": "nebula",
-  "credit": "ESA/Hubble & NASA, R. J. Foley\u00a0(UC Santa Cruz), N. Bartmann (ESA/Hubble)",
+  "credit": "ESA/Hubble & NASA, R. J. Foley (UC Santa Cruz), N. Bartmann (ESA/Hubble)",
   "dur": 30,
   "dist": null,
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/potw2504a.mp4",
@@ -3732,7 +3732,7 @@
   "mb": 113.4,
   "kind": "pan",
   "tier": "galaxy",
-  "credit": "ESA/Hubble & NASA, O. Fox, L. Jenkins, S. Van Dyk, A. Filippenko, J. Lee and the PHANGS-HST Team, D. de Martin\u00a0(ESA/Hubble),\u00a0M. Zamani (ESA/Hubble), N. Bartmann (ESA/Hubble)",
+  "credit": "ESA/Hubble & NASA, O. Fox, L. Jenkins, S. Van Dyk, A. Filippenko, J. Lee and the PHANGS-HST Team, D. de Martin (ESA/Hubble), M. Zamani (ESA/Hubble), N. Bartmann (ESA/Hubble)",
   "dur": 30,
   "dist": null,
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/potw2445a.mp4",
@@ -3751,7 +3751,7 @@
   "dur": 30,
   "dist": {
    "text": "650 million",
-   "sentence": "This galaxy lies over 650 million light-years from Earth in the appropriately-named constellation Telescopium, and was captured in crystal-clear detail by Hubble\u2019s Wide Field Camera 3."
+   "sentence": "This galaxy lies over 650 million light-years from Earth in the appropriately-named constellation Telescopium, and was captured in crystal-clear detail by Hubble’s Wide Field Camera 3."
   },
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/potw2318a.mp4",
   "page": "https://esahubble.org/videos/potw2318a/",
@@ -4180,7 +4180,7 @@
   "dur": 30,
   "dist": {
    "text": "000",
-   "sentence": "This gigantic cloud of cold hydrogen gas is called N159, and it\u2019s located about 160 000 light-years away in the constellation Dorado ."
+   "sentence": "This gigantic cloud of cold hydrogen gas is called N159, and it’s located about 160 000 light-years away in the constellation Dorado ."
   },
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/potw2547a.mp4",
   "page": "https://esahubble.org/videos/potw2547a/",
@@ -4198,7 +4198,7 @@
   "dur": 30,
   "dist": {
    "text": "60 million",
-   "sentence": "This galaxy is called NGC 4571, and it\u2019s situated about 60 million light-years away in the constellation Coma Berenices ."
+   "sentence": "This galaxy is called NGC 4571, and it’s situated about 60 million light-years away in the constellation Coma Berenices ."
   },
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/potw2543a.mp4",
   "page": "https://esahubble.org/videos/potw2543a/",
@@ -4230,7 +4230,7 @@
   "mb": 113.7,
   "kind": "pan",
   "tier": "nebula",
-  "credit": "ESA/Hubble & NASA, C. Murray, J. Ma\u00edz Apell\u00e1niz, N. Bartmann (ESA/Hubble)",
+  "credit": "ESA/Hubble & NASA, C. Murray, J. Maíz Apellániz, N. Bartmann (ESA/Hubble)",
   "dur": 30,
   "dist": {
    "text": "000",
@@ -4299,7 +4299,7 @@
   "mb": 112.5,
   "kind": "pan",
   "tier": "nebula",
-  "credit": "ESA/Hubble & NASA, G. Duch\u00eane, N. Bartmann (ESA/Hubble)",
+  "credit": "ESA/Hubble & NASA, G. Duchêne, N. Bartmann (ESA/Hubble)",
   "dur": 30,
   "dist": {
    "text": "480",
@@ -4512,7 +4512,7 @@
   "mb": 201.9,
   "kind": "zoom",
   "tier": "nebula",
-  "credit": "ESA/Hubble, NASA, Digitized Sky Survey 2, L. Cal\u00e7ada.\u00a0Music: Astral Electronic",
+  "credit": "ESA/Hubble, NASA, Digitized Sky Survey 2, L. Calçada. Music: Astral Electronic",
   "dur": 50,
   "dist": {
    "text": "000",
@@ -4578,7 +4578,7 @@
   "mb": 196.4,
   "kind": "zoom",
   "tier": "nebula",
-  "credit": "Hubble, DSS,\u00a0Nick Risinger (skysurvey.org)",
+  "credit": "Hubble, DSS, Nick Risinger (skysurvey.org)",
   "dur": 50,
   "dist": null,
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/heic1907b.mp4",
@@ -4837,7 +4837,7 @@
   "dur": 30,
   "dist": {
    "text": "69 million",
-   "sentence": "UGC 11861 is located 69 million light-years away from Earth \u2014 which may seem a vast distance, but it\u2019s just right for Hubble to grab this majestic shot of the galaxy\u2019s spiral arms and the short but brightly glowing bar in its centre."
+   "sentence": "UGC 11861 is located 69 million light-years away from Earth — which may seem a vast distance, but it’s just right for Hubble to grab this majestic shot of the galaxy’s spiral arms and the short but brightly glowing bar in its centre."
   },
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/potw2434a.mp4",
   "page": "https://esahubble.org/videos/potw2434a/",
@@ -4976,7 +4976,7 @@
  {
   "id": "heic2303a",
   "site": "hubble",
-  "title": "Hubble\u2019s new views of Jupiter and Uranus",
+  "title": "Hubble’s new views of Jupiter and Uranus",
   "mb": 58.0,
   "kind": "still-video",
   "tier": "planet",
@@ -5055,7 +5055,7 @@
   "mb": 317.6,
   "kind": "zoom",
   "tier": "galaxy",
-  "credit": "NASA,\u00a0ESA, Digitized Sky Survey 2. ESO",
+  "credit": "NASA, ESA, Digitized Sky Survey 2. ESO",
   "dur": 50,
   "dist": null,
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/heic1514a.mp4",
@@ -5087,7 +5087,7 @@
   "title": "Pan: Messier 72",
   "mb": 121.7,
   "kind": "pan",
-  "tier": "galaxy",
+  "tier": "nebula",
   "credit": "ESA/Hubble & NASA, A. Sarajedini, G. Piotto, M. Libralato, N. Bartmann (ESA/Hubble)",
   "dur": 34,
   "dist": null,
@@ -5107,7 +5107,7 @@
   "dur": 30,
   "dist": {
    "text": "7109",
-   "sentence": "It\u2019s just 7109 light-years away from Earth."
+   "sentence": "It’s just 7109 light-years away from Earth."
   },
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/potw2510a.mp4",
   "page": "https://esahubble.org/videos/potw2510a/",
@@ -5232,7 +5232,7 @@
   "mb": 114.5,
   "kind": "pan",
   "tier": "nebula",
-  "credit": "ESA/Hubble & NASA, D. Calzetti, R. Chandar, N. Bartmann (ESA/Hubble) Acknowledgement: M. H. \u00d6zsara\u00e7",
+  "credit": "ESA/Hubble & NASA, D. Calzetti, R. Chandar, N. Bartmann (ESA/Hubble) Acknowledgement: M. H. Özsaraç",
   "dur": 30,
   "dist": null,
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/potw2532a.mp4",
@@ -5347,7 +5347,7 @@
   "dur": 30,
   "dist": {
    "text": "100 million",
-   "sentence": "This swirling collection of stars new and old is located in the constellation Virgo \u2014 in fact, in the Virgo galaxy cluster \u2014 100 million light-years from Earth."
+   "sentence": "This swirling collection of stars new and old is located in the constellation Virgo — in fact, in the Virgo galaxy cluster — 100 million light-years from Earth."
   },
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/potw2418a.mp4",
   "page": "https://esahubble.org/videos/potw2418a/",
@@ -5596,7 +5596,7 @@
   "dur": 30,
   "dist": {
    "text": "000",
-   "sentence": "Located 160 000 light-years away in the constellations Dorado and Mensa , the Large Magellanic Cloud is the largest of the Milky Way\u2019s many small satellite galaxies."
+   "sentence": "Located 160 000 light-years away in the constellations Dorado and Mensa , the Large Magellanic Cloud is the largest of the Milky Way’s many small satellite galaxies."
   },
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/potw2519a.mp4",
   "page": "https://esahubble.org/videos/potw2519a/",
@@ -5609,7 +5609,7 @@
   "title": "Zoom Into M13",
   "mb": 223.7,
   "kind": "zoom",
-  "tier": "galaxy",
+  "tier": "nebula",
   "credit": "ESA/Hubble, NASA, KPNO/NOIRLab , Digitized Sky Survey 2, E. Slawik, N. Risinger (skysurvey.org), T.A. Rector (University of Alaska Anchorage) and H. Schweiker (WIYN and NOIRLab)",
   "dur": 60,
   "dist": null,
@@ -5952,7 +5952,7 @@
   "mb": 78.3,
   "kind": "pan",
   "tier": "nebula",
-  "credit": "ESA/Hubble, NASA, Dark Energy Survey/DOE/FNAL/DECam/CTIO/NOIRLab/NSF/AURA, Digitized Sky Survey 2, M. Zamani (NSF\u2019s NOIRLab), E. Slawik",
+  "credit": "ESA/Hubble, NASA, Dark Energy Survey/DOE/FNAL/DECam/CTIO/NOIRLab/NSF/AURA, Digitized Sky Survey 2, M. Zamani (NSF’s NOIRLab), E. Slawik",
   "dur": 30,
   "dist": null,
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/heic2109b.mp4",
@@ -5967,7 +5967,7 @@
   "mb": 218.0,
   "kind": "zoom",
   "tier": "nebula",
-  "credit": "ESA/Hubble, NASA, Dark Energy Survey/DOE/FNAL/DECam/CTIO/NOIRLab/NSF/AURA, Digitized Sky Survey 2, M. Zamani (NSF\u2019s NOIRLab), E. Slawik",
+  "credit": "ESA/Hubble, NASA, Dark Energy Survey/DOE/FNAL/DECam/CTIO/NOIRLab/NSF/AURA, Digitized Sky Survey 2, M. Zamani (NSF’s NOIRLab), E. Slawik",
   "dur": 60,
   "dist": null,
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/heic2109c.mp4",
@@ -5981,7 +5981,7 @@
   "title": "Pan of M13",
   "mb": 115.3,
   "kind": "pan",
-  "tier": "galaxy",
+  "tier": "nebula",
   "credit": "ESA/Hubble & NASA",
   "dur": 30,
   "dist": null,
@@ -6008,7 +6008,7 @@
  {
   "id": "potw2342a",
   "site": "hubble",
-  "title": "Pan: \u2018S\u2019 is for \u2018Spiral\u2019, \u2018AB\u2019 is for \u2026 \u2018Weakly Barred\u2019",
+  "title": "Pan: ‘S’ is for ‘Spiral’, ‘AB’ is for … ‘Weakly Barred’",
   "mb": 116.5,
   "kind": "pan",
   "tier": "galaxy",
@@ -6090,7 +6090,7 @@
   "mb": 346.3,
   "kind": "zoom",
   "tier": "nebula",
-  "credit": "ESA/Hubble, Digitized Sky Survey 2, Nick Risinger (skysurvey.org); Music:\u00a0Johan B. Monell",
+  "credit": "ESA/Hubble, Digitized Sky Survey 2, Nick Risinger (skysurvey.org); Music: Johan B. Monell",
   "dur": 80,
   "dist": null,
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/heic1608b.mp4",
@@ -6274,7 +6274,7 @@
   "dur": 30,
   "dist": {
    "text": "89 million",
-   "sentence": "NGC 298 lies around 89 million light-years away in the constellation Cetus, and appears isolated in this image \u2014 only a handful of distant galaxies and foreground stars accompany the lonely galaxy."
+   "sentence": "NGC 298 lies around 89 million light-years away in the constellation Cetus, and appears isolated in this image — only a handful of distant galaxies and foreground stars accompany the lonely galaxy."
   },
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/potw2322a.mp4",
   "page": "https://esahubble.org/videos/potw2322a/",
@@ -6303,7 +6303,7 @@
   "mb": 311.9,
   "kind": "zoom",
   "tier": "galaxy",
-  "credit": "NASA,\u00a0ESA, Digitized Sky Survey 2, N. Risinger (Skysurvey.org),\u00a0J. Dalcanton (University of Washington, USA), B. F. Williams (University of Washington, USA), L. C. Johnson (University of Washington, USA), the PHAT team, and R. Gendler.",
+  "credit": "NASA, ESA, Digitized Sky Survey 2, N. Risinger (Skysurvey.org), J. Dalcanton (University of Washington, USA), B. F. Williams (University of Washington, USA), L. C. Johnson (University of Washington, USA), the PHAT team, and R. Gendler.",
   "dur": 50,
   "dist": null,
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/heic1502a.mp4",
@@ -6318,7 +6318,7 @@
   "mb": 226.4,
   "kind": "zoom",
   "tier": "nebula",
-  "credit": "ESA/Hubble & NASA, ESO, Digitized Sky Survey 2,\u00a0NOIRLab/NSF/AURA, D. Gouliermis, P. Hor\u00e1lek, E. Slawik, N. Risinger, N. Bartmann (ESA/Hubble)",
+  "credit": "ESA/Hubble & NASA, ESO, Digitized Sky Survey 2, NOIRLab/NSF/AURA, D. Gouliermis, P. Horálek, E. Slawik, N. Risinger, N. Bartmann (ESA/Hubble)",
   "dur": 60,
   "dist": null,
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/potm2608c.mp4",
@@ -6355,7 +6355,7 @@
   "dur": 30,
   "dist": {
    "text": "63 million",
-   "sentence": "The galaxy Messier 88 (M88), which is also known as NGC 4501, is located about 63 million light-years away in the constellation Coma Berenices (Berenice\u2019s Hair)."
+   "sentence": "The galaxy Messier 88 (M88), which is also known as NGC 4501, is located about 63 million light-years away in the constellation Coma Berenices (Berenice’s Hair)."
   },
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/potm2605a.mp4",
   "page": "https://esahubble.org/videos/potm2605a/",
@@ -6432,7 +6432,7 @@
   "mb": 114.4,
   "kind": "pan",
   "tier": "nebula",
-  "credit": "ESA/Hubble & NASA, R. J. Foley (UC Santa Cruz), Dark Energy Survey/DOE/FNAL/DECam/CTIO/NOIRLab/NSF/AURA, N. Bartmann (ESA/Hubble) Acknowledgement: Mehmet Y\u00fcksek",
+  "credit": "ESA/Hubble & NASA, R. J. Foley (UC Santa Cruz), Dark Energy Survey/DOE/FNAL/DECam/CTIO/NOIRLab/NSF/AURA, N. Bartmann (ESA/Hubble) Acknowledgement: Mehmet Yüksek",
   "dur": 30,
   "dist": {
    "text": "187 million",
@@ -6479,7 +6479,7 @@
  {
   "id": "potw2352a",
   "site": "hubble",
-  "title": "Pan: It\u2019s all relative",
+  "title": "Pan: It’s all relative",
   "mb": 113.9,
   "kind": "pan",
   "tier": "nebula",
@@ -6678,7 +6678,7 @@
   "mb": 71.6,
   "kind": "pan",
   "tier": "nebula",
-  "credit": "NASA, ESA, G. Illingworth (University of California, Santa Cruz), P. Oesch (University of California, Santa Cruz; Yale University), R. Bouwens and I. Labb\u00e9 (Leiden University), and the Science Team, S. Fujimoto et al. (Cosmic Dawn Center [DAWN] and University of Copenhagen), N. Bartmann (ESA/Hubble)",
+  "credit": "NASA, ESA, G. Illingworth (University of California, Santa Cruz), P. Oesch (University of California, Santa Cruz; Yale University), R. Bouwens and I. Labbé (Leiden University), and the Science Team, S. Fujimoto et al. (Cosmic Dawn Center [DAWN] and University of Copenhagen), N. Bartmann (ESA/Hubble)",
   "dur": 20,
   "dist": null,
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/heic2204c.mp4",
@@ -6693,7 +6693,7 @@
   "mb": 276.5,
   "kind": "zoom",
   "tier": "nebula",
-  "credit": "ESA/Hubble, NASA, Digitized Sky Survey 2, G. Brammer, S. Fujimoto, G. Illingworth, P. Oesch, R. Bouwens, I. Labb\u00e9, N. Risinger, E. Slawikkkn, M. Zamani, N. Bartmann (ESA/Hubble)",
+  "credit": "ESA/Hubble, NASA, Digitized Sky Survey 2, G. Brammer, S. Fujimoto, G. Illingworth, P. Oesch, R. Bouwens, I. Labbé, N. Risinger, E. Slawikkkn, M. Zamani, N. Bartmann (ESA/Hubble)",
   "dur": 75,
   "dist": null,
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/heic2204b.mp4",
@@ -6708,11 +6708,11 @@
   "mb": 226.4,
   "kind": "zoom",
   "tier": "nebula",
-  "credit": "ESA/Hubble, NASA, Dark Energy Survey/DOE/FNAL/NOIRLab/NSF/AURA, Digitized Sky Survey 2,\u00a0 E. Slawik, N. Risinger, M. Zamani",
+  "credit": "ESA/Hubble, NASA, Dark Energy Survey/DOE/FNAL/NOIRLab/NSF/AURA, Digitized Sky Survey 2,  E. Slawik, N. Risinger, M. Zamani",
   "dur": 60,
   "dist": {
    "text": "300",
-   "sentence": "Lying roughly 300 light-years from Earth in the constellation Leo, CW Leonis is a carbon star \u2014 a luminous type of red giant star with a carbon-rich atmosphere."
+   "sentence": "Lying roughly 300 light-years from Earth in the constellation Leo, CW Leonis is a carbon star — a luminous type of red giant star with a carbon-rich atmosphere."
   },
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/heic2112c.mp4",
   "page": "https://esahubble.org/videos/heic2112c/",
@@ -6730,7 +6730,7 @@
   "dur": 30,
   "dist": {
    "text": "400",
-   "sentence": "Lying roughly 400 light-years from Earth in the constellation Leo, CW Leonis is a carbon star \u2014 a luminous type of red giant star with a carbon-rich atmosphere."
+   "sentence": "Lying roughly 400 light-years from Earth in the constellation Leo, CW Leonis is a carbon star — a luminous type of red giant star with a carbon-rich atmosphere."
   },
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/heic2112b.mp4",
   "page": "https://esahubble.org/videos/heic2112b/",
@@ -6748,7 +6748,7 @@
   "dur": 50,
   "dist": {
    "text": "704 million",
-   "sentence": "Residing 704 million light-years from Earth, this system is catalogued as Arp-Madore 2026-424 (AM 2026-424) in the Arp-Madore \u201cCatalogue of Southern Peculiar Galaxies and Associations\u201d."
+   "sentence": "Residing 704 million light-years from Earth, this system is catalogued as Arp-Madore 2026-424 (AM 2026-424) in the Arp-Madore “Catalogue of Southern Peculiar Galaxies and Associations”."
   },
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/heic1919a.mp4",
   "page": "https://esahubble.org/videos/heic1919a/",
@@ -6846,7 +6846,7 @@
   "mb": 301.4,
   "kind": "zoom",
   "tier": "nebula",
-  "credit": "ESA/Hubble, Digitized Sky Survey, L. Cal\u00e7ada, Nick Risinger (skysurvey.org). Music: Astral Electronic",
+  "credit": "ESA/Hubble, Digitized Sky Survey, L. Calçada, Nick Risinger (skysurvey.org). Music: Astral Electronic",
   "dur": 80,
   "dist": {
    "text": "70 million",
@@ -7022,7 +7022,7 @@
  {
   "id": "potw2311a",
   "site": "hubble",
-  "title": "Pan: Hubble\u2019s neighbourhood watch",
+  "title": "Pan: Hubble’s neighbourhood watch",
   "mb": 113.5,
   "kind": "pan",
   "tier": "nebula",
@@ -7048,7 +7048,7 @@
   "dur": 20,
   "dist": {
    "text": "704 million",
-   "sentence": "Residing 704 million light-years from Earth, this system is catalogued as Arp-Madore 2026-424 (AM 2026-424) in the Arp-Madore \u201cCatalogue of Southern Peculiar Galaxies and Associations\u201d."
+   "sentence": "Residing 704 million light-years from Earth, this system is catalogued as Arp-Madore 2026-424 (AM 2026-424) in the Arp-Madore “Catalogue of Southern Peculiar Galaxies and Associations”."
   },
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/heic1919b.mp4",
   "page": "https://esahubble.org/videos/heic1919b/",
@@ -7114,7 +7114,7 @@
   "dur": 30,
   "dist": {
    "text": "000",
-   "sentence": "Like the object in another recent Picture of the Week, it is located about 162 000 light-years away in the largest and brightest of the Milky Way\u2019s satellite galaxies , the Large Magellanic Cloud (LMC)."
+   "sentence": "Like the object in another recent Picture of the Week, it is located about 162 000 light-years away in the largest and brightest of the Milky Way’s satellite galaxies , the Large Magellanic Cloud (LMC)."
   },
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/potw2413a.mp4",
   "page": "https://esahubble.org/videos/potw2413a/",
@@ -7271,7 +7271,7 @@
  {
   "id": "potw2343a",
   "site": "hubble",
-  "title": "Pan: A dynamic duo \u2026 or trio?",
+  "title": "Pan: A dynamic duo … or trio?",
   "mb": 112.7,
   "kind": "pan",
   "tier": "nebula",
@@ -7312,7 +7312,7 @@
   "dur": 30,
   "dist": {
    "text": "32 million",
-   "sentence": "M74 \u2014 also known as the Phantom Galaxy \u2014 lies around 32 million light-years away from Earth in the constellation Pisces, and is a familiar sight for Hubble ."
+   "sentence": "M74 — also known as the Phantom Galaxy — lies around 32 million light-years away from Earth in the constellation Pisces, and is a familiar sight for Hubble ."
   },
   "url": "https://cdn.esahubble.org/archives/videos/ultra_hd/potw2235a.mp4",
   "page": "https://esahubble.org/videos/potw2235a/",
@@ -7367,11 +7367,11 @@
  {
   "id": "heic2012b",
   "site": "hubble",
-  "title": "Zooming Into the Bat Shadow and its \u201cFlapping\u201d",
+  "title": "Zooming Into the Bat Shadow and its “Flapping”",
   "mb": 297.8,
   "kind": "zoom",
   "tier": "nebula",
-  "credit": "ESA/Hubble, Digitized Sky Survey, L. Cal\u00e7ada, Nick Risinger (skysurvey.org)",
+  "credit": "ESA/Hubble, Digitized Sky Survey, L. Calçada, Nick Risinger (skysurvey.org)",
   "dur": 78,
   "dist": {
    "text": "1300",
