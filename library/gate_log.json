@@ -1762,5 +1762,51 @@
    16196335077689966785,
    17361650311320103160
   ]
+ },
+ {
+  "id": "20261102_0899",
+  "t": "2026-11-02T16:28:04+00:00",
+  "template": "timemachine",
+  "music": "Dark Fog",
+  "hook": "Light-years are also years. Watch.",
+  "closer": "YOU ARE LOOKING BACK IN TIME",
+  "assets": [
+   "heic2011c",
+   "potw2425a",
+   "weic2611a",
+   "potm2403a",
+   "potw2327a"
+  ],
+  "windows": [],
+  "hashes": [
+   67669308922134528,
+   16195211305669022434,
+   16208728772748941520,
+   264917827230336,
+   17162246680514688,
+   127642369789952
+  ]
+ },
+ {
+  "id": "20261102_0904",
+  "t": "2026-11-02T16:30:59+00:00",
+  "template": "drift",
+  "music": "Heart of the Beast",
+  "hook": "Breathe. This is the real universe.",
+  "closer": "SAVE THIS FOR LATER",
+  "assets": [
+   "heic1920a",
+   "weic2517a",
+   "potw2523a"
+  ],
+  "windows": [],
+  "hashes": [
+   56533247515112192,
+   18164556742262784,
+   17938647423201632448,
+   17940353998238968032,
+   16208728805908606976,
+   17940362365626802176
+  ]
  }
 ]
