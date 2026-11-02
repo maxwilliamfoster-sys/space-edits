@@ -10,11 +10,13 @@ from .lib import history, load_assets
 
 # (slot, beats). Totals must be 60 beats. Slots only ever get bigger (SCALE_RANK): the caption promises "zoom out", so no
 # Jupiter after the Sun and no other galaxy before our own. mw -> galaxy_zoom stay adjacent (one all-sky zoom serves both).
+# 2026-11-02: viewers average 4-8 s, and the zoom-outs spent those seconds on near-still Earth (up to 10 beats, two shots), so
+# Earth is now one 4-beat shot. The closing deep field is capped at about 10 s for the same reason.
 TEMPLATES = {
-    "classic": [("earth", 6), ("earth", 4), ("planet", 4), ("sun", 8), ("mw", 8), ("galaxy_zoom", 10), ("deep", 20)],
-    "tour":    [("earth", 6), ("planet", 6), ("nebula", 6), ("nebula", 6), ("mw", 8), ("galaxy_zoom", 10), ("deep", 18)],
-    "deep":    [("earth", 8), ("sun", 6), ("nebula", 8), ("mw", 6), ("galaxy_zoom", 10), ("galaxy", 6), ("deep", 16)],
-    "nebulae": [("earth", 6), ("earth", 4), ("nebula", 8), ("nebula", 6), ("mw", 6), ("galaxy_zoom", 10), ("galaxy", 6), ("deep", 14)],
+    "classic": [("earth", 4), ("planet", 4), ("sun", 6), ("nebula", 6), ("mw", 8), ("galaxy_zoom", 10), ("deep", 22)],
+    "tour":    [("earth", 4), ("planet", 6), ("nebula", 6), ("nebula", 6), ("mw", 8), ("galaxy_zoom", 10), ("deep", 20)],
+    "deep":    [("earth", 4), ("sun", 6), ("nebula", 8), ("mw", 6), ("galaxy_zoom", 10), ("galaxy", 6), ("deep", 20)],
+    "nebulae": [("earth", 4), ("nebula", 8), ("nebula", 6), ("mw", 6), ("galaxy_zoom", 10), ("galaxy", 6), ("deep", 20)],
 }
 SCALE_RANK = {"earth": 0, "planet": 1, "sun": 2, "nebula": 3, "mw": 4, "galaxy_zoom": 5, "galaxy": 5, "deep": 6}
 IN_OUR_GALAXY_LY = 1e5      # a "nebula" slot comes before the Milky Way, so its clip must be inside it (MW is ~100,000 ly across)

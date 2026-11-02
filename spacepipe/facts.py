@@ -20,7 +20,8 @@ HASHTAGS = [["#space", "#universe", "#nasa", "#webb"], ["#astronomy", "#cosmos",
             ["#space", "#galaxy", "#hubble", "#deepspace"], ["#universe", "#scale", "#earth", "#nasa"]]
 # on-screen hook: 7 words or fewer with a concrete specific (a name or place: Earth, the universe...), checked by gate.text_lint
 HOOKS = ["You vs the universe. Watch this.", "How small is Earth? Watch this.", "Zoom out from Earth. Keep going.",
-         "This is how big the universe is.", "Earth is not the main character.", "From Earth to the edge. Watch."]
+         "This is how big the universe is.", "Earth is not the main character.", "From Earth to the edge. Watch.",
+         "Not CGI. This is the real universe.", "Earth to the edge. All of it real.", "Real footage. Earth to deep space."]
 
 # The other formats (Max, 2026-10-28: every post said the same things over the same pictures). Each has its own story,
 # hooks, closers and tags; every number on screen comes from the clip's own ESA page (dist_ly).
