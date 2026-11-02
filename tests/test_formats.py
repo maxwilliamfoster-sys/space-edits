@@ -77,7 +77,7 @@ class Labels(unittest.TestCase):
     def test_star_clusters_are_never_called_a_galaxy(self):
         """M13 and M72 are globular clusters inside the Milky Way; a 'galaxy' tier makes the edit say ONE GALAXY over them."""
         for a in compose.load_assets():
-            if re.search(r"M13|Messier 72", a["title"]):
+            if re.search(r"\bM13\b|Messier 72\b", a["title"]):
                 self.assertNotEqual(a["tier"], "galaxy", a["title"])
 
 
