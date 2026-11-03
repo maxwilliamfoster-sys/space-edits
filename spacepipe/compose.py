@@ -1,6 +1,7 @@
 """Plan one edit: pick template, assets (rotating by usage), windows, music, text. Returns a plain dict (JSON-serialisable)."""
 import functools
 import json
+import os
 import random
 import re
 import statistics
@@ -38,7 +39,24 @@ FORMATS = {
     "countdown":   [10, 10, 10, 10, 20],    # #5..#1 ranked by distance, farthest last
     "drift":       [20, 20, 20],            # 3 long calm shots, almost no text
 }
-FAMILY = {**{t: "zoom" for t in TEMPLATES}, **{f: f for f in FORMATS}}
+# Named-target cut (2026-11-03 research: Cosmic Zoom opens on a named destination, typical video about 62,000 views). One clip,
+# about 18 s. TARGET_SHARE 0 until the 2 Nov results are read on 9 Nov; then 0.5. At 0 it takes no draw, so seeds don't change.
+TARGET_SHARE = float(os.environ.get("TARGET_SHARE", "0"))
+TARGET_SECONDS = 18
+TARGET_NAMES = {   # the name people know, where the clip's own ESA page gives it
+    **dict.fromkeys(["weic2427a", "weic2427b", "weic2427c"], "THE SOMBRERO GALAXY"),
+    **dict.fromkeys(["weic2608c"], "THE WHIRLPOOL GALAXY"),
+    **dict.fromkeys(["weic2517a", "weic2517c"], "THE BUTTERFLY NEBULA"),
+    **dict.fromkeys(["weic2216c", "weic2216d", "weic2218a"], "THE PILLARS OF CREATION"),
+    **dict.fromkeys(["weic2411b", "weic2411d"], "THE HORSEHEAD NEBULA"),
+    **dict.fromkeys(["potm2506b", "potm2506c", "weic2410a"], "THE CIGAR GALAXY"),
+    **dict.fromkeys(["potm2410a", "potm2410b", "potm2410c"], "THE PHANTOM GALAXY"),
+    **dict.fromkeys(["potm2607a", "potm2607b"], "THE TREASURE CHEST NEBULA"),
+    **dict.fromkeys(["weic2205b", "weic2205c"], "THE COSMIC CLIFFS"),
+    **dict.fromkeys(["potm2303a", "potm2303b"], "THE COSMIC SEAHORSE"),
+}
+_CATALOG_NAME = re.compile(r"\b(NGC \d+|Messier \d+|M\d{1,3}|Arp \d+|Abell \w+|MACS ?\w+|Terzan \d+|Westerlund \d+|Pismis \d+|Lynds \d+)\b")
+FAMILY = {**{t: "zoom" for t in TEMPLATES}, **{f: f for f in FORMATS}, "target": "target"}
 FAMILIES = ["zoom", *FORMATS]
 STYLE = {   # grade (render_shot) and the cut between shots (xfade); "zoom" keeps render.GRADE
     "zoom":        dict(grade=None, tin=["fade", 0.25]),
@@ -147,9 +165,13 @@ def plan(seed, template=None, track=None):
     usage = history()["usage"]
     if template:
         tname = template
+    elif TARGET_SHARE and rng.random() < TARGET_SHARE:
+        tname = "target"
     else:
         fam = rng.choice(FAMILIES)
         tname = rng.choice(list(TEMPLATES)) if fam == "zoom" else fam
+    if tname == "target":
+        return plan_target(seed, track, rng, assets, usage)
     if tname in FORMATS:
         return plan_format(seed, tname, track, rng, assets, usage)
     slots = TEMPLATES[tname]
@@ -253,6 +275,49 @@ def _clip_shot(a, slot, beats, L, rng, style, last):
 
 def _size(head, big=96):
     return big if len(head) < 15 else 74 if len(head) < 24 else 62
+
+
+def target_name(a):
+    """The on-screen name of a clip's subject: from TARGET_NAMES, else the one catalogue name in its title. Else None."""
+    if a["id"] in TARGET_NAMES:
+        return TARGET_NAMES[a["id"]]
+    found = set(_CATALOG_NAME.findall(a["title"]))
+    return found.pop() if len(found) == 1 and "pullout" not in a["title"].lower() else None
+
+
+def hook_name(name):
+    """How a target reads in a sentence: "the Pillars of Creation", but never "Ngc 3507"."""
+    if name not in TARGET_NAMES.values():
+        return name
+    return name.title().replace("The ", "the ").replace(" Of ", " of ")
+
+
+def plan_target(seed, track, rng, assets, usage):
+    """One named place: the name from frame 0, then its distance. A zoom plays whole, sped up, so it reaches the target."""
+    tr = _track(rng, track)
+    P, T0 = tr["P"], tr["T0"]
+    total = round((TARGET_SECONDS - T0) / P)
+    pool = [a for a in dist_pool(assets, set()) if target_name(a)]
+    zooms = [a for a in pool if a.get("kind") == "zoom"]
+    a = _pick_spread(zooms if zooms and rng.random() < 0.5 else pool, 1, usage, rng)[0]
+    style = dict(grade=None, tin=["fade", 0.25])
+    L = total * P + 0.6 + T0
+    shot = _clip_shot(a, "target", total, L, rng, style, True)
+    if a.get("kind") == "zoom" and a["dur"] > L + 1:
+        shot.update(src_in=0.0, speed=round((a["dur"] - 0.5) / L, 2), fx=0.5, z=[1.0, 1.0])
+    name, d = target_name(a), facts.ly_text(a["dist_ly"])
+    mid, k_end = total // 2, total - CLOSER_BEATS
+    head = f"{d} LIGHT-YEARS"
+    texts = [dict(text=name.upper(), k0=0, k1=mid, size=_size(name), y="y1", font="impact"),
+             dict(text="REAL TELESCOPE FOOTAGE", k0=0, k1=mid, size=40, y="y2", font="arial"),
+             dict(text=head, k0=mid, k1=k_end, size=_size(head), y="y1", font="impact", color=GOLD),
+             dict(text="THIS LIGHT LEFT " + facts.era_line(ly_value(a["dist_ly"])), k0=mid, k1=k_end, size=36, y="y2", font="arial")]
+    closer = rng.choice(facts.TARGET_CLOSERS)
+    texts.append(dict(text=closer, k0=k_end, k1=total, size=60 if len(closer) <= 30 else 48, y=560, font="impact"))
+    tr = dict(tr, start=music.pick_start(tr, T0 + total * P, T0 + mid * P, random.Random(f"{seed}/music")))
+    return dict(seed=seed, template="target", music=tr, shots=[shot], texts=texts, total_beats=total,
+                hook=rng.choice(facts.TARGET_HOOKS).format(name=hook_name(name)),
+                hashtags=rng.choice(facts.TARGET_HASHTAGS), P=P, T0=T0)
 
 
 def plan_format(seed, tname, track, rng, assets, usage):

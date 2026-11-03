@@ -194,7 +194,8 @@ def assemble(p, final):
     for s in shots:
         k += s["beats"]
         cuts.append(bt(k))
-    t_end = bt(60)
+    total = p.get("total_beats", 60)
+    t_end = bt(total)
     for i, s in enumerate(shots):
         s["c0"] = cuts[i]
     chain, last = [f"[{i}:v]tpad=stop_mode=clone:stop_duration=0.3[p{i}]" for i in range(len(shots))], "p0"
@@ -209,7 +210,7 @@ def assemble(p, final):
                    f":x=(w-tw)/2:y={L['y']}:alpha='{L['alpha']}'")
     cdir = ROOT / "out/pipe_tmp"
     cdir.mkdir(parents=True, exist_ok=True)
-    c0 = bt(60 - CARD_BEATS)
+    c0 = bt(total - CARD_BEATS)
     cal = f"if(lt(t,{c0:.2f}),0,min(1,(t-{c0:.2f})/0.5))"
     lines = credit_text(p).split("\n")
     box_h = len(lines) * 31 + 40

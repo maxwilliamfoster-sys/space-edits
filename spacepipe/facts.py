@@ -46,6 +46,10 @@ FORMAT_HASHTAGS = {
     "countdown": [["#space", "#top5", "#universe", "#hubble"], ["#astronomy", "#ranking", "#galaxy", "#webb"]],
     "drift": [["#space", "#relaxing", "#universe", "#webb"], ["#calm", "#cosmos", "#nebula", "#hubble"]],
 }
+# The named-target cut (compose.plan_target). Kept apart from FORMAT_HOOKS: {name} is filled in from the clip.
+TARGET_HOOKS = ["We flew to {name}.", "Next stop: {name}.", "This is {name}. It's real.", "Real footage of {name}."]
+TARGET_CLOSERS = ["WHERE SHOULD WE GO NEXT?", "COMMENT THE NEXT STOP", "NAME OUR NEXT DESTINATION"]
+TARGET_HASHTAGS = [["#space", "#universe", "#astronomy", "#jameswebb"], ["#cosmos", "#galaxy", "#hubble", "#nebula"]]
 # (lower bound in years, line). Standard dates: Earth 4.54 bn years; the Mesozoic "age of dinosaurs" 252-66 million;
 # Homo sapiens about 300,000; the last ice age ended about 11,700; the Great Pyramid about 4,500; the Roman Empire 27 BC.
 ERAS = [(4.6e9, "BEFORE EARTH EXISTED"), (2.52e8, "BEFORE THE AGE OF DINOSAURS"), (6.6e7, "IN THE AGE OF THE DINOSAURS"),

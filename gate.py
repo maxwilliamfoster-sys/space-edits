@@ -159,7 +159,7 @@ def load_log():
 
 
 def entry_for(plan, hashes, eid):
-    closer = next((t["text"] for t in plan["texts"] if t["k1"] == 60), "")
+    closer = next((t["text"] for t in plan["texts"] if t["k1"] == plan.get("total_beats", 60)), "")
     return dict(id=eid, t=datetime.now(timezone.utc).isoformat(timespec="seconds"), template=plan["template"], music=plan["music"]["title"],
                 hook=plan["hook"], closer=closer, assets=[s["asset"] for s in plan["shots"] if s["src"] != "nasa"],
                 windows=[[s["asset"], s["src_in"]] for s in plan["shots"] if s["src"] == "nasa"], hashes=hashes)

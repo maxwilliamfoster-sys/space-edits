@@ -12,7 +12,11 @@ def probe(path):
     return json.loads(r.stdout)
 
 
-def check(path, silent=False):
+def min_seconds(plan):
+    return 15 if plan.get("template") == "target" else 20
+
+
+def check(path, silent=False, min_s=20):
     j = probe(path)
     v = next(s for s in j["streams"] if s["codec_type"] == "video")
     a = next((s for s in j["streams"] if s["codec_type"] == "audio"), None)
@@ -31,7 +35,7 @@ def check(path, silent=False):
         "30fps": abs(fps - 30) < 0.01,
         "h264 high yuv420p": v["codec_name"] == "h264" and v["profile"] == "High" and v["pix_fmt"] == "yuv420p",
         "aac 48k": bool(a) and a["codec_name"] == "aac" and a["sample_rate"] == "48000",
-        "length 20-60s": 20 <= dur <= 60,
+        "length 20-60s": min_s <= dur <= 60,
         "size < 200MB": size_mb < 200,
         "no mid black (<0.8s)": mid_black < 0.8,
         "loudness -17..-11 LUFS": silent or (lufs is not None and -17 <= lufs <= -11),

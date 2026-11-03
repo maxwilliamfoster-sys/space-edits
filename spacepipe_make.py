@@ -1,5 +1,5 @@
 """Space 'scale' edit factory.
-  py -I -X utf8 spacepipe_make.py new [-n 3] [--seed S] [--template classic|tour|deep|nebulae|timemachine|guess|countdown|drift] [--track "Epic Unease"]
+  py -I -X utf8 spacepipe_make.py new [-n 3] [--seed S] [--template classic|tour|deep|nebulae|timemachine|guess|countdown|drift|target] [--track "Epic Unease"]
   py -I -X utf8 spacepipe_make.py status        # footage/music capacity report
   py -I -X utf8 spacepipe_make.py prefetch [-n 6]  # download N ESA clips per tier ahead of time
 Each edit lands in out/queue/<id>/ : video.mp4, caption.txt, plan.json, qc.json.
@@ -36,7 +36,7 @@ def make_one(seed, template, track, silent=False, precheck=None):
     print(f"[{eid}] template={p['template']} music={p['music']['title']} ({p['music']['mode']}) "
           f"clips={[s['asset'] for s in p['shots']]}", flush=True)
     render.render(p, str(tmp / "video.mp4"))
-    res = qc.check(tmp / "video.mp4", silent=silent)
+    res = qc.check(tmp / "video.mp4", silent=silent, min_s=qc.min_seconds(p))
     (tmp / "caption.txt").write_text(render.caption_text(p), encoding="utf-8")
     (tmp / "plan.json").write_text(json.dumps(p, indent=1, default=str), encoding="utf-8")
     (tmp / "qc.json").write_text(json.dumps(res, indent=1), encoding="utf-8")
@@ -118,7 +118,7 @@ if __name__ == "__main__":
     n = sub.add_parser("new")
     n.add_argument("-n", type=int, default=1)
     n.add_argument("--seed", type=int)
-    n.add_argument("--template", choices=[*compose.TEMPLATES, *compose.FORMATS])
+    n.add_argument("--template", choices=[*compose.TEMPLATES, *compose.FORMATS, "target"])
     n.add_argument("--track")
     n.set_defaults(f=new)
     sub.add_parser("status").set_defaults(f=status)
