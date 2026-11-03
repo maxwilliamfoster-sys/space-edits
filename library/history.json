@@ -1854,6 +1854,18 @@
     "potw2530a",
     "potw2402a"
    ]
+  },
+  {
+   "id": "20261103_0920",
+   "seed": 920,
+   "template": "drift",
+   "music": "Impact Prelude",
+   "qc": true,
+   "assets": [
+    "weic2503b",
+    "potw2447a",
+    "potw2312a"
+   ]
   }
  ],
  "usage": {
@@ -2121,7 +2133,7 @@
   "potw2310a": 1,
   "potw2338a": 1,
   "potw2321a": 1,
-  "weic2503b": 1,
+  "weic2503b": 2,
   "potm2603a": 1,
   "weic2616c": 1,
   "potm2403a": 1,
@@ -2129,6 +2141,8 @@
   "potw2523a": 1,
   "potw2532a": 1,
   "potw2326a": 1,
-  "potw2530a": 1
+  "potw2530a": 1,
+  "potw2447a": 1,
+  "potw2312a": 1
  }
 }

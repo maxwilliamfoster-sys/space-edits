@@ -489,7 +489,9 @@
   "due": "2026-11-03T12:00:00Z",
   "file": "space_20261101_0882.mp4",
   "mode": "own",
-  "status": "scheduled"
+  "status": "sent",
+  "sent_at": "2026-11-03T12:05:32.706Z",
+  "link": "https://tiktok.com/@mcfiddler.bob/video/7703914689096371488"
  },
  "20261101_0893": {
   "post": "6ae7a4ab07b774c8fb2ced8b",
@@ -523,6 +525,13 @@
   "post": "6ae921c7e697cf47b8402538",
   "due": "2026-11-04T22:00:00Z",
   "file": "space_20261102_0918.mp4",
+  "mode": "own",
+  "status": "scheduled"
+ },
+ "20261103_0920": {
+  "post": "6ae9f1076f67d3809121b0a0",
+  "due": "2026-11-05T12:00:00Z",
+  "file": "space_20261103_0920.mp4",
   "mode": "own",
   "status": "scheduled"
  }
