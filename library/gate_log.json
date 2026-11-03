@@ -1884,5 +1884,62 @@
    8714730194490884096,
    8714729599872794624
   ]
+ },
+ {
+  "id": "20261103_0946",
+  "t": "2026-11-03T22:16:44+00:00",
+  "template": "deep",
+  "music": "Epic Unease",
+  "hook": "Earth is not the main character.",
+  "closer": "EVERYTHING YOU LOVE IS ON ONE SPECK",
+  "assets": [
+   "heic1910b",
+   "heic1811a",
+   "heic1811a",
+   "weic2615a",
+   "potm2505a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    656
+   ],
+   [
+    "mercury_transit",
+    14
+   ]
+  ],
+  "hashes": [
+   5496881580312031328,
+   6972300756533830257,
+   9245762959503512,
+   15755905903973918720,
+   18222092409450899716,
+   17651543045426423213
+  ]
+ },
+ {
+  "id": "20261103_0947",
+  "t": "2026-11-03T22:23:58+00:00",
+  "template": "timemachine",
+  "music": "Ghost Story",
+  "hook": "Light-years are also years. Watch.",
+  "closer": "EVERY STAR YOU SEE IS THE PAST",
+  "assets": [
+   "weic2411d",
+   "heic2505d",
+   "potw2510a",
+   "potw2324a",
+   "potm2303a"
+  ],
+  "windows": [],
+  "hashes": [
+   33893231652552704,
+   17937960662964133888,
+   12173477047480934584,
+   17938058184257761328,
+   38260781841,
+   252887751363652
+  ]
  }
 ]
