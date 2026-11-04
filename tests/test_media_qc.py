@@ -1,7 +1,7 @@
 """media_qc against real seeded clips made with whatever FFmpeg this machine resolves.
 
-space-edits/tests/test_media_qc.py is a copy of this file, so these tests also run on the FFmpeg 6.1
-that Space's CI installs. Update both together.
+space-edits/tests/test_media_qc.py is a copy of this file, so these tests also run on the FFmpeg that
+Space's CI installs (8.0.1 on ubuntu-latest, checked 2026-11-04). Update both together.
 
 Set FFMPEG_BIN to run the whole file against another FFmpeg build:
     FFMPEG_BIN=C:/ffmpeg/ffmpeg-n7.1-latest-win64-gpl-shared-7.1/bin/ffmpeg.exe py -m unittest tests.test_media_qc
