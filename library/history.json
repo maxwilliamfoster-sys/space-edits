@@ -1896,6 +1896,19 @@
     "potw2324a",
     "potm2303a"
    ]
+  },
+  {
+   "id": "20261104_0949",
+   "seed": 949,
+   "template": "guess",
+   "music": "Long Time Coming",
+   "qc": true,
+   "assets": [
+    "weic2420b",
+    "potm2405b",
+    "weic2517b",
+    "heic2304c"
+   ]
   }
  ],
  "usage": {
@@ -2043,7 +2056,7 @@
   "heic1805a": 1,
   "potw2503a": 1,
   "weic2407a": 1,
-  "weic2420b": 2,
+  "weic2420b": 3,
   "heic2213a": 1,
   "potw2448a": 1,
   "weic2621a": 1,
@@ -2130,7 +2143,7 @@
   "potw2430a": 1,
   "potw2551a": 1,
   "weic2205b": 1,
-  "weic2517b": 2,
+  "weic2517b": 3,
   "weic2216c": 2,
   "weic2411d": 2,
   "potw2435a": 1,
@@ -2147,7 +2160,7 @@
   "potw2402a": 2,
   "heic1920a": 2,
   "heic1818b": 1,
-  "heic2304c": 1,
+  "heic2304c": 2,
   "potw2344a": 1,
   "potw2438a": 1,
   "potm2211b": 1,
@@ -2174,6 +2187,7 @@
   "potw2530a": 1,
   "potw2447a": 1,
   "potw2312a": 1,
-  "weic2615a": 1
+  "weic2615a": 1,
+  "potm2405b": 1
  }
 }
