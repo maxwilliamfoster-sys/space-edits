@@ -1909,10 +1909,26 @@
     "weic2517b",
     "heic2304c"
    ]
+  },
+  {
+   "id": "20261104_0952",
+   "seed": 952,
+   "template": "classic",
+   "music": "Windswept",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "weic2332a",
+    "sdo_year6",
+    "weic2415c",
+    "potm2306c",
+    "potm2306c",
+    "potm2312a"
+   ]
   }
  ],
  "usage": {
-  "earth_exp65": 148,
+  "earth_exp65": 149,
   "weic2510b": 1,
   "potw2428a": 1,
   "weic2520b": 1,
@@ -1937,8 +1953,8 @@
   "weic2427a": 1,
   "weic2420c": 6,
   "potm2503a": 6,
-  "sdo_year6": 18,
-  "weic2332a": 10,
+  "sdo_year6": 19,
+  "weic2332a": 11,
   "potm2301b": 6,
   "weic2429a": 7,
   "heic1919a": 10,
@@ -1947,10 +1963,10 @@
   "potw2504a": 1,
   "weic2514b": 2,
   "heic2201a": 8,
-  "potm2312a": 5,
+  "potm2312a": 6,
   "potw2403a": 1,
   "heic2301b": 1,
-  "potm2306c": 10,
+  "potm2306c": 12,
   "heic1417a": 6,
   "weic2606a": 7,
   "heic1712b": 1,
@@ -2188,6 +2204,7 @@
   "potw2447a": 1,
   "potw2312a": 1,
   "weic2615a": 1,
-  "potm2405b": 1
+  "potm2405b": 1,
+  "weic2415c": 1
  }
 }
