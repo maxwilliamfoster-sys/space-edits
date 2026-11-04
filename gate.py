@@ -22,6 +22,7 @@ import numpy as np
 import requests
 
 import hook_lint   # growth-lab S5 (vendored)
+import media_qc    # growth-lab (vendored)
 from spacepipe.lib import FFMPEG, LIB
 
 LOG = LIB / "gate_log.json"
@@ -111,6 +112,11 @@ def quality(video, folder, dur, silent=False):
                        capture_output=True, text=True)
     if not silent and "silence_start" in r.stderr:
         reasons.append("silent stretch of 2s or more in the audio")
+    # Shared rule-based QC: true peak, clipping, flashes and more. Its rules only warn during rollout
+    # (they show as "[qc]" lines in the Actions log); a QC that cannot run rejects the video.
+    report = media_qc.check(str(video), bot="space", audio=not silent)
+    print(media_qc.log_line(report, video))
+    reasons.extend(report["failures"])
     return reasons
 
 

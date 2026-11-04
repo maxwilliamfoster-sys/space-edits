@@ -153,6 +153,22 @@ class Quality(unittest.TestCase):
         self.assertTrue(any("silent" in r for r in self.q(self.moving_silent)))
         self.assertEqual(self.q(self.moving_silent, silent=True), [])
 
+    def test_media_qc_warnings_do_not_reject_the_video(self):
+        report = dict(ok=True, failures=[], warnings=["QC true_peak: 0.1 dBTP above -1.0"],
+                      flags=[dict(rule="true_peak", message="QC true_peak: 0.1 dBTP above -1.0")], metrics={}, version="t")
+        with mock.patch.object(gate.media_qc, "check", return_value=report):
+            self.assertEqual(self.q(self.moving), [])
+
+    def test_media_qc_that_cannot_run_rejects_the_video(self):
+        report = dict(ok=False, failures=["media QC check could not run: x"], warnings=[], flags=[], metrics={}, version="t")
+        with mock.patch.object(gate.media_qc, "check", return_value=report):
+            self.assertIn("media QC check could not run: x", self.q(self.moving))
+
+    def test_media_qc_uses_the_space_rules_and_skips_audio_rules_on_silent_edits(self):
+        with mock.patch.object(gate.media_qc, "check", wraps=gate.media_qc.check) as spy:
+            self.q(self.moving_silent, silent=True)
+        self.assertEqual(spy.call_args.kwargs, dict(bot="space", audio=False))
+
     def test_failed_qc_json_is_rejected(self):
         folder = TMP / "qcfail"
         folder.mkdir(exist_ok=True)
