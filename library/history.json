@@ -1925,10 +1925,26 @@
     "potm2306c",
     "potm2312a"
    ]
+  },
+  {
+   "id": "20261104_0972",
+   "seed": 972,
+   "template": "nebulae",
+   "music": "Evening of Chaos",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "weic2617a",
+    "potw2405a",
+    "weic2615b",
+    "weic2615b",
+    "heic2506a",
+    "weic2522a"
+   ]
   }
  ],
  "usage": {
-  "earth_exp65": 149,
+  "earth_exp65": 150,
   "weic2510b": 1,
   "potw2428a": 1,
   "weic2520b": 1,
@@ -1958,7 +1974,7 @@
   "potm2301b": 6,
   "weic2429a": 7,
   "heic1919a": 10,
-  "weic2522a": 5,
+  "weic2522a": 6,
   "heic2312b": 6,
   "potw2504a": 1,
   "weic2514b": 2,
@@ -1991,7 +2007,7 @@
   "weic2620a": 2,
   "potm2604a": 1,
   "potm2407a": 1,
-  "weic2615b": 8,
+  "weic2615b": 10,
   "heic1914b": 6,
   "weic2608c": 4,
   "potm2606b": 4,
@@ -2111,7 +2127,7 @@
   "potw2329a": 1,
   "heic2505f": 1,
   "potw2508a": 1,
-  "heic2506a": 1,
+  "heic2506a": 2,
   "potw2433a": 1,
   "potw2519a": 1,
   "potw2541a": 1,
@@ -2205,6 +2221,8 @@
   "potw2312a": 1,
   "weic2615a": 1,
   "potm2405b": 1,
-  "weic2415c": 1
+  "weic2415c": 1,
+  "weic2617a": 1,
+  "potw2405a": 1
  }
 }

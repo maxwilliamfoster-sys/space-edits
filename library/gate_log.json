@@ -1964,5 +1964,35 @@
    9277686565868404738,
    15128418876916887920
   ]
+ },
+ {
+  "id": "20261104_0972",
+  "t": "2026-11-04T22:06:47+00:00",
+  "template": "nebulae",
+  "music": "Evening of Chaos",
+  "hook": "Real footage. Earth to deep space.",
+  "closer": "YOU ARE SMALLER THAN YOU THINK",
+  "assets": [
+   "weic2617a",
+   "potw2405a",
+   "weic2615b",
+   "weic2615b",
+   "heic2506a",
+   "weic2522a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    2758
+   ]
+  ],
+  "hashes": [
+   17886271195178105980,
+   17913191181667859648,
+   36028866552135682,
+   17940362863943941372,
+   3468370263009772417,
+   2314955780203447180
+  ]
  }
 ]
