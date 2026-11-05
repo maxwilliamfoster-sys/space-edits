@@ -2039,5 +2039,62 @@
    17935850433628141793,
    8712487192866386016
   ]
+ },
+ {
+  "id": "20261105_0991",
+  "t": "2026-11-05T22:53:44+00:00",
+  "template": "timemachine",
+  "music": "Windswept",
+  "hook": "Old light from across the universe.",
+  "closer": "THE NIGHT SKY IS OLD LIGHT",
+  "assets": [
+   "heic2112c",
+   "potm2512a",
+   "potw2314a",
+   "potw2538a",
+   "potw2323a"
+  ],
+  "windows": [],
+  "hashes": [
+   33873756107571712,
+   16272571757042922727,
+   4519631332610932736,
+   16208719975457812708,
+   18261723932786688,
+   58811437085622272
+  ]
+ },
+ {
+  "id": "20261105_0993",
+  "t": "2026-11-05T22:56:31+00:00",
+  "template": "classic",
+  "music": "Echoes of Time v2",
+  "hook": "How small is Earth? Watch this.",
+  "closer": "ONE PLANET. ONE CHANCE.",
+  "assets": [
+   "weic2214b",
+   "potw2417a",
+   "heic1903a",
+   "heic1903a",
+   "potm2312a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    1932
+   ],
+   [
+    "sdo_flare",
+    50
+   ]
+  ],
+  "hashes": [
+   11018321337251856384,
+   17508017299345424512,
+   17941776839839319040,
+   5517069082801099474,
+   235629221890,
+   1159228975936046592
+  ]
  }
 ]

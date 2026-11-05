@@ -1966,17 +1966,47 @@
     "weic2611a",
     "potw2437a"
    ]
+  },
+  {
+   "id": "20261105_0991",
+   "seed": 991,
+   "template": "timemachine",
+   "music": "Windswept",
+   "qc": true,
+   "assets": [
+    "heic2112c",
+    "potm2512a",
+    "potw2314a",
+    "potw2538a",
+    "potw2323a"
+   ]
+  },
+  {
+   "id": "20261105_0993",
+   "seed": 993,
+   "template": "classic",
+   "music": "Echoes of Time v2",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "weic2214b",
+    "sdo_flare",
+    "potw2417a",
+    "heic1903a",
+    "heic1903a",
+    "potm2312a"
+   ]
   }
  ],
  "usage": {
-  "earth_exp65": 150,
+  "earth_exp65": 151,
   "weic2510b": 1,
   "potw2428a": 1,
   "weic2520b": 1,
   "heic1620c": 2,
   "potm2507b": 4,
-  "sdo_flare": 16,
-  "weic2214b": 6,
+  "sdo_flare": 17,
+  "weic2214b": 7,
   "potm2211a": 4,
   "potm2601b": 5,
   "potw2511a": 1,
@@ -2004,7 +2034,7 @@
   "potw2504a": 1,
   "weic2514b": 2,
   "heic2201a": 8,
-  "potm2312a": 6,
+  "potm2312a": 7,
   "potw2403a": 1,
   "heic2301b": 1,
   "potm2306c": 12,
@@ -2015,7 +2045,7 @@
   "heic1711b": 3,
   "heic2604a": 2,
   "potw2517a": 1,
-  "heic1903a": 8,
+  "heic1903a": 10,
   "potw2527a": 4,
   "potw2525a": 1,
   "potw2316a": 2,
@@ -2081,7 +2111,7 @@
   "potw2528a": 1,
   "weic2427c": 1,
   "heic2502b": 4,
-  "potm2512a": 3,
+  "potm2512a": 4,
   "weic2518a": 2,
   "heic2108b": 2,
   "weic2612b": 4,
@@ -2221,13 +2251,13 @@
   "potw2344a": 1,
   "potw2438a": 1,
   "potm2211b": 1,
-  "potw2538a": 1,
+  "potw2538a": 2,
   "potw2512a": 1,
   "heic2406a": 2,
   "potw2437a": 2,
   "weic2307c": 1,
   "potw2539a": 1,
-  "heic2112c": 1,
+  "heic2112c": 2,
   "potw2432a": 1,
   "potm2506c": 1,
   "potw2310a": 1,
@@ -2250,6 +2280,9 @@
   "weic2617a": 1,
   "potw2405a": 1,
   "potw2522a": 1,
-  "heic2012b": 1
+  "heic2012b": 1,
+  "potw2314a": 1,
+  "potw2323a": 1,
+  "potw2417a": 1
  }
 }
