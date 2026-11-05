@@ -1941,6 +1941,31 @@
     "heic2506a",
     "weic2522a"
    ]
+  },
+  {
+   "id": "20261105_0987",
+   "seed": 987,
+   "template": "drift",
+   "music": "Cut and Run",
+   "qc": true,
+   "assets": [
+    "potw2522a",
+    "potw2418a",
+    "heic2406a"
+   ]
+  },
+  {
+   "id": "20261105_0988",
+   "seed": 988,
+   "template": "guess",
+   "music": "Dreams Become Real",
+   "qc": true,
+   "assets": [
+    "heic2012b",
+    "potw2425a",
+    "weic2611a",
+    "potw2437a"
+   ]
   }
  ],
  "usage": {
@@ -1955,7 +1980,7 @@
   "potm2211a": 4,
   "potm2601b": 5,
   "potw2511a": 1,
-  "potw2425a": 2,
+  "potw2425a": 3,
   "potm2410b": 2,
   "heic2011c": 7,
   "heic1816a": 5,
@@ -2027,7 +2052,7 @@
   "potm2410c": 1,
   "weic2427b": 4,
   "potm2505a": 6,
-  "potw2418a": 1,
+  "potw2418a": 2,
   "potm2506d": 2,
   "heic1811a": 10,
   "heic1901b": 10,
@@ -2181,7 +2206,7 @@
   "potw2435a": 1,
   "weic2327a": 1,
   "potw2318a": 1,
-  "weic2611a": 2,
+  "weic2611a": 3,
   "potw2420a": 1,
   "potw2542a": 1,
   "potw2446a": 1,
@@ -2198,8 +2223,8 @@
   "potm2211b": 1,
   "potw2538a": 1,
   "potw2512a": 1,
-  "heic2406a": 1,
-  "potw2437a": 1,
+  "heic2406a": 2,
+  "potw2437a": 2,
   "weic2307c": 1,
   "potw2539a": 1,
   "heic2112c": 1,
@@ -2223,6 +2248,8 @@
   "potm2405b": 1,
   "weic2415c": 1,
   "weic2617a": 1,
-  "potw2405a": 1
+  "potw2405a": 1,
+  "potw2522a": 1,
+  "heic2012b": 1
  }
 }

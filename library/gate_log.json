@@ -1994,5 +1994,50 @@
    3468370263009772417,
    2314955780203447180
   ]
+ },
+ {
+  "id": "20261105_0987",
+  "t": "2026-11-05T14:58:00+00:00",
+  "template": "drift",
+  "music": "Cut and Run",
+  "hook": "Real telescope footage of the universe.",
+  "closer": "ALL OF THIS IS REAL",
+  "assets": [
+   "potw2522a",
+   "potw2418a",
+   "heic2406a"
+  ],
+  "windows": [],
+  "hashes": [
+   16348331599473975526,
+   6980826679144408816,
+   1774630325531507952,
+   4731166069417702,
+   8277863440537092096,
+   305808203598295040
+  ]
+ },
+ {
+  "id": "20261105_0988",
+  "t": "2026-11-05T15:00:55+00:00",
+  "template": "guess",
+  "music": "Dreams Become Real",
+  "hook": "Guess the light-years before they appear.",
+  "closer": "HOW MANY DID YOU GET RIGHT?",
+  "assets": [
+   "heic2012b",
+   "potw2425a",
+   "weic2611a",
+   "potw2437a"
+  ],
+  "windows": [],
+  "hashes": [
+   29538315198828720,
+   8997287817006316653,
+   16496354425987702739,
+   16186210774622460124,
+   17935850433628141793,
+   8712487192866386016
+  ]
  }
 ]
