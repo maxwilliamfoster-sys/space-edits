@@ -2096,5 +2096,61 @@
    235629221890,
    1159228975936046592
   ]
+ },
+ {
+  "id": "20261106_1016",
+  "t": "2026-11-06T21:49:08+00:00",
+  "template": "guess",
+  "music": "Mesmerize",
+  "hook": "How many light-years away? Guess.",
+  "closer": "COMMENT YOUR SCORE OUT OF 4",
+  "assets": [
+   "potm2408a",
+   "potm2601b",
+   "potw2514a",
+   "potw2318a"
+  ],
+  "windows": [],
+  "hashes": [
+   16197370455199555808,
+   152443642822172,
+   4225702620224876916,
+   399246395596,
+   3831496704,
+   7020316794748928
+  ]
+ },
+ {
+  "id": "20261106_1020",
+  "t": "2026-11-06T21:52:31+00:00",
+  "template": "classic",
+  "music": "Windswept",
+  "hook": "How small is Earth? Watch this.",
+  "closer": "AND YOU THOUGHT YOUR PROBLEMS WERE BIG",
+  "assets": [
+   "heic2312b",
+   "potw2536a",
+   "heic1919a",
+   "heic1919a",
+   "weic2429a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    1856
+   ],
+   [
+    "sdo_year6",
+    148
+   ]
+  ],
+  "hashes": [
+   282847656613194944,
+   16781762976811487212,
+   15564440314071482368,
+   35165048848,
+   1765622662011297808,
+   7782434500603814401
+  ]
  }
 ]
