@@ -570,7 +570,9 @@
   "due": "2026-11-06T12:00:00Z",
   "file": "space_20261104_0949.mp4",
   "mode": "own",
-  "status": "scheduled"
+  "status": "sent",
+  "sent_at": "2026-11-06T12:06:09.418Z",
+  "link": "https://tiktok.com/@mcfiddler.bob/video/7705027975116246304"
  },
  "20261104_0972": {
   "post": "6aebac77c91738fad507b8eb",
