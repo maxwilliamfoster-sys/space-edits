@@ -2037,6 +2037,32 @@
     "heic1919a",
     "weic2429a"
    ]
+  },
+  {
+   "id": "20261107_1057",
+   "seed": 1057,
+   "template": "drift",
+   "music": "Eternal Hope",
+   "qc": true,
+   "assets": [
+    "weic2517a",
+    "potm2211b",
+    "potw2310a"
+   ]
+  },
+  {
+   "id": "20261107_1060",
+   "seed": 1060,
+   "template": "timemachine",
+   "music": "Evening of Chaos",
+   "qc": true,
+   "assets": [
+    "heic2112b",
+    "weic2216c",
+    "potm2405e",
+    "potw2517a",
+    "heic1920a"
+   ]
   }
  ],
  "usage": {
@@ -2085,7 +2111,7 @@
   "weic2316c": 1,
   "heic1711b": 3,
   "heic2604a": 2,
-  "potw2517a": 1,
+  "potw2517a": 2,
   "heic1903a": 10,
   "potw2527a": 4,
   "potw2525a": 1,
@@ -2128,7 +2154,7 @@
   "heic1811a": 10,
   "heic1901b": 10,
   "weic2218a": 3,
-  "potm2405e": 1,
+  "potm2405e": 2,
   "potw2406a": 1,
   "weic2518b": 4,
   "potm2603b": 1,
@@ -2156,7 +2182,7 @@
   "weic2518a": 2,
   "heic2108b": 2,
   "weic2612b": 4,
-  "weic2517a": 3,
+  "weic2517a": 4,
   "weic2423a": 1,
   "weic2503c": 4,
   "potw2502a": 1,
@@ -2272,7 +2298,7 @@
   "potw2551a": 1,
   "weic2205b": 1,
   "weic2517b": 3,
-  "weic2216c": 2,
+  "weic2216c": 3,
   "weic2411d": 2,
   "potw2435a": 1,
   "weic2327a": 1,
@@ -2282,16 +2308,16 @@
   "potw2542a": 1,
   "potw2446a": 1,
   "potm2412b": 1,
-  "heic2112b": 2,
+  "heic2112b": 3,
   "potw2322a": 1,
   "potw2505a": 1,
   "potw2402a": 2,
-  "heic1920a": 3,
+  "heic1920a": 4,
   "heic1818b": 1,
   "heic2304c": 2,
   "potw2344a": 1,
   "potw2438a": 1,
-  "potm2211b": 2,
+  "potm2211b": 3,
   "potw2538a": 2,
   "potw2512a": 1,
   "heic2406a": 2,
@@ -2301,7 +2327,7 @@
   "heic2112c": 2,
   "potw2432a": 1,
   "potm2506c": 1,
-  "potw2310a": 1,
+  "potw2310a": 2,
   "potw2338a": 1,
   "potw2321a": 1,
   "weic2503b": 2,
