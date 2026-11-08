@@ -2198,5 +2198,83 @@
    2909545847735726387,
    29493886438088704
   ]
+ },
+ {
+  "id": "20261108_1114",
+  "t": "2026-11-08T20:47:16+00:00",
+  "template": "drift",
+  "music": "Ghost Story",
+  "hook": "Real telescope footage of the universe.",
+  "closer": "SEND THIS TO SOMEONE WHO NEEDS IT",
+  "assets": [
+   "potw2543a",
+   "potm2303a",
+   "potw2315a"
+  ],
+  "windows": [],
+  "hashes": [
+   17357137916005511392,
+   16208719976531554528,
+   2260666105729024,
+   2260717177405440,
+   9254524684599296,
+   229767798325248
+  ]
+ },
+ {
+  "id": "20261108_1124",
+  "t": "2026-11-08T20:49:52+00:00",
+  "template": "deep",
+  "music": "Cut and Run",
+  "hook": "Earth to the edge. All real.",
+  "closer": "AND YOU THOUGHT YOUR PROBLEMS WERE BIG",
+  "assets": [
+   "potm2510b",
+   "heic2002a",
+   "heic2002a",
+   "potm2310a",
+   "heic1711b"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    2688
+   ],
+   [
+    "mercury_transit",
+    12
+   ]
+  ],
+  "hashes": [
+   17325848902748864512,
+   251723485550336,
+   69055283208,
+   17177346478570274544,
+   10719612718516597188,
+   8328493228122206449
+  ]
+ },
+ {
+  "id": "20261108_1126",
+  "t": "2026-11-08T20:52:57+00:00",
+  "template": "guess",
+  "music": "Dark Fog",
+  "hook": "Guess how far. Light-years appear.",
+  "closer": "WHICH ONE SURPRISED YOU?",
+  "assets": [
+   "potw2443a",
+   "potw2545a",
+   "potm2607a",
+   "heic2505d"
+  ],
+  "windows": [],
+  "hashes": [
+   538739775893405696,
+   38174065410203680,
+   71776054106177536,
+   13595976486946933510,
+   3502775686396400,
+   6972025354598859394
+  ]
  }
 ]

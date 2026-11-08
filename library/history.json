@@ -2127,10 +2127,51 @@
     "heic2002a",
     "heic1816a"
    ]
+  },
+  {
+   "id": "20261108_1114",
+   "seed": 1114,
+   "template": "drift",
+   "music": "Ghost Story",
+   "qc": true,
+   "assets": [
+    "potw2543a",
+    "potm2303a",
+    "potw2315a"
+   ]
+  },
+  {
+   "id": "20261108_1124",
+   "seed": 1124,
+   "template": "deep",
+   "music": "Cut and Run",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "mercury_transit",
+    "potm2510b",
+    "heic2002a",
+    "heic2002a",
+    "potm2310a",
+    "heic1711b"
+   ]
+  },
+  {
+   "id": "20261108_1126",
+   "seed": 1126,
+   "template": "guess",
+   "music": "Dark Fog",
+   "qc": true,
+   "assets": [
+    "potw2443a",
+    "potw2545a",
+    "potm2607a",
+    "heic2505d"
+   ]
   }
  ],
  "usage": {
-  "earth_exp65": 156,
+  "earth_exp65": 157,
   "weic2510b": 1,
   "potw2428a": 1,
   "weic2520b": 1,
@@ -2150,8 +2191,8 @@
   "weic2420a": 3,
   "heic2018b": 2,
   "potm2606a": 6,
-  "mercury_transit": 16,
-  "potm2510b": 1,
+  "mercury_transit": 17,
+  "potm2510b": 2,
   "weic2427a": 1,
   "weic2420c": 6,
   "potm2503a": 6,
@@ -2173,7 +2214,7 @@
   "weic2606a": 7,
   "heic1712b": 1,
   "weic2316c": 1,
-  "heic1711b": 3,
+  "heic1711b": 4,
   "heic2604a": 2,
   "potw2517a": 2,
   "heic1903a": 10,
@@ -2197,7 +2238,7 @@
   "heic1914b": 7,
   "weic2608c": 4,
   "potm2606b": 4,
-  "heic2002a": 10,
+  "heic2002a": 12,
   "heic1615a": 5,
   "weic2303a": 1,
   "weic2411b": 3,
@@ -2222,7 +2263,7 @@
   "potw2406a": 1,
   "weic2518b": 4,
   "potm2603b": 1,
-  "heic2505d": 3,
+  "heic2505d": 4,
   "heic1819b": 4,
   "weic2422a": 1,
   "potw2235a": 1,
@@ -2265,7 +2306,7 @@
   "heic1707b": 1,
   "weic2426a": 1,
   "potw2549a": 1,
-  "potm2303a": 3,
+  "potm2303a": 4,
   "potm2311a": 2,
   "potw2427a": 1,
   "weic2208b": 1,
@@ -2278,12 +2319,12 @@
   "heic2213a": 1,
   "potw2448a": 1,
   "weic2621a": 1,
-  "potm2607a": 3,
+  "potm2607a": 4,
   "potm2411a": 1,
   "heic2106b": 1,
   "weic2603a": 1,
   "potw2515a": 1,
-  "potw2443a": 2,
+  "potw2443a": 3,
   "heic2201b": 1,
   "potw2518a": 2,
   "potw2431a": 1,
@@ -2332,7 +2373,7 @@
   "weic2219c": 1,
   "potm2605a": 2,
   "heic2409a": 1,
-  "potm2310a": 1,
+  "potm2310a": 2,
   "weic2514c": 1,
   "potm2306a": 1,
   "potm2504b": 1,
@@ -2420,6 +2461,9 @@
   "potm2504a": 1,
   "potw2340a": 1,
   "heic2607b": 1,
-  "potw2423a": 1
+  "potw2423a": 1,
+  "potw2543a": 1,
+  "potw2315a": 1,
+  "potw2545a": 1
  }
 }
