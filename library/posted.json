@@ -615,14 +615,18 @@
   "due": "2026-11-07T22:00:00Z",
   "file": "space_20261105_0993.mp4",
   "mode": "own",
-  "status": "scheduled"
+  "status": "sent",
+  "sent_at": "2026-11-07T22:03:07.599Z",
+  "link": "https://tiktok.com/@mcfiddler.bob/video/7705553137339354401"
  },
  "20261106_1016": {
   "post": "6aee4b54004e4879a718c7a5",
   "due": "2026-11-08T12:00:00Z",
   "file": "space_20261106_1016.mp4",
   "mode": "own",
-  "status": "scheduled"
+  "status": "sent",
+  "sent_at": "2026-11-08T12:04:42.069Z",
+  "link": "https://tiktok.com/@mcfiddler.bob/video/7705770185570913568"
  },
  "20261106_1020": {
   "post": "6aee4c1faf7e526d43e3dbef",
