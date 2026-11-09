@@ -21,15 +21,19 @@ def plan(seed, template="target"):
 
 
 class SwitchedOff(unittest.TestCase):
-    def test_it_never_comes_up_by_itself(self):
-        self.assertEqual(compose.TARGET_SHARE, 0)
-        self.assertNotIn("target", {plan(s, None)["template"] for s in range(200)})
+    def test_it_never_comes_up_at_share_zero(self):
+        with mock.patch.object(compose, "TARGET_SHARE", 0):
+            self.assertNotIn("target", {plan(s, None)["template"] for s in range(200)})
+
+    def test_live_share_is_half(self):
+        # switched on 2026-11-09 (review 2026-11-09)
+        self.assertEqual(compose.TARGET_SHARE, 0.5)
 
     def test_a_seed_still_gives_the_same_edit(self):
-        with mock.patch.object(compose, "history", return_value=NO_HISTORY):
+        # share 0 takes no draw, so a seed gives the edit it gave before the test existed
+        with mock.patch.object(compose, "history", return_value=NO_HISTORY),                 mock.patch.object(compose, "TARGET_SHARE", 0):
             first = compose.plan(9001)
-            with mock.patch.object(compose, "TARGET_SHARE", 0):
-                second = compose.plan(9001)
+            second = compose.plan(9001)
         self.assertEqual(first["template"], second["template"])
         self.assertEqual([s["asset"] for s in first["shots"]], [s["asset"] for s in second["shots"]])
 

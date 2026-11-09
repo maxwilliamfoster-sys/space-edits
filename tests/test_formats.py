@@ -21,7 +21,9 @@ def plan(seed, template=None):
 
 class Formats(unittest.TestCase):
     def test_seeds_spread_over_every_format(self):
-        fams = collections.Counter(compose.FAMILY[plan(s)["template"]] for s in range(9000, 9100))
+        # the rotation among the older formats; the target cut (TARGET_SHARE) has its own tests
+        with mock.patch.object(compose, "TARGET_SHARE", 0):
+            fams = collections.Counter(compose.FAMILY[plan(s)["template"]] for s in range(9000, 9100))
         self.assertEqual(set(fams), set(compose.FAMILIES))
         self.assertLess(max(fams.values()), 40)          # ~20 each, no format dominates
 

@@ -41,7 +41,8 @@ FORMATS = {
 }
 # Named-target cut (2026-11-03 research: Cosmic Zoom opens on a named destination, typical video about 62,000 views). One clip,
 # about 18 s. TARGET_SHARE 0 until the 2 Nov results are read on 9 Nov; then 0.5. At 0 it takes no draw, so seeds don't change.
-TARGET_SHARE = float(os.environ.get("TARGET_SHARE", "0"))
+# 2026-11-09: live at 0.5 on the owner's yes (review 2026-11-09). Set TARGET_SHARE=0 to stop it.
+TARGET_SHARE = float(os.environ.get("TARGET_SHARE", "0.5"))
 TARGET_SECONDS = 18
 TARGET_NAMES = {   # the name people know, where the clip's own ESA page gives it
     **dict.fromkeys(["weic2427a", "weic2427b", "weic2427c"], "THE SOMBRERO GALAXY"),

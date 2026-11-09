@@ -68,7 +68,7 @@ class MusicStart(unittest.TestCase):
         for seed in SEEDS:
             p = plan(seed)
             m = p["music"]
-            t_end = p["T0"] + 60 * p["P"]
+            t_end = p["T0"] + p.get("total_beats", 60) * p["P"]     # the target cut is shorter
             self.assertIn("start", m)
             self.assertLess(m["start"] + t_end + 2, m["dur"], m["title"])
             if m["mode"] == "beat" and m["start"]:
