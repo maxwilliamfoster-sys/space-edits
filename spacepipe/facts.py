@@ -68,8 +68,11 @@ def era_line(years):
 
 
 def ly_text(d):
-    """'2.8 billion' -> '2.8 BILLION'; '960' -> '960'."""
-    return re.sub(r"\s+", " ", d).upper()
+    """'2.8 billion' -> '2.8 BILLION'; '960' -> '960'; '7500' -> '7,500'.
+    The catalogue's distances are scraped as written, so one video once showed '7500' next to '4,500'.
+    Whole numbers of four or more digits always get thousands commas (years like 'in 1054' never reach here)."""
+    d = re.sub(r"\s+", " ", d).upper()
+    return re.sub(r"(?<![\d.,])\d{4,}(?![\d.,])", lambda m: f"{int(m.group()):,}", d)
 
 
 def lines_for(slot, asset, rng):

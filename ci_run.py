@@ -24,6 +24,7 @@ from spacepipe.lib import FFMPEG, LIB, ROOT, history
 AUTO_POST = os.environ.get("AUTO_POST", "").strip().lower() == "true"
 SOUND_MODE = os.environ.get("SOUND_MODE", "own").strip().lower()
 EDITS_PER_RUN = int(os.environ.get("EDITS_PER_RUN") or 3)
+AI_DOWN_OK_QUEUE = 2     # with this many posts still queued, a run that lost the AI review ends quietly (next cron retries)
 MAX_TRIES = 120                   # safety cap on renders per run; the real limit is RUN_BUDGET_S, so a rejected edit is replaced until one passes
 RUN_BUDGET_S = 200 * 60           # stop starting renders after this (job timeout is 240 min); the next cron tops the queue up
 MAX_PLANS = 3000                  # plans per run (~20/s); a plan that breaks a novelty rule is dropped before rendering. At 3 a day
@@ -176,7 +177,7 @@ def main():
             skipped.append(reasons)
         return reasons
 
-    started = time.monotonic()
+    started, ai_down = time.monotonic(), False
     while (len(good) < need and plans - len(skipped) < MAX_TRIES and plans < MAX_PLANS
            and time.monotonic() - started < RUN_BUDGET_S):
         plans += 1
@@ -186,14 +187,27 @@ def main():
                 good.append((eid, plan, folder))
                 batch_log.append(gate.pending_entry(plan, folder, eid))
             elif gate.AI_UNAVAILABLE in res["reasons"]:   # every further edit would be rejected the same way: stop instead of burning renders
-                emit("gate_unavailable", "error", "Space: the AI quality review could not run", "Stopped without posting. Check GROQ_API_KEY / Groq limits.")
-                sys.exit("AI review unavailable and required")
+                ai_down = True
+                break
             else:
                 rej = ROOT / "out/rejected" / eid
                 shutil.rmtree(rej, ignore_errors=True)
                 shutil.move(str(folder), str(rej))
                 emit("gate_rejected", "info", f"Space: edit {eid} rejected by the gate", "\n".join(res["reasons"]))
-    if len(good) < need:
+        if ai_down:
+            break
+    if ai_down and not good:
+        # Nothing passed before the review went away. With posts still queued this is not an emergency: the next
+        # cron (10 h later at most) tries again, so the run ends quietly instead of failing. Only an EMPTY queue
+        # is an error. Edits that already passed in this run are still posted (they used to be thrown away).
+        if AUTO_POST and len(pending) >= AI_DOWN_OK_QUEUE:
+            emit("gate_unavailable", "warning", "Space: the AI quality review could not run",
+                 f"Nothing made this run; {len(pending)} post(s) are still queued. The next run tries again.")
+            print(f"[gate] AI review unavailable; {len(pending)} post(s) still queued - leaving it to the next run")
+            return
+        emit("gate_unavailable", "error", "Space: the AI quality review could not run", "Stopped without posting. Check GROQ_API_KEY / Groq limits.")
+        sys.exit("AI review unavailable and required")
+    if len(good) < need and not ai_down:
         emit("render_failed", "warning", "Space: could not make enough edits that pass the gate",
              f"{len(good)}/{need} passed after {plans - len(skipped)} renders ({len(skipped)} plans dropped before rendering)")
     if not good:

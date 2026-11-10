@@ -120,6 +120,47 @@ def quality(video, folder, dur, silent=False):
     return reasons
 
 
+AI_TRIES = 5            # the free tier allows 8,000 tokens a minute, shared with the other bots: a 429 clears within ~60 s
+AI_WAIT_CAP_S = 75
+
+
+def _ask_ai(body, key, post=None, sleep=time.sleep):
+    """The model's JSON verdict, or None when the review could not run. A busy minute (429), a server error,
+    a dropped connection or an unreadable reply is asked again, waiting as long as Groq says ("retry-after").
+    A used-up DAILY quota is not retried: no wait inside one run fixes it. Until 2026-11-10 one 429 after
+    65 s of waiting, or any reply without "choices", failed the whole run with a bare "KeyError"."""
+    post = post or requests.post
+    why = "no reply"
+    for attempt in range(AI_TRIES):
+        wait = 20
+        try:
+            r = post("https://api.groq.com/openai/v1/chat/completions", json=body, headers={"Authorization": f"Bearer {key}"}, timeout=90)
+            if r.status_code == 200:
+                txt = r.json()["choices"][0]["message"]["content"]
+                v = json.loads(re.search(r"{.*}", txt, re.S).group(0))
+                if isinstance(v, dict) and "ok" in v:
+                    return v
+                why = "reply had no verdict"
+            else:
+                text = (r.text or "")[:300]
+                why = f"HTTP {r.status_code}"
+                if "per day" in text:
+                    print("[gate] AI review failed: the free daily AI quota is used up")
+                    return None
+                if r.status_code not in (408, 429, 500, 502, 503, 504):
+                    break
+                try:
+                    wait = float(r.headers.get("retry-after") or 30)
+                except (TypeError, ValueError):
+                    wait = 30
+        except Exception as e:
+            why = type(e).__name__
+        if attempt < AI_TRIES - 1:
+            sleep(min(AI_WAIT_CAP_S, max(5, wait)))
+    print(f"[gate] AI review failed: {why}")
+    return None
+
+
 def ai_review(video, dur):
     """None = skipped (no key), else a list of problems (empty = looks fine)."""
     key = os.environ.get("GROQ_API_KEY")
@@ -138,16 +179,8 @@ def ai_review(video, dur):
     body = {"model": GROQ_MODEL, "temperature": 0, "reasoning_effort": "none", "max_tokens": 400,
             "messages": [{"role": "user", "content": [{"type": "text", "text": AI_PROMPT},
                                                       {"type": "image_url", "image_url": {"url": "data:image/jpeg;base64," + b64}}]}]}
-    try:
-        for wait in (0, 20, 45):   # free tier rate limits: back off and retry
-            time.sleep(wait)
-            r = requests.post("https://api.groq.com/openai/v1/chat/completions", json=body, headers={"Authorization": f"Bearer {key}"}, timeout=90)
-            if r.status_code != 429:
-                break
-        txt = r.json()["choices"][0]["message"]["content"]
-        v = json.loads(re.search(r"{.*}", txt, re.S).group(0))
-    except Exception as e:      # a gate that cannot run must not wave things through when it is required
-        print(f"[gate] AI review failed: {type(e).__name__}")
+    v = _ask_ai(body, key)
+    if v is None:               # a gate that cannot run must not wave things through when it is required
         return [AI_UNAVAILABLE] if os.environ.get("REQUIRE_AI") == "1" else None
     return [] if v.get("ok") else [f"AI review: {p}" for p in v.get("problems", ["rejected"])] or ["AI review rejected it"]
 
