@@ -660,21 +660,27 @@
   "due": "2026-11-09T17:00:00Z",
   "file": "space_20261108_1114.mp4",
   "mode": "own",
-  "status": "scheduled"
+  "status": "sent",
+  "sent_at": "2026-11-09T17:07:13.226Z",
+  "link": "https://tiktok.com/@mcfiddler.bob/video/7706218771945475360"
  },
  "20261108_1124": {
   "post": "6af0e070d6bbae6fa10ece5e",
   "due": "2026-11-09T22:00:00Z",
   "file": "space_20261108_1124.mp4",
   "mode": "own",
-  "status": "scheduled"
+  "status": "sent",
+  "sent_at": "2026-11-09T22:03:55.899Z",
+  "link": "https://tiktok.com/@mcfiddler.bob/video/7706295413841661216"
  },
  "20261108_1126": {
   "post": "6af0e129d6bbae6fa10f1856",
   "due": "2026-11-10T12:00:00Z",
   "file": "space_20261108_1126.mp4",
   "mode": "own",
-  "status": "scheduled"
+  "status": "sent",
+  "sent_at": "2026-11-10T12:04:48.215Z",
+  "link": "https://tiktok.com/@mcfiddler.bob/video/7706512295869893921"
  },
  "20261109_1134": {
   "post": "6af1fb4ffa4f406f7bb6337d",
