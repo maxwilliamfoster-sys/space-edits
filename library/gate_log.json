@@ -2318,5 +2318,27 @@
    578878513681137676,
    151135988465061952
   ]
+ },
+ {
+  "id": "20261110_1169",
+  "t": "2026-11-10T21:57:40+00:00",
+  "template": "drift",
+  "music": "Dreams Become Real",
+  "hook": "Real telescope footage of the universe.",
+  "closer": "SAVE THIS FOR LATER",
+  "assets": [
+   "potw2402a",
+   "potw2322a",
+   "weic2411b"
+  ],
+  "windows": [],
+  "hashes": [
+   29520516859326512,
+   54290555529099264,
+   9286687380620705792,
+   212072339867136,
+   70605928672,
+   114885995847680
+  ]
  }
 ]

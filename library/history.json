@@ -2281,6 +2281,28 @@
     "potw2327a",
     "potm2603b"
    ]
+  },
+  {
+   "id": "20261110_1169",
+   "seed": 1169,
+   "template": "drift",
+   "music": "Dreams Become Real",
+   "qc": true,
+   "assets": [
+    "potw2402a",
+    "potw2322a",
+    "weic2411b"
+   ]
+  },
+  {
+   "id": "20261110_1170",
+   "seed": 1170,
+   "template": "target",
+   "music": "Echoes of Time v2",
+   "qc": true,
+   "assets": [
+    "heic1720a"
+   ]
   }
  ],
  "usage": {
@@ -2354,13 +2376,13 @@
   "heic2002a": 12,
   "heic1615a": 5,
   "weic2303a": 1,
-  "weic2411b": 3,
+  "weic2411b": 4,
   "potw2235c": 1,
   "potm2305c": 4,
   "weic2305b": 4,
   "weic2311a": 1,
   "weic2608b": 1,
-  "heic1720a": 18,
+  "heic1720a": 19,
   "potm2303b": 6,
   "heic1816b": 4,
   "heic2211a": 1,
@@ -2527,9 +2549,9 @@
   "potw2446a": 1,
   "potm2412b": 1,
   "heic2112b": 3,
-  "potw2322a": 2,
+  "potw2322a": 3,
   "potw2505a": 2,
-  "potw2402a": 2,
+  "potw2402a": 3,
   "heic1920a": 4,
   "heic1818b": 1,
   "heic2304c": 3,
