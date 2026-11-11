@@ -2303,10 +2303,86 @@
    "assets": [
     "heic1720a"
    ]
+  },
+  {
+   "id": "20261111_1175",
+   "seed": 1175,
+   "template": "target",
+   "music": "Long Time Coming",
+   "qc": true,
+   "assets": [
+    "heic1513a"
+   ]
+  },
+  {
+   "id": "20261111_1176",
+   "seed": 1176,
+   "template": "timemachine",
+   "music": "Echoes of Time v2",
+   "qc": true,
+   "assets": [
+    "heic2112c",
+    "potw2514a",
+    "weic2611a",
+    "potw2418a",
+    "potm2601b"
+   ]
+  },
+  {
+   "id": "20261111_1177",
+   "seed": 1177,
+   "template": "target",
+   "music": "Epic Unease",
+   "qc": true,
+   "assets": [
+    "heic1513a"
+   ]
+  },
+  {
+   "id": "20261111_1180",
+   "seed": 1180,
+   "template": "target",
+   "music": "Mesmerize",
+   "qc": true,
+   "assets": [
+    "weic2518b"
+   ]
+  },
+  {
+   "id": "20261111_1199",
+   "seed": 1199,
+   "template": "tour",
+   "music": "Rite of Passage",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "weic2606a",
+    "heic2004b",
+    "heic1906b",
+    "heic1901b",
+    "heic1901b",
+    "heic1711a"
+   ]
+  },
+  {
+   "id": "20261111_1216",
+   "seed": 1216,
+   "template": "tour",
+   "music": "Dark Fog",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "weic2606a",
+    "potw2516a",
+    "potw2320a",
+    "weic2211c",
+    "weic2211c",
+    "potm2503a"
+   ]
   }
  ],
  "usage": {
-  "earth_exp65": 157,
+  "earth_exp65": 159,
   "weic2510b": 1,
   "potw2428a": 1,
   "weic2520b": 1,
@@ -2315,7 +2391,7 @@
   "sdo_flare": 17,
   "weic2214b": 7,
   "potm2211a": 4,
-  "potm2601b": 6,
+  "potm2601b": 7,
   "potw2511a": 1,
   "potw2425a": 3,
   "potm2410b": 2,
@@ -2330,7 +2406,7 @@
   "potm2510b": 2,
   "weic2427a": 1,
   "weic2420c": 6,
-  "potm2503a": 6,
+  "potm2503a": 7,
   "sdo_year6": 21,
   "weic2332a": 11,
   "potm2301b": 6,
@@ -2346,7 +2422,7 @@
   "heic2301b": 1,
   "potm2306c": 12,
   "heic1417a": 6,
-  "weic2606a": 7,
+  "weic2606a": 9,
   "heic1712b": 1,
   "weic2316c": 1,
   "heic1711b": 4,
@@ -2365,7 +2441,7 @@
   "weic2212e": 1,
   "potw2445a": 1,
   "heic2304d": 3,
-  "heic1711a": 4,
+  "heic1711a": 5,
   "weic2620a": 2,
   "potm2604a": 1,
   "potm2407a": 1,
@@ -2389,14 +2465,14 @@
   "potm2410c": 1,
   "weic2427b": 4,
   "potm2505a": 6,
-  "potw2418a": 2,
+  "potw2418a": 3,
   "potm2506d": 2,
   "heic1811a": 10,
-  "heic1901b": 10,
+  "heic1901b": 12,
   "weic2218a": 4,
   "potm2405e": 2,
   "potw2406a": 1,
-  "weic2518b": 4,
+  "weic2518b": 5,
   "potm2603b": 3,
   "heic2505d": 4,
   "heic1819b": 4,
@@ -2406,12 +2482,12 @@
   "heic1801a": 5,
   "weic2216d": 4,
   "weic2305a": 3,
-  "weic2211c": 12,
+  "weic2211c": 14,
   "potw2510a": 4,
   "potw2412a": 1,
   "heic1502a": 10,
   "weic2207d": 1,
-  "potw2516a": 1,
+  "potw2516a": 2,
   "heic2108d": 8,
   "weic2418a": 4,
   "heic1509d": 2,
@@ -2480,7 +2556,7 @@
   "potw2317a": 1,
   "potw2534a": 1,
   "heic1910b": 2,
-  "potw2514a": 3,
+  "potw2514a": 4,
   "potm2602a": 2,
   "potm2408a": 2,
   "heic1812c": 1,
@@ -2543,7 +2619,7 @@
   "potw2435a": 1,
   "weic2327a": 1,
   "potw2318a": 2,
-  "weic2611a": 4,
+  "weic2611a": 5,
   "potw2420a": 1,
   "potw2542a": 1,
   "potw2446a": 1,
@@ -2564,7 +2640,7 @@
   "potw2437a": 2,
   "weic2307c": 1,
   "potw2539a": 1,
-  "heic2112c": 2,
+  "heic2112c": 3,
   "potw2432a": 1,
   "potm2506c": 1,
   "potw2310a": 2,
@@ -2600,7 +2676,10 @@
   "potw2543a": 1,
   "potw2315a": 1,
   "potw2545a": 1,
-  "heic1513a": 3,
-  "potm2405d": 1
+  "heic1513a": 5,
+  "potm2405d": 1,
+  "heic2004b": 1,
+  "heic1906b": 1,
+  "potw2320a": 1
  }
 }

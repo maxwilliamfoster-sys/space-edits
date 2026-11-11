@@ -2340,5 +2340,79 @@
    70605928672,
    114885995847680
   ]
+ },
+ {
+  "id": "20261111_1176",
+  "t": "2026-11-11T23:11:39+00:00",
+  "template": "timemachine",
+  "music": "Echoes of Time v2",
+  "hook": "Telescopes look into the universe's past.",
+  "closer": "EVERY STAR YOU SEE IS THE PAST",
+  "assets": [
+   "heic2112c",
+   "potw2514a",
+   "weic2611a",
+   "potw2418a",
+   "potm2601b"
+  ],
+  "windows": [],
+  "hashes": [
+   28257485072629760,
+   17940314261991497728,
+   7705923914416290520,
+   14588357873103352,
+   3757244988101158026,
+   12568694377861656088
+  ]
+ },
+ {
+  "id": "20261111_1180",
+  "t": "2026-11-11T23:14:28+00:00",
+  "template": "target",
+  "music": "Mesmerize",
+  "hook": "Have you seen Pismis 24?",
+  "closer": "NAME OUR NEXT DESTINATION",
+  "assets": [
+   "weic2518b"
+  ],
+  "windows": [],
+  "hashes": [
+   59938372105318400,
+   13884650641984709568,
+   8423983862946234432,
+   67814256290191536,
+   17361623819964431608,
+   215821246840928
+  ]
+ },
+ {
+  "id": "20261111_1216",
+  "t": "2026-11-11T23:17:15+00:00",
+  "template": "tour",
+  "music": "Dark Fog",
+  "hook": "Earth, then everything else. Watch.",
+  "closer": "ALL OF HISTORY HAPPENED ON ONE SPECK",
+  "assets": [
+   "weic2606a",
+   "potw2516a",
+   "potw2320a",
+   "weic2211c",
+   "weic2211c",
+   "potm2503a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    378
+   ]
+  ],
+  "hashes": [
+   13035934035812024320,
+   15054637326969201844,
+   1895891201,
+   36028798629576704,
+   13885856561344082160,
+   16204110031501181680
+  ]
  }
 ]
