@@ -34,6 +34,7 @@ NO_REPEAT_WINDOW_S = 20    # same NASA reel: new windows must start this far fro
 NO_REPEAT_REELS = 9        # ... looking back this many edits (3 days)
 NO_REPEAT_COMBO = 9        # template+music (3 days)
 NO_REPEAT_TEXT = 6         # hook+closer (2 days; only 25 pairs until the text pools grow)
+NO_REPEAT_HOOK = 20        # the opening line alone: never the same one within 20 posts (view-cap research, 2026-11-10)
 HASH_FRAMES = 6
 HASH_NEAR = 8              # max hamming distance (of 64 bits) for two frames to count as "the same picture"
 HASH_MATCHES = 3           # this many near-identical frames = a repeat
@@ -215,6 +216,8 @@ def novelty(plan, hashes, log):
         reasons.append(f"same format ({FAMILY.get(e['template'], e['template'])}) as the previous edit")
     if any(p["template"] == e["template"] and p["music"] == e["music"] for p in log[-NO_REPEAT_COMBO:]):
         reasons.append(f"template+music ({e['template']} / {e['music']}) used in the last {NO_REPEAT_COMBO} edits")
+    if any(p["hook"] == e["hook"] for p in log[-NO_REPEAT_HOOK:]):
+        reasons.append(f"hook was used in one of the last {NO_REPEAT_HOOK} edits")
     if any(p["hook"] == e["hook"] and p["closer"] == e["closer"] for p in log[-NO_REPEAT_TEXT:]):
         reasons.append("same hook + closing line as a recent edit")
     if hashes:

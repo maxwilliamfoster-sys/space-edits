@@ -88,3 +88,37 @@ class Distances(unittest.TestCase):
         self.assertEqual(facts.ly_text("960"), "960")
         self.assertEqual(facts.ly_text("2.8  billion"), "2.8 BILLION")
         self.assertEqual(facts.ly_text("200,000"), "200,000")
+
+
+class Hooks(unittest.TestCase):
+    """Opening lines: enough of them, all pass the wording check, and none repeats within 20 posts."""
+
+    def pools(self):
+        from spacepipe import facts
+        return {"zoom": facts.HOOKS, **facts.FORMAT_HOOKS,
+                "target": [h.format(name="the Orion Nebula") for h in facts.TARGET_HOOKS]}
+
+    def test_every_hook_passes_the_lint_and_no_pool_repeats_itself(self):
+        for name, hooks in self.pools().items():
+            self.assertEqual(len(set(hooks)), len(hooks), name)
+            for h in hooks:
+                self.assertEqual(gate.text_lint({"hook": h, "hashtags": ["#space", "#universe"]}), [], h)
+
+    def test_pools_are_big_enough_for_the_no_repeat_window(self):
+        # back-to-back edits are never the same format, so one format fills at most half the window
+        for name, hooks in self.pools().items():
+            if name != "target":                      # target hooks carry the object's name, so they differ anyway
+                self.assertGreater(len(hooks), gate.NO_REPEAT_HOOK // 2, name)
+
+    def test_a_hook_used_in_the_last_twenty_edits_is_refused(self):
+        from unittest import mock
+        plan = {"template": "t9", "music": {"title": "m"}, "hook": "Earth is not the main character.", "texts": [],
+                "shots": [], "total_beats": 60}
+        old = {"id": "x", "template": "other", "music": "n", "hook": plan["hook"], "closer": "c", "assets": [],
+               "windows": [], "hashes": []}
+        filler = [dict(old, id=str(i), hook=f"h{i}") for i in range(25)]
+        with mock.patch("spacepipe.compose.FAMILY", {}):
+            near = gate.novelty(plan, [], filler[:10] + [old] + filler[10:20])
+            far = gate.novelty(plan, [], [old] + filler[:20])
+        self.assertTrue(any("hook was used" in r for r in near))
+        self.assertFalse(any("hook was used" in r for r in far))

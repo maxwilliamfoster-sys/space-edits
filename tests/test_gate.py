@@ -85,7 +85,9 @@ class NoveltyRules(unittest.TestCase):
     def test_hook_and_closer_pair_repeat_is_rejected(self):
         log = [entry(hook="Hook A", closer="CLOSER A")]
         self.assertTrue(gate.novelty(plan(hook="Hook A", closer="CLOSER A"), [], log))
-        self.assertFalse(gate.novelty(plan(hook="Hook A", closer="CLOSER B"), [], log))
+        # since 2026-11-11 the hook alone may not repeat within NO_REPEAT_HOOK posts, whatever the closer
+        self.assertTrue(gate.novelty(plan(hook="Hook A", closer="CLOSER B"), [], log))
+        self.assertFalse(gate.novelty(plan(hook="Hook B", closer="CLOSER A"), [], log))
 
     def test_look_alike_frames_are_rejected(self):
         h = [0, 1 << 63, 12345, 99999, 2 ** 40, 7]

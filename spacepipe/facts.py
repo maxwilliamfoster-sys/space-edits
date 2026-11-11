@@ -21,18 +21,39 @@ HASHTAGS = [["#space", "#universe", "#nasa", "#webb"], ["#astronomy", "#cosmos",
 # on-screen hook: 7 words or fewer with a concrete specific (a name or place: Earth, the universe...), checked by gate.text_lint
 HOOKS = ["You vs the universe. Watch this.", "How small is Earth? Watch this.", "Zoom out from Earth. Keep going.",
          "This is how big the universe is.", "Earth is not the main character.", "From Earth to the edge. Watch.",
-         "Not CGI. This is the real universe.", "Earth to the edge. All real.", "Real footage. Earth to deep space."]
+         "Not CGI. This is the real universe.", "Earth to the edge. All real.", "Real footage. Earth to deep space.",
+         # 2026-11-11: the pools were so small that one hook had opened 10 of 79 posts. The same words on post after
+         # post is what TikTok stops recommending, so every pool is now big enough for gate.NO_REPEAT_HOOK (20 posts).
+         "Earth, then everything else. Watch.", "How far from Earth can you go?", "Leaving Earth. Do not blink.",
+         "Earth is smaller than you think.", "One planet. Then the whole universe.", "Start at Earth. End at the edge.",
+         "Zoom out until Earth disappears.", "Everything you know is on Earth.", "Earth from orbit. Then keep going.",
+         "The Milky Way is just the start.", "Past the Sun. Past the galaxy.", "Real images. Earth to distant galaxies.",
+         "This zoom starts on Earth.", "The solar system is tiny. Watch.", "The universe, from your street outwards."]
 
 # The other formats (Max, 2026-10-28: every post said the same things over the same pictures). Each has its own story,
 # hooks, closers and tags; every number on screen comes from the clip's own ESA page (dist_ly).
 FORMAT_HOOKS = {
     "timemachine": ["The universe is a time machine.", "You are seeing the universe's past.", "Light-years are also years. Watch.",
-                    "Old light from across the universe."],
+                    "Old light from across the universe.", "Every galaxy you see is old light.",
+                    "Telescopes look into the universe's past.", "The farther the galaxy, the older.",
+                    "This galaxy light is ancient. Watch.", "Far in the universe means long ago.",
+                    "The universe shows us its past.", "Old light, real galaxies. Watch.",
+                    "Nothing in the universe is seen live."],
     "guess": ["Guess the distance in light-years.", "Guess the light-years before they appear.", "How many light-years away? Guess.",
-              "Guess how far. Light-years appear."],
+              "Guess how far. Light-years appear.", "Guess how many light-years. Then look.",
+              "Light-years quiz: how far is this?", "How far is this galaxy? Guess.", "Four objects. Guess the light-years.",
+              "Can you guess these light-years?", "Near or far? Guess the light-years.",
+              "Guess first. The light-years come after.", "Guess the distance. Light-years, not miles."],
     "countdown": ["5 real telescope images, ranked by distance.", "The universe, ranked by distance. Watch.",
-                  "5 views of the universe. Farthest last."],
-    "drift": ["30 seconds of the real universe.", "Breathe. This is the real universe.", "Real telescope footage of the universe."],
+                  "5 views of the universe. Farthest last.", "Ranked: 5 views of the universe.",
+                  "5 stops across the universe. Ranked.", "Farthest galaxy last. 5 real images.",
+                  "Counting down 5 views of the universe.", "The universe in 5 images. Ranked.",
+                  "5 light-year distances, smallest first.", "Near to far: 5 universe views.",
+                  "5 images, each deeper into the universe.", "5 real images, nearest to farthest galaxy."],
+    "drift": ["30 seconds of the real universe.", "Breathe. This is the real universe.", "Real telescope footage of the universe.",
+              "Slow down. The universe is real.", "Quiet footage of the real universe.", "No talking. Just the universe.",
+              "Real galaxies. Take a breath.", "Pause here. This is the universe.", "Calm, real images of the universe.",
+              "Let the universe slow you down.", "Real telescope views. Just the universe.", "Watch the universe drift by."],
 }
 FORMAT_CLOSERS = {
     "timemachine": ["YOU ARE LOOKING BACK IN TIME", "THE NIGHT SKY IS OLD LIGHT", "EVERY STAR YOU SEE IS THE PAST"],
@@ -47,7 +68,8 @@ FORMAT_HASHTAGS = {
     "drift": [["#space", "#relaxing", "#universe", "#webb"], ["#calm", "#cosmos", "#nebula", "#hubble"]],
 }
 # The named-target cut (compose.plan_target). Kept apart from FORMAT_HOOKS: {name} is filled in from the clip.
-TARGET_HOOKS = ["We flew to {name}.", "Next stop: {name}.", "This is {name}. It's real.", "Real footage of {name}."]
+TARGET_HOOKS = ["We flew to {name}.", "Next stop: {name}.", "This is {name}. It's real.", "Real footage of {name}.",
+                "Destination: {name}.", "Have you seen {name}?", "A closer look at {name}.", "Zooming in on {name}."]
 TARGET_CLOSERS = ["WHERE SHOULD WE GO NEXT?", "COMMENT THE NEXT STOP", "NAME OUR NEXT DESTINATION"]
 TARGET_HASHTAGS = [["#space", "#universe", "#astronomy", "#jameswebb"], ["#cosmos", "#galaxy", "#hubble", "#nebula"]]
 # (lower bound in years, line). Standard dates: Earth 4.54 bn years; the Mesozoic "age of dinosaurs" 252-66 million;
