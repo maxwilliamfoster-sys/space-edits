@@ -2484,5 +2484,69 @@
    12730758835654398088,
    18429821908623504934
   ]
+ },
+ {
+  "id": "20261112_1234",
+  "t": "2026-11-12T22:29:37+00:00",
+  "template": "countdown",
+  "music": "Dreams Become Real",
+  "hook": "Ranked: 5 views of the universe.",
+  "closer": "THE FARTHEST LIGHT CAME LAST",
+  "assets": [
+   "heic2012b",
+   "weic2216d",
+   "potm2512a",
+   "potm2403a",
+   "potm2303a"
+  ],
+  "windows": [],
+  "hashes": [
+   17940208654103364728,
+   15869732432822462528,
+   16272008532211578087,
+   27457666940992,
+   71672299537,
+   114357799229060
+  ]
+ },
+ {
+  "id": "20261112_1238",
+  "t": "2026-11-12T22:32:12+00:00",
+  "template": "flash",
+  "music": "Call to Adventure",
+  "hook": "Zooming in on NGC 6302.",
+  "closer": "3,800 LIGHT-YEARS",
+  "assets": [
+   "heic2011c"
+  ],
+  "windows": [],
+  "hashes": [
+   67818580165554176,
+   8133624125901119672,
+   1208921912496,
+   485077053729,
+   12613782110208,
+   448276184327327488
+  ]
+ },
+ {
+  "id": "20261112_1239",
+  "t": "2026-11-12T22:34:29+00:00",
+  "template": "target",
+  "music": "Windswept",
+  "hook": "Have you seen the Pillars of Creation?",
+  "closer": "COMMENT THE NEXT STOP",
+  "assets": [
+   "weic2216c"
+  ],
+  "windows": [],
+  "hashes": [
+   12927799073914185219,
+   1002019343787829702,
+   4646252361378480779,
+   8178765874856186764,
+   10332789718738702307,
+   10358258532234622010
+  ]
  }
 ]
