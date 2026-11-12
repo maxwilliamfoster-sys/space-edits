@@ -44,6 +44,12 @@ FORMATS = {
 # 2026-11-09: live at 0.5 on the owner's yes (review 2026-11-09). Set TARGET_SHARE=0 to stop it.
 TARGET_SHARE = float(os.environ.get("TARGET_SHARE", "0.5"))
 TARGET_SECONDS = 18
+# Flash cut (2026-11-12): every post lands at 709-748 views and viewers stay about 4.5 s, so most of each 18-30 s edit goes
+# unwatched and no post wins the next round of viewers. A flash is the named-target cut at 10 s with no closing line, ending
+# in a dissolve back to its own first frame, so TikTok's replay looks seamless and replays add watch time. A third of posts
+# (own rng, so other seeds keep their plans). The tracker's format test compares it with the others. FLASH_SHARE=0 stops it.
+FLASH_SHARE = float(os.environ.get("FLASH_SHARE", "0.34"))
+FLASH_SECONDS = 10
 TARGET_NAMES = {   # the name people know, where the clip's own ESA page gives it
     **dict.fromkeys(["weic2427a", "weic2427b", "weic2427c"], "THE SOMBRERO GALAXY"),
     **dict.fromkeys(["weic2608c"], "THE WHIRLPOOL GALAXY"),
@@ -57,7 +63,7 @@ TARGET_NAMES = {   # the name people know, where the clip's own ESA page gives i
     **dict.fromkeys(["potm2303a", "potm2303b"], "THE COSMIC SEAHORSE"),
 }
 _CATALOG_NAME = re.compile(r"\b(NGC \d+|Messier \d+|M\d{1,3}|Arp \d+|Abell \w+|MACS ?\w+|Terzan \d+|Westerlund \d+|Pismis \d+|Lynds \d+)\b")
-FAMILY = {**{t: "zoom" for t in TEMPLATES}, **{f: f for f in FORMATS}, "target": "target"}
+FAMILY = {**{t: "zoom" for t in TEMPLATES}, **{f: f for f in FORMATS}, "target": "target", "flash": "flash"}
 FAMILIES = ["zoom", *FORMATS]
 STYLE = {   # grade (render_shot) and the cut between shots (xfade); "zoom" keeps render.GRADE
     "zoom":        dict(grade=None, tin=["fade", 0.25]),
@@ -166,6 +172,8 @@ def plan(seed, template=None, track=None):
     usage = history()["usage"]
     if template:
         tname = template
+    elif FLASH_SHARE and random.Random(f"{seed}/flash").random() < FLASH_SHARE:
+        tname = "flash"
     elif TARGET_SHARE and rng.random() < TARGET_SHARE:
         tname = "target"
     else:
@@ -173,6 +181,8 @@ def plan(seed, template=None, track=None):
         tname = rng.choice(list(TEMPLATES)) if fam == "zoom" else fam
     if tname == "target":
         return plan_target(seed, track, rng, assets, usage)
+    if tname == "flash":
+        return plan_target(seed, track, rng, assets, usage, seconds=FLASH_SECONDS, flash=True)
     if tname in FORMATS:
         return plan_format(seed, tname, track, rng, assets, usage)
     slots = TEMPLATES[tname]
@@ -293,11 +303,12 @@ def hook_name(name):
     return name.title().replace("The ", "the ").replace(" Of ", " of ")
 
 
-def plan_target(seed, track, rng, assets, usage):
-    """One named place: the name from frame 0, then its distance. A zoom plays whole, sped up, so it reaches the target."""
+def plan_target(seed, track, rng, assets, usage, seconds=TARGET_SECONDS, flash=False):
+    """One named place: the name from frame 0, then its distance. A zoom plays whole, sped up, so it reaches the target.
+    flash: the 10 s looping version (no closing line; render dissolves the end into the first frame)."""
     tr = _track(rng, track)
     P, T0 = tr["P"], tr["T0"]
-    total = round((TARGET_SECONDS - T0) / P)
+    total = round((seconds - T0) / P)
     pool = [a for a in dist_pool(assets, set()) if target_name(a)]
     zooms = [a for a in pool if a.get("kind") == "zoom"]
     a = _pick_spread(zooms if zooms and rng.random() < 0.5 else pool, 1, usage, rng)[0]
@@ -307,16 +318,18 @@ def plan_target(seed, track, rng, assets, usage):
     if a.get("kind") == "zoom" and a["dur"] > L + 1:
         shot.update(src_in=0.0, speed=round((a["dur"] - 0.5) / L, 2), fx=0.5, z=[1.0, 1.0])
     name, d = target_name(a), facts.ly_text(a["dist_ly"])
-    mid, k_end = total // 2, total - CLOSER_BEATS
+    mid, k_end = total // 2, (total if flash else total - CLOSER_BEATS)
     head = f"{d} LIGHT-YEARS"
     texts = [dict(text=name.upper(), k0=0, k1=mid, size=_size(name), y="y1", font="impact"),
              dict(text="REAL TELESCOPE FOOTAGE", k0=0, k1=mid, size=40, y="y2", font="arial"),
              dict(text=head, k0=mid, k1=k_end, size=_size(head), y="y1", font="impact", color=GOLD),
              dict(text="THIS LIGHT LEFT " + facts.era_line(ly_value(a["dist_ly"])), k0=mid, k1=k_end, size=36, y="y2", font="arial")]
     closer = rng.choice(facts.TARGET_CLOSERS)
-    texts.append(dict(text=closer, k0=k_end, k1=total, size=60 if len(closer) <= 30 else 48, y=560, font="impact"))
+    if not flash:
+        texts.append(dict(text=closer, k0=k_end, k1=total, size=60 if len(closer) <= 30 else 48, y=560, font="impact"))
     tr = dict(tr, start=music.pick_start(tr, T0 + total * P, T0 + mid * P, random.Random(f"{seed}/music")))
-    return dict(seed=seed, template="target", music=tr, shots=[shot], texts=texts, total_beats=total,
+    return dict(seed=seed, template="flash" if flash else "target", loop=flash, music=tr, shots=[shot], texts=texts,
+                total_beats=total,
                 hook=rng.choice(facts.TARGET_HOOKS).format(name=hook_name(name)),
                 hashtags=rng.choice(facts.TARGET_HASHTAGS), P=P, T0=T0)
 

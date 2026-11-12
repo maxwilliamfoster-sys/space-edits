@@ -118,7 +118,7 @@ if __name__ == "__main__":
     n = sub.add_parser("new")
     n.add_argument("-n", type=int, default=1)
     n.add_argument("--seed", type=int)
-    n.add_argument("--template", choices=[*compose.TEMPLATES, *compose.FORMATS, "target"])
+    n.add_argument("--template", choices=[*compose.TEMPLATES, *compose.FORMATS, "target", "flash"])
     n.add_argument("--track")
     n.set_defaults(f=new)
     sub.add_parser("status").set_defaults(f=status)

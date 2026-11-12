@@ -13,7 +13,7 @@ def probe(path):
 
 
 def min_seconds(plan):
-    return 15 if plan.get("template") == "target" else 20
+    return {"target": 15, "flash": 8}.get(plan.get("template"), 20)
 
 
 def check(path, silent=False, min_s=20):

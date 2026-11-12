@@ -28,6 +28,7 @@ else:   # CI (ubuntu): Anton is the free Impact look-alike (committed in fonts/)
 GRADE = "eq=contrast=1.06:saturation=1.1:gamma=0.97,vignette=PI/6"
 TEXT_Y = {"earth": (1290, 1410), "planet": (1180, 1300)}
 CARD_BEATS = 5          # credit card shows for the last N beats
+CARD_Y_LOOP = 1230      # a looping edit ends on its distance and era lines (around y 1040-1180), so its card goes below them
 # opening hook (p["hook"]), burned in from frame 0 (audit 2026-10-21 #9): Impact, centred, top band y 380-520
 HOOK_SIZE, HOOK_LINE, HOOK_WRAP, HOOK_Y = 80, 92, 20, 392   # 20 chars of Impact 80 ~ 800 px of the 1080 width
 HOOK_BEATS, HOOK_FADE = 5, 0.3   # held until beat 5 (~2.5-3 s), then faded out
@@ -150,8 +151,16 @@ def text_layers(p):
     return out
 
 
+LOOP_D = 0.5   # a looping edit dissolves its last LOOP_D s into its own first frame (text included), so the replay is seamless
+
+
 def post_chain(p, last, t_end, txt):
-    """Final video filter: no fade-in (the hook must be readable at t=0), fade out at the end, then the text layers."""
+    """Final video filter: no fade-in (the hook must be readable at t=0), fade out at the end, then the text layers.
+    A looping edit (p['loop']) has no fade to black: its end dissolves into its first frame instead."""
+    if p.get("loop"):
+        return (f"[{last}]" + ",".join(txt) + f",fps={FPS},format=yuv420p,split[lm][lf];"
+                f"[lf]trim=end_frame=1,setpts=PTS-STARTPTS,tpad=stop_mode=clone:stop_duration={LOOP_D}[lf0];"
+                f"[lm][lf0]xfade=transition=fade:duration={LOOP_D}:offset={t_end - LOOP_D:.3f},format=yuv420p[v]")
     return f"[{last}]fade=t=out:st={t_end - 1.0:.2f}:d=1.0," + ",".join(txt) + ",format=yuv420p[v]"
 
 
@@ -162,8 +171,9 @@ def audio_filter(p, t_end):
     if p.get("silent"):
         return "aresample=48000"
     st = float(p["music"].get("start") or 0.0)
+    out = 0.3 if p.get("loop") else 1.8     # a loop mustn't sound like an ending
     return (f"atrim=start={st:.2f}:end={st + t_end:.2f},asetpts=PTS-STARTPTS,afade=t=in:st=0:d=0.05,"
-            f"afade=t=out:st={t_end - 1.8:.2f}:d=1.8,aresample=48000")
+            f"afade=t=out:st={t_end - out:.2f}:d={out},aresample=48000")
 
 
 def normalize_audio(final, silent=False):
@@ -214,12 +224,13 @@ def assemble(p, final):
     cal = f"if(lt(t,{c0:.2f}),0,min(1,(t-{c0:.2f})/0.5))"
     lines = credit_text(p).split("\n")
     box_h = len(lines) * 31 + 40
-    txt.append(f"drawbox=x=(iw-900)/2:y=700:w=900:h={box_h}:color=black@0.55:t=fill:enable='gte(t,{c0:.2f})'")
+    cy = CARD_Y_LOOP if p.get("loop") else 700   # a loop's card sits under its payoff line instead of over it
+    txt.append(f"drawbox=x=(iw-900)/2:y={cy}:w=900:h={box_h}:color=black@0.55:t=fill:enable='gte(t,{c0:.2f})'")
     for i, line in enumerate(lines):   # one drawtext per line so each is centred (text_align needs ffmpeg 7+, CI has 6.1)
         lf = cdir / f"credits_{p['seed']}_{i}.txt"
         lf.write_bytes(line.encode("utf-8"))
         txt.append(f"drawtext=fontfile='{FONTS['plain']}':textfile='{lf.relative_to(ROOT).as_posix()}':fontsize=24:fontcolor=white@0.95:"
-                   f"x=(w-tw)/2:y={718 + i * 31}:alpha='{cal}'")
+                   f"x=(w-tw)/2:y={cy + 18 + i * 31}:alpha='{cal}'")
     post = post_chain(p, last, t_end, txt)
     script = cdir / f"filter_{p['seed']}.txt"
     script.write_text(";\n".join(chain + [post]), encoding="utf-8")
