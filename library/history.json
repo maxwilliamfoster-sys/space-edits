@@ -2413,10 +2413,56 @@
     "potm2601a",
     "potm2603a"
    ]
+  },
+  {
+   "id": "20261112_1225",
+   "seed": 1225,
+   "template": "flash",
+   "music": "Mesmerize",
+   "qc": true,
+   "assets": [
+    "weic2518a"
+   ]
+  },
+  {
+   "id": "20261112_1226",
+   "seed": 1226,
+   "template": "target",
+   "music": "Evening of Chaos",
+   "qc": true,
+   "assets": [
+    "heic2304d"
+   ]
+  },
+  {
+   "id": "20261112_1227",
+   "seed": 1227,
+   "template": "tour",
+   "music": "Echoes of Time v2",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "heic2312b",
+    "potw2449a",
+    "heic2011b",
+    "heic1903a",
+    "heic1903a",
+    "weic2522a"
+   ]
+  },
+  {
+   "id": "20261112_1228",
+   "seed": 1228,
+   "template": "target",
+   "music": "Eternal Hope",
+   "qc": true,
+   "assets": [
+    "potm2607b"
+   ]
   }
  ],
  "usage": {
-  "earth_exp65": 159,
+  "earth_exp65": 160,
   "weic2510b": 1,
   "potw2428a": 1,
   "weic2520b": 1,
@@ -2446,8 +2492,8 @@
   "potm2301b": 6,
   "weic2429a": 8,
   "heic1919a": 12,
-  "weic2522a": 6,
-  "heic2312b": 7,
+  "weic2522a": 7,
+  "heic2312b": 8,
   "potw2504a": 1,
   "weic2514b": 2,
   "heic2201a": 10,
@@ -2462,7 +2508,7 @@
   "heic1711b": 4,
   "heic2604a": 2,
   "potw2517a": 2,
-  "heic1903a": 10,
+  "heic1903a": 12,
   "potw2527a": 4,
   "potw2525a": 1,
   "potw2316a": 2,
@@ -2474,7 +2520,7 @@
   "heic1716a": 1,
   "weic2212e": 1,
   "potw2445a": 1,
-  "heic2304d": 3,
+  "heic2304d": 4,
   "heic1711a": 5,
   "weic2620a": 2,
   "potm2604a": 1,
@@ -2529,7 +2575,7 @@
   "weic2427c": 2,
   "heic2502b": 4,
   "potm2512a": 6,
-  "weic2518a": 4,
+  "weic2518a": 5,
   "heic2108b": 2,
   "weic2612b": 4,
   "weic2517a": 4,
@@ -2537,7 +2583,7 @@
   "weic2503c": 4,
   "potw2502a": 1,
   "potm2608a": 2,
-  "potm2607b": 5,
+  "potm2607b": 6,
   "heic2204c": 1,
   "potw2444a": 1,
   "potm2305a": 1,
@@ -2714,6 +2760,8 @@
   "potm2405d": 1,
   "heic2004b": 1,
   "heic1906b": 1,
-  "potw2320a": 1
+  "potw2320a": 1,
+  "potw2449a": 1,
+  "heic2011b": 1
  }
 }
