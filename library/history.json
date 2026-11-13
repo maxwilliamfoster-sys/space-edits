@@ -2503,6 +2503,16 @@
    "assets": [
     "weic2216c"
    ]
+  },
+  {
+   "id": "20261113_1244",
+   "seed": 1244,
+   "template": "flash",
+   "music": "Ghost Story",
+   "qc": true,
+   "assets": [
+    "potw2527a"
+   ]
   }
  ],
  "usage": {
@@ -2553,7 +2563,7 @@
   "heic2604a": 2,
   "potw2517a": 2,
   "heic1903a": 12,
-  "potw2527a": 4,
+  "potw2527a": 5,
   "potw2525a": 1,
   "potw2316a": 2,
   "weic2517c": 4,
