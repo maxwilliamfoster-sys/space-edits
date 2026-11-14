@@ -2549,6 +2549,16 @@
    "assets": [
     "weic2327a"
    ]
+  },
+  {
+   "id": "20261114_1261",
+   "seed": 1261,
+   "template": "target",
+   "music": "Dreams Become Real",
+   "qc": true,
+   "assets": [
+    "heic2505g"
+   ]
   }
  ],
  "usage": {
@@ -2648,7 +2658,7 @@
   "heic1819b": 4,
   "weic2422a": 1,
   "potw2235a": 1,
-  "heic2505g": 5,
+  "heic2505g": 6,
   "heic1801a": 5,
   "weic2216d": 5,
   "weic2305a": 3,
