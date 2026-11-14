@@ -2559,6 +2559,38 @@
    "assets": [
     "heic2505g"
    ]
+  },
+  {
+   "id": "20261114_1263",
+   "seed": 1263,
+   "template": "flash",
+   "music": "Eternal Hope",
+   "qc": true,
+   "assets": [
+    "heic1720a"
+   ]
+  },
+  {
+   "id": "20261114_1270",
+   "seed": 1270,
+   "template": "flash",
+   "music": "Gathering Darkness",
+   "qc": true,
+   "assets": [
+    "heic1720a"
+   ]
+  },
+  {
+   "id": "20261114_1275",
+   "seed": 1275,
+   "template": "drift",
+   "music": "Ghost Story",
+   "qc": true,
+   "assets": [
+    "heic2505d",
+    "potm2408a",
+    "potm2511a"
+   ]
   }
  ],
  "usage": {
@@ -2638,7 +2670,7 @@
   "weic2305b": 4,
   "weic2311a": 1,
   "weic2608b": 1,
-  "heic1720a": 19,
+  "heic1720a": 21,
   "potm2303b": 6,
   "heic1816b": 4,
   "heic2211a": 1,
@@ -2654,7 +2686,7 @@
   "potw2406a": 1,
   "weic2518b": 5,
   "potm2603b": 3,
-  "heic2505d": 4,
+  "heic2505d": 5,
   "heic1819b": 4,
   "weic2422a": 1,
   "potw2235a": 1,
@@ -2738,7 +2770,7 @@
   "heic1910b": 2,
   "potw2514a": 4,
   "potm2602a": 2,
-  "potm2408a": 2,
+  "potm2408a": 3,
   "heic1812c": 2,
   "potm2604c": 2,
   "potm2502a": 2,
@@ -2864,6 +2896,7 @@
   "potw2449a": 1,
   "heic2011b": 1,
   "potw2419a": 1,
-  "potw2346a": 1
+  "potw2346a": 1,
+  "potm2511a": 1
  }
 }
