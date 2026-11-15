@@ -2613,6 +2613,26 @@
     "potw2435a",
     "potw2520a"
    ]
+  },
+  {
+   "id": "20261115_1283",
+   "seed": 1283,
+   "template": "target",
+   "music": "Call to Adventure",
+   "qc": true,
+   "assets": [
+    "heic1720a"
+   ]
+  },
+  {
+   "id": "20261115_1284",
+   "seed": 1284,
+   "template": "target",
+   "music": "Epic Unease",
+   "qc": true,
+   "assets": [
+    "potm2607b"
+   ]
   }
  ],
  "usage": {
@@ -2692,7 +2712,7 @@
   "weic2305b": 4,
   "weic2311a": 1,
   "weic2608b": 1,
-  "heic1720a": 21,
+  "heic1720a": 22,
   "potm2303b": 6,
   "heic1816b": 4,
   "heic2211a": 1,
@@ -2737,7 +2757,7 @@
   "weic2503c": 4,
   "potw2502a": 1,
   "potm2608a": 2,
-  "potm2607b": 6,
+  "potm2607b": 7,
   "heic2204c": 1,
   "potw2444a": 1,
   "potm2305a": 1,
