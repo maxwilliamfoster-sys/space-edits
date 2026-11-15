@@ -2591,6 +2591,28 @@
     "potm2408a",
     "potm2511a"
    ]
+  },
+  {
+   "id": "20261115_1277",
+   "seed": 1277,
+   "template": "flash",
+   "music": "Gathering Darkness",
+   "qc": true,
+   "assets": [
+    "potw2538a"
+   ]
+  },
+  {
+   "id": "20261115_1279",
+   "seed": 1279,
+   "template": "drift",
+   "music": "Long Time Coming",
+   "qc": true,
+   "assets": [
+    "weic2218a",
+    "potw2435a",
+    "potw2520a"
+   ]
   }
  ],
  "usage": {
@@ -2681,7 +2703,7 @@
   "potm2506d": 2,
   "heic1811a": 10,
   "heic1901b": 12,
-  "weic2218a": 4,
+  "weic2218a": 5,
   "potm2405e": 2,
   "potw2406a": 1,
   "weic2518b": 5,
@@ -2828,7 +2850,7 @@
   "weic2517b": 4,
   "weic2216c": 4,
   "weic2411d": 5,
-  "potw2435a": 1,
+  "potw2435a": 2,
   "weic2327a": 3,
   "potw2318a": 2,
   "weic2611a": 5,
@@ -2846,7 +2868,7 @@
   "potw2344a": 1,
   "potw2438a": 1,
   "potm2211b": 3,
-  "potw2538a": 2,
+  "potw2538a": 3,
   "potw2512a": 1,
   "heic2406a": 2,
   "potw2437a": 2,
@@ -2897,6 +2919,7 @@
   "heic2011b": 1,
   "potw2419a": 1,
   "potw2346a": 1,
-  "potm2511a": 1
+  "potm2511a": 1,
+  "potw2520a": 1
  }
 }
