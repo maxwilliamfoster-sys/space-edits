@@ -2633,6 +2633,26 @@
    "assets": [
     "potm2607b"
    ]
+  },
+  {
+   "id": "20261116_1286",
+   "seed": 1286,
+   "template": "flash",
+   "music": "Impact Prelude",
+   "qc": true,
+   "assets": [
+    "weic2503c"
+   ]
+  },
+  {
+   "id": "20261116_1287",
+   "seed": 1287,
+   "template": "target",
+   "music": "Dark Fog",
+   "qc": true,
+   "assets": [
+    "heic1903a"
+   ]
   }
  ],
  "usage": {
@@ -2682,7 +2702,7 @@
   "heic1711b": 4,
   "heic2604a": 2,
   "potw2517a": 2,
-  "heic1903a": 12,
+  "heic1903a": 13,
   "potw2527a": 5,
   "potw2525a": 1,
   "potw2316a": 2,
@@ -2754,7 +2774,7 @@
   "weic2612b": 4,
   "weic2517a": 5,
   "weic2423a": 1,
-  "weic2503c": 4,
+  "weic2503c": 5,
   "potw2502a": 1,
   "potm2608a": 2,
   "potm2607b": 7,
