@@ -831,14 +831,18 @@
   "due": "2026-11-16T17:00:00Z",
   "file": "space_20261114_1275.mp4",
   "mode": "own",
-  "status": "scheduled"
+  "status": "sent",
+  "sent_at": "2026-11-16T17:07:29.672Z",
+  "link": "https://tiktok.com/@mcfiddler.bob/video/7708816766675275040"
  },
  "20261115_1277": {
   "post": "6af9be28c5b364e0625e4550",
   "due": "2026-11-16T22:00:00Z",
   "file": "space_20261115_1277.mp4",
   "mode": "own",
-  "status": "scheduled"
+  "status": "sent",
+  "sent_at": "2026-11-16T22:03:23.908Z",
+  "link": "https://tiktok.com/@mcfiddler.bob/video/7708892933210000673"
  },
  "20261115_1279": {
   "post": "6af9be9676c23bf1c7850137",
@@ -865,6 +869,20 @@
   "post": "6afb2c90e94446819596b7ec",
   "due": "2026-11-18T12:00:00Z",
   "file": "space_20261116_1287.mp4",
+  "mode": "own",
+  "status": "scheduled"
+ },
+ "20261117_1289": {
+  "post": "6afb9f18f83aaca8f39a1e4c",
+  "due": "2026-11-18T17:00:00Z",
+  "file": "space_20261117_1289.mp4",
+  "mode": "own",
+  "status": "scheduled"
+ },
+ "20261117_1290": {
+  "post": "6afb9f91f83aaca8f39a4b70",
+  "due": "2026-11-18T22:00:00Z",
+  "file": "space_20261117_1290.mp4",
   "mode": "own",
   "status": "scheduled"
  }
