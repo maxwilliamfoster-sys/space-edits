@@ -2686,6 +2686,36 @@
    "assets": [
     "potm2604b"
    ]
+  },
+  {
+   "id": "20261117_1298",
+   "seed": 1298,
+   "template": "flash",
+   "music": "Evening of Chaos",
+   "qc": true,
+   "assets": [
+    "heic2304d"
+   ]
+  },
+  {
+   "id": "20261117_1300",
+   "seed": 1300,
+   "template": "flash",
+   "music": "Long Time Coming",
+   "qc": true,
+   "assets": [
+    "heic2011c"
+   ]
+  },
+  {
+   "id": "20261117_1304",
+   "seed": 1304,
+   "template": "target",
+   "music": "Call to Adventure",
+   "qc": true,
+   "assets": [
+    "heic2505g"
+   ]
   }
  ],
  "usage": {
@@ -2702,7 +2732,7 @@
   "potw2511a": 1,
   "potw2425a": 4,
   "potm2410b": 2,
-  "heic2011c": 8,
+  "heic2011c": 9,
   "heic1816a": 6,
   "potw2434a": 1,
   "potm2601a": 3,
@@ -2747,7 +2777,7 @@
   "heic1716a": 1,
   "weic2212e": 1,
   "potw2445a": 1,
-  "heic2304d": 5,
+  "heic2304d": 6,
   "heic1711a": 6,
   "weic2620a": 2,
   "potm2604a": 1,
@@ -2785,7 +2815,7 @@
   "heic1819b": 4,
   "weic2422a": 1,
   "potw2235a": 1,
-  "heic2505g": 6,
+  "heic2505g": 7,
   "heic1801a": 5,
   "weic2216d": 5,
   "weic2305a": 3,
