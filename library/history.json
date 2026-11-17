@@ -2676,6 +2676,16 @@
     "weic2611a",
     "heic2112c"
    ]
+  },
+  {
+   "id": "20261117_1293",
+   "seed": 1293,
+   "template": "target",
+   "music": "Crossing the Chasm",
+   "qc": true,
+   "assets": [
+    "potm2604b"
+   ]
   }
  ],
  "usage": {
@@ -2805,7 +2815,7 @@
   "potw2444a": 1,
   "potm2305a": 1,
   "heic1919b": 1,
-  "potm2604b": 2,
+  "potm2604b": 3,
   "potm2401a": 1,
   "weic2407b": 1,
   "potw2535a": 1,
