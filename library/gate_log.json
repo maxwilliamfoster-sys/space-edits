@@ -2855,5 +2855,28 @@
    578878513681137676,
    151135988465061952
   ]
+ },
+ {
+  "id": "20261118_1312",
+  "t": "2026-11-18T15:55:16+00:00",
+  "template": "drift",
+  "music": "Ghost Story",
+  "hook": "Real telescope views. Just the universe.",
+  "closer": "SEND THIS TO SOMEONE WHO NEEDS IT",
+  "assets": [
+   "heic2505d",
+   "potm2607a",
+   "heic1920a"
+  ],
+  "windows": [],
+  "hashes": [
+   646530957313630208,
+   3651413158573816,
+   9854093297231038084,
+   18223405537100571648,
+   4610118378848256,
+   251515575996416
+  ],
+  "narrated": true
  }
 ]
