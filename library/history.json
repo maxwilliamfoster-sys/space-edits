@@ -2762,6 +2762,39 @@
     "potm2607a",
     "heic1920a"
    ]
+  },
+  {
+   "id": "20261118_1314",
+   "seed": 1314,
+   "template": "target",
+   "music": "Rite of Passage",
+   "qc": true,
+   "assets": [
+    "weic2503b"
+   ]
+  },
+  {
+   "id": "20261118_1316",
+   "seed": 1316,
+   "template": "flash",
+   "music": "Evening of Chaos",
+   "qc": true,
+   "assets": [
+    "potm2303a"
+   ]
+  },
+  {
+   "id": "20261118_1317",
+   "seed": 1317,
+   "template": "guess",
+   "music": "Dreams Become Real",
+   "qc": true,
+   "assets": [
+    "potm2512a",
+    "potw2425a",
+    "weic2517b",
+    "potm2502a"
+   ]
   }
  ],
  "usage": {
@@ -2776,7 +2809,7 @@
   "potm2211a": 4,
   "potm2601b": 7,
   "potw2511a": 1,
-  "potw2425a": 4,
+  "potw2425a": 5,
   "potm2410b": 2,
   "heic2011c": 9,
   "heic1816a": 6,
@@ -2877,7 +2910,7 @@
   "potw2528a": 1,
   "weic2427c": 2,
   "heic2502b": 4,
-  "potm2512a": 8,
+  "potm2512a": 9,
   "weic2518a": 5,
   "heic2108b": 2,
   "weic2612b": 4,
@@ -2900,7 +2933,7 @@
   "heic1707b": 1,
   "weic2426a": 1,
   "potw2549a": 1,
-  "potm2303a": 5,
+  "potm2303a": 6,
   "potm2311a": 2,
   "potw2427a": 1,
   "weic2208b": 1,
@@ -2944,7 +2977,7 @@
   "potm2408a": 3,
   "heic1812c": 2,
   "potm2604c": 2,
-  "potm2502a": 2,
+  "potm2502a": 3,
   "potw2329a": 1,
   "heic2505f": 1,
   "potw2508a": 1,
@@ -2996,7 +3029,7 @@
   "potw2430a": 1,
   "potw2551a": 1,
   "weic2205b": 1,
-  "weic2517b": 4,
+  "weic2517b": 5,
   "weic2216c": 4,
   "weic2411d": 5,
   "potw2435a": 2,
@@ -3029,7 +3062,7 @@
   "potw2310a": 2,
   "potw2338a": 1,
   "potw2321a": 1,
-  "weic2503b": 2,
+  "weic2503b": 3,
   "potm2603a": 3,
   "weic2616c": 1,
   "potm2403a": 2,
