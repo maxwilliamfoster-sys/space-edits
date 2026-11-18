@@ -23,6 +23,7 @@ def rows(sent, posted, gate_log, now=None):
     template = {e["id"]: e.get("template") for e in gate_log}
     hook = {e["id"]: e.get("hook") for e in gate_log}
     voice = {e["id"]: e.get("narrated") for e in gate_log}   # narration A/B arm (gate.narrated)
+    clean = {e["id"]: e.get("clean") for e in gate_log}      # clean-screen A/B arm (compose.CLEAN_SHARE)
     out = []
     for p in sent:
         when = p.get("sentAt") or p.get("dueAt")
@@ -31,7 +32,7 @@ def rows(sent, posted, gate_log, now=None):
         m = p.get("metrics") or {}
         eid = by_post.get(p["id"])
         out.append(dict(id=eid, post=p["id"], sent=when, age_h=round(_age_h(when, now), 1), template=template.get(eid),
-                        hook=hook.get(eid), narrated=voice.get(eid), views=m.get("views"), likes=m.get("likes"), comments=m.get("comments"),
+                        hook=hook.get(eid), narrated=voice.get(eid), clean=clean.get(eid), views=m.get("views"), likes=m.get("likes"), comments=m.get("comments"),
                         shares=m.get("shares"), saves=m.get("saves"), avg_watch_s=m.get("averageTimeWatched"),
                         link=p.get("externalLink")))
     return out

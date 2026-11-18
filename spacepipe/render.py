@@ -133,12 +133,15 @@ def text_layers(p):
         slot_at.append((k, s["slot"]))
         k += s["beats"]
     out = []
-    lines = textwrap.wrap(p["hook"].upper(), HOOK_WRAP) if p.get("hook") else []
+    clean = bool(p.get("clean"))   # clean-screen arm (compose.CLEAN_SHARE): no top hook, no small sub-lines
+    lines = textwrap.wrap(p["hook"].upper(), HOOK_WRAP) if p.get("hook") and not clean else []
     y0 = HOOK_Y + (HOOK_LINE // 2 if len(lines) == 1 else 0)
     for i, line in enumerate(lines):
         out.append(dict(text=line, y=y0 + i * HOOK_LINE, size=HOOK_SIZE, font="impact", t0=0.0, hook=True,
                         alpha=_fade_out(bt(HOOK_BEATS), HOOK_FADE)))
     for tx in p["texts"]:
+        if clean and tx["font"] != "impact":
+            continue
         slot = next((sl for a, sl in slot_at if a == tx["k0"]), "")
         y = tx["y"]
         if y in ("y1", "y2"):
@@ -149,9 +152,41 @@ def text_layers(p):
         else:
             a = bt(tx["k0"]) + 0.15
             al = f"if(lt(t,{a:.2f}),0,if(lt(t,{a + 0.4:.2f}),(t-{a:.2f})/0.4,{_fade_out(b, 0.4)}))"
-        out.append(dict(text=tx["text"], y=y, size=tx["size"], font=tx["font"], t0=a, hook=False, alpha=al,
-                        color=tx.get("color", "white")))
+        for i, line in enumerate(fit_lines(tx["text"], tx["size"], tx["font"])):
+            out.append(dict(text=line, y=y + i * (tx["size"] + 10), size=tx["size"], font=tx["font"], t0=a, hook=False,
+                            alpha=al, color=tx.get("color", "white")))
     return out
+
+
+# Widest a centred line may be: clear of the frame edges (1080 px) with room for the black border. Autopilot review
+# 2026-11-18: the era line 'THIS LIGHT LEFT BEFORE THE GREAT PYRAMID WAS BUILT' (Arial Bold 36) was 1,064 px wide.
+MAX_TEXT_W = 900
+# average upper-case advance per pixel of font size, measured with Pillow on these texts (+3% margin): Impact 0.436,
+# Anton 0.412, Arial Bold 0.583. The widest of each look-alike pair is used so local and CI renders agree.
+CHAR_W = {"impact": 0.45, "arial": 0.60, "plain": 0.56}
+
+
+def text_width(text, size, font):
+    """Estimated drawn width in px (deterministic, no font file needed, so tests run anywhere)."""
+    return len(text) * size * CHAR_W.get(font, 0.60)
+
+
+def fit_lines(text, size, font):
+    """`text` as one line if it fits MAX_TEXT_W, else word-wrapped into the fewest balanced lines that each fit."""
+    if text_width(text, size, font) <= MAX_TEXT_W:
+        return [text]
+    words = text.split()
+    for n in range(2, len(words) + 1):
+        width = max(len(w) for w in words)
+        target = max(width, -(-len(text) // n))
+        while True:
+            lines = textwrap.wrap(text, target)
+            if len(lines) <= n:
+                break
+            target += 1
+        if all(text_width(l, size, font) <= MAX_TEXT_W for l in lines):
+            return lines
+    return words
 
 
 LOOP_D = 0.5   # a looping edit dissolves its last LOOP_D s into its own first frame (text included), so the replay is seamless

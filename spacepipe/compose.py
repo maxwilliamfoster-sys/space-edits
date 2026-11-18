@@ -54,6 +54,10 @@ FLASH_SECONDS = 10
 # for every upload, so the default is 1 (every edit, drift included). The draw uses its own rng, so a seed keeps its shots,
 # text and music whatever the share. NARRATION_SHARE=0.5 brings the test back, 0 turns the narrator off.
 NARRATION_SHARE = float(os.environ.get("NARRATION_SHARE", "1"))
+# Clean-screen A/B (autopilot review 2026-11-18, tracker test 'space-clean'): a 'clean' edit drops the top hook and the small
+# sub-lines (render.text_layers) and keeps the big name/distance words and credits; the narrator says the rest. Own rng, so
+# a seed keeps its plan. When decided: 1 = every edit clean, 0 = off.
+CLEAN_SHARE = float(os.environ.get("CLEAN_SHARE", "0.5"))
 TARGET_NAMES = {   # the name people know, where the clip's own ESA page gives it
     **dict.fromkeys(["weic2427a", "weic2427b", "weic2427c"], "THE SOMBRERO GALAXY"),
     **dict.fromkeys(["weic2608c"], "THE WHIRLPOOL GALAXY"),
@@ -173,6 +177,7 @@ def _track(rng, track):
 def plan(seed, template=None, track=None):
     p = _plan(seed, template, track)
     p["narrate"] = random.Random(f"{seed}/narrate").random() < NARRATION_SHARE
+    p["clean"] = random.Random(f"{seed}/clean").random() < CLEAN_SHARE
     return p
 
 

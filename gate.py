@@ -197,7 +197,7 @@ def entry_for(plan, hashes, eid):
     return dict(id=eid, t=datetime.now(timezone.utc).isoformat(timespec="seconds"), template=plan["template"], music=plan["music"]["title"],
                 hook=plan["hook"], closer=closer, assets=[s["asset"] for s in plan["shots"] if s["src"] != "nasa"],
                 windows=[[s["asset"], s["src_in"]] for s in plan["shots"] if s["src"] == "nasa"], hashes=hashes,
-                narrated=narrated(plan))
+                narrated=narrated(plan), clean=plan.get("clean"))   # clean: clean-screen A/B arm, None = before the test
 
 
 def narrated(plan):
