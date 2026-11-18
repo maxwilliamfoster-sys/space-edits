@@ -220,7 +220,7 @@ def _is_are(name):
 
 
 def script(p):
-    """The narration of a plan, as cues in time order. [] for formats that stay unnarrated (drift: 'no talking')."""
+    """The narration of a plan, as cues in time order."""
     from .compose import CLOSER_BEATS, ly_value
     P, T0 = p["P"], p["T0"]
     bt = lambda k: T0 + k * P
@@ -241,13 +241,20 @@ def script(p):
             cues.append(_cue(bt(mid) + 0.15, t_end, f"It's about {d} light-years away.",
                              f"The light you're seeing left it {era}." if era else None))
         return cues
-    if tname == "drift":
-        return []
     shot_k, k = [], 0
     for s in p["shots"]:
         shot_k.append(k)
         k += s["beats"]
     n = len(p["shots"])
+    if tname == "drift":   # 3 long calm shots: one unhurried line each, with room to breathe
+        for i, (s, k0) in enumerate(zip(p["shots"], shot_k)):
+            d, era = distance_words(s["dist_ly"]), era_spoken(ly_value(s["dist_ly"]))
+            end = bt(shot_k[i + 1]) - 0.5 if i + 1 < n else t_end
+            first = ["Real footage, from space telescopes."] if i == 0 else []
+            say = ([f"This light left about {d} years ago."] if i == 0 else
+                   [f"This one is about {d} light-years away." if i < n - 1 else f"And this one, about {d} light-years away."]) if d else []
+            cues.append(_cue(0.3 if i == 0 else bt(k0) + 0.6, end, *(first + say), f"Its light left {era}." if d and era and i else None))
+        return [c for c in cues if c["options"]]
     if tname == "timemachine":
         for i, (s, k0) in enumerate(zip(p["shots"], shot_k)):
             d, era = distance_words(s["dist_ly"]), era_spoken(ly_value(s["dist_ly"]))

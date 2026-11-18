@@ -51,7 +51,7 @@ FORMAT_HOOKS = {
                   "5 light-year distances, smallest first.", "Near to far: 5 universe views.",
                   "5 images, each deeper into the universe.", "5 real images, nearest to farthest galaxy."],
     "drift": ["30 seconds of the real universe.", "Breathe. This is the real universe.", "Real telescope footage of the universe.",
-              "Slow down. The universe is real.", "Quiet footage of the real universe.", "No talking. Just the universe.",
+              "Slow down. The universe is real.", "Quiet footage of the real universe.", "Sit back. Just the universe.",
               "Real galaxies. Take a breath.", "Pause here. This is the universe.", "Calm, real images of the universe.",
               "Let the universe slow you down.", "Real telescope views. Just the universe.", "Watch the universe drift by."],
 }

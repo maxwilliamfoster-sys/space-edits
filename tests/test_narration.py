@@ -89,9 +89,6 @@ class Script(unittest.TestCase):
             for seed in (11, 12, 13):
                 p = compose.plan(seed, t)
                 cues = narrate.script(p)
-                if t == "drift":
-                    self.assertEqual(cues, [])      # "no talking"
-                    continue
                 self.assertTrue(cues, t)
                 t_end = p["T0"] + p.get("total_beats", 60) * p["P"]
                 prev = -1
@@ -128,6 +125,11 @@ class Script(unittest.TestCase):
         p["texts"][0]["text"] = "THE PILLARS OF CREATION"
         self.assertTrue(narrate.script(p)[0]["options"][-1].startswith("These are the Pillars of Creation"))
 
+    def test_every_edit_is_narrated_by_default(self):
+        self.assertEqual(compose.NARRATION_SHARE, 1.0)
+        self.assertTrue(all(compose.plan(s, t)["narrate"] for s in (400, 401) for t in ALL))
+        self.assertFalse(any("talking" in h.lower() for hooks in facts.FORMAT_HOOKS.values() for h in hooks))
+
     def test_draw_is_a_share_and_never_moves_a_plan(self):
         with mock.patch.object(compose, "NARRATION_SHARE", 0.5):
             arms = [compose.plan(s)["narrate"] for s in range(200, 260)]
@@ -139,10 +141,7 @@ class Script(unittest.TestCase):
             with mock.patch.object(compose, "NARRATION_SHARE", 1.0):
                 on = compose.plan(s)
             self.assertEqual({k: v for k, v in off.items() if k != "narrate"}, {k: v for k, v in on.items() if k != "narrate"})
-            if on["template"] != "drift":
-                self.assertEqual((off["narrate"], on["narrate"]), (False, True))
-            else:
-                self.assertIsNone(on["narrate"])
+            self.assertEqual((off["narrate"], on["narrate"]), (False, True))
 
 
 def fake_synth(text, speed):
