@@ -2878,5 +2878,51 @@
    251515575996416
   ],
   "narrated": true
+ },
+ {
+  "id": "20261118_1320",
+  "t": "2026-11-18T23:06:49+00:00",
+  "template": "target",
+  "music": "Echoes of Time v2",
+  "hook": "A closer look at NGC 3370.",
+  "closer": "WHERE SHOULD WE GO NEXT?",
+  "assets": [
+   "potw2542a"
+  ],
+  "windows": [],
+  "hashes": [
+   18013550772745164912,
+   18012420457342497008,
+   17435961903926014192,
+   17433710103039631600,
+   17361652474640916704,
+   17352635935445008608
+  ],
+  "narrated": true,
+  "clean": false
+ },
+ {
+  "id": "20261118_1325",
+  "t": "2026-11-18T23:08:55+00:00",
+  "template": "drift",
+  "music": "Evening of Chaos",
+  "hook": "Sit back. Just the universe.",
+  "closer": "SAVE THIS FOR LATER",
+  "assets": [
+   "potm2601b",
+   "weic2517a",
+   "heic1919b"
+  ],
+  "windows": [],
+  "hashes": [
+   11624968683185160,
+   2615739197078133262,
+   17938647423201632464,
+   17940353998238968032,
+   67818912036221176,
+   63297651234369776
+  ],
+  "narrated": true,
+  "clean": true
  }
 ]

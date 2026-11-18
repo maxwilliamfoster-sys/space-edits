@@ -2795,6 +2795,38 @@
     "weic2517b",
     "potm2502a"
    ]
+  },
+  {
+   "id": "20261118_1319",
+   "seed": 1319,
+   "template": "flash",
+   "music": "Mesmerize",
+   "qc": true,
+   "assets": [
+    "heic1720a"
+   ]
+  },
+  {
+   "id": "20261118_1320",
+   "seed": 1320,
+   "template": "target",
+   "music": "Echoes of Time v2",
+   "qc": true,
+   "assets": [
+    "potw2542a"
+   ]
+  },
+  {
+   "id": "20261118_1325",
+   "seed": 1325,
+   "template": "drift",
+   "music": "Evening of Chaos",
+   "qc": true,
+   "assets": [
+    "potm2601b",
+    "weic2517a",
+    "heic1919b"
+   ]
   }
  ],
  "usage": {
@@ -2807,7 +2839,7 @@
   "sdo_flare": 17,
   "weic2214b": 7,
   "potm2211a": 4,
-  "potm2601b": 7,
+  "potm2601b": 8,
   "potw2511a": 1,
   "potw2425a": 5,
   "potm2410b": 2,
@@ -2874,7 +2906,7 @@
   "weic2305b": 4,
   "weic2311a": 1,
   "weic2608b": 1,
-  "heic1720a": 22,
+  "heic1720a": 23,
   "potm2303b": 6,
   "heic1816b": 4,
   "heic2211a": 1,
@@ -2914,7 +2946,7 @@
   "weic2518a": 5,
   "heic2108b": 2,
   "weic2612b": 4,
-  "weic2517a": 5,
+  "weic2517a": 6,
   "weic2423a": 1,
   "weic2503c": 5,
   "potw2502a": 1,
@@ -2923,7 +2955,7 @@
   "heic2204c": 1,
   "potw2444a": 1,
   "potm2305a": 1,
-  "heic1919b": 1,
+  "heic1919b": 2,
   "potm2604b": 3,
   "potm2401a": 1,
   "weic2407b": 1,
@@ -3037,7 +3069,7 @@
   "potw2318a": 2,
   "weic2611a": 6,
   "potw2420a": 1,
-  "potw2542a": 1,
+  "potw2542a": 2,
   "potw2446a": 1,
   "potm2412b": 1,
   "heic2112b": 3,
