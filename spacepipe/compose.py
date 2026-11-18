@@ -50,6 +50,11 @@ TARGET_SECONDS = 18
 # (own rng, so other seeds keep their plans). The tracker's format test compares it with the others. FLASH_SHARE=0 stops it.
 FLASH_SHARE = float(os.environ.get("FLASH_SHARE", "0.34"))
 FLASH_SECONDS = 10
+# Narrator (2026-11-18, spacepipe/narrate.py): an A/B test, not a switch for every post. Half of edits are narrated, drawn on
+# their own rng so a seed keeps its shots, text and music either way; the tracker compares narrated with music-only by
+# views at 72 h. Drift ("no talking", 3 calm shots) is never narrated and stays out of the test (narrate=None).
+# NARRATION_SHARE=1 narrates every edit, 0 none.
+NARRATION_SHARE = float(os.environ.get("NARRATION_SHARE", "0.5"))
 TARGET_NAMES = {   # the name people know, where the clip's own ESA page gives it
     **dict.fromkeys(["weic2427a", "weic2427b", "weic2427c"], "THE SOMBRERO GALAXY"),
     **dict.fromkeys(["weic2608c"], "THE WHIRLPOOL GALAXY"),
@@ -167,6 +172,12 @@ def _track(rng, track):
 
 
 def plan(seed, template=None, track=None):
+    p = _plan(seed, template, track)
+    p["narrate"] = None if p["template"] == "drift" else random.Random(f"{seed}/narrate").random() < NARRATION_SHARE
+    return p
+
+
+def _plan(seed, template=None, track=None):
     rng = random.Random(seed)
     assets = load_assets()
     usage = history()["usage"]

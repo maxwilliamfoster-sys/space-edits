@@ -9,6 +9,7 @@ from pathlib import Path
 
 import numpy as np
 
+from . import narrate
 from .lib import FFMPEG, ROOT, ensure_local
 
 try:
@@ -35,6 +36,8 @@ HOOK_BEATS, HOOK_FADE = 5, 0.3   # held until beat 5 (~2.5-3 s), then faded out
 NET = ["-reconnect", "1", "-reconnect_streamed", "1", "-reconnect_delay_max", "5"]   # for http inputs (NASA reels in CI)
 WIN = 9 / 16 / (16 / 9)  # width fraction of a 16:9 frame that a 9:16 window covers
 LOUDNESS_TARGET = -14    # LUFS, two-pass linear (audio_norm); qc.py accepts -17..-11
+# Narrated edits (narrate.py): music stays unless NARRATION_MUSIC=0 (then the voice plays over silence)
+NARRATION_MUSIC = os.environ.get("NARRATION_MUSIC", "1") not in ("0", "false", "no")
 
 
 def run(args, **kw):
@@ -176,6 +179,18 @@ def audio_filter(p, t_end):
             f"afade=t=out:st={t_end - out:.2f}:d={out},aresample=48000")
 
 
+def narration_mix(p, music_in, voice_in, t_end):
+    """filter_complex audio for a narrated edit: the music (from its best section, as audio_filter) dips DUCK_DB under each
+    spoken cue and comes back after it; the voice is resampled to 48 kHz, de-essed and laid on top. Output label [a].
+    The de-esser: Kokoro's 's' and 'th' sounds made sample-to-sample jumps over 0.25 (the senses tool's 'sharp jumps'); it
+    removed all of them in a test with no change in voice level (Max's rule: no sharp or harsh sounds)."""
+    spans = [(c["t0"], c["t1"]) for c in p["narration"]["cues"]]
+    music = audio_filter(p, t_end) if not p.get("silent") and p.get("music_on", True) else "aresample=48000"
+    return (f"[{music_in}:a]{music},volume='{narrate.duck_expr(spans)}':eval=frame,aformat=channel_layouts=stereo[mus];"
+            f"[{voice_in}:a]aresample=48000,deesser=i=0.6:m=0.5:f=0.5,aformat=channel_layouts=stereo,apad[voi];"
+            f"[mus][voi]amix=inputs=2:duration=first:normalize=0,aresample=48000[a]")
+
+
 def normalize_audio(final, silent=False):
     """Two-pass LINEAR loudnorm of the finished mp4 to LOUDNESS_TARGET (one constant gain, so the music's own build is kept;
     a limiter runs first if more than +6 dB is needed). The video stream is copied. On any failure the un-normalised mix is
@@ -232,16 +247,24 @@ def assemble(p, final):
         txt.append(f"drawtext=fontfile='{FONTS['plain']}':textfile='{lf.relative_to(ROOT).as_posix()}':fontsize=24:fontcolor=white@0.95:"
                    f"x=(w-tw)/2:y={cy + 18 + i * 31}:alpha='{cal}'")
     post = post_chain(p, last, t_end, txt)
-    script = cdir / f"filter_{p['seed']}.txt"
-    script.write_text(";\n".join(chain + [post]), encoding="utf-8")
+    voiced = bool((p.get("narration") or {}).get("cues"))
+    if voiced:
+        p["music_on"] = NARRATION_MUSIC
     inputs = [x for s in shots for x in ("-i", s["file"])]
-    if p.get("silent"):
+    if p.get("silent") or (voiced and not p["music_on"]):
         src = ["-f", "lavfi", "-t", f"{t_end:.2f}", "-i", "anullsrc=r=48000:cl=stereo"]
     else:
         src = ["-i", ROOT / p["music"]["file"]]
-    af = audio_filter(p, t_end)
-    run([*inputs, *src, "-filter_complex_script", script, "-map", "[v]", "-map", f"{len(shots)}:a",
-         "-af", af,
+    graph = chain + [post]
+    if voiced:   # music and voice are mixed inside the filter graph
+        src += ["-i", p["narration"]["file"]]
+        graph.append(narration_mix(p, len(shots), len(shots) + 1, t_end))
+        amap = ["-map", "[a]"]
+    else:
+        amap = ["-map", f"{len(shots)}:a", "-af", audio_filter(p, t_end)]
+    script = cdir / f"filter_{p['seed']}.txt"
+    script.write_text(";\n".join(graph), encoding="utf-8")
+    run([*inputs, *src, "-filter_complex_script", script, "-map", "[v]", *amap,
          "-t", f"{t_end:.2f}", "-c:v", "libx264", "-profile:v", "high", "-crf", "16", "-preset", "slow", "-pix_fmt", "yuv420p",
          "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", final])
     normalize_audio(final, silent=bool(p.get("silent")))
@@ -257,4 +280,8 @@ def render(p, final):
             s["path"] = s["url"]   # no local copy (CI): ffmpeg seeks straight into the NASA reel over HTTP
     with ThreadPoolExecutor(3) as ex:
         list(ex.map(render_shot, p["shots"]))
+    if p.get("narrate"):
+        tmp = ROOT / "out/pipe_tmp"
+        tmp.mkdir(parents=True, exist_ok=True)
+        narrate.build(p, tmp)   # on failure the edit renders unnarrated and p["narration"]["cues"] == []
     return assemble(p, final)

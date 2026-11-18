@@ -262,15 +262,16 @@ def _create_post(query, variables):
         time.sleep(CREATE_RETRY_WAITS[attempt])
 
 
-def schedule_tiktok(channel_id, video_url, caption, due_at, thumb_ms=2500, notify=False):
-    """notify=True: Buffer pings the phone at due time and the post is finished in the TikTok app (needed to add a TikTok sound)."""
+def schedule_tiktok(channel_id, video_url, caption, due_at, thumb_ms=2500, notify=False, ai_voice=False):
+    """notify=True: Buffer pings the phone at due time and the post is finished in the TikTok app (needed to add a TikTok sound).
+    ai_voice=True: the edit has the synthetic narrator (spacepipe/narrate.py), so TikTok's AI-generated label is set."""
     now = datetime.now(timezone.utc)
     mode = "customScheduled" if (due_at - now).total_seconds() > 300 else "shareNow"
     inp = {
         "text": caption, "channelId": channel_id, "schedulingType": "notification" if notify else "automatic", "mode": mode, "needsApproval": False,
         "assets": [{"video": {"url": video_url, "metadata": {"thumbnailOffset": thumb_ms}}}],
-        # real NASA/ESA footage edited together, not generative AI
-        "metadata": {"tiktok": {"isAiGenerated": False}},
+        # real NASA/ESA footage edited together; only a narrated edit has AI content (its text-to-speech voice)
+        "metadata": {"tiktok": {"isAiGenerated": bool(ai_voice)}},
     }
     if mode == "customScheduled":
         inp["dueAt"] = due_at.astimezone(timezone.utc).isoformat().replace("+00:00", "Z")

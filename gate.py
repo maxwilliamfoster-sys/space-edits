@@ -196,7 +196,16 @@ def entry_for(plan, hashes, eid):
     closer = next((t["text"] for t in plan["texts"] if t["k1"] == plan.get("total_beats", 60)), "")
     return dict(id=eid, t=datetime.now(timezone.utc).isoformat(timespec="seconds"), template=plan["template"], music=plan["music"]["title"],
                 hook=plan["hook"], closer=closer, assets=[s["asset"] for s in plan["shots"] if s["src"] != "nasa"],
-                windows=[[s["asset"], s["src_in"]] for s in plan["shots"] if s["src"] == "nasa"], hashes=hashes)
+                windows=[[s["asset"], s["src_in"]] for s in plan["shots"] if s["src"] == "nasa"], hashes=hashes,
+                narrated=narrated(plan))
+
+
+def narrated(plan):
+    """The narration A/B arm of an edit as it was rendered: True = a voice really spoke, False = music only (including an edit
+    drawn for a voice whose narration failed), None = not in the test (drift, or a plan from before the narrator)."""
+    if plan.get("narrate") is None:
+        return None
+    return bool((plan.get("narration") or {}).get("cues"))
 
 
 def novelty(plan, hashes, log):

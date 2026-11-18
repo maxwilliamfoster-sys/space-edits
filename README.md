@@ -14,3 +14,10 @@ Automatic "scale of the universe" TikTok edits for **@mcfiddler.bob**, built fro
   trending `EPIC` sound from `tiktok_music_trending` and trimming it in the publish form. `py sound_sync.py <track> <video_s> <climax_s>`
   suggests the trim start whose energy build lands on the final reveal.
 - All on-screen text is centred; the credit card is one `drawtext` per line (ffmpeg 6.1 in CI has no `text_align`).
+- Narrator (`spacepipe/narrate.py`, since 2026-11-18): a calm British documentary voice (Kokoro-82M `bm_george`, `en-gb`, speed 0.94,
+  free, runs on the runner's CPU) says the target's name, its distance in words, one checked fact and how old its light is, in cues
+  timed to the on-screen text. The music dips 12 dB under each line and the voice is de-essed. It is an A/B test: `NARRATION_SHARE`
+  (default 0.5) of edits are narrated, drift never; the arm is logged as `narrated` in `library/gate_log.json` and compared by views at
+  72 h in the tracker (`space-narration`). `NARRATION_MUSIC=0` drops the music under narrated edits. The workflows download the model
+  files (hash-checked, `kokoro_models.sha256`); locally set `KOKORO_DIR` to a folder that has them. Narrated posts set TikTok's
+  AI-generated flag (synthetic voice). If the voice fails, the edit renders music-only and the Telegram preview says NARRATION FAILED.

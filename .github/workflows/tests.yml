@@ -3,7 +3,7 @@ name: Tests
 on:
   push:
     branches: [main]
-    paths: ['gate.py', 'ci_run.py', 'publish.py', 'spacepipe/**', 'tests/**', '.github/workflows/tests.yml']
+    paths: ['gate.py', 'ci_run.py', 'publish.py', 'spacepipe/**', 'tests/**', '.github/workflows/tests.yml', 'requirements.txt', 'kokoro_models.sha256']
   workflow_dispatch:
 
 jobs:
@@ -28,6 +28,23 @@ jobs:
           exit 1
 
       - run: pip install -r requirements.txt
+
+      - name: Cache the narrator voice
+        uses: actions/cache@v6
+        with:
+          path: kokoro_models
+          key: kokoro-v1.0
+
+      - name: Narrator voice (Kokoro bm_george; public model files, hash-checked)
+        timeout-minutes: 6
+        # Never fails the run: without the files every edit renders music-only and the Telegram preview says NARRATION FAILED.
+        run: |
+          mkdir -p kokoro_models
+          base=https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0
+          for f in kokoro-v1.0.onnx voices-v1.0.bin; do
+            [ -f "kokoro_models/$f" ] || curl -fsSL --retry 4 --retry-delay 5 -o "kokoro_models/$f" "$base/$f" || echo "::warning::could not download $f"
+          done
+          sha256sum -c kokoro_models.sha256 || { echo "::warning::narrator model files missing or wrong hash: no narration this run"; rm -f kokoro_models/*; }
 
       - name: Gate, QC, slot and pruning tests
         run: python -m unittest discover -s tests -v

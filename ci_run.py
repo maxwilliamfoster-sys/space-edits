@@ -136,6 +136,16 @@ def next_slot(taken, now=None):
     raise RuntimeError("no free slot in 30 days")
 
 
+def narration_note(plan):
+    """One line for the Telegram preview: which narration arm the edit is in, and why a voice is missing if it failed."""
+    n = plan.get("narration") or {}
+    if plan.get("narrate") is None:
+        return ""
+    if n.get("cues"):
+        return f"\nNarrated ({len(n['cues'])} lines): " + " / ".join(c["text"] for c in n["cues"])[:300]
+    return "\nMusic only" + (f" (NARRATION FAILED: {n['error']})" if n.get("error") else "")
+
+
 def telegram_preview(eid, folder, note):
     tok, chat = os.environ.get("TELEGRAM_BOT_TOKEN"), os.environ.get("TELEGRAM_CHAT_ID")
     if not tok or not chat:
@@ -217,8 +227,9 @@ def main():
     taken = [datetime.fromisoformat(p["dueAt"].replace("Z", "+00:00")) for p in pending]
     protect = [v["file"] for v in posted.values() if datetime.fromisoformat(v["due"].replace("Z", "+00:00")) > now]
     for eid, plan, folder in good:
+        voice = narration_note(plan)
         if not AUTO_POST:
-            telegram_preview(eid, folder, "passed the gate; preview only (AUTO_POST is off, not posted)")
+            telegram_preview(eid, folder, f"passed the gate; preview only (AUTO_POST is off, not posted){voice}")
             continue
         gate.require(folder)       # only a video this run's gate approved can be hosted
         caption = (folder / "caption.txt").read_text(encoding="utf-8")
@@ -227,7 +238,7 @@ def main():
         due = datetime.now(timezone.utc) if os.environ.get("POST_NOW") == "true" else next_slot(taken)   # POST_NOW: publish immediately
         fname = f"space_{eid}.mp4"
         url = publish.host_video(folder / "video.mp4", fname, protect)
-        post = publish.schedule_tiktok(chan, url, caption, due, notify=(SOUND_MODE == "tiktok"))
+        post = publish.schedule_tiktok(chan, url, caption, due, notify=(SOUND_MODE == "tiktok"), ai_voice=bool(gate.narrated(plan)))
         taken.append(due)
         protect.append(fname)
         posted[eid] = posted_entry(post, due, fname)
@@ -236,7 +247,7 @@ def main():
         what = "notification (add a TikTok sound in the app)" if SOUND_MODE == "tiktok" else "auto-post"
         emit("scheduled", "info", f"Space: {eid} scheduled", f"{due:%a %d %b %H:%M} UTC on mcfiddler.bob, {what}",
              data={"edit": eid, "due": due.isoformat(), "mode": SOUND_MODE})
-        telegram_preview(eid, folder, f"SCHEDULED {due:%a %d %b %H:%M} UTC on mcfiddler.bob ({what})")
+        telegram_preview(eid, folder, f"SCHEDULED {due:%a %d %b %H:%M} UTC on mcfiddler.bob ({what}){voice}")
 
 
 if __name__ == "__main__":
