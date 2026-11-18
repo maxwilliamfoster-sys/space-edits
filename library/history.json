@@ -2716,6 +2716,40 @@
    "assets": [
     "heic2505g"
    ]
+  },
+  {
+   "id": "20261118_1306",
+   "seed": 1306,
+   "template": "countdown",
+   "music": "Dreams Become Real",
+   "qc": true,
+   "assets": [
+    "potm2607a",
+    "potm2512a",
+    "potw2326a",
+    "potw2517a",
+    "potw2505a"
+   ]
+  },
+  {
+   "id": "20261118_1308",
+   "seed": 1308,
+   "template": "target",
+   "music": "Eternal Hope",
+   "qc": true,
+   "assets": [
+    "potw2510a"
+   ]
+  },
+  {
+   "id": "20261118_1310",
+   "seed": 1310,
+   "template": "flash",
+   "music": "Gathering Darkness",
+   "qc": true,
+   "assets": [
+    "potw2440a"
+   ]
   }
  ],
  "usage": {
@@ -2764,7 +2798,7 @@
   "weic2316c": 1,
   "heic1711b": 4,
   "heic2604a": 2,
-  "potw2517a": 2,
+  "potw2517a": 3,
   "heic1903a": 13,
   "potw2527a": 5,
   "potw2525a": 1,
@@ -2820,7 +2854,7 @@
   "weic2216d": 5,
   "weic2305a": 3,
   "weic2211c": 14,
-  "potw2510a": 4,
+  "potw2510a": 5,
   "potw2412a": 1,
   "heic1502a": 10,
   "weic2207d": 1,
@@ -2831,7 +2865,7 @@
   "potw2528a": 1,
   "weic2427c": 2,
   "heic2502b": 4,
-  "potm2512a": 7,
+  "potm2512a": 8,
   "weic2518a": 5,
   "heic2108b": 2,
   "weic2612b": 4,
@@ -2867,7 +2901,7 @@
   "heic2213a": 1,
   "potw2448a": 1,
   "weic2621a": 1,
-  "potm2607a": 4,
+  "potm2607a": 5,
   "potm2411a": 1,
   "heic2106b": 1,
   "weic2603a": 1,
@@ -2963,7 +2997,7 @@
   "potm2412b": 1,
   "heic2112b": 3,
   "potw2322a": 3,
-  "potw2505a": 2,
+  "potw2505a": 3,
   "potw2402a": 3,
   "heic1920a": 4,
   "heic1818b": 1,
@@ -2990,7 +3024,7 @@
   "potw2327a": 2,
   "potw2523a": 1,
   "potw2532a": 1,
-  "potw2326a": 1,
+  "potw2326a": 2,
   "potw2530a": 2,
   "potw2447a": 2,
   "potw2312a": 1,
@@ -3024,6 +3058,7 @@
   "potw2346a": 1,
   "potm2511a": 1,
   "potw2520a": 1,
-  "potw2442a": 1
+  "potw2442a": 1,
+  "potw2440a": 1
  }
 }
