@@ -2924,5 +2924,27 @@
   ],
   "narrated": true,
   "clean": true
+ },
+ {
+  "id": "20261119_1327",
+  "t": "2026-11-19T16:01:25+00:00",
+  "template": "flash",
+  "music": "Gathering Darkness",
+  "hook": "Destination: the Cosmic Seahorse.",
+  "closer": "6.3 BILLION LIGHT-YEARS",
+  "assets": [
+   "potm2303a"
+  ],
+  "windows": [],
+  "hashes": [
+   310995211033,
+   38260777777,
+   141911827243810,
+   3437921781318,
+   2200979278916,
+   567349681592448
+  ],
+  "narrated": true,
+  "clean": true
  }
 ]

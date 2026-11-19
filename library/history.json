@@ -2827,6 +2827,16 @@
     "weic2517a",
     "heic1919b"
    ]
+  },
+  {
+   "id": "20261119_1327",
+   "seed": 1327,
+   "template": "flash",
+   "music": "Gathering Darkness",
+   "qc": true,
+   "assets": [
+    "potm2303a"
+   ]
   }
  ],
  "usage": {
@@ -2965,7 +2975,7 @@
   "heic1707b": 1,
   "weic2426a": 1,
   "potw2549a": 1,
-  "potm2303a": 6,
+  "potm2303a": 7,
   "potm2311a": 2,
   "potw2427a": 1,
   "weic2208b": 1,
