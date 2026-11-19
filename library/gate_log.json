@@ -2946,5 +2946,49 @@
   ],
   "narrated": true,
   "clean": true
+ },
+ {
+  "id": "20261119_1330",
+  "t": "2026-11-19T23:15:01+00:00",
+  "template": "target",
+  "music": "Eternal Hope",
+  "hook": "Next stop: Pismis 24.",
+  "closer": "NAME OUR NEXT DESTINATION",
+  "assets": [
+   "weic2518b"
+  ],
+  "windows": [],
+  "hashes": [
+   4769345389502464,
+   13884650641984840640,
+   8428487462573604928,
+   67814256290191536,
+   17361623819964431608,
+   215818965139552
+  ],
+  "narrated": true,
+  "clean": true
+ },
+ {
+  "id": "20261119_1331",
+  "t": "2026-11-19T23:17:20+00:00",
+  "template": "flash",
+  "music": "Cut and Run",
+  "hook": "Destination: Lynds 483.",
+  "closer": "650 LIGHT-YEARS",
+  "assets": [
+   "weic2503c"
+  ],
+  "windows": [],
+  "hashes": [
+   32915580900408589,
+   4680489093085282819,
+   4459938119680,
+   13899003480054660120,
+   104958263296,
+   62663244644352
+  ],
+  "narrated": true,
+  "clean": false
  }
 ]

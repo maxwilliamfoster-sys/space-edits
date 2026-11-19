@@ -2837,6 +2837,26 @@
    "assets": [
     "potm2303a"
    ]
+  },
+  {
+   "id": "20261119_1330",
+   "seed": 1330,
+   "template": "target",
+   "music": "Eternal Hope",
+   "qc": true,
+   "assets": [
+    "weic2518b"
+   ]
+  },
+  {
+   "id": "20261119_1331",
+   "seed": 1331,
+   "template": "flash",
+   "music": "Cut and Run",
+   "qc": true,
+   "assets": [
+    "weic2503c"
+   ]
   }
  ],
  "usage": {
@@ -2930,7 +2950,7 @@
   "weic2218a": 5,
   "potm2405e": 2,
   "potw2406a": 1,
-  "weic2518b": 5,
+  "weic2518b": 6,
   "potm2603b": 3,
   "heic2505d": 6,
   "heic1819b": 4,
@@ -2958,7 +2978,7 @@
   "weic2612b": 4,
   "weic2517a": 6,
   "weic2423a": 1,
-  "weic2503c": 5,
+  "weic2503c": 6,
   "potw2502a": 1,
   "potm2608a": 2,
   "potm2607b": 7,
