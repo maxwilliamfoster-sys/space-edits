@@ -2857,17 +2857,45 @@
    "assets": [
     "weic2503c"
    ]
+  },
+  {
+   "id": "20261120_1334",
+   "seed": 1334,
+   "template": "classic",
+   "music": "Windswept",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "weic2214b",
+    "mercury_transit",
+    "potw2413a",
+    "heic2201a",
+    "heic2201a",
+    "heic1417a"
+   ]
+  },
+  {
+   "id": "20261120_1335",
+   "seed": 1335,
+   "template": "drift",
+   "music": "Dark Fog",
+   "qc": true,
+   "assets": [
+    "heic2112b",
+    "weic2611a",
+    "weic2427a"
+   ]
   }
  ],
  "usage": {
-  "earth_exp65": 161,
+  "earth_exp65": 162,
   "weic2510b": 1,
   "potw2428a": 1,
   "weic2520b": 1,
   "heic1620c": 2,
   "potm2507b": 4,
   "sdo_flare": 17,
-  "weic2214b": 7,
+  "weic2214b": 8,
   "potm2211a": 4,
   "potm2601b": 8,
   "potw2511a": 1,
@@ -2880,9 +2908,9 @@
   "weic2420a": 3,
   "heic2018b": 2,
   "potm2606a": 6,
-  "mercury_transit": 17,
+  "mercury_transit": 18,
   "potm2510b": 2,
-  "weic2427a": 1,
+  "weic2427a": 2,
   "weic2420c": 6,
   "potm2503a": 7,
   "sdo_year6": 21,
@@ -2894,12 +2922,12 @@
   "heic2312b": 8,
   "potw2504a": 1,
   "weic2514b": 2,
-  "heic2201a": 10,
+  "heic2201a": 12,
   "potm2312a": 7,
   "potw2403a": 1,
   "heic2301b": 1,
   "potm2306c": 12,
-  "heic1417a": 6,
+  "heic1417a": 7,
   "weic2606a": 9,
   "heic1712b": 1,
   "weic2316c": 1,
@@ -3097,12 +3125,12 @@
   "potw2435a": 2,
   "weic2327a": 3,
   "potw2318a": 2,
-  "weic2611a": 6,
+  "weic2611a": 7,
   "potw2420a": 1,
   "potw2542a": 2,
   "potw2446a": 1,
   "potm2412b": 1,
-  "heic2112b": 3,
+  "heic2112b": 4,
   "potw2322a": 3,
   "potw2505a": 3,
   "potw2402a": 3,
@@ -3166,6 +3194,7 @@
   "potm2511a": 1,
   "potw2520a": 1,
   "potw2442a": 1,
-  "potw2440a": 1
+  "potw2440a": 1,
+  "potw2413a": 1
  }
 }
