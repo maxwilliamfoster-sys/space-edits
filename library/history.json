@@ -2885,6 +2885,46 @@
     "weic2611a",
     "weic2427a"
    ]
+  },
+  {
+   "id": "20261120_1341",
+   "seed": 1341,
+   "template": "target",
+   "music": "Heart of the Beast",
+   "qc": true,
+   "assets": [
+    "heic1720a"
+   ]
+  },
+  {
+   "id": "20261120_1344",
+   "seed": 1344,
+   "template": "flash",
+   "music": "Rite of Passage",
+   "qc": true,
+   "assets": [
+    "heic1513a"
+   ]
+  },
+  {
+   "id": "20261120_1345",
+   "seed": 1345,
+   "template": "target",
+   "music": "Windswept",
+   "qc": true,
+   "assets": [
+    "potm2306a"
+   ]
+  },
+  {
+   "id": "20261120_1346",
+   "seed": 1346,
+   "template": "flash",
+   "music": "Heart of the Beast",
+   "qc": true,
+   "assets": [
+    "potm2412b"
+   ]
   }
  ],
  "usage": {
@@ -2964,7 +3004,7 @@
   "weic2305b": 4,
   "weic2311a": 1,
   "weic2608b": 1,
-  "heic1720a": 23,
+  "heic1720a": 24,
   "potm2303b": 6,
   "heic1816b": 4,
   "heic2211a": 1,
@@ -3092,7 +3132,7 @@
   "heic2409a": 1,
   "potm2310a": 2,
   "weic2514c": 1,
-  "potm2306a": 1,
+  "potm2306a": 2,
   "potm2504b": 1,
   "weic2328a": 1,
   "potw2324a": 2,
@@ -3129,7 +3169,7 @@
   "potw2420a": 1,
   "potw2542a": 2,
   "potw2446a": 1,
-  "potm2412b": 1,
+  "potm2412b": 2,
   "heic2112b": 4,
   "potw2322a": 3,
   "potw2505a": 3,
@@ -3182,7 +3222,7 @@
   "potw2543a": 1,
   "potw2315a": 1,
   "potw2545a": 1,
-  "heic1513a": 5,
+  "heic1513a": 6,
   "potm2405d": 1,
   "heic2004b": 1,
   "heic1906b": 1,

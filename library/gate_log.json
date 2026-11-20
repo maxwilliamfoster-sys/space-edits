@@ -3014,5 +3014,27 @@
   ],
   "narrated": true,
   "clean": false
+ },
+ {
+  "id": "20261120_1345",
+  "t": "2026-11-20T22:51:14+00:00",
+  "template": "target",
+  "music": "Windswept",
+  "hook": "Have you seen NGC 3256?",
+  "closer": "NAME OUR NEXT DESTINATION",
+  "assets": [
+   "potm2306a"
+  ],
+  "windows": [],
+  "hashes": [
+   18371282318438751432,
+   18228597387957170296,
+   17361641515699450080,
+   17354307677712343232,
+   17936985162503979136,
+   16500850667510857920
+  ],
+  "narrated": true,
+  "clean": false
  }
 ]
