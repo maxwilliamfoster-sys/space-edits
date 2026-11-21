@@ -3080,5 +3080,27 @@
   ],
   "narrated": true,
   "clean": false
+ },
+ {
+  "id": "20261121_1370",
+  "t": "2026-11-21T21:47:31+00:00",
+  "template": "flash",
+  "music": "Ghost Story",
+  "hook": "A closer look at NGC 4388.",
+  "closer": "60 MILLION LIGHT-YEARS",
+  "assets": [
+   "potw2550a"
+  ],
+  "windows": [],
+  "hashes": [
+   18446422985716843648,
+   18445889155650078848,
+   18444770350488137744,
+   18373825254989545568,
+   18372682002328518784,
+   18228566747954348032
+  ],
+  "narrated": true,
+  "clean": true
  }
 ]

@@ -2971,6 +2971,16 @@
    "assets": [
     "potw2539a"
    ]
+  },
+  {
+   "id": "20261121_1370",
+   "seed": 1370,
+   "template": "flash",
+   "music": "Ghost Story",
+   "qc": true,
+   "assets": [
+    "potw2550a"
+   ]
   }
  ],
  "usage": {
@@ -3284,6 +3294,7 @@
   "potw2413a": 1,
   "heic1912c": 1,
   "potm2508a": 1,
-  "potw2524a": 1
+  "potw2524a": 1,
+  "potw2550a": 1
  }
 }
