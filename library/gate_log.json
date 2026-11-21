@@ -3036,5 +3036,49 @@
   ],
   "narrated": true,
   "clean": false
+ },
+ {
+  "id": "20261121_1358",
+  "t": "2026-11-21T14:57:29+00:00",
+  "template": "flash",
+  "music": "Call to Adventure",
+  "hook": "This is NGC 4449. It's real.",
+  "closer": "12.5 MILLION LIGHT-YEARS",
+  "assets": [
+   "potw2524a"
+  ],
+  "windows": [],
+  "hashes": [
+   16785110084273108216,
+   17649810018078618872,
+   9581686215778817778,
+   14188725645984448730,
+   4675560140230222304,
+   65707393193996768
+  ],
+  "narrated": true,
+  "clean": true
+ },
+ {
+  "id": "20261121_1368",
+  "t": "2026-11-21T14:59:32+00:00",
+  "template": "target",
+  "music": "Gathering Darkness",
+  "hook": "We flew to NGC 6000.",
+  "closer": "NAME OUR NEXT DESTINATION",
+  "assets": [
+   "potw2539a"
+  ],
+  "windows": [],
+  "hashes": [
+   16208728806981957858,
+   16208720011025242354,
+   16208720011024850168,
+   16208720011091963096,
+   16208720028271699608,
+   16208719431271244444
+  ],
+  "narrated": true,
+  "clean": false
  }
 ]

@@ -2925,24 +2925,70 @@
    "assets": [
     "potm2412b"
    ]
+  },
+  {
+   "id": "20261121_1354",
+   "seed": 1354,
+   "template": "tour",
+   "music": "Evening of Chaos",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "weic2214b",
+    "heic1912c",
+    "potm2508a",
+    "heic1901b",
+    "heic1901b",
+    "heic1816a"
+   ]
+  },
+  {
+   "id": "20261121_1357",
+   "seed": 1357,
+   "template": "flash",
+   "music": "Rite of Passage",
+   "qc": true,
+   "assets": [
+    "heic1720a"
+   ]
+  },
+  {
+   "id": "20261121_1358",
+   "seed": 1358,
+   "template": "flash",
+   "music": "Call to Adventure",
+   "qc": true,
+   "assets": [
+    "potw2524a"
+   ]
+  },
+  {
+   "id": "20261121_1368",
+   "seed": 1368,
+   "template": "target",
+   "music": "Gathering Darkness",
+   "qc": true,
+   "assets": [
+    "potw2539a"
+   ]
   }
  ],
  "usage": {
-  "earth_exp65": 162,
+  "earth_exp65": 163,
   "weic2510b": 1,
   "potw2428a": 1,
   "weic2520b": 1,
   "heic1620c": 2,
   "potm2507b": 4,
   "sdo_flare": 17,
-  "weic2214b": 8,
+  "weic2214b": 9,
   "potm2211a": 4,
   "potm2601b": 8,
   "potw2511a": 1,
   "potw2425a": 5,
   "potm2410b": 2,
   "heic2011c": 9,
-  "heic1816a": 6,
+  "heic1816a": 7,
   "potw2434a": 1,
   "potm2601a": 3,
   "weic2420a": 3,
@@ -3004,7 +3050,7 @@
   "weic2305b": 4,
   "weic2311a": 1,
   "weic2608b": 1,
-  "heic1720a": 24,
+  "heic1720a": 25,
   "potm2303b": 6,
   "heic1816b": 4,
   "heic2211a": 1,
@@ -3014,7 +3060,7 @@
   "potw2418a": 3,
   "potm2506d": 2,
   "heic1811a": 10,
-  "heic1901b": 12,
+  "heic1901b": 14,
   "weic2218a": 5,
   "potm2405e": 2,
   "potw2406a": 1,
@@ -3185,7 +3231,7 @@
   "heic2406a": 2,
   "potw2437a": 2,
   "weic2307c": 1,
-  "potw2539a": 1,
+  "potw2539a": 2,
   "heic2112c": 4,
   "potw2432a": 1,
   "potm2506c": 1,
@@ -3235,6 +3281,9 @@
   "potw2520a": 1,
   "potw2442a": 1,
   "potw2440a": 1,
-  "potw2413a": 1
+  "potw2413a": 1,
+  "heic1912c": 1,
+  "potm2508a": 1,
+  "potw2524a": 1
  }
 }
