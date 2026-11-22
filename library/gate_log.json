@@ -3102,5 +3102,49 @@
   ],
   "narrated": true,
   "clean": true
+ },
+ {
+  "id": "20261122_1374",
+  "t": "2026-11-22T14:53:03+00:00",
+  "template": "target",
+  "music": "Rite of Passage",
+  "hook": "A closer look at NGC 298.",
+  "closer": "NAME OUR NEXT DESTINATION",
+  "assets": [
+   "potw2322a"
+  ],
+  "windows": [],
+  "hashes": [
+   17941283319207428096,
+   16208728279945838592,
+   63315344840130560,
+   212072339997184,
+   141703729907456,
+   75183150603776
+  ],
+  "narrated": true,
+  "clean": true
+ },
+ {
+  "id": "20261122_1377",
+  "t": "2026-11-22T14:54:39+00:00",
+  "template": "flash",
+  "music": "Echoes of Time v2",
+  "hook": "Next stop: NGC 3507.",
+  "closer": "46 MILLION LIGHT-YEARS",
+  "assets": [
+   "potw2521a"
+  ],
+  "windows": [],
+  "hashes": [
+   16208728006938653398,
+   18222937352169197184,
+   18358854579400871552,
+   18357728679494028806,
+   18357728679497895686,
+   18429786273535827726
+  ],
+  "narrated": true,
+  "clean": false
  }
 ]
