@@ -3017,6 +3017,18 @@
    "assets": [
     "potw2521a"
    ]
+  },
+  {
+   "id": "20261122_1380",
+   "seed": 1380,
+   "template": "drift",
+   "music": "Epic Unease",
+   "qc": true,
+   "assets": [
+    "potm2512a",
+    "potw2518a",
+    "potw2446a"
+   ]
   }
  ],
  "usage": {
@@ -3132,7 +3144,7 @@
   "potw2528a": 1,
   "weic2427c": 2,
   "heic2502b": 4,
-  "potm2512a": 9,
+  "potm2512a": 10,
   "weic2518a": 5,
   "heic2108b": 2,
   "weic2612b": 4,
@@ -3175,7 +3187,7 @@
   "potw2515a": 1,
   "potw2443a": 3,
   "heic2201b": 1,
-  "potw2518a": 2,
+  "potw2518a": 3,
   "potw2431a": 1,
   "potm2208c": 1,
   "weic2506c": 1,
@@ -3260,7 +3272,7 @@
   "weic2611a": 7,
   "potw2420a": 1,
   "potw2542a": 2,
-  "potw2446a": 1,
+  "potw2446a": 2,
   "potm2412b": 2,
   "heic2112b": 4,
   "potw2322a": 4,

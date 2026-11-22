@@ -3146,5 +3146,29 @@
   ],
   "narrated": true,
   "clean": false
+ },
+ {
+  "id": "20261122_1380",
+  "t": "2026-11-22T21:59:55+00:00",
+  "template": "drift",
+  "music": "Epic Unease",
+  "hook": "30 seconds of the real universe.",
+  "closer": "SEND THIS TO SOMEONE WHO NEEDS IT",
+  "assets": [
+   "potm2512a",
+   "potw2518a",
+   "potw2446a"
+  ],
+  "windows": [],
+  "hashes": [
+   16204101872934223000,
+   13298228514495700216,
+   17933581041628934369,
+   17938084641256044768,
+   40532641408677888,
+   56436389909952512
+  ],
+  "narrated": true,
+  "clean": false
  }
 ]
