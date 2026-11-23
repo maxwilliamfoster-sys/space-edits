@@ -3170,5 +3170,75 @@
   ],
   "narrated": true,
   "clean": false
+ },
+ {
+  "id": "20261123_1382",
+  "t": "2026-11-23T18:36:17+00:00",
+  "template": "flash",
+  "music": "Rite of Passage",
+  "hook": "This is NGC 1333. It's real.",
+  "closer": "960 LIGHT-YEARS",
+  "assets": [
+   "potm2408a"
+  ],
+  "windows": [],
+  "hashes": [
+   14456148601850618304,
+   14451645070809686208,
+   9839959052386558144,
+   10128190501726437568,
+   13568937329444194055,
+   8385926927283588870
+  ],
+  "narrated": true,
+  "clean": true
+ },
+ {
+  "id": "20261123_1388",
+  "t": "2026-11-23T18:38:01+00:00",
+  "template": "timemachine",
+  "music": "Eternal Hope",
+  "hook": "Every galaxy you see is old light.",
+  "closer": "EVERY STAR YOU SEE IS THE PAST",
+  "assets": [
+   "heic2012b",
+   "weic2517a",
+   "weic2216c",
+   "potm2403a",
+   "heic1920a"
+  ],
+  "windows": [],
+  "hashes": [
+   9854088160113916152,
+   18008146595647897728,
+   13867174718555604611,
+   124180271480960,
+   9263957899006407424,
+   1477339214415659110
+  ],
+  "narrated": true,
+  "clean": true
+ },
+ {
+  "id": "20261123_1389",
+  "t": "2026-11-23T18:39:53+00:00",
+  "template": "flash",
+  "music": "Crossing the Chasm",
+  "hook": "A closer look at Terzan 5.",
+  "closer": "22,000 LIGHT-YEARS",
+  "assets": [
+   "weic2611a"
+  ],
+  "windows": [],
+  "hashes": [
+   16352843960700926864,
+   7705923880056552088,
+   4314678210634217688,
+   3741032208097900760,
+   4317492960527219032,
+   1219016382536054872
+  ],
+  "narrated": true,
+  "clean": true
  }
 ]
