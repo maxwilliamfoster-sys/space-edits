@@ -3240,5 +3240,74 @@
   ],
   "narrated": true,
   "clean": true
+ },
+ {
+  "id": "20261124_1395",
+  "t": "2026-11-24T18:11:31+00:00",
+  "template": "guess",
+  "music": "Evening of Chaos",
+  "hook": "Guess first. The light-years come after.",
+  "closer": "COMMENT YOUR SCORE OUT OF 4",
+  "assets": [
+   "heic1819b",
+   "potw2323a",
+   "potm2405c",
+   "potm2601b"
+  ],
+  "windows": [],
+  "hashes": [
+   17361641060282970355,
+   8682438704268050432,
+   9291199796641529856,
+   8681472013651299305,
+   3522246578057799654,
+   16268277976496988897
+  ],
+  "narrated": true,
+  "clean": false
+ },
+ {
+  "id": "20261124_1396",
+  "t": "2026-11-24T18:13:35+00:00",
+  "template": "flash",
+  "music": "Dark Fog",
+  "hook": "Real footage of NGC 2899.",
+  "closer": "4,500 LIGHT-YEARS",
+  "assets": [
+   "heic2505g"
+  ],
+  "windows": [],
+  "hashes": [
+   68946541888929792,
+   9247104694564220992,
+   9140852568077124774,
+   53160240201859072,
+   592371718228543624,
+   8147256213028864
+  ],
+  "narrated": true,
+  "clean": false
+ },
+ {
+  "id": "20261124_1403",
+  "t": "2026-11-24T18:15:29+00:00",
+  "template": "target",
+  "music": "Echoes of Time v2",
+  "hook": "This is MACS0416. It's real.",
+  "closer": "WHERE SHOULD WE GO NEXT?",
+  "assets": [
+   "weic2327a"
+  ],
+  "windows": [],
+  "hashes": [
+   22609529170652872,
+   13522120364319369,
+   141473697624200,
+   8797916361921,
+   36028837371242906,
+   9223470391319173736
+  ],
+  "narrated": true,
+  "clean": true
  }
 ]

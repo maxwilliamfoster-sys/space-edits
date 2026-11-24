@@ -3063,6 +3063,59 @@
    "assets": [
     "weic2611a"
    ]
+  },
+  {
+   "id": "20261124_1394",
+   "seed": 1394,
+   "template": "target",
+   "music": "Windswept",
+   "qc": true,
+   "assets": [
+    "heic1720a"
+   ]
+  },
+  {
+   "id": "20261124_1395",
+   "seed": 1395,
+   "template": "guess",
+   "music": "Evening of Chaos",
+   "qc": true,
+   "assets": [
+    "heic1819b",
+    "potw2323a",
+    "potm2405c",
+    "potm2601b"
+   ]
+  },
+  {
+   "id": "20261124_1396",
+   "seed": 1396,
+   "template": "flash",
+   "music": "Dark Fog",
+   "qc": true,
+   "assets": [
+    "heic2505g"
+   ]
+  },
+  {
+   "id": "20261124_1398",
+   "seed": 1398,
+   "template": "target",
+   "music": "Long Time Coming",
+   "qc": true,
+   "assets": [
+    "heic1720a"
+   ]
+  },
+  {
+   "id": "20261124_1403",
+   "seed": 1403,
+   "template": "target",
+   "music": "Echoes of Time v2",
+   "qc": true,
+   "assets": [
+    "weic2327a"
+   ]
   }
  ],
  "usage": {
@@ -3075,7 +3128,7 @@
   "sdo_flare": 18,
   "weic2214b": 9,
   "potm2211a": 4,
-  "potm2601b": 8,
+  "potm2601b": 9,
   "potw2511a": 1,
   "potw2425a": 5,
   "potm2410b": 2,
@@ -3142,7 +3195,7 @@
   "weic2305b": 4,
   "weic2311a": 1,
   "weic2608b": 1,
-  "heic1720a": 25,
+  "heic1720a": 27,
   "potm2303b": 6,
   "heic1816b": 4,
   "heic2211a": 1,
@@ -3159,10 +3212,10 @@
   "weic2518b": 6,
   "potm2603b": 3,
   "heic2505d": 6,
-  "heic1819b": 4,
+  "heic1819b": 5,
   "weic2422a": 1,
   "potw2235a": 1,
-  "heic2505g": 7,
+  "heic2505g": 8,
   "heic1801a": 5,
   "weic2216d": 5,
   "weic2305a": 3,
@@ -3301,7 +3354,7 @@
   "weic2216c": 5,
   "weic2411d": 5,
   "potw2435a": 2,
-  "weic2327a": 3,
+  "weic2327a": 4,
   "potw2318a": 2,
   "weic2611a": 8,
   "potw2420a": 1,
@@ -3349,7 +3402,7 @@
   "potw2522a": 1,
   "heic2012b": 3,
   "potw2314a": 1,
-  "potw2323a": 1,
+  "potw2323a": 2,
   "potw2417a": 1,
   "potw2536a": 1,
   "potw2335a": 1,
@@ -3378,6 +3431,7 @@
   "potm2508a": 1,
   "potw2524a": 1,
   "potw2550a": 1,
-  "potm2605b": 1
+  "potm2605b": 1,
+  "potm2405c": 1
  }
 }
