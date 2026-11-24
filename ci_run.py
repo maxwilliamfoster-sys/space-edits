@@ -238,7 +238,7 @@ def main():
         due = datetime.now(timezone.utc) if os.environ.get("POST_NOW") == "true" else next_slot(taken)   # POST_NOW: publish immediately
         fname = f"space_{eid}.mp4"
         url = publish.host_video(folder / "video.mp4", fname, protect)
-        post = publish.schedule_tiktok(chan, url, caption, due, notify=(SOUND_MODE == "tiktok"), ai_voice=bool(gate.narrated(plan)))
+        post = publish.schedule_tiktok(chan, url, caption, due, notify=(SOUND_MODE == "tiktok"))   # no AI label: see publish.schedule_tiktok
         taken.append(due)
         protect.append(fname)
         posted[eid] = posted_entry(post, due, fname)

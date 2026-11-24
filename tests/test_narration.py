@@ -258,5 +258,18 @@ class RealVoice(unittest.TestCase):
         self.assertLessEqual(float(np.abs(x).max()), 10 ** (narrate.PEAK_DB / 20) + 1e-3)
 
 
+class AiLabelTests(unittest.TestCase):
+    """Max, 2026-11-24: real NASA/ESA footage + a generic TTS narrator isn't realistic AI content, so no AI label."""
+
+    def test_buffer_post_has_no_ai_label_by_default(self):
+        import publish
+        from datetime import datetime, timedelta, timezone
+        sent = {}
+        fake = lambda q, v: sent.update(v) or {"post": {"id": "p", "status": "scheduled", "dueAt": "x"}}
+        with mock.patch.object(publish, "_create_post", side_effect=fake):
+            publish.schedule_tiktok("c", "https://x/v.mp4", "cap", datetime.now(timezone.utc) + timedelta(hours=2))
+        self.assertIs(sent["i"]["metadata"]["tiktok"]["isAiGenerated"], False)
+
+
 if __name__ == "__main__":
     unittest.main()
