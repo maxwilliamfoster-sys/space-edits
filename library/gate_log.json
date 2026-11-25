@@ -3309,5 +3309,81 @@
   ],
   "narrated": true,
   "clean": true
+ },
+ {
+  "id": "20261125_1408",
+  "t": "2026-11-25T17:37:41+00:00",
+  "template": "flash",
+  "music": "Epic Unease",
+  "hook": "Real footage of Pismis 24.",
+  "closer": "5,500 LIGHT-YEARS",
+  "assets": [
+   "weic2518b"
+  ],
+  "windows": [],
+  "hashes": [
+   4769345389502464,
+   13884650650608329408,
+   8099724618908057672,
+   67809838907955249,
+   9867634040009488636,
+   9259617199432221024
+  ],
+  "narrated": true,
+  "clean": true
+ },
+ {
+  "id": "20261125_1410",
+  "t": "2026-11-25T17:39:34+00:00",
+  "template": "target",
+  "music": "Long Time Coming",
+  "hook": "A closer look at NGC 6302.",
+  "closer": "NAME OUR NEXT DESTINATION",
+  "assets": [
+   "heic2011c"
+  ],
+  "windows": [],
+  "hashes": [
+   58794888236396544,
+   8133632990445199368,
+   87948039408,
+   22473162185056,
+   10964514635776,
+   880612408343140353
+  ],
+  "narrated": true,
+  "clean": true
+ },
+ {
+  "id": "20261125_1411",
+  "t": "2026-11-25T17:41:32+00:00",
+  "template": "nebulae",
+  "music": "Crossing the Chasm",
+  "hook": "From Earth to the edge. Watch.",
+  "closer": "NOW LOOK UP TONIGHT",
+  "assets": [
+   "potw2547a",
+   "potw2511a",
+   "heic2201a",
+   "heic2201a",
+   "potw2310a",
+   "heic1816b"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    924
+   ]
+  ],
+  "hashes": [
+   16639860388521964082,
+   11254689845891569692,
+   4259840,
+   8712478396773873724,
+   11565246148825872664,
+   1623222362932527296
+  ],
+  "narrated": true,
+  "clean": true
  }
 ]
