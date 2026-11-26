@@ -3385,5 +3385,84 @@
   ],
   "narrated": true,
   "clean": true
+ },
+ {
+  "id": "20261126_1413",
+  "t": "2026-11-26T17:15:19+00:00",
+  "template": "target",
+  "music": "Dreams Become Real",
+  "hook": "This is Arp 142. It's real.",
+  "closer": "WHERE SHOULD WE GO NEXT?",
+  "assets": [
+   "weic2420b"
+  ],
+  "windows": [],
+  "hashes": [
+   13898373408517945529,
+   13902876999689599128,
+   16208721675334285372,
+   16204216428570177916,
+   17359398537673603448,
+   17360529361861376120
+  ],
+  "narrated": true,
+  "clean": true
+ },
+ {
+  "id": "20261126_1418",
+  "t": "2026-11-26T17:17:30+00:00",
+  "template": "deep",
+  "music": "Epic Unease",
+  "hook": "The solar system is tiny. Watch.",
+  "closer": "ONE PLANET. ONE CHANCE.",
+  "assets": [
+   "potm2409a",
+   "heic1502a",
+   "heic1502a",
+   "potw2515a",
+   "heic1711a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    2672
+   ],
+   [
+    "sdo_year6",
+    120
+   ]
+  ],
+  "hashes": [
+   17938102233174293706,
+   14186585944722948544,
+   75733038275840,
+   13898241391935418992,
+   3556769792,
+   114349209288704
+  ],
+  "narrated": true,
+  "clean": true
+ },
+ {
+  "id": "20261126_1422",
+  "t": "2026-11-26T17:19:10+00:00",
+  "template": "target",
+  "music": "Windswept",
+  "hook": "Zooming in on the Cosmic Seahorse.",
+  "closer": "COMMENT THE NEXT STOP",
+  "assets": [
+   "potm2303a"
+  ],
+  "windows": [],
+  "hashes": [
+   29387885905993988,
+   276635370008,
+   626537113379,
+   2347000120900,
+   4399861340296,
+   2383950999203841
+  ],
+  "narrated": true,
+  "clean": false
  }
 ]
