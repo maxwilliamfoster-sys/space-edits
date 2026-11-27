@@ -3188,6 +3188,38 @@
    "assets": [
     "potm2303a"
    ]
+  },
+  {
+   "id": "20261127_1428",
+   "seed": 1428,
+   "template": "drift",
+   "music": "Eternal Hope",
+   "qc": true,
+   "assets": [
+    "potw2542a",
+    "potw2534a",
+    "weic2218a"
+   ]
+  },
+  {
+   "id": "20261127_1429",
+   "seed": 1429,
+   "template": "target",
+   "music": "Gathering Darkness",
+   "qc": true,
+   "assets": [
+    "heic1720a"
+   ]
+  },
+  {
+   "id": "20261127_1430",
+   "seed": 1430,
+   "template": "flash",
+   "music": "Heart of the Beast",
+   "qc": true,
+   "assets": [
+    "heic2505d"
+   ]
   }
  ],
  "usage": {
@@ -3267,7 +3299,7 @@
   "weic2305b": 4,
   "weic2311a": 1,
   "weic2608b": 1,
-  "heic1720a": 27,
+  "heic1720a": 28,
   "potm2303b": 6,
   "heic1816b": 5,
   "heic2211a": 1,
@@ -3278,12 +3310,12 @@
   "potm2506d": 2,
   "heic1811a": 10,
   "heic1901b": 14,
-  "weic2218a": 5,
+  "weic2218a": 6,
   "potm2405e": 2,
   "potw2406a": 1,
   "weic2518b": 7,
   "potm2603b": 3,
-  "heic2505d": 6,
+  "heic2505d": 7,
   "heic1819b": 5,
   "weic2422a": 1,
   "potw2235a": 1,
@@ -3363,7 +3395,7 @@
   "potm2410a": 1,
   "potw2507a": 1,
   "potw2317a": 1,
-  "potw2534a": 1,
+  "potw2534a": 2,
   "heic1910b": 2,
   "potw2514a": 4,
   "potm2602a": 2,
@@ -3430,7 +3462,7 @@
   "potw2318a": 2,
   "weic2611a": 8,
   "potw2420a": 1,
-  "potw2542a": 2,
+  "potw2542a": 3,
   "potw2446a": 2,
   "potm2412b": 2,
   "heic2112b": 4,

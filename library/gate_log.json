@@ -3464,5 +3464,51 @@
   ],
   "narrated": true,
   "clean": false
+ },
+ {
+  "id": "20261127_1428",
+  "t": "2026-11-27T16:59:37+00:00",
+  "template": "drift",
+  "music": "Eternal Hope",
+  "hook": "Real galaxies. Take a breath.",
+  "closer": "SAVE THIS FOR LATER",
+  "assets": [
+   "potw2542a",
+   "potw2534a",
+   "weic2218a"
+  ],
+  "windows": [],
+  "hashes": [
+   17361641514960220400,
+   17361641481138397408,
+   16785180728834973920,
+   17361650277230375136,
+   17075662560412166241,
+   15052429602653782368
+  ],
+  "narrated": true,
+  "clean": false
+ },
+ {
+  "id": "20261127_1430",
+  "t": "2026-11-27T17:01:54+00:00",
+  "template": "flash",
+  "music": "Heart of the Beast",
+  "hook": "A closer look at NGC 2899.",
+  "closer": "4,500 LIGHT-YEARS",
+  "assets": [
+   "heic2505d"
+  ],
+  "windows": [],
+  "hashes": [
+   1797182811148967936,
+   934761218574829600,
+   439365810320243936,
+   75709005047969480,
+   1720705372325628,
+   295738318864022
+  ],
+  "narrated": true,
+  "clean": false
  }
 ]
