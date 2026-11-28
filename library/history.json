@@ -3256,6 +3256,16 @@
    "assets": [
     "potm2306a"
    ]
+  },
+  {
+   "id": "20261128_1443",
+   "seed": 1443,
+   "template": "target",
+   "music": "Echoes of Time v2",
+   "qc": true,
+   "assets": [
+    "weic2327a"
+   ]
   }
  ],
  "usage": {
@@ -3494,7 +3504,7 @@
   "weic2216c": 5,
   "weic2411d": 5,
   "potw2435a": 2,
-  "weic2327a": 4,
+  "weic2327a": 5,
   "potw2318a": 2,
   "weic2611a": 8,
   "potw2420a": 1,
