@@ -152,12 +152,17 @@ def telegram_preview(eid, folder, note):
         print("[telegram] no token, skipping preview")
         return
     small = folder / "preview.mp4"
-    subprocess.run([FFMPEG, "-y", "-loglevel", "error", "-i", str(folder / "video.mp4"), "-vf", "scale=540:960", "-c:v", "libx264",
-                    "-crf", "30", "-preset", "veryfast", "-c:a", "aac", "-b:a", "96k", str(small)], check=True)
-    with open(small, "rb") as f:
-        r = requests.post(f"https://api.telegram.org/bot{tok}/sendVideo", data={"chat_id": chat, "caption": f"{eid}: {note}"[:1000],
-                          "supports_streaming": "true", "width": 540, "height": 960}, files={"video": f}, timeout=300)
-    print("[telegram]", r.status_code, r.json().get("ok"))
+    # The preview is only a copy for Max: a dropped connection or a failed shrink must never
+    # stop the run from scheduling its other edits (run 46161181220, 28 Nov 2026).
+    try:
+        subprocess.run([FFMPEG, "-y", "-loglevel", "error", "-i", str(folder / "video.mp4"), "-vf", "scale=540:960", "-c:v", "libx264",
+                        "-crf", "30", "-preset", "veryfast", "-c:a", "aac", "-b:a", "96k", str(small)], check=True)
+        with open(small, "rb") as f:
+            r = requests.post(f"https://api.telegram.org/bot{tok}/sendVideo", data={"chat_id": chat, "caption": f"{eid}: {note}"[:1000],
+                              "supports_streaming": "true", "width": 540, "height": 960}, files={"video": f}, timeout=300)
+        print("[telegram]", r.status_code, r.json().get("ok"))
+    except (OSError, subprocess.SubprocessError, requests.exceptions.RequestException, ValueError) as e:
+        print(f"[telegram] preview not sent for {eid} ({type(e).__name__}); carrying on")
 
 
 def main():
