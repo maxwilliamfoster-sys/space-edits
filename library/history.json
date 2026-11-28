@@ -3220,16 +3220,52 @@
    "assets": [
     "heic2505d"
    ]
+  },
+  {
+   "id": "20261128_1433",
+   "seed": 1433,
+   "template": "deep",
+   "music": "Call to Adventure",
+   "qc": true,
+   "assets": [
+    "earth_exp65",
+    "sdo_flare",
+    "potw2531a",
+    "heic2002a",
+    "heic2002a",
+    "potw2342a",
+    "potm2503a"
+   ]
+  },
+  {
+   "id": "20261128_1434",
+   "seed": 1434,
+   "template": "target",
+   "music": "Echoes of Time v2",
+   "qc": true,
+   "assets": [
+    "potw2517a"
+   ]
+  },
+  {
+   "id": "20261128_1439",
+   "seed": 1439,
+   "template": "flash",
+   "music": "Cut and Run",
+   "qc": true,
+   "assets": [
+    "potm2306a"
+   ]
   }
  ],
  "usage": {
-  "earth_exp65": 166,
+  "earth_exp65": 167,
   "weic2510b": 1,
   "potw2428a": 1,
   "weic2520b": 1,
   "heic1620c": 2,
   "potm2507b": 4,
-  "sdo_flare": 18,
+  "sdo_flare": 19,
   "weic2214b": 9,
   "potm2211a": 4,
   "potm2601b": 9,
@@ -3247,7 +3283,7 @@
   "potm2510b": 2,
   "weic2427a": 2,
   "weic2420c": 6,
-  "potm2503a": 7,
+  "potm2503a": 8,
   "sdo_year6": 22,
   "weic2332a": 11,
   "potm2301b": 6,
@@ -3268,7 +3304,7 @@
   "weic2316c": 1,
   "heic1711b": 4,
   "heic2604a": 2,
-  "potw2517a": 3,
+  "potw2517a": 4,
   "heic1903a": 13,
   "potw2527a": 5,
   "potw2525a": 1,
@@ -3290,7 +3326,7 @@
   "heic1914b": 7,
   "weic2608c": 4,
   "potm2606b": 4,
-  "heic2002a": 12,
+  "heic2002a": 14,
   "heic1615a": 5,
   "weic2303a": 1,
   "weic2411b": 4,
@@ -3427,7 +3463,7 @@
   "heic2409a": 1,
   "potm2310a": 2,
   "weic2514c": 1,
-  "potm2306a": 2,
+  "potm2306a": 3,
   "potm2504b": 1,
   "weic2328a": 1,
   "potw2324a": 2,
@@ -3538,6 +3574,8 @@
   "potm2605b": 1,
   "potm2405c": 1,
   "potw2547a": 1,
-  "potm2409a": 1
+  "potm2409a": 1,
+  "potw2531a": 1,
+  "potw2342a": 1
  }
 }

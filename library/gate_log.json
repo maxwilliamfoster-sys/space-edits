@@ -3510,5 +3510,40 @@
   ],
   "narrated": true,
   "clean": false
+ },
+ {
+  "id": "20261128_1433",
+  "t": "2026-11-28T15:50:54+00:00",
+  "template": "deep",
+  "music": "Call to Adventure",
+  "hook": "Past the Sun. Past the galaxy.",
+  "closer": "YOU ARE SMALLER THAN YOU THINK",
+  "assets": [
+   "potw2531a",
+   "heic2002a",
+   "heic2002a",
+   "potw2342a",
+   "potm2503a"
+  ],
+  "windows": [
+   [
+    "earth_exp65",
+    1326
+   ],
+   [
+    "sdo_flare",
+    50
+   ]
+  ],
+  "hashes": [
+   15632328559088693992,
+   9691964382334470275,
+   69055283208,
+   15046773680482869488,
+   8680961806496231480,
+   16194514319182983416
+  ],
+  "narrated": true,
+  "clean": false
  }
 ]
